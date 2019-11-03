@@ -8,21 +8,57 @@
 
 /* Begin PBXBuildFile section */
 		202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202EDA35236CD73100A1419D /* AppDelegate.swift */; };
-		202EDA3A236CD73100A1419D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202EDA39236CD73100A1419D /* ViewController.swift */; };
-		202EDA3D236CD73100A1419D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202EDA3B236CD73100A1419D /* Main.storyboard */; };
 		202EDA3F236CD73300A1419D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202EDA3E236CD73300A1419D /* Assets.xcassets */; };
 		202EDA42236CD73300A1419D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202EDA40236CD73300A1419D /* LaunchScreen.storyboard */; };
+		20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B55236EAEE000E661E9 /* TAOnboardingRootView.swift */; };
+		20587B58236EAF1500E661E9 /* TALaunchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B57236EAF1500E661E9 /* TALaunchRootView.swift */; };
+		20587B5A236EAF2A00E661E9 /* TAMainContentRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B59236EAF2A00E661E9 /* TAMainContentRootView.swift */; };
+		20587B5C236EAF3D00E661E9 /* TAMainMenuRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B5B236EAF3D00E661E9 /* TAMainMenuRootView.swift */; };
+		20C8AAA4236DE07A005E6590 /* TAAppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA3236DE07A005E6590 /* TAAppDependencyContainer.swift */; };
+		20C8AAA7236DE17A005E6590 /* TAMainContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA6236DE17A005E6590 /* TAMainContentViewController.swift */; };
+		20C8AAA9236DE1D3005E6590 /* TAMainContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA8236DE1D3005E6590 /* TAMainContentViewModel.swift */; };
+		20C8AAB1236DE480005E6590 /* TAMainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAB0236DE480005E6590 /* TAMainMenuViewController.swift */; };
+		20C8AAB3236DE49E005E6590 /* TABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAB2236DE49E005E6590 /* TABaseViewController.swift */; };
+		20C8AAB5236DE4E6005E6590 /* TAMainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAB4236DE4E6005E6590 /* TAMainMenuViewModel.swift */; };
+		20C8AAB7236DE59E005E6590 /* TAAppUserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAB6236DE59E005E6590 /* TAAppUserSessionRepository.swift */; };
+		20C8AAB9236DE64C005E6590 /* TAUserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAB8236DE64C005E6590 /* TAUserSessionDataStore.swift */; };
+		20C8AABB236DE71B005E6590 /* TAUserSessionCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AABA236DE71B005E6590 /* TAUserSessionCoding.swift */; };
+		20C8AABD236DE734005E6590 /* TAAuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AABC236DE734005E6590 /* TAAuthRemoteAPI.swift */; };
+		20C8AABF236DFDD2005E6590 /* TADatabaseSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AABE236DFDD2005E6590 /* TADatabaseSessionDataStore.swift */; };
+		20C8AAC2236DFFAD005E6590 /* TALaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC1236DFFAD005E6590 /* TALaunchViewController.swift */; };
+		20C8AAC4236DFFB5005E6590 /* TALaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC3236DFFB5005E6590 /* TALaunchViewModel.swift */; };
+		20C8AAC7236E0183005E6590 /* TAOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */; };
+		20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */; };
+		20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AACB236EAAAC005E6590 /* TABaseView.swift */; };
 		ACB0B621FEE4A6B0C2C1A0C5 /* Pods_TaxiAggregator_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		202EDA32236CD73100A1419D /* TaxiAggregator-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaxiAggregator-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		202EDA35236CD73100A1419D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		202EDA39236CD73100A1419D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		202EDA3C236CD73100A1419D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		202EDA3E236CD73300A1419D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		202EDA41236CD73300A1419D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		202EDA43236CD73300A1419D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20587B55236EAEE000E661E9 /* TAOnboardingRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingRootView.swift; sourceTree = "<group>"; };
+		20587B57236EAF1500E661E9 /* TALaunchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALaunchRootView.swift; sourceTree = "<group>"; };
+		20587B59236EAF2A00E661E9 /* TAMainContentRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainContentRootView.swift; sourceTree = "<group>"; };
+		20587B5B236EAF3D00E661E9 /* TAMainMenuRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainMenuRootView.swift; sourceTree = "<group>"; };
+		20C8AAA3236DE07A005E6590 /* TAAppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAAppDependencyContainer.swift; sourceTree = "<group>"; };
+		20C8AAA6236DE17A005E6590 /* TAMainContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainContentViewController.swift; sourceTree = "<group>"; };
+		20C8AAA8236DE1D3005E6590 /* TAMainContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainContentViewModel.swift; sourceTree = "<group>"; };
+		20C8AAB0236DE480005E6590 /* TAMainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainMenuViewController.swift; sourceTree = "<group>"; };
+		20C8AAB2236DE49E005E6590 /* TABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABaseViewController.swift; sourceTree = "<group>"; };
+		20C8AAB4236DE4E6005E6590 /* TAMainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainMenuViewModel.swift; sourceTree = "<group>"; };
+		20C8AAB6236DE59E005E6590 /* TAAppUserSessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAAppUserSessionRepository.swift; sourceTree = "<group>"; };
+		20C8AAB8236DE64C005E6590 /* TAUserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAUserSessionDataStore.swift; sourceTree = "<group>"; };
+		20C8AABA236DE71B005E6590 /* TAUserSessionCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAUserSessionCoding.swift; sourceTree = "<group>"; };
+		20C8AABC236DE734005E6590 /* TAAuthRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAAuthRemoteAPI.swift; sourceTree = "<group>"; };
+		20C8AABE236DFDD2005E6590 /* TADatabaseSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TADatabaseSessionDataStore.swift; sourceTree = "<group>"; };
+		20C8AAC1236DFFAD005E6590 /* TALaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALaunchViewController.swift; sourceTree = "<group>"; };
+		20C8AAC3236DFFB5005E6590 /* TALaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALaunchViewModel.swift; sourceTree = "<group>"; };
+		20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingViewController.swift; sourceTree = "<group>"; };
+		20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingViewModel.swift; sourceTree = "<group>"; };
+		20C8AACB236EAAAC005E6590 /* TABaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABaseView.swift; sourceTree = "<group>"; };
 		9E0F14C52B61CF4C35095F75 /* Pods-TaxiAggregator-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.release.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E58A9E76673CFFFBC02C29CE /* Pods-TaxiAggregator-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.debug.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaxiAggregator_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,14 +97,96 @@
 		202EDA34236CD73100A1419D /* TaxiAggregator-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				20C8AAA2236DC2E8005E6590 /* Sources */,
 				202EDA35236CD73100A1419D /* AppDelegate.swift */,
-				202EDA39236CD73100A1419D /* ViewController.swift */,
-				202EDA3B236CD73100A1419D /* Main.storyboard */,
 				202EDA3E236CD73300A1419D /* Assets.xcassets */,
 				202EDA40236CD73300A1419D /* LaunchScreen.storyboard */,
 				202EDA43236CD73300A1419D /* Info.plist */,
 			);
 			path = "TaxiAggregator-iOS";
+			sourceTree = "<group>";
+		};
+		20C8AAA2236DC2E8005E6590 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				20C8AACA236EAA9C005E6590 /* TaxicosUIKit */,
+				20C8AAA5236DE139005E6590 /* Screens */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		20C8AAA5236DE139005E6590 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				20C8AAA3236DE07A005E6590 /* TAAppDependencyContainer.swift */,
+				20C8AAB6236DE59E005E6590 /* TAAppUserSessionRepository.swift */,
+				20C8AAB8236DE64C005E6590 /* TAUserSessionDataStore.swift */,
+				20C8AABA236DE71B005E6590 /* TAUserSessionCoding.swift */,
+				20C8AABC236DE734005E6590 /* TAAuthRemoteAPI.swift */,
+				20C8AABE236DFDD2005E6590 /* TADatabaseSessionDataStore.swift */,
+				20C8AAAD236DE452005E6590 /* Main */,
+				20C8AAC0236DFF91005E6590 /* Launch */,
+				20C8AAC5236E0160005E6590 /* Onboarding */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		20C8AAAD236DE452005E6590 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				20C8AAAF236DE468005E6590 /* Menu */,
+				20C8AAAE236DE45B005E6590 /* Content */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		20C8AAAE236DE45B005E6590 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				20587B59236EAF2A00E661E9 /* TAMainContentRootView.swift */,
+				20C8AAA6236DE17A005E6590 /* TAMainContentViewController.swift */,
+				20C8AAA8236DE1D3005E6590 /* TAMainContentViewModel.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		20C8AAAF236DE468005E6590 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				20587B5B236EAF3D00E661E9 /* TAMainMenuRootView.swift */,
+				20C8AAB0236DE480005E6590 /* TAMainMenuViewController.swift */,
+				20C8AAB4236DE4E6005E6590 /* TAMainMenuViewModel.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		20C8AAC0236DFF91005E6590 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				20587B57236EAF1500E661E9 /* TALaunchRootView.swift */,
+				20C8AAC1236DFFAD005E6590 /* TALaunchViewController.swift */,
+				20C8AAC3236DFFB5005E6590 /* TALaunchViewModel.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		20C8AAC5236E0160005E6590 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				20587B55236EAEE000E661E9 /* TAOnboardingRootView.swift */,
+				20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */,
+				20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		20C8AACA236EAA9C005E6590 /* TaxicosUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				20C8AAB2236DE49E005E6590 /* TABaseViewController.swift */,
+				20C8AACB236EAAAC005E6590 /* TABaseView.swift */,
+			);
+			path = TaxicosUIKit;
 			sourceTree = "<group>";
 		};
 		88CD5F27E592BC6558233864 /* Pods */ = {
@@ -150,7 +268,6 @@
 			files = (
 				202EDA42236CD73300A1419D /* LaunchScreen.storyboard in Resources */,
 				202EDA3F236CD73300A1419D /* Assets.xcassets in Resources */,
-				202EDA3D236CD73100A1419D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,22 +320,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				202EDA3A236CD73100A1419D /* ViewController.swift in Sources */,
+				20C8AAB9236DE64C005E6590 /* TAUserSessionDataStore.swift in Sources */,
+				20C8AABF236DFDD2005E6590 /* TADatabaseSessionDataStore.swift in Sources */,
+				20587B5A236EAF2A00E661E9 /* TAMainContentRootView.swift in Sources */,
+				20C8AABD236DE734005E6590 /* TAAuthRemoteAPI.swift in Sources */,
+				20C8AAA9236DE1D3005E6590 /* TAMainContentViewModel.swift in Sources */,
+				20C8AAC7236E0183005E6590 /* TAOnboardingViewController.swift in Sources */,
+				20C8AABB236DE71B005E6590 /* TAUserSessionCoding.swift in Sources */,
+				20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */,
+				20C8AAA7236DE17A005E6590 /* TAMainContentViewController.swift in Sources */,
+				20C8AAB3236DE49E005E6590 /* TABaseViewController.swift in Sources */,
+				20C8AAB7236DE59E005E6590 /* TAAppUserSessionRepository.swift in Sources */,
+				20C8AAC2236DFFAD005E6590 /* TALaunchViewController.swift in Sources */,
+				20C8AAC4236DFFB5005E6590 /* TALaunchViewModel.swift in Sources */,
+				20C8AAB1236DE480005E6590 /* TAMainMenuViewController.swift in Sources */,
+				20587B58236EAF1500E661E9 /* TALaunchRootView.swift in Sources */,
+				20C8AAA4236DE07A005E6590 /* TAAppDependencyContainer.swift in Sources */,
+				20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */,
+				20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */,
 				202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */,
+				20C8AAB5236DE4E6005E6590 /* TAMainMenuViewModel.swift in Sources */,
+				20587B5C236EAF3D00E661E9 /* TAMainMenuRootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		202EDA3B236CD73100A1419D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				202EDA3C236CD73100A1419D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		202EDA40236CD73300A1419D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
