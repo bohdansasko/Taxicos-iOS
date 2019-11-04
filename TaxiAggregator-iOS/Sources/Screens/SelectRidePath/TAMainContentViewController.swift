@@ -8,19 +8,22 @@
 
 import UIKit
 import SideMenu
+import RxSwift
 
 final class TAMainContentViewController: TABaseViewController {
     let viewModel: TAMainContentViewModel
     let launchViewController: TALaunchViewController
-    let makeLeftSideMenu: () -> SideMenuNavigationController
+    let makeLeftSideMenuViewController: () -> SideMenuNavigationController
     let makeOnboardingViewController: () -> TAOnboardingViewController
+    
+    let disposeBag = DisposeBag()
     
     init(viewModel: TAMainContentViewModel,
          leftSideMenuFactory: @escaping () -> SideMenuNavigationController,
          launchViewController: TALaunchViewController,
          onboardingFactory: @escaping () -> TAOnboardingViewController) {
         self.viewModel                    = viewModel
-        self.makeLeftSideMenu             = leftSideMenuFactory
+        self.makeLeftSideMenuViewController = leftSideMenuFactory
         self.launchViewController         = launchViewController
         self.makeOnboardingViewController = onboardingFactory
         super.init()
@@ -33,20 +36,26 @@ final class TAMainContentViewController: TABaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigationBar()
+        subscribe(to: viewModel.navigationAction)
     }
     
-    func setupNavigationBar() {
-        clearNavigationBar()
-        
-        let menuIcon = #imageLiteral(resourceName: "icMenu").withRenderingMode(.alwaysOriginal)
-        let menuButton = UIBarButtonItem(image: menuIcon, style: .done, target: self, action: #selector(actMenuButton))
-        navigationItem.leftBarButtonItem = menuButton
-    }
-    
-    @objc func actMenuButton(sender: Any) {
-        let leftMenu = makeLeftSideMenu()
-        present(leftMenu, animated: true, completion: nil)
-    }
+}
 
+private extension TAMainContentViewController {
+    
+    func subscribe(to navigationAction: PublishSubject<TAMapNavigationAction>) {
+        navigationAction
+            .subscribe(onNext: { [weak self] action in
+                guard let self = self else { return }
+                switch action {
+                case .present(let screen):
+                    switch screen {
+                    case .leftMenu:
+                        let leftMenu = self.makeLeftSideMenuViewController()
+                        self.present(leftMenu, animated: true, completion: nil)
+                    }
+                }
+            }).disposed(by: disposeBag)
+    }
+    
 }

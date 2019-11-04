@@ -7,9 +7,13 @@
 //
 
 import GoogleMaps
+import RxSwift
+
+typealias TAMapNavigationAction = TANavigationAction<TAMapNavigationScreen>
 
 final class TAMainContentViewModel: NSObject {
-    private let locationManager = CLLocationManager()
+            let navigationAction = PublishSubject<TAMapNavigationAction>()
+    private let locationManager  = CLLocationManager()
     
     override init() {
         super.init()
@@ -18,6 +22,18 @@ final class TAMainContentViewModel: NSObject {
     }
     
 }
+
+// MARK: - User interactions
+
+extension TAMainContentViewModel {
+
+    @objc func actMenuButton(_ sender: UIButton) {
+        navigationAction.onNext(.present(.leftMenu))
+    }
+    
+}
+
+// MARK: - CLLocationManagerDelegate
 
 extension TAMainContentViewModel: CLLocationManagerDelegate {
     

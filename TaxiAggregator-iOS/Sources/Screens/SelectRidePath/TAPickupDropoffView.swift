@@ -1,5 +1,5 @@
 //
-//  TAPickupDropoffView.swift
+//  TAPickupDropoffNavigationBar.swift
 //  TaxiAggregator-iOS
 //
 //  Created by Bogdan Sasko on 04.11.2019.
@@ -8,7 +8,19 @@
 
 import UIKit
 
-final class TAPickupDropoffView: TABaseView {
+final class TAPickupDropoffNavigationBar: UINavigationBar {
+
+    // MARK: - Menu button
+    
+    let menuButton: UIButton = {
+        let menuIcon = #imageLiteral(resourceName: "icMenu").withRenderingMode(.alwaysOriginal)
+        let menuButton = UIButton(type: .system)
+        menuButton.translatesAutoresizingMaskIntoConstraints = false
+        menuButton.setImage(menuIcon, for: .normal)
+        menuButton.contentMode = .scaleAspectFit
+        return menuButton
+    }()
+    
     
     // MARK: - Pickup properties
     
@@ -29,45 +41,61 @@ final class TAPickupDropoffView: TABaseView {
     fileprivate let dropoffTF: UITextField = {
         return makeTextField(placeholder: "Where to?")
     }()
-    
+
     // MARK: - View lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         setupUI()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
 }
 
 // MARK: - Setup
 
-private extension TAPickupDropoffView {
+private extension TAPickupDropoffNavigationBar {
     
     func setupUI() {
         backgroundColor = .white
         
-        pickupTF.setContentHuggingPriority(.init(249), for: .horizontal)
-        dropoffTF.setContentHuggingPriority(.init(249), for: .horizontal)
+        menuButton.setContentHuggingPriority(.init(251), for: .horizontal)
         
+        pickupIconView.setContentHuggingPriority(.init(251), for: .horizontal)
+        dropoffIconView.setContentHuggingPriority(.init(251), for: .horizontal)
+
         let pickupSV = UIStackView(arrangedSubviews: [pickupIconView, pickupTF])
-        pickupSV.distribution = .fill
         pickupSV.axis = .horizontal
+        pickupSV.distribution = .fill
         pickupSV.spacing = 12
-        
+
         let dropoffSV = UIStackView(arrangedSubviews: [dropoffIconView, dropoffTF])
-        dropoffSV.distribution = .fill
+        dropoffSV.translatesAutoresizingMaskIntoConstraints = false
         dropoffSV.axis = .horizontal
+        dropoffSV.distribution = .fill
         dropoffSV.spacing = 12
+
+        let fromToSV = UIStackView(arrangedSubviews: [pickupSV, dropoffSV])
+        fromToSV.translatesAutoresizingMaskIntoConstraints = false
+        fromToSV.axis = .vertical
+        fromToSV.distribution = .fill
+        fromToSV.spacing = 8
         
-        let combinedSV = UIStackView(arrangedSubviews: [pickupSV, dropoffSV])
-        combinedSV.axis = .vertical
-        combinedSV.distribution = .fill
-        combinedSV.spacing = 8
-        addSubview(combinedSV)
+        let allSV = UIStackView(arrangedSubviews: [menuButton, fromToSV])
+        allSV.axis = .horizontal
+        allSV.distribution = .fill
+        allSV.alignment = .top
+        allSV.spacing = 15
+        addSubview(allSV)
         
-        combinedSV.snp.makeConstraints {
-            $0.left.equalToSuperview().inset(50)
+        menuButton.snp.makeConstraints{ $0.centerY.equalTo(pickupIconView) }
+        
+        allSV.snp.makeConstraints {
+            $0.left.equalToSuperview().offset(18)
             $0.right.equalToSuperview().inset(18)
             $0.bottom.equalToSuperview().inset(8)
         }
@@ -77,7 +105,7 @@ private extension TAPickupDropoffView {
 
 // MARK: - Make
 
-private extension TAPickupDropoffView {
+private extension TAPickupDropoffNavigationBar {
 
     static func makeTextField(placeholder: String?) -> UITextField {
         let tf = UITextField()

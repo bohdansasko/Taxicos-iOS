@@ -53,6 +53,7 @@ extension TAAppDependencyContainer {
         leftMenu.statusBarEndAlpha = 0
         leftMenu.setNavigationBarHidden(true, animated: false)
         leftMenu.presentationStyle.onTopShadowOpacity = 0.8
+        
         SideMenuManager.default.leftMenuNavigationController = leftMenu
         
         return leftMenu
@@ -68,7 +69,7 @@ extension TAAppDependencyContainer {
         return TAMainMenuViewModel()
     }
     
-    func makeMainContentViewController() -> UINavigationController {
+    func makeMainContentViewController() -> TAMainContentViewController {
         let launchViewController = makeLaunchViewController()
         let leftSideMenuFactory = {
             return self.makeLeftSideMenuNavigationController()
@@ -83,7 +84,7 @@ extension TAAppDependencyContainer {
             launchViewController: launchViewController,
             onboardingFactory: onboardingFactory
         )
-        return UINavigationController(rootViewController: vc)
+        return vc
     }
     
     func makeLaunchViewController() -> TALaunchViewController {

@@ -8,9 +8,12 @@
 
 import UIKit
 import GoogleMaps
+import RxSwift
+import RxCocoa
 
 final class TAMainContentRootView: TABaseView {
     let viewModel: TAMainContentViewModel
+    let disposeBag = DisposeBag()
     
     fileprivate let mapView: GMSMapView = {
         let map = GMSMapView()
@@ -18,8 +21,8 @@ final class TAMainContentRootView: TABaseView {
         return map
     }()
     
-    fileprivate let pickupDropoffView: TAPickupDropoffView = {
-        return TAPickupDropoffView()
+    fileprivate let pickupDropoffView: TAPickupDropoffNavigationBar = {
+        return TAPickupDropoffNavigationBar()
     }()
     
     init(frame: CGRect = .zero, viewModel: TAMainContentViewModel) {
@@ -35,12 +38,20 @@ final class TAMainContentRootView: TABaseView {
 private extension TAMainContentRootView {
     
     func setupUI() {
+        backgroundColor = .white
+        
         addSubview(pickupDropoffView)
+        
+        pickupDropoffView.menuButton.addTarget(
+            viewModel,
+            action: #selector(TAMainContentViewModel.actMenuButton)
+        )
+        
         pickupDropoffView.snp.makeConstraints {
-            $0.top.equalToSuperview()
+            $0.top.equalTo(self.safeAreaLayoutGuide.snp.topMargin)
             $0.left.equalToSuperview()
             $0.right.equalToSuperview()
-            $0.height.equalTo(132)
+            $0.height.equalTo(100)
         }
         
         addSubview(mapView)
