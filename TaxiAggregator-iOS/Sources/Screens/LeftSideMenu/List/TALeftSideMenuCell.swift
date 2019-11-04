@@ -11,7 +11,7 @@ import UIKit
 final class TALeftSideMenuCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "HelveticaNeue-Regular", size: 14)
+        label.font = UIFont.helvetica(weight: .regular, fontSize: 14)
         return label
     }()
     

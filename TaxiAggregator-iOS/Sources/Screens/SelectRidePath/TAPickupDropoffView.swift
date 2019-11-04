@@ -111,7 +111,7 @@ private extension TAPickupDropoffNavigationBar {
         let tf = UITextField()
         tf.borderStyle = .roundedRect
         tf.textAlignment = .left
-        tf.font = UIFont(name: "Rubik-Regular", size: 14)
+        tf.font = UIFont.rubik(weight: .regular, fontSize: 14)
         tf.placeholder = placeholder
         return tf
     }

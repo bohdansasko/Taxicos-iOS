@@ -32,6 +32,14 @@
 		20C8AAC7236E0183005E6590 /* TAOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */; };
 		20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */; };
 		20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AACB236EAAAC005E6590 /* TABaseView.swift */; };
+		20DC11C32370BC04004F323E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11C22370BC04004F323E /* Logger.swift */; };
+		20DC11C52370BC42004F323E /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11C42370BC42004F323E /* Date+Ext.swift */; };
+		20DC11C72370BC63004F323E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11C62370BC63004F323E /* String+Extension.swift */; };
+		20DC11D52370BC86004F323E /* UIApplication+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11C92370BC86004F323E /* UIApplication+Ext.swift */; };
+		20DC11D62370BC86004F323E /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11CA2370BC86004F323E /* UIFont+Ext.swift */; };
+		20DC11DB2370BC86004F323E /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11CF2370BC86004F323E /* UICollectionView+Ext.swift */; };
+		20DC11DD2370BC86004F323E /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11D12370BC86004F323E /* UIStackView+Ext.swift */; };
+		20DC11E02370BC86004F323E /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11D42370BC86004F323E /* UITableView+Ext.swift */; };
 		20ED9D00236F49B800ED3FBB /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */; };
 		97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A33C482370391E00C06500 /* TAPickupDropoffView.swift */; };
 		97A551D42370869500960890 /* UIControl+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D32370869500960890 /* UIControl+Ext.swift */; };
@@ -68,6 +76,14 @@
 		20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingViewController.swift; sourceTree = "<group>"; };
 		20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingViewModel.swift; sourceTree = "<group>"; };
 		20C8AACB236EAAAC005E6590 /* TABaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABaseView.swift; sourceTree = "<group>"; };
+		20DC11C22370BC04004F323E /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		20DC11C42370BC42004F323E /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		20DC11C62370BC63004F323E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		20DC11C92370BC86004F323E /* UIApplication+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Ext.swift"; sourceTree = "<group>"; };
+		20DC11CA2370BC86004F323E /* UIFont+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
+		20DC11CF2370BC86004F323E /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
+		20DC11D12370BC86004F323E /* UIStackView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
+		20DC11D42370BC86004F323E /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		97A33C482370391E00C06500 /* TAPickupDropoffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAPickupDropoffView.swift; sourceTree = "<group>"; };
 		97A551D32370869500960890 /* UIControl+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Ext.swift"; sourceTree = "<group>"; };
@@ -113,6 +129,7 @@
 			children = (
 				20C8AAA2236DC2E8005E6590 /* Sources */,
 				202EDA35236CD73100A1419D /* AppDelegate.swift */,
+				20DC11C22370BC04004F323E /* Logger.swift */,
 				202EDA3E236CD73300A1419D /* Assets.xcassets */,
 				20ED9CFE236F49A800ED3FBB /* Fonts */,
 				202EDA40236CD73300A1419D /* LaunchScreen.storyboard */,
@@ -201,6 +218,28 @@
 			path = TaxicosUIKit;
 			sourceTree = "<group>";
 		};
+		20DC11C82370BC86004F323E /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				97A551D32370869500960890 /* UIControl+Ext.swift */,
+				20DC11C92370BC86004F323E /* UIApplication+Ext.swift */,
+				20DC11CA2370BC86004F323E /* UIFont+Ext.swift */,
+				20DC11D12370BC86004F323E /* UIStackView+Ext.swift */,
+				20DC11CF2370BC86004F323E /* UICollectionView+Ext.swift */,
+				20DC11D42370BC86004F323E /* UITableView+Ext.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		20DC11E12370BC92004F323E /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				20DC11C42370BC42004F323E /* Date+Ext.swift */,
+				20DC11C62370BC63004F323E /* String+Extension.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		20ED9CFD236F261E00ED3FBB /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,7 +269,8 @@
 		97A551D22370868700960890 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				97A551D32370869500960890 /* UIControl+Ext.swift */,
+				20DC11E12370BC92004F323E /* Foundation */,
+				20DC11C82370BC86004F323E /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -384,14 +424,18 @@
 				20C8AABD236DE734005E6590 /* TAAuthRemoteAPI.swift in Sources */,
 				20C8AAA9236DE1D3005E6590 /* TAMainContentViewModel.swift in Sources */,
 				20C8AAC7236E0183005E6590 /* TAOnboardingViewController.swift in Sources */,
+				20DC11C32370BC04004F323E /* Logger.swift in Sources */,
 				20C8AABB236DE71B005E6590 /* TAUserSessionCoding.swift in Sources */,
 				97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */,
 				97A551D42370869500960890 /* UIControl+Ext.swift in Sources */,
 				20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */,
 				20C8AAA7236DE17A005E6590 /* TAMainContentViewController.swift in Sources */,
+				20DC11D62370BC86004F323E /* UIFont+Ext.swift in Sources */,
 				20C8AAB3236DE49E005E6590 /* TABaseViewController.swift in Sources */,
 				20587B60236EF1FA00E661E9 /* TAMenuItem.swift in Sources */,
+				20DC11C52370BC42004F323E /* Date+Ext.swift in Sources */,
 				20C8AAB7236DE59E005E6590 /* TAAppUserSessionRepository.swift in Sources */,
+				20DC11E02370BC86004F323E /* UITableView+Ext.swift in Sources */,
 				20C8AAC2236DFFAD005E6590 /* TALaunchViewController.swift in Sources */,
 				20C8AAC4236DFFB5005E6590 /* TALaunchViewModel.swift in Sources */,
 				20C8AAB1236DE480005E6590 /* TAMainMenuViewController.swift in Sources */,
@@ -401,7 +445,11 @@
 				20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */,
 				20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */,
 				202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */,
+				20DC11D52370BC86004F323E /* UIApplication+Ext.swift in Sources */,
+				20DC11DB2370BC86004F323E /* UICollectionView+Ext.swift in Sources */,
 				20C8AAB5236DE4E6005E6590 /* TAMainMenuViewModel.swift in Sources */,
+				20DC11DD2370BC86004F323E /* UIStackView+Ext.swift in Sources */,
+				20DC11C72370BC63004F323E /* String+Extension.swift in Sources */,
 				20587B5C236EAF3D00E661E9 /* TAMainMenuRootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
