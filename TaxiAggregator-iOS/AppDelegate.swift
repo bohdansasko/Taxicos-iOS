@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // TODO bohdans: move key to configuration file
         GMSServices.provideAPIKey("AIzaSyACPHIWoEdxs5RWDIYMOUP1I-r6AFiA7Zo")
         
         let mainVC = appDependencyContainer.makeMainContentViewController()

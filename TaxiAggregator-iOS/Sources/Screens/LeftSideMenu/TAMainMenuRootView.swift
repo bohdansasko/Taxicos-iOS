@@ -15,7 +15,7 @@ final class TAMainMenuRootView: TABaseView {
     
     fileprivate let tableMenu: UITableView = {
         let table = UITableView()
-        table.register(TALeftSideMenuCell.self, forCellReuseIdentifier: "TALeftSideMenuCell")
+        table.register(class: TALeftSideMenuCell.self)
         table.tableFooterView = UIView()
         table.separatorStyle = .none
         table.backgroundColor = .clear
@@ -73,7 +73,7 @@ extension TAMainMenuRootView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TALeftSideMenuCell") as! TALeftSideMenuCell
+        let cell = tableView.dequeue(class: TALeftSideMenuCell.self, for: indexPath)
         cell.item = items[indexPath.row]
         return cell
     }
