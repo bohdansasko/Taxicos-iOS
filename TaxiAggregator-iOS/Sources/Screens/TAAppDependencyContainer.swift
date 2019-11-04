@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 final class TAAppDependencyContainer {
     let sharedUserSessionRepository: TAUserSessionRepository
@@ -44,18 +45,45 @@ final class TAAppDependencyContainer {
 
 extension TAAppDependencyContainer {
     
-    func makeMainContentViewController() -> TAMainContentViewController {
+    func makeLeftSideMenuNavigationController() -> SideMenuNavigationController {
+        let mainMenuViewController = makeMainMenuViewController()
+        
+        let leftMenu = SideMenuNavigationController(rootViewController: mainMenuViewController)
+        leftMenu.leftSide = true
+        leftMenu.statusBarEndAlpha = 0
+        leftMenu.setNavigationBarHidden(true, animated: false)
+        leftMenu.presentationStyle.onTopShadowOpacity = 0.8
+        SideMenuManager.default.leftMenuNavigationController = leftMenu
+        
+        return leftMenu
+    }
+    
+    func makeMainMenuViewController() -> TAMainMenuViewController {
+        let mainMenuViewModel = makeMainMenuViewModel()
+        let vc = TAMainMenuViewController(viewModel: mainMenuViewModel)
+        return vc
+    }
+    
+    func makeMainMenuViewModel() -> TAMainMenuViewModel {
+        return TAMainMenuViewModel()
+    }
+    
+    func makeMainContentViewController() -> UINavigationController {
         let launchViewController = makeLaunchViewController()
+        let leftSideMenuFactory = {
+            return self.makeLeftSideMenuNavigationController()
+        }
         let onboardingFactory = {
             return self.makeOnboardingViewController()
         }
         
         let vc = TAMainContentViewController(
             viewModel: sharedMainViewModel,
+            leftSideMenuFactory: leftSideMenuFactory,
             launchViewController: launchViewController,
             onboardingFactory: onboardingFactory
         )
-        return vc
+        return UINavigationController(rootViewController: vc)
     }
     
     func makeLaunchViewController() -> TALaunchViewController {

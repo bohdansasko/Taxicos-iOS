@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let appDependencyContainer = TAAppDependencyContainer()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        GMSServices.provideAPIKey("AIzaSyACPHIWoEdxs5RWDIYMOUP1I-r6AFiA7Zo")
         
         let mainVC = appDependencyContainer.makeMainContentViewController()
         
