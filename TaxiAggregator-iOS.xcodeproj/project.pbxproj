@@ -33,6 +33,7 @@
 		20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */; };
 		20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AACB236EAAAC005E6590 /* TABaseView.swift */; };
 		20ED9D00236F49B800ED3FBB /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */; };
+		97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A33C482370391E00C06500 /* TAPickupDropoffView.swift */; };
 		ACB0B621FEE4A6B0C2C1A0C5 /* Pods_TaxiAggregator_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingViewModel.swift; sourceTree = "<group>"; };
 		20C8AACB236EAAAC005E6590 /* TABaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABaseView.swift; sourceTree = "<group>"; };
 		20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		97A33C482370391E00C06500 /* TAPickupDropoffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAPickupDropoffView.swift; sourceTree = "<group>"; };
 		9E0F14C52B61CF4C35095F75 /* Pods-TaxiAggregator-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.release.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E58A9E76673CFFFBC02C29CE /* Pods-TaxiAggregator-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.debug.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaxiAggregator_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +144,7 @@
 		20C8AAAD236DE452005E6590 /* SelectRidePath */ = {
 			isa = PBXGroup;
 			children = (
+				97A33C482370391E00C06500 /* TAPickupDropoffView.swift */,
 				20587B59236EAF2A00E661E9 /* TAMainContentRootView.swift */,
 				20C8AAA6236DE17A005E6590 /* TAMainContentViewController.swift */,
 				20C8AAA8236DE1D3005E6590 /* TAMainContentViewModel.swift */,
@@ -364,6 +367,7 @@
 				20C8AAA9236DE1D3005E6590 /* TAMainContentViewModel.swift in Sources */,
 				20C8AAC7236E0183005E6590 /* TAOnboardingViewController.swift in Sources */,
 				20C8AABB236DE71B005E6590 /* TAUserSessionCoding.swift in Sources */,
+				97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */,
 				20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */,
 				20C8AAA7236DE17A005E6590 /* TAMainContentViewController.swift in Sources */,
 				20C8AAB3236DE49E005E6590 /* TABaseViewController.swift in Sources */,
