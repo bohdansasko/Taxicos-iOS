@@ -20,8 +20,11 @@ target 'TaxiAggregator-iOS' do
   pod 'RealmSwift'
 
   # UI
+  pod 'SideMenu', '~> 6.0'
   pod 'SnapKit', '~> 5.0.0'
- 
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+
   # General
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'

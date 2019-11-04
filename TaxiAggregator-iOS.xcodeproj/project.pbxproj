@@ -14,6 +14,8 @@
 		20587B58236EAF1500E661E9 /* TALaunchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B57236EAF1500E661E9 /* TALaunchRootView.swift */; };
 		20587B5A236EAF2A00E661E9 /* TAMainContentRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B59236EAF2A00E661E9 /* TAMainContentRootView.swift */; };
 		20587B5C236EAF3D00E661E9 /* TAMainMenuRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B5B236EAF3D00E661E9 /* TAMainMenuRootView.swift */; };
+		20587B5E236EF1E200E661E9 /* TALeftSideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B5D236EF1E200E661E9 /* TALeftSideMenuCell.swift */; };
+		20587B60236EF1FA00E661E9 /* TAMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B5F236EF1FA00E661E9 /* TAMenuItem.swift */; };
 		20C8AAA4236DE07A005E6590 /* TAAppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA3236DE07A005E6590 /* TAAppDependencyContainer.swift */; };
 		20C8AAA7236DE17A005E6590 /* TAMainContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA6236DE17A005E6590 /* TAMainContentViewController.swift */; };
 		20C8AAA9236DE1D3005E6590 /* TAMainContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA8236DE1D3005E6590 /* TAMainContentViewModel.swift */; };
@@ -30,6 +32,7 @@
 		20C8AAC7236E0183005E6590 /* TAOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */; };
 		20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */; };
 		20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AACB236EAAAC005E6590 /* TABaseView.swift */; };
+		20ED9D00236F49B800ED3FBB /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */; };
 		ACB0B621FEE4A6B0C2C1A0C5 /* Pods_TaxiAggregator_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +46,8 @@
 		20587B57236EAF1500E661E9 /* TALaunchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALaunchRootView.swift; sourceTree = "<group>"; };
 		20587B59236EAF2A00E661E9 /* TAMainContentRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainContentRootView.swift; sourceTree = "<group>"; };
 		20587B5B236EAF3D00E661E9 /* TAMainMenuRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainMenuRootView.swift; sourceTree = "<group>"; };
+		20587B5D236EF1E200E661E9 /* TALeftSideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftSideMenuCell.swift; sourceTree = "<group>"; };
+		20587B5F236EF1FA00E661E9 /* TAMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMenuItem.swift; sourceTree = "<group>"; };
 		20C8AAA3236DE07A005E6590 /* TAAppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAAppDependencyContainer.swift; sourceTree = "<group>"; };
 		20C8AAA6236DE17A005E6590 /* TAMainContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainContentViewController.swift; sourceTree = "<group>"; };
 		20C8AAA8236DE1D3005E6590 /* TAMainContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainContentViewModel.swift; sourceTree = "<group>"; };
@@ -59,6 +64,7 @@
 		20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingViewController.swift; sourceTree = "<group>"; };
 		20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingViewModel.swift; sourceTree = "<group>"; };
 		20C8AACB236EAAAC005E6590 /* TABaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABaseView.swift; sourceTree = "<group>"; };
+		20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		9E0F14C52B61CF4C35095F75 /* Pods-TaxiAggregator-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.release.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E58A9E76673CFFFBC02C29CE /* Pods-TaxiAggregator-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.debug.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaxiAggregator_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +106,7 @@
 				20C8AAA2236DC2E8005E6590 /* Sources */,
 				202EDA35236CD73100A1419D /* AppDelegate.swift */,
 				202EDA3E236CD73300A1419D /* Assets.xcassets */,
+				20ED9CFE236F49A800ED3FBB /* Fonts */,
 				202EDA40236CD73300A1419D /* LaunchScreen.storyboard */,
 				202EDA43236CD73300A1419D /* Info.plist */,
 			);
@@ -124,40 +131,33 @@
 				20C8AABA236DE71B005E6590 /* TAUserSessionCoding.swift */,
 				20C8AABC236DE734005E6590 /* TAAuthRemoteAPI.swift */,
 				20C8AABE236DFDD2005E6590 /* TADatabaseSessionDataStore.swift */,
-				20C8AAAD236DE452005E6590 /* Main */,
+				20C8AAAF236DE468005E6590 /* LeftSideMenu */,
+				20C8AAAD236DE452005E6590 /* SelectRidePath */,
 				20C8AAC0236DFF91005E6590 /* Launch */,
 				20C8AAC5236E0160005E6590 /* Onboarding */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		20C8AAAD236DE452005E6590 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				20C8AAAF236DE468005E6590 /* Menu */,
-				20C8AAAE236DE45B005E6590 /* Content */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		20C8AAAE236DE45B005E6590 /* Content */ = {
+		20C8AAAD236DE452005E6590 /* SelectRidePath */ = {
 			isa = PBXGroup;
 			children = (
 				20587B59236EAF2A00E661E9 /* TAMainContentRootView.swift */,
 				20C8AAA6236DE17A005E6590 /* TAMainContentViewController.swift */,
 				20C8AAA8236DE1D3005E6590 /* TAMainContentViewModel.swift */,
 			);
-			path = Content;
+			path = SelectRidePath;
 			sourceTree = "<group>";
 		};
-		20C8AAAF236DE468005E6590 /* Menu */ = {
+		20C8AAAF236DE468005E6590 /* LeftSideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				20ED9CFD236F261E00ED3FBB /* List */,
 				20587B5B236EAF3D00E661E9 /* TAMainMenuRootView.swift */,
 				20C8AAB0236DE480005E6590 /* TAMainMenuViewController.swift */,
 				20C8AAB4236DE4E6005E6590 /* TAMainMenuViewModel.swift */,
 			);
-			path = Menu;
+			path = LeftSideMenu;
 			sourceTree = "<group>";
 		};
 		20C8AAC0236DFF91005E6590 /* Launch */ = {
@@ -189,6 +189,23 @@
 			path = TaxicosUIKit;
 			sourceTree = "<group>";
 		};
+		20ED9CFD236F261E00ED3FBB /* List */ = {
+			isa = PBXGroup;
+			children = (
+				20587B5F236EF1FA00E661E9 /* TAMenuItem.swift */,
+				20587B5D236EF1E200E661E9 /* TALeftSideMenuCell.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		20ED9CFE236F49A800ED3FBB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		88CD5F27E592BC6558233864 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +235,7 @@
 				202EDA2F236CD73100A1419D /* Frameworks */,
 				202EDA30236CD73100A1419D /* Resources */,
 				D6932295C86FD9572FF5D2D5 /* [CP] Embed Pods Frameworks */,
+				13879F465AF556AB00CBA920 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				202EDA42236CD73300A1419D /* LaunchScreen.storyboard in Resources */,
+				20ED9D00236F49B800ED3FBB /* Rubik-Regular.ttf in Resources */,
 				202EDA3F236CD73300A1419D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +293,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		13879F465AF556AB00CBA920 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		45F595227570151CB1718F71 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20C8AAB9236DE64C005E6590 /* TAUserSessionDataStore.swift in Sources */,
+				20587B5E236EF1E200E661E9 /* TALeftSideMenuCell.swift in Sources */,
 				20C8AABF236DFDD2005E6590 /* TADatabaseSessionDataStore.swift in Sources */,
 				20587B5A236EAF2A00E661E9 /* TAMainContentRootView.swift in Sources */,
 				20C8AABD236DE734005E6590 /* TAAuthRemoteAPI.swift in Sources */,
@@ -330,6 +367,7 @@
 				20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */,
 				20C8AAA7236DE17A005E6590 /* TAMainContentViewController.swift in Sources */,
 				20C8AAB3236DE49E005E6590 /* TABaseViewController.swift in Sources */,
+				20587B60236EF1FA00E661E9 /* TAMenuItem.swift in Sources */,
 				20C8AAB7236DE59E005E6590 /* TAAppUserSessionRepository.swift in Sources */,
 				20C8AAC2236DFFAD005E6590 /* TALaunchViewController.swift in Sources */,
 				20C8AAC4236DFFB5005E6590 /* TALaunchViewModel.swift in Sources */,
