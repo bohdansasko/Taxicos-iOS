@@ -23,14 +23,18 @@ final class TAMainMenuRootView: TABaseView {
     }()
     
     fileprivate let logoView: UIView = {
-        let view = UIView()
+        let logoContainerView = UIView()
         
         let logo = UIImageView()
         logo.image = #imageLiteral(resourceName: "icLogo")
-        view.addSubview(logo)
-        logo.snp.makeConstraints{ $0.centerX.centerY.equalToSuperview() }
+        logoContainerView.addSubview(logo)
+        logo.snp.makeConstraints {
+            $0.width.equalToSuperview().multipliedBy(0.4)
+            $0.height.equalToSuperview().multipliedBy(0.6)
+            $0.centerX.centerY.equalToSuperview()
+        }
         
-        return view
+        return logoContainerView
     }()
     
     let items: [TAMenuItem] = [
