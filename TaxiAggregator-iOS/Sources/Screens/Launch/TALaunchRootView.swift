@@ -14,6 +14,19 @@ final class TALaunchRootView: TABaseView {
     init(frame: CGRect = .zero, viewModel: TALaunchViewModel) {
         self.viewModel = viewModel
         super.init(frame: frame)
+        
+        themeProvider.register(observer: self)
     }
     
+}
+
+
+// MARK: - TAThemeable
+
+extension TALaunchRootView: TAThemeable {
+        
+    func apply(theme: TATheme) {
+        backgroundColor = theme.colors.backgroundColor
+    }
+
 }

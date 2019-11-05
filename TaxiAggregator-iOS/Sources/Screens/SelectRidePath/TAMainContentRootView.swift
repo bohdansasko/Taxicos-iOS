@@ -28,7 +28,9 @@ final class TAMainContentRootView: TABaseView {
     init(frame: CGRect = .zero, viewModel: TAMainContentViewModel) {
         self.viewModel = viewModel
         super.init(frame: frame)
-        setupUI()
+                
+        setupLayout()
+        themeProvider.register(observer: self)
     }
     
 }
@@ -37,9 +39,7 @@ final class TAMainContentRootView: TABaseView {
 
 private extension TAMainContentRootView {
     
-    func setupUI() {
-        backgroundColor = .white
-        
+    func setupLayout() {
         addSubview(pickupDropoffView)
         
         pickupDropoffView.menuButton.addTarget(
@@ -61,4 +61,14 @@ private extension TAMainContentRootView {
         }
     }
     
+}
+
+// MARK: - TAThemeable
+
+extension TAMainContentRootView: TAThemeable {
+        
+    func apply(theme: TATheme) {
+        backgroundColor = theme.colors.backgroundColor
+    }
+
 }

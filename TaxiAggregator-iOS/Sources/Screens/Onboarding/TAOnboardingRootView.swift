@@ -14,6 +14,18 @@ final class TAOnboardingRootView: TABaseView {
     init(frame: CGRect = .zero, viewModel: TAOnboardingViewModel) {
         self.viewModel = viewModel
         super.init(frame: frame)
+        
+        themeProvider.register(observer: self)
     }
     
+}
+
+// MARK: - TAThemeable
+
+extension TAOnboardingRootView: TAThemeable {
+        
+    func apply(theme: TATheme) {
+        backgroundColor = theme.colors.backgroundColor
+    }
+
 }

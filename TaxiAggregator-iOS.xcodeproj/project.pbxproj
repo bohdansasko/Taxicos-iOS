@@ -41,6 +41,11 @@
 		20DC11DD2370BC86004F323E /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11D12370BC86004F323E /* UIStackView+Ext.swift */; };
 		20DC11E02370BC86004F323E /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11D42370BC86004F323E /* UITableView+Ext.swift */; };
 		20ED9D00236F49B800ED3FBB /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */; };
+		9797E7AC23718E1A008AC393 /* TAThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7AB23718E1A008AC393 /* TAThemeable.swift */; };
+		9797E7AE23718E3D008AC393 /* TATheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7AD23718E3D008AC393 /* TATheme.swift */; };
+		9797E7B023718F8C008AC393 /* TAColorsPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7AF23718F8C008AC393 /* TAColorsPalette.swift */; };
+		9797E7B223718FE4008AC393 /* TAThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7B123718FE4008AC393 /* TAThemeProvider.swift */; };
+		9797E7B423719257008AC393 /* TALegacyThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7B323719257008AC393 /* TALegacyThemeProvider.swift */; };
 		97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A33C482370391E00C06500 /* TAPickupDropoffView.swift */; };
 		97A551D42370869500960890 /* UIControl+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D32370869500960890 /* UIControl+Ext.swift */; };
 		97A551D923708ECA00960890 /* TANavigationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D823708ECA00960890 /* TANavigationAction.swift */; };
@@ -85,6 +90,11 @@
 		20DC11D12370BC86004F323E /* UIStackView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
 		20DC11D42370BC86004F323E /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		9797E7AB23718E1A008AC393 /* TAThemeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAThemeable.swift; sourceTree = "<group>"; };
+		9797E7AD23718E3D008AC393 /* TATheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TATheme.swift; sourceTree = "<group>"; };
+		9797E7AF23718F8C008AC393 /* TAColorsPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAColorsPalette.swift; sourceTree = "<group>"; };
+		9797E7B123718FE4008AC393 /* TAThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAThemeProvider.swift; sourceTree = "<group>"; };
+		9797E7B323719257008AC393 /* TALegacyThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALegacyThemeProvider.swift; sourceTree = "<group>"; };
 		97A33C482370391E00C06500 /* TAPickupDropoffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAPickupDropoffView.swift; sourceTree = "<group>"; };
 		97A551D32370869500960890 /* UIControl+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Ext.swift"; sourceTree = "<group>"; };
 		97A551D823708ECA00960890 /* TANavigationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TANavigationAction.swift; sourceTree = "<group>"; };
@@ -141,9 +151,9 @@
 		20C8AAA2236DC2E8005E6590 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				97A551D22370868700960890 /* Extensions */,
 				20C8AACA236EAA9C005E6590 /* TaxicosUIKit */,
 				20C8AAA5236DE139005E6590 /* Screens */,
+				97A551D22370868700960890 /* Extensions */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -211,6 +221,7 @@
 		20C8AACA236EAA9C005E6590 /* TaxicosUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				9797E7AA23718DE1008AC393 /* Theme */,
 				97A551D823708ECA00960890 /* TANavigationAction.swift */,
 				20C8AAB2236DE49E005E6590 /* TABaseViewController.swift */,
 				20C8AACB236EAAAC005E6590 /* TABaseView.swift */,
@@ -264,6 +275,18 @@
 				9E0F14C52B61CF4C35095F75 /* Pods-TaxiAggregator-iOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9797E7AA23718DE1008AC393 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				9797E7AB23718E1A008AC393 /* TAThemeable.swift */,
+				9797E7AD23718E3D008AC393 /* TATheme.swift */,
+				9797E7AF23718F8C008AC393 /* TAColorsPalette.swift */,
+				9797E7B123718FE4008AC393 /* TAThemeProvider.swift */,
+				9797E7B323719257008AC393 /* TALegacyThemeProvider.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		97A551D22370868700960890 /* Extensions */ = {
@@ -416,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9797E7AC23718E1A008AC393 /* TAThemeable.swift in Sources */,
 				20C8AAB9236DE64C005E6590 /* TAUserSessionDataStore.swift in Sources */,
 				20587B5E236EF1E200E661E9 /* TALeftSideMenuCell.swift in Sources */,
 				97A551DB23708F8500960890 /* TAMapNavigationScreen.swift in Sources */,
@@ -426,8 +450,10 @@
 				20C8AAC7236E0183005E6590 /* TAOnboardingViewController.swift in Sources */,
 				20DC11C32370BC04004F323E /* Logger.swift in Sources */,
 				20C8AABB236DE71B005E6590 /* TAUserSessionCoding.swift in Sources */,
+				9797E7AE23718E3D008AC393 /* TATheme.swift in Sources */,
 				97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */,
 				97A551D42370869500960890 /* UIControl+Ext.swift in Sources */,
+				9797E7B023718F8C008AC393 /* TAColorsPalette.swift in Sources */,
 				20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */,
 				20C8AAA7236DE17A005E6590 /* TAMainContentViewController.swift in Sources */,
 				20DC11D62370BC86004F323E /* UIFont+Ext.swift in Sources */,
@@ -443,12 +469,14 @@
 				20C8AAA4236DE07A005E6590 /* TAAppDependencyContainer.swift in Sources */,
 				97A551D923708ECA00960890 /* TANavigationAction.swift in Sources */,
 				20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */,
+				9797E7B423719257008AC393 /* TALegacyThemeProvider.swift in Sources */,
 				20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */,
 				202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */,
 				20DC11D52370BC86004F323E /* UIApplication+Ext.swift in Sources */,
 				20DC11DB2370BC86004F323E /* UICollectionView+Ext.swift in Sources */,
 				20C8AAB5236DE4E6005E6590 /* TAMainMenuViewModel.swift in Sources */,
 				20DC11DD2370BC86004F323E /* UIStackView+Ext.swift in Sources */,
+				9797E7B223718FE4008AC393 /* TAThemeProvider.swift in Sources */,
 				20DC11C72370BC63004F323E /* String+Extension.swift in Sources */,
 				20587B5C236EAF3D00E661E9 /* TAMainMenuRootView.swift in Sources */,
 			);

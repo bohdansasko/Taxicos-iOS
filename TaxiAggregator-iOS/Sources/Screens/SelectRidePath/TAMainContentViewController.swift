@@ -11,12 +11,17 @@ import SideMenu
 import RxSwift
 
 final class TAMainContentViewController: TABaseViewController {
+    
+    // MARK: - Internal variables
+    
     let viewModel: TAMainContentViewModel
     let launchViewController: TALaunchViewController
     let makeLeftSideMenuViewController: () -> SideMenuNavigationController
     let makeOnboardingViewController: () -> TAOnboardingViewController
     
     let disposeBag = DisposeBag()
+    
+    // MARK: - View lifecycle
     
     init(viewModel: TAMainContentViewModel,
          leftSideMenuFactory: @escaping () -> SideMenuNavigationController,

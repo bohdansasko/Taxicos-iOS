@@ -44,8 +44,18 @@ final class TAMainMenuRootView: TABaseView {
         self.viewModel = viewModel
         super.init(frame: frame)
         
-        backgroundColor = .white
+        setupLayout()
         
+        themeProvider.register(observer: self)
+    }
+    
+}
+
+// MARK: - Setup
+
+extension TAMainMenuRootView {
+    
+    func setupLayout() {
         addSubview(logoView)
         logoView.snp.makeConstraints {
             $0.left.right.equalToSuperview()
@@ -92,4 +102,14 @@ extension TAMainMenuRootView: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
+}
+
+// MARK: - TAThemeable
+
+extension TAMainMenuRootView: TAThemeable {
+        
+    func apply(theme: TATheme) {
+        backgroundColor = theme.colors.backgroundColor
+    }
+
 }

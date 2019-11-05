@@ -24,6 +24,10 @@ class TABaseViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension TABaseViewController {
+    
     func clearNavigationBar() {
         guard let navBar = navigationController?.navigationBar else {
             assertionFailure()
