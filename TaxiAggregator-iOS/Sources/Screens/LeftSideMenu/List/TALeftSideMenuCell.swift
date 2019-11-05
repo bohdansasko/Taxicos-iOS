@@ -11,7 +11,6 @@ import UIKit
 final class TALeftSideMenuCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.helvetica(weight: .regular, fontSize: 14)
         return label
     }()
     
@@ -29,7 +28,9 @@ final class TALeftSideMenuCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupUI()
+        
+        setupLayout()
+        themeProvider.register(observer: self)
     }
     
     required init?(coder: NSCoder) {
@@ -40,9 +41,7 @@ final class TALeftSideMenuCell: UITableViewCell {
 
 private extension TALeftSideMenuCell {
     
-    func setupUI() {
-        backgroundColor = .clear
-        
+    func setupLayout() {
         addSubview(iconImageView)
         addSubview(titleLabel)
         
@@ -58,4 +57,16 @@ private extension TALeftSideMenuCell {
         }
     }
     
+}
+
+// MARK: - TAThemeable
+
+extension TALeftSideMenuCell: TAThemeable {
+        
+    func apply(theme: TATheme) {
+        backgroundColor      = theme.colors.menuItemBackgroundColor
+        titleLabel.font      = theme.colors.menuItemFont
+        titleLabel.textColor = theme.colors.menuItemTextColor
+    }
+
 }
