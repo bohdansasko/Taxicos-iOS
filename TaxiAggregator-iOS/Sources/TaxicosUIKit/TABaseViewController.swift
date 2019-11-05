@@ -13,6 +13,10 @@ class TABaseViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
     }
+    
+    deinit {
+        log.debug("☠️ deinit")
+    }
         
     @available(*, unavailable, message: "")
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
