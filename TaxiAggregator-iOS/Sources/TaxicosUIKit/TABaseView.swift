@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class TABaseView: UIView {
+    
+    let disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

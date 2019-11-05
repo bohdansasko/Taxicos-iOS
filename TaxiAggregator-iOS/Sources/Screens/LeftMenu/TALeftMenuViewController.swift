@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class TALeftMenuViewController: TABaseViewController {
     let viewModel: TALeftMenuViewModel
@@ -22,7 +23,32 @@ final class TALeftMenuViewController: TABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        subscribe(to: viewModel.navigationAction)
     }
+    
+}
 
+// MARK: Subscriptions
+
+extension TALeftMenuViewController {
+    
+    func subscribe(to navigationAction: PublishSubject<TALeftMenuNavigationAction>) {
+        viewModel.navigationAction.subscribe(onNext: { navigationAction in
+            switch navigationAction {
+            case .present(let screen):
+                switch screen {
+                case .savedAddresses:
+                    log.debug("savedAddresses")
+                case .shareApp:
+                    log.debug("shareApp")
+                case .feedback:
+                    log.debug("feedback")
+                case .rateApp:
+                    log.debug("rateApp")
+                }
+            }
+        }).disposed(by: disposeBag)
+    }
+    
 }

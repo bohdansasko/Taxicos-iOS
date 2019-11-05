@@ -13,6 +13,7 @@
 		200AEA8E2371E9D000624F53 /* TAAuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA892371E9D000624F53 /* TAAuthRemoteAPI.swift */; };
 		200AEA8F2371E9D000624F53 /* TAUserSessionCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA8A2371E9D000624F53 /* TAUserSessionCoding.swift */; };
 		200AEA902371E9D000624F53 /* TAAppUserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA8B2371E9D000624F53 /* TAAppUserSessionRepository.swift */; };
+		200AEA932371FD6A00624F53 /* TALeftMenuNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA922371FD6A00624F53 /* TALeftMenuNavigationScreen.swift */; };
 		202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202EDA35236CD73100A1419D /* AppDelegate.swift */; };
 		202EDA3F236CD73300A1419D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202EDA3E236CD73300A1419D /* Assets.xcassets */; };
 		202EDA42236CD73300A1419D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202EDA40236CD73300A1419D /* LaunchScreen.storyboard */; };
@@ -21,7 +22,7 @@
 		20587B5A236EAF2A00E661E9 /* TAMapRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B59236EAF2A00E661E9 /* TAMapRootView.swift */; };
 		20587B5C236EAF3D00E661E9 /* TALeftMenuRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B5B236EAF3D00E661E9 /* TALeftMenuRootView.swift */; };
 		20587B5E236EF1E200E661E9 /* TALeftSideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B5D236EF1E200E661E9 /* TALeftSideMenuCell.swift */; };
-		20587B60236EF1FA00E661E9 /* TAMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B5F236EF1FA00E661E9 /* TAMenuItem.swift */; };
+		20587B60236EF1FA00E661E9 /* TAMenuItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B5F236EF1FA00E661E9 /* TAMenuItemType.swift */; };
 		20C8AAA4236DE07A005E6590 /* TAAppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA3236DE07A005E6590 /* TAAppDependencyContainer.swift */; };
 		20C8AAA7236DE17A005E6590 /* TAMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA6236DE17A005E6590 /* TAMapViewController.swift */; };
 		20C8AAA9236DE1D3005E6590 /* TAMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA8236DE1D3005E6590 /* TAMapViewModel.swift */; };
@@ -62,6 +63,7 @@
 		200AEA892371E9D000624F53 /* TAAuthRemoteAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAAuthRemoteAPI.swift; sourceTree = "<group>"; };
 		200AEA8A2371E9D000624F53 /* TAUserSessionCoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAUserSessionCoding.swift; sourceTree = "<group>"; };
 		200AEA8B2371E9D000624F53 /* TAAppUserSessionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAAppUserSessionRepository.swift; sourceTree = "<group>"; };
+		200AEA922371FD6A00624F53 /* TALeftMenuNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftMenuNavigationScreen.swift; sourceTree = "<group>"; };
 		202EDA32236CD73100A1419D /* Taxicos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taxicos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		202EDA35236CD73100A1419D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		202EDA3E236CD73300A1419D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 		20587B59236EAF2A00E661E9 /* TAMapRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMapRootView.swift; sourceTree = "<group>"; };
 		20587B5B236EAF3D00E661E9 /* TALeftMenuRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftMenuRootView.swift; sourceTree = "<group>"; };
 		20587B5D236EF1E200E661E9 /* TALeftSideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftSideMenuCell.swift; sourceTree = "<group>"; };
-		20587B5F236EF1FA00E661E9 /* TAMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMenuItem.swift; sourceTree = "<group>"; };
+		20587B5F236EF1FA00E661E9 /* TAMenuItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMenuItemType.swift; sourceTree = "<group>"; };
 		20C8AAA3236DE07A005E6590 /* TAAppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAAppDependencyContainer.swift; sourceTree = "<group>"; };
 		20C8AAA6236DE17A005E6590 /* TAMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMapViewController.swift; sourceTree = "<group>"; };
 		20C8AAA8236DE1D3005E6590 /* TAMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMapViewModel.swift; sourceTree = "<group>"; };
@@ -132,6 +134,16 @@
 			path = DataLayer;
 			sourceTree = "<group>";
 		};
+		200AEA912371FCC000624F53 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				20ED9CFE236F49A800ED3FBB /* Fonts */,
+				202EDA43236CD73300A1419D /* Info.plist */,
+				202EDA3E236CD73300A1419D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		202EDA29236CD73100A1419D = {
 			isa = PBXGroup;
 			children = (
@@ -154,10 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				20C8AAA2236DC2E8005E6590 /* Sources */,
-				202EDA3E236CD73300A1419D /* Assets.xcassets */,
-				20ED9CFE236F49A800ED3FBB /* Fonts */,
-				202EDA40236CD73300A1419D /* LaunchScreen.storyboard */,
-				202EDA43236CD73300A1419D /* Info.plist */,
+				200AEA912371FCC000624F53 /* Resources */,
 			);
 			path = "TaxiAggregator-iOS";
 			sourceTree = "<group>";
@@ -165,6 +174,7 @@
 		20C8AAA2236DC2E8005E6590 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				202EDA40236CD73300A1419D /* LaunchScreen.storyboard */,
 				202EDA35236CD73100A1419D /* AppDelegate.swift */,
 				20DC11C22370BC04004F323E /* Logger.swift */,
 				9797E7B52371AF6C008AC393 /* TAConfig.swift */,
@@ -207,6 +217,7 @@
 				20587B5B236EAF3D00E661E9 /* TALeftMenuRootView.swift */,
 				20C8AAB0236DE480005E6590 /* TALeftMenuViewController.swift */,
 				20C8AAB4236DE4E6005E6590 /* TALeftMenuViewModel.swift */,
+				200AEA922371FD6A00624F53 /* TALeftMenuNavigationScreen.swift */,
 			);
 			path = LeftMenu;
 			sourceTree = "<group>";
@@ -268,7 +279,7 @@
 		20ED9CFD236F261E00ED3FBB /* List */ = {
 			isa = PBXGroup;
 			children = (
-				20587B5F236EF1FA00E661E9 /* TAMenuItem.swift */,
+				20587B5F236EF1FA00E661E9 /* TAMenuItemType.swift */,
 				20587B5D236EF1E200E661E9 /* TALeftSideMenuCell.swift */,
 			);
 			path = List;
@@ -474,7 +485,7 @@
 				200AEA902371E9D000624F53 /* TAAppUserSessionRepository.swift in Sources */,
 				20DC11D62370BC86004F323E /* UIFont+Ext.swift in Sources */,
 				20C8AAB3236DE49E005E6590 /* TABaseViewController.swift in Sources */,
-				20587B60236EF1FA00E661E9 /* TAMenuItem.swift in Sources */,
+				20587B60236EF1FA00E661E9 /* TAMenuItemType.swift in Sources */,
 				20DC11C52370BC42004F323E /* Date+Ext.swift in Sources */,
 				20DC11E02370BC86004F323E /* UITableView+Ext.swift in Sources */,
 				20C8AAC2236DFFAD005E6590 /* TALaunchViewController.swift in Sources */,
@@ -487,6 +498,7 @@
 				200AEA8E2371E9D000624F53 /* TAAuthRemoteAPI.swift in Sources */,
 				9797E7B423719257008AC393 /* TALegacyThemeProvider.swift in Sources */,
 				20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */,
+				200AEA932371FD6A00624F53 /* TALeftMenuNavigationScreen.swift in Sources */,
 				202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */,
 				20DC11D52370BC86004F323E /* UIApplication+Ext.swift in Sources */,
 				20DC11DB2370BC86004F323E /* UICollectionView+Ext.swift in Sources */,
@@ -633,7 +645,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "TaxiAggregator-iOS/Info.plist";
+				INFOPLIST_FILE = "TaxiAggregator-iOS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -654,7 +666,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "TaxiAggregator-iOS/Info.plist";
+				INFOPLIST_FILE = "TaxiAggregator-iOS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

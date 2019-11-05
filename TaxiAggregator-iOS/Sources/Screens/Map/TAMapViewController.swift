@@ -19,8 +19,6 @@ final class TAMapViewController: TABaseViewController {
     let makeLeftSideMenuViewController: () -> SideMenuNavigationController
     let makeOnboardingViewController: () -> TAOnboardingViewController
     
-    let disposeBag = DisposeBag()
-    
     // MARK: - View lifecycle
     
     init(viewModel: TAMapViewModel,

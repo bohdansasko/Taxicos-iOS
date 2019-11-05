@@ -13,7 +13,6 @@ import RxCocoa
 
 final class TAMapRootView: TABaseView {
     let viewModel: TAMapViewModel
-    let disposeBag = DisposeBag()
     
     fileprivate let mapView: GMSMapView = {
         let map = GMSMapView()

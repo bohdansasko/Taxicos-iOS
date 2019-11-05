@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import RxSwift
 
 class TABaseViewController: UIViewController {
+    
+    // MARK: - Rx variables
+    
+    let disposeBag = DisposeBag()
+    
+    // MARK: - View Lifecycle
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -29,6 +36,8 @@ class TABaseViewController: UIViewController {
     }
     
 }
+
+// MARK: - Navigation
 
 extension TABaseViewController {
     

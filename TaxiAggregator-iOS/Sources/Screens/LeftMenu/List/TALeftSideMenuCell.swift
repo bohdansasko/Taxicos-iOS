@@ -19,7 +19,7 @@ final class TALeftMenuCell: TABaseTableViewCell {
         return imageView
     }()
     
-    var item: TAMenuItem! {
+    var item: TAMenuItemType! {
         didSet {
             iconImageView.image = item.icon
             titleLabel.text = item.title

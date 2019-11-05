@@ -12,6 +12,7 @@ import SideMenu
 
 final class TALeftMenuRootView: TABaseView {
     let viewModel: TALeftMenuViewModel
+    let items    : [TAMenuItemType]
     
     fileprivate let tableMenu: UITableView = {
         let table = UITableView()
@@ -37,19 +38,13 @@ final class TALeftMenuRootView: TABaseView {
         return logoContainerView
     }()
     
-    let items: [TAMenuItem] = [
-        TAMenuItem(icon: #imageLiteral(resourceName: "icHome")    , title: "Saved locations"),
-        TAMenuItem(icon: #imageLiteral(resourceName: "icShareApp"), title: "Share app"),
-        TAMenuItem(icon: #imageLiteral(resourceName: "icFeedback"), title: "Feedback"),
-        TAMenuItem(icon: #imageLiteral(resourceName: "icRateApp") , title: "Rate app")
-    ]
-    
     init(frame: CGRect = .zero, viewModel: TALeftMenuViewModel) {
         self.viewModel = viewModel
+        self.items     = TAMenuItemType.allCases
+        
         super.init(frame: frame)
         
         setupLayout()
-        
         themeProvider.register(observer: self)
     }
     
@@ -104,6 +99,22 @@ extension TALeftMenuRootView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        
+        guard let tappedMenuItem = TAMenuItemType(rawValue: indexPath.row) else {
+            assertionFailure("required")
+            return
+        }
+        
+        switch tappedMenuItem {
+        case .savedLocations:
+            viewModel.actSavedLocations(self)
+        case .shareApp:
+            viewModel.actShareApp(self)
+        case .feedback:
+            viewModel.actFeedback(self)
+        case .rateApp:
+            viewModel.actRateApp(self)
+        }
     }
     
 }
