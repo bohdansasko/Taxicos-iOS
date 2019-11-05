@@ -46,6 +46,7 @@
 		9797E7B023718F8C008AC393 /* TAColorsPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7AF23718F8C008AC393 /* TAColorsPalette.swift */; };
 		9797E7B223718FE4008AC393 /* TAThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7B123718FE4008AC393 /* TAThemeProvider.swift */; };
 		9797E7B423719257008AC393 /* TALegacyThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7B323719257008AC393 /* TALegacyThemeProvider.swift */; };
+		9797E7B62371AF6C008AC393 /* TAConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7B52371AF6C008AC393 /* TAConfig.swift */; };
 		97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A33C482370391E00C06500 /* TAPickupDropoffView.swift */; };
 		97A551D42370869500960890 /* UIControl+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D32370869500960890 /* UIControl+Ext.swift */; };
 		97A551D923708ECA00960890 /* TANavigationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D823708ECA00960890 /* TANavigationAction.swift */; };
@@ -95,6 +96,7 @@
 		9797E7AF23718F8C008AC393 /* TAColorsPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAColorsPalette.swift; sourceTree = "<group>"; };
 		9797E7B123718FE4008AC393 /* TAThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAThemeProvider.swift; sourceTree = "<group>"; };
 		9797E7B323719257008AC393 /* TALegacyThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALegacyThemeProvider.swift; sourceTree = "<group>"; };
+		9797E7B52371AF6C008AC393 /* TAConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConfig.swift; sourceTree = "<group>"; };
 		97A33C482370391E00C06500 /* TAPickupDropoffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAPickupDropoffView.swift; sourceTree = "<group>"; };
 		97A551D32370869500960890 /* UIControl+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Ext.swift"; sourceTree = "<group>"; };
 		97A551D823708ECA00960890 /* TANavigationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TANavigationAction.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				20C8AAA2236DC2E8005E6590 /* Sources */,
 				202EDA35236CD73100A1419D /* AppDelegate.swift */,
 				20DC11C22370BC04004F323E /* Logger.swift */,
+				9797E7B52371AF6C008AC393 /* TAConfig.swift */,
 				202EDA3E236CD73300A1419D /* Assets.xcassets */,
 				20ED9CFE236F49A800ED3FBB /* Fonts */,
 				202EDA40236CD73300A1419D /* LaunchScreen.storyboard */,
@@ -454,6 +457,7 @@
 				97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */,
 				97A551D42370869500960890 /* UIControl+Ext.swift in Sources */,
 				9797E7B023718F8C008AC393 /* TAColorsPalette.swift in Sources */,
+				9797E7B62371AF6C008AC393 /* TAConfig.swift in Sources */,
 				20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */,
 				20C8AAA7236DE17A005E6590 /* TAMainContentViewController.swift in Sources */,
 				20DC11D62370BC86004F323E /* UIFont+Ext.swift in Sources */,

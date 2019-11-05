@@ -10,23 +10,31 @@ import UIKit
 import GoogleMaps
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     let appDependencyContainer = TAAppDependencyContainer()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // TODO bohdans: move key to configuration file
-        GMSServices.provideAPIKey("AIzaSyACPHIWoEdxs5RWDIYMOUP1I-r6AFiA7Zo")
-        
+        GMSServices.provideAPIKey(TAConfig.kGSMAPIKey)
+
         let mainVC = appDependencyContainer.makeMainContentViewController()
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = mainVC
-        window?.makeKeyAndVisible()
+        setupWindow(with: mainVC)
         
         return true
     }
 
+}
+
+// MARK: - Setup
+
+private extension AppDelegate {
+    
+    func setupWindow(with rootViewController: UIViewController) {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = rootViewController
+        window?.makeKeyAndVisible()
+    }
+    
 }
