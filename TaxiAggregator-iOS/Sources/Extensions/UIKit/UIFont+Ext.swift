@@ -10,7 +10,7 @@ extension UIFont {
     static func helvetica(weight: UIFont.Weight, fontSize: CGFloat) -> UIFont {
         switch weight {
         case .regular:
-            return UIFont(name: "HelveticaNeue-Regular", size: fontSize)!
+            return UIFont(name: "HelveticaNeue", size: fontSize)!
         default:
             assertionFailure()
             break
