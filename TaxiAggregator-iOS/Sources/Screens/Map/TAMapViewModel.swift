@@ -1,5 +1,5 @@
 //
-//  TAMainContentViewModel.swift
+//  TAMapViewModel.swift
 //  TaxiAggregator-iOS
 //
 //  Created by Bogdan Sasko on 02.11.2019.
@@ -11,7 +11,7 @@ import RxSwift
 
 typealias TAMapNavigationAction = TANavigationAction<TAMapNavigationScreen>
 
-final class TAMainContentViewModel: NSObject {
+final class TAMapViewModel: NSObject {
             let navigationAction = PublishSubject<TAMapNavigationAction>()
     private let locationManager  = CLLocationManager()
     
@@ -25,7 +25,7 @@ final class TAMainContentViewModel: NSObject {
 
 // MARK: - User interactions
 
-extension TAMainContentViewModel {
+extension TAMapViewModel {
 
     @objc func actMenuButton(_ sender: UIButton) {
         navigationAction.onNext(.present(.leftMenu))
@@ -35,7 +35,7 @@ extension TAMainContentViewModel {
 
 // MARK: - CLLocationManagerDelegate
 
-extension TAMainContentViewModel: CLLocationManagerDelegate {
+extension TAMapViewModel: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         

@@ -1,5 +1,5 @@
 //
-//  TAMainContentRootView.swift
+//  TAMapRootView.swift
 //  TaxiAggregator-iOS
 //
 //  Created by Bogdan Sasko on 03.11.2019.
@@ -11,8 +11,8 @@ import GoogleMaps
 import RxSwift
 import RxCocoa
 
-final class TAMainContentRootView: TABaseView {
-    let viewModel: TAMainContentViewModel
+final class TAMapRootView: TABaseView {
+    let viewModel: TAMapViewModel
     let disposeBag = DisposeBag()
     
     fileprivate let mapView: GMSMapView = {
@@ -25,7 +25,7 @@ final class TAMainContentRootView: TABaseView {
         return TAPickupDropoffNavigationBar()
     }()
     
-    init(frame: CGRect = .zero, viewModel: TAMainContentViewModel) {
+    init(frame: CGRect = .zero, viewModel: TAMapViewModel) {
         self.viewModel = viewModel
         super.init(frame: frame)
                 
@@ -37,14 +37,14 @@ final class TAMainContentRootView: TABaseView {
 
 // MARK: - Setup
 
-private extension TAMainContentRootView {
+private extension TAMapRootView {
     
     func setupLayout() {
         addSubview(pickupDropoffView)
         
         pickupDropoffView.menuButton.addTarget(
             viewModel,
-            action: #selector(TAMainContentViewModel.actMenuButton)
+            action: #selector(TAMapViewModel.actMenuButton)
         )
         
         pickupDropoffView.snp.makeConstraints {
@@ -65,7 +65,7 @@ private extension TAMainContentRootView {
 
 // MARK: - TAThemeable
 
-extension TAMainContentRootView: TAThemeable {
+extension TAMapRootView: TAThemeable {
         
     func apply(theme: TATheme) {
         backgroundColor = theme.colors.backgroundColor

@@ -1,5 +1,5 @@
 //
-//  TAMainContentViewController.swift
+//  TAMapViewController.swift
 //  TaxiAggregator-iOS
 //
 //  Created by Bogdan Sasko on 02.11.2019.
@@ -10,11 +10,11 @@ import UIKit
 import SideMenu
 import RxSwift
 
-final class TAMainContentViewController: TABaseViewController {
+final class TAMapViewController: TABaseViewController {
     
     // MARK: - Internal variables
     
-    let viewModel: TAMainContentViewModel
+    let viewModel: TAMapViewModel
     let launchViewController: TALaunchViewController
     let makeLeftSideMenuViewController: () -> SideMenuNavigationController
     let makeOnboardingViewController: () -> TAOnboardingViewController
@@ -23,7 +23,7 @@ final class TAMainContentViewController: TABaseViewController {
     
     // MARK: - View lifecycle
     
-    init(viewModel: TAMainContentViewModel,
+    init(viewModel: TAMapViewModel,
          leftSideMenuFactory: @escaping () -> SideMenuNavigationController,
          launchViewController: TALaunchViewController,
          onboardingFactory: @escaping () -> TAOnboardingViewController) {
@@ -35,7 +35,7 @@ final class TAMainContentViewController: TABaseViewController {
     }
     
     override func loadView() {
-        view = TAMainContentRootView(viewModel: viewModel)
+        view = TAMapRootView(viewModel: viewModel)
     }
     
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ final class TAMainContentViewController: TABaseViewController {
     
 }
 
-private extension TAMainContentViewController {
+private extension TAMapViewController {
     
     func subscribe(to navigationAction: PublishSubject<TAMapNavigationAction>) {
         navigationAction

@@ -13,13 +13,13 @@
 		202EDA42236CD73300A1419D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202EDA40236CD73300A1419D /* LaunchScreen.storyboard */; };
 		20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B55236EAEE000E661E9 /* TAOnboardingRootView.swift */; };
 		20587B58236EAF1500E661E9 /* TALaunchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B57236EAF1500E661E9 /* TALaunchRootView.swift */; };
-		20587B5A236EAF2A00E661E9 /* TAMainContentRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B59236EAF2A00E661E9 /* TAMainContentRootView.swift */; };
+		20587B5A236EAF2A00E661E9 /* TAMapRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B59236EAF2A00E661E9 /* TAMapRootView.swift */; };
 		20587B5C236EAF3D00E661E9 /* TAMainMenuRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B5B236EAF3D00E661E9 /* TAMainMenuRootView.swift */; };
 		20587B5E236EF1E200E661E9 /* TALeftSideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B5D236EF1E200E661E9 /* TALeftSideMenuCell.swift */; };
 		20587B60236EF1FA00E661E9 /* TAMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B5F236EF1FA00E661E9 /* TAMenuItem.swift */; };
 		20C8AAA4236DE07A005E6590 /* TAAppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA3236DE07A005E6590 /* TAAppDependencyContainer.swift */; };
-		20C8AAA7236DE17A005E6590 /* TAMainContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA6236DE17A005E6590 /* TAMainContentViewController.swift */; };
-		20C8AAA9236DE1D3005E6590 /* TAMainContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA8236DE1D3005E6590 /* TAMainContentViewModel.swift */; };
+		20C8AAA7236DE17A005E6590 /* TAMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA6236DE17A005E6590 /* TAMapViewController.swift */; };
+		20C8AAA9236DE1D3005E6590 /* TAMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAA8236DE1D3005E6590 /* TAMapViewModel.swift */; };
 		20C8AAB1236DE480005E6590 /* TAMainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAB0236DE480005E6590 /* TAMainMenuViewController.swift */; };
 		20C8AAB3236DE49E005E6590 /* TABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAB2236DE49E005E6590 /* TABaseViewController.swift */; };
 		20C8AAB5236DE4E6005E6590 /* TAMainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAB4236DE4E6005E6590 /* TAMainMenuViewModel.swift */; };
@@ -48,7 +48,7 @@
 		9797E7B223718FE4008AC393 /* TAThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7B123718FE4008AC393 /* TAThemeProvider.swift */; };
 		9797E7B423719257008AC393 /* TALegacyThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7B323719257008AC393 /* TALegacyThemeProvider.swift */; };
 		9797E7B62371AF6C008AC393 /* TAConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7B52371AF6C008AC393 /* TAConfig.swift */; };
-		97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A33C482370391E00C06500 /* TAPickupDropoffView.swift */; };
+		97A33C492370391E00C06500 /* TAPickupDropoffNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A33C482370391E00C06500 /* TAPickupDropoffNavigationBar.swift */; };
 		97A551D42370869500960890 /* UIControl+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D32370869500960890 /* UIControl+Ext.swift */; };
 		97A551D923708ECA00960890 /* TANavigationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D823708ECA00960890 /* TANavigationAction.swift */; };
 		97A551DB23708F8500960890 /* TAMapNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551DA23708F8500960890 /* TAMapNavigationScreen.swift */; };
@@ -64,13 +64,13 @@
 		202EDA43236CD73300A1419D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20587B55236EAEE000E661E9 /* TAOnboardingRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingRootView.swift; sourceTree = "<group>"; };
 		20587B57236EAF1500E661E9 /* TALaunchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALaunchRootView.swift; sourceTree = "<group>"; };
-		20587B59236EAF2A00E661E9 /* TAMainContentRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainContentRootView.swift; sourceTree = "<group>"; };
+		20587B59236EAF2A00E661E9 /* TAMapRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMapRootView.swift; sourceTree = "<group>"; };
 		20587B5B236EAF3D00E661E9 /* TAMainMenuRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainMenuRootView.swift; sourceTree = "<group>"; };
 		20587B5D236EF1E200E661E9 /* TALeftSideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftSideMenuCell.swift; sourceTree = "<group>"; };
 		20587B5F236EF1FA00E661E9 /* TAMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMenuItem.swift; sourceTree = "<group>"; };
 		20C8AAA3236DE07A005E6590 /* TAAppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAAppDependencyContainer.swift; sourceTree = "<group>"; };
-		20C8AAA6236DE17A005E6590 /* TAMainContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainContentViewController.swift; sourceTree = "<group>"; };
-		20C8AAA8236DE1D3005E6590 /* TAMainContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainContentViewModel.swift; sourceTree = "<group>"; };
+		20C8AAA6236DE17A005E6590 /* TAMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMapViewController.swift; sourceTree = "<group>"; };
+		20C8AAA8236DE1D3005E6590 /* TAMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMapViewModel.swift; sourceTree = "<group>"; };
 		20C8AAB0236DE480005E6590 /* TAMainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainMenuViewController.swift; sourceTree = "<group>"; };
 		20C8AAB2236DE49E005E6590 /* TABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABaseViewController.swift; sourceTree = "<group>"; };
 		20C8AAB4236DE4E6005E6590 /* TAMainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainMenuViewModel.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		9797E7B123718FE4008AC393 /* TAThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAThemeProvider.swift; sourceTree = "<group>"; };
 		9797E7B323719257008AC393 /* TALegacyThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALegacyThemeProvider.swift; sourceTree = "<group>"; };
 		9797E7B52371AF6C008AC393 /* TAConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConfig.swift; sourceTree = "<group>"; };
-		97A33C482370391E00C06500 /* TAPickupDropoffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAPickupDropoffView.swift; sourceTree = "<group>"; };
+		97A33C482370391E00C06500 /* TAPickupDropoffNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAPickupDropoffNavigationBar.swift; sourceTree = "<group>"; };
 		97A551D32370869500960890 /* UIControl+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Ext.swift"; sourceTree = "<group>"; };
 		97A551D823708ECA00960890 /* TANavigationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TANavigationAction.swift; sourceTree = "<group>"; };
 		97A551DA23708F8500960890 /* TAMapNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMapNavigationScreen.swift; sourceTree = "<group>"; };
@@ -173,23 +173,23 @@
 				20C8AABC236DE734005E6590 /* TAAuthRemoteAPI.swift */,
 				20C8AABE236DFDD2005E6590 /* TADatabaseSessionDataStore.swift */,
 				20C8AAAF236DE468005E6590 /* LeftSideMenu */,
-				20C8AAAD236DE452005E6590 /* SelectRidePath */,
+				20C8AAAD236DE452005E6590 /* Map */,
 				20C8AAC0236DFF91005E6590 /* Launch */,
 				20C8AAC5236E0160005E6590 /* Onboarding */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		20C8AAAD236DE452005E6590 /* SelectRidePath */ = {
+		20C8AAAD236DE452005E6590 /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				97A551DA23708F8500960890 /* TAMapNavigationScreen.swift */,
-				97A33C482370391E00C06500 /* TAPickupDropoffView.swift */,
-				20587B59236EAF2A00E661E9 /* TAMainContentRootView.swift */,
-				20C8AAA6236DE17A005E6590 /* TAMainContentViewController.swift */,
-				20C8AAA8236DE1D3005E6590 /* TAMainContentViewModel.swift */,
+				97A33C482370391E00C06500 /* TAPickupDropoffNavigationBar.swift */,
+				20587B59236EAF2A00E661E9 /* TAMapRootView.swift */,
+				20C8AAA6236DE17A005E6590 /* TAMapViewController.swift */,
+				20C8AAA8236DE1D3005E6590 /* TAMapViewModel.swift */,
 			);
-			path = SelectRidePath;
+			path = Map;
 			sourceTree = "<group>";
 		};
 		20C8AAAF236DE468005E6590 /* LeftSideMenu */ = {
@@ -450,20 +450,20 @@
 				20587B5E236EF1E200E661E9 /* TALeftSideMenuCell.swift in Sources */,
 				97A551DB23708F8500960890 /* TAMapNavigationScreen.swift in Sources */,
 				20C8AABF236DFDD2005E6590 /* TADatabaseSessionDataStore.swift in Sources */,
-				20587B5A236EAF2A00E661E9 /* TAMainContentRootView.swift in Sources */,
+				20587B5A236EAF2A00E661E9 /* TAMapRootView.swift in Sources */,
 				20C8AABD236DE734005E6590 /* TAAuthRemoteAPI.swift in Sources */,
-				20C8AAA9236DE1D3005E6590 /* TAMainContentViewModel.swift in Sources */,
+				20C8AAA9236DE1D3005E6590 /* TAMapViewModel.swift in Sources */,
 				20C8AAC7236E0183005E6590 /* TAOnboardingViewController.swift in Sources */,
 				20DC11C32370BC04004F323E /* Logger.swift in Sources */,
 				20C8AABB236DE71B005E6590 /* TAUserSessionCoding.swift in Sources */,
 				9797E7AE23718E3D008AC393 /* TATheme.swift in Sources */,
-				97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */,
+				97A33C492370391E00C06500 /* TAPickupDropoffNavigationBar.swift in Sources */,
 				97A551D42370869500960890 /* UIControl+Ext.swift in Sources */,
 				9797E7B023718F8C008AC393 /* TAColorsPalette.swift in Sources */,
 				9797E7B62371AF6C008AC393 /* TAConfig.swift in Sources */,
 				20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */,
 				200AEA812371DA8B00624F53 /* TABaseTableViewCell.swift in Sources */,
-				20C8AAA7236DE17A005E6590 /* TAMainContentViewController.swift in Sources */,
+				20C8AAA7236DE17A005E6590 /* TAMapViewController.swift in Sources */,
 				20DC11D62370BC86004F323E /* UIFont+Ext.swift in Sources */,
 				20C8AAB3236DE49E005E6590 /* TABaseViewController.swift in Sources */,
 				20587B60236EF1FA00E661E9 /* TAMenuItem.swift in Sources */,

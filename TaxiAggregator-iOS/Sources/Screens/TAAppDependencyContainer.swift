@@ -11,7 +11,7 @@ import SideMenu
 
 final class TAAppDependencyContainer {
     let sharedUserSessionRepository: TAUserSessionRepository
-    let sharedMainViewModel        : TAMainContentViewModel
+    let sharedMainViewModel        : TAMapViewModel
     
     init() {
         func makeUserSessionRepository() -> TAUserSessionRepository {
@@ -38,7 +38,7 @@ final class TAAppDependencyContainer {
         }
         
         sharedUserSessionRepository = makeUserSessionRepository()
-        sharedMainViewModel         = TAMainContentViewModel()
+        sharedMainViewModel         = TAMapViewModel()
     }
     
 }
@@ -69,7 +69,7 @@ extension TAAppDependencyContainer {
         return TAMainMenuViewModel()
     }
     
-    func makeMainContentViewController() -> TAMainContentViewController {
+    func makeMainContentViewController() -> TAMapViewController {
         let launchViewController = makeLaunchViewController()
         let leftSideMenuFactory = {
             return self.makeLeftSideMenuNavigationController()
@@ -78,7 +78,7 @@ extension TAAppDependencyContainer {
             return self.makeOnboardingViewController()
         }
         
-        let vc = TAMainContentViewController(
+        let vc = TAMapViewController(
             viewModel: sharedMainViewModel,
             leftSideMenuFactory: leftSideMenuFactory,
             launchViewController: launchViewController,
