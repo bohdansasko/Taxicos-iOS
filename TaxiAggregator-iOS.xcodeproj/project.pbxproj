@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200AEA812371DA8B00624F53 /* TABaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA802371DA8B00624F53 /* TABaseTableViewCell.swift */; };
 		202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202EDA35236CD73100A1419D /* AppDelegate.swift */; };
 		202EDA3F236CD73300A1419D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202EDA3E236CD73300A1419D /* Assets.xcassets */; };
 		202EDA42236CD73300A1419D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202EDA40236CD73300A1419D /* LaunchScreen.storyboard */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		200AEA802371DA8B00624F53 /* TABaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABaseTableViewCell.swift; sourceTree = "<group>"; };
 		202EDA32236CD73100A1419D /* Taxicos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taxicos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		202EDA35236CD73100A1419D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		202EDA3E236CD73300A1419D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				97A551D823708ECA00960890 /* TANavigationAction.swift */,
 				20C8AAB2236DE49E005E6590 /* TABaseViewController.swift */,
 				20C8AACB236EAAAC005E6590 /* TABaseView.swift */,
+				200AEA802371DA8B00624F53 /* TABaseTableViewCell.swift */,
 			);
 			path = TaxicosUIKit;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				9797E7B023718F8C008AC393 /* TAColorsPalette.swift in Sources */,
 				9797E7B62371AF6C008AC393 /* TAConfig.swift in Sources */,
 				20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */,
+				200AEA812371DA8B00624F53 /* TABaseTableViewCell.swift in Sources */,
 				20C8AAA7236DE17A005E6590 /* TAMainContentViewController.swift in Sources */,
 				20DC11D62370BC86004F323E /* UIFont+Ext.swift in Sources */,
 				20C8AAB3236DE49E005E6590 /* TABaseViewController.swift in Sources */,

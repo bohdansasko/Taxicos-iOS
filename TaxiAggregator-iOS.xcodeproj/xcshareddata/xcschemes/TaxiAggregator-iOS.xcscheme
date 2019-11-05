@@ -69,7 +69,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "202EDA31236CD73100A1419D"
-            BuildableName = "TaxiAggregator-iOS.app"
+            BuildableName = "Taxicos.app"
             BlueprintName = "TaxiAggregator-iOS"
             ReferencedContainer = "container:TaxiAggregator-iOS.xcodeproj">
          </BuildableReference>

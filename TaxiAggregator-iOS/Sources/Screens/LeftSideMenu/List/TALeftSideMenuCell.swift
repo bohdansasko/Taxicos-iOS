@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TALeftSideMenuCell: UITableViewCell {
+final class TALeftSideMenuCell: TABaseTableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         return label
@@ -31,10 +31,6 @@ final class TALeftSideMenuCell: UITableViewCell {
         
         setupLayout()
         themeProvider.register(observer: self)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
 }
