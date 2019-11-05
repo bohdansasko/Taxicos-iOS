@@ -1,5 +1,5 @@
 //
-//  TAMainMenuRootView.swift
+//  TALeftMenuRootView.swift
 //  TaxiAggregator-iOS
 //
 //  Created by Bogdan Sasko on 03.11.2019.
@@ -10,12 +10,12 @@ import UIKit
 import SnapKit
 import SideMenu
 
-final class TAMainMenuRootView: TABaseView {
-    let viewModel: TAMainMenuViewModel
+final class TALeftMenuRootView: TABaseView {
+    let viewModel: TALeftMenuViewModel
     
     fileprivate let tableMenu: UITableView = {
         let table = UITableView()
-        table.register(class: TALeftSideMenuCell.self)
+        table.register(class: TALeftMenuCell.self)
         table.tableFooterView = UIView()
         table.separatorStyle = .none
         table.backgroundColor = .clear
@@ -29,7 +29,7 @@ final class TAMainMenuRootView: TABaseView {
         logo.image = #imageLiteral(resourceName: "icLogo")
         logoContainerView.addSubview(logo)
         logo.snp.makeConstraints {
-            $0.width.equalToSuperview().multipliedBy(0.4)
+            $0.width.equalToSuperview().multipliedBy(0.35)
             $0.height.equalToSuperview().multipliedBy(0.6)
             $0.centerX.centerY.equalToSuperview()
         }
@@ -44,7 +44,7 @@ final class TAMainMenuRootView: TABaseView {
         TAMenuItem(icon: #imageLiteral(resourceName: "icRateApp") , title: "Rate app")
     ]
     
-    init(frame: CGRect = .zero, viewModel: TAMainMenuViewModel) {
+    init(frame: CGRect = .zero, viewModel: TALeftMenuViewModel) {
         self.viewModel = viewModel
         super.init(frame: frame)
         
@@ -57,7 +57,7 @@ final class TAMainMenuRootView: TABaseView {
 
 // MARK: - Setup
 
-extension TAMainMenuRootView {
+extension TALeftMenuRootView {
     
     func setupLayout() {
         addSubview(logoView)
@@ -80,14 +80,14 @@ extension TAMainMenuRootView {
 
 // MARK: - UITableViewDataSource
 
-extension TAMainMenuRootView: UITableViewDataSource {
+extension TALeftMenuRootView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(class: TALeftSideMenuCell.self, for: indexPath)
+        let cell = tableView.dequeue(class: TALeftMenuCell.self, for: indexPath)
         cell.item = items[indexPath.row]
         return cell
     }
@@ -96,7 +96,7 @@ extension TAMainMenuRootView: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension TAMainMenuRootView: UITableViewDelegate {
+extension TALeftMenuRootView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 58
@@ -110,7 +110,7 @@ extension TAMainMenuRootView: UITableViewDelegate {
 
 // MARK: - TAThemeable
 
-extension TAMainMenuRootView: TAThemeable {
+extension TALeftMenuRootView: TAThemeable {
         
     func apply(theme: TATheme) {
         backgroundColor = theme.colors.backgroundColor

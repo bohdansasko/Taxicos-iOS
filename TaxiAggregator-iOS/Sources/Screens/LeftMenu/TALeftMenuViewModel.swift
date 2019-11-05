@@ -1,5 +1,5 @@
 //
-//  TAMainMenuViewModel.swift
+//  TALeftMenuViewModel.swift
 //  TaxiAggregator-iOS
 //
 //  Created by Bogdan Sasko on 02.11.2019.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-final class TAMainMenuViewModel {
+final class TALeftMenuViewModel {
     
 }

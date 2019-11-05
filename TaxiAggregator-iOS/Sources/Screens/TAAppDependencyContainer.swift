@@ -45,34 +45,34 @@ final class TAAppDependencyContainer {
 
 extension TAAppDependencyContainer {
     
-    func makeLeftSideMenuNavigationController() -> SideMenuNavigationController {
-        let mainMenuViewController = makeMainMenuViewController()
+    func makeLeftMenuNavigationController() -> SideMenuNavigationController {
+        let leftMenuViewController = makeLeftMenuViewController()
         
-        let leftMenu = SideMenuNavigationController(rootViewController: mainMenuViewController)
-        leftMenu.leftSide = true
-        leftMenu.statusBarEndAlpha = 0
-        leftMenu.setNavigationBarHidden(true, animated: false)
-        leftMenu.presentationStyle.onTopShadowOpacity = 0.8
+        let leftMenuNavigation = SideMenuNavigationController(rootViewController: leftMenuViewController)
+        leftMenuNavigation.leftSide = true
+        leftMenuNavigation.statusBarEndAlpha = 0
+        leftMenuNavigation.setNavigationBarHidden(true, animated: false)
+        leftMenuNavigation.presentationStyle.onTopShadowOpacity = 0.8
         
-        SideMenuManager.default.leftMenuNavigationController = leftMenu
+        SideMenuManager.default.leftMenuNavigationController = leftMenuNavigation
         
-        return leftMenu
+        return leftMenuNavigation
     }
     
-    func makeMainMenuViewController() -> TAMainMenuViewController {
-        let mainMenuViewModel = makeMainMenuViewModel()
-        let vc = TAMainMenuViewController(viewModel: mainMenuViewModel)
+    func makeLeftMenuViewController() -> TALeftMenuViewController {
+        let leftMenuViewModel = makeLeftMenuViewModel()
+        let vc = TALeftMenuViewController(viewModel: leftMenuViewModel)
         return vc
     }
     
-    func makeMainMenuViewModel() -> TAMainMenuViewModel {
-        return TAMainMenuViewModel()
+    func makeLeftMenuViewModel() -> TALeftMenuViewModel {
+        return TALeftMenuViewModel()
     }
     
-    func makeMainContentViewController() -> TAMapViewController {
+    func makeMapViewController() -> TAMapViewController {
         let launchViewController = makeLaunchViewController()
         let leftSideMenuFactory = {
-            return self.makeLeftSideMenuNavigationController()
+            return self.makeLeftMenuNavigationController()
         }
         let onboardingFactory = {
             return self.makeOnboardingViewController()

@@ -1,5 +1,5 @@
 //
-//  TAMainMenuViewController.swift
+//  TALeftMenuViewController.swift
 //  TaxiAggregator-iOS
 //
 //  Created by Bogdan Sasko on 02.11.2019.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-final class TAMainMenuViewController: TABaseViewController {
-    let viewModel: TAMainMenuViewModel
+final class TALeftMenuViewController: TABaseViewController {
+    let viewModel: TALeftMenuViewModel
     
-    init(viewModel: TAMainMenuViewModel) {
+    init(viewModel: TALeftMenuViewModel) {
         self.viewModel = viewModel
         super.init()
     }
     
     override func loadView() {
-        view = TAMainMenuRootView(viewModel: viewModel)
+        view = TALeftMenuRootView(viewModel: viewModel)
     }
     
     override func viewDidLoad() {

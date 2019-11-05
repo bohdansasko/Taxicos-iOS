@@ -1,5 +1,5 @@
 //
-//  TALeftSideMenuCell.swift
+//  TALeftMenuCell.swift
 //  TaxiAggregator-iOS
 //
 //  Created by Bogdan Sasko on 03.11.2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TALeftSideMenuCell: TABaseTableViewCell {
+final class TALeftMenuCell: TABaseTableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         return label
@@ -35,7 +35,7 @@ final class TALeftSideMenuCell: TABaseTableViewCell {
     
 }
 
-private extension TALeftSideMenuCell {
+private extension TALeftMenuCell {
     
     func setupLayout() {
         addSubview(iconImageView)
@@ -57,7 +57,7 @@ private extension TALeftSideMenuCell {
 
 // MARK: - TAThemeable
 
-extension TALeftSideMenuCell: TAThemeable {
+extension TALeftMenuCell: TAThemeable {
         
     func apply(theme: TATheme) {
         backgroundColor      = theme.colors.menuItemBackgroundColor
