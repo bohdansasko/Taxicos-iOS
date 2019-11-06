@@ -40,6 +40,7 @@ final class TAMapViewController: TABaseViewController {
         super.viewDidLoad()
         
         subscribe(to: viewModel.navigationAction)
+        viewModel.requestLocationIfNeeded()
     }
     
 }

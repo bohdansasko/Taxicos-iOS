@@ -22,9 +22,14 @@ final class TAMapViewModel: NSObject {
     
     override init() {
         super.init()
-        
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+    }
+    
+    func requestLocationIfNeeded() {
+        if CLLocationManager.locationServicesEnabled() {
+            return
+        }
+        locationManager.requestLocation()
     }
     
 }
@@ -44,12 +49,10 @@ extension TAMapViewModel {
 extension TAMapViewModel: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        guard status == .authorizedWhenInUse else {
-            manager.requestWhenInUseAuthorization()
+        guard status == .authorizedAlways || status == .authorizedWhenInUse else {
             return
         }
-        manager.startUpdatingLocation()
-        
+        locationManager.startUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
