@@ -107,6 +107,7 @@
 		97A551D32370869500960890 /* UIControl+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Ext.swift"; sourceTree = "<group>"; };
 		97A551D823708ECA00960890 /* TANavigationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TANavigationAction.swift; sourceTree = "<group>"; };
 		97A551DA23708F8500960890 /* TAMapNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMapNavigationScreen.swift; sourceTree = "<group>"; };
+		97C9332B237317F6006ADA4A /* FakeLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FakeLocation.gpx; sourceTree = "<group>"; };
 		9E0F14C52B61CF4C35095F75 /* Pods-TaxiAggregator-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.release.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E58A9E76673CFFFBC02C29CE /* Pods-TaxiAggregator-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.debug.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaxiAggregator_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +142,7 @@
 			children = (
 				20ED9CFE236F49A800ED3FBB /* Fonts */,
 				202EDA43236CD73300A1419D /* Info.plist */,
+				97C9332B237317F6006ADA4A /* FakeLocation.gpx */,
 				202EDA3E236CD73300A1419D /* Assets.xcassets */,
 				976811542372EF6A007AB1E2 /* Localizable.strings */,
 			);

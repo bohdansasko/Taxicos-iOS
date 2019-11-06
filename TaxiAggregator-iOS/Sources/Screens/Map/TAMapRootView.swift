@@ -16,7 +16,6 @@ final class TAMapRootView: TABaseView {
     
     fileprivate let mapView: GMSMapView = {
         let map = GMSMapView()
-        map.isMyLocationEnabled = true
         return map
     }()
     
@@ -30,6 +29,33 @@ final class TAMapRootView: TABaseView {
                 
         setupLayout()
         themeProvider.register(observer: self)
+        subscribeToViewModel()
+    }
+    
+    func subscribeToViewModel() {
+        viewModel
+            .isMyLocationEnabled
+            .subscribe(onNext: { [weak self] isEnabled in
+                self?.mapView.isMyLocationEnabled = isEnabled
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .isVisibleMyLocationButton
+            .subscribe(onNext: { [weak self] isVisible in
+                self?.mapView.settings.myLocationButton = isVisible
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .myLocation
+            .subscribe(onNext: { [weak self] location in
+                self?.mapView.camera = GMSCameraPosition(
+                    target: location.coordinate,
+                    zoom: 15
+                )
+            })
+            .disposed(by: disposeBag)
     }
     
 }
