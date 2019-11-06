@@ -19,10 +19,10 @@ final class TAMapViewModel: NSObject {
     let isMyLocationEnabled       = BehaviorSubject<Bool>(value: true)
     let isVisibleMyLocationButton = BehaviorSubject<Bool>(value: true)
 
-    
     override init() {
         super.init()
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
     func requestLocationIfNeeded() {
@@ -40,6 +40,10 @@ extension TAMapViewModel {
 
     @objc func actMenuButton(_ sender: UIButton) {
         navigationAction.onNext(.present(.leftMenu))
+    }
+    
+    @objc func actMyLocation(_ sender: UIButton) {
+        locationManager.requestLocation()
     }
     
 }

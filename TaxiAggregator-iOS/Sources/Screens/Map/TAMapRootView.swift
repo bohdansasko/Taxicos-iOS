@@ -24,6 +24,13 @@ final class TAMapRootView: TABaseView {
         return TAPickupDropoffNavigationBar()
     }()
     
+    fileprivate let myLocationButton: UIButton = {
+        let btn = UIButton()
+        btn.setImage(#imageLiteral(resourceName: "icMyLocation"), for: .normal)
+        btn.contentMode = .scaleAspectFit
+        return btn
+    }()
+    
     init(frame: CGRect = .zero, viewModel: TAMapViewModel) {
         self.viewModel = viewModel
         super.init(frame: frame)
@@ -59,6 +66,16 @@ private extension TAMapRootView {
             $0.top.equalTo(pickupDropoffView.snp.bottom)
             $0.left.right.bottom.equalToSuperview()
         }
+        
+        addSubview(myLocationButton)
+        myLocationButton.snp.makeConstraints {
+            $0.right.equalToSuperview().inset(2)
+            $0.bottom.equalToSuperview().inset(32)
+        }
+        myLocationButton.addTarget(
+            viewModel,
+            action: #selector(TAMapViewModel.actMyLocation(_:))
+        )
     }
     
 }
@@ -78,7 +95,7 @@ private extension TAMapRootView {
         viewModel
             .isVisibleMyLocationButton
             .subscribe(onNext: { [weak self] isVisible in
-                self?.mapView.settings.myLocationButton = isVisible
+                self?.myLocationButton.isHidden = !isVisible
             })
             .disposed(by: disposeBag)
         
@@ -87,10 +104,11 @@ private extension TAMapRootView {
             .subscribe(onNext: { [weak self] location in
                 guard let self = self else { return }
                 
-                self.mapView.camera = GMSCameraPosition(
+                let cameraPos = GMSCameraPosition(
                     target: location.coordinate,
                     zoom: self.kMapZoom
                 )
+                self.mapView.animate(to: cameraPos)
             })
             .disposed(by: disposeBag)
     }
