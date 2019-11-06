@@ -18,7 +18,9 @@ struct TAColorsPalette {
     var menuItemFont: UIFont
     var menuItemTextColor: UIColor
     var menuItemBackgroundColor: UIColor
-    
+
+    var versionLabelFont: UIFont
+    var versionLabelColor: UIColor
 }
 
 // MARK: - Palette Templates
@@ -34,7 +36,10 @@ extension TAColorsPalette {
         
         menuItemFont: UIFont.helvetica(weight: .regular, fontSize: 18),
         menuItemTextColor: #colorLiteral(red: 0.2392156863, green: 0.2392156863, blue: 0.2392156863, alpha: 1),
-        menuItemBackgroundColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        menuItemBackgroundColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0),
+        
+        versionLabelFont: UIFont.helvetica(weight: .regular, fontSize: 14),
+        versionLabelColor: #colorLiteral(red: 0.6980392157, green: 0.6980392157, blue: 0.6980392157, alpha: 1)
     )
     
 }

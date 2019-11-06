@@ -12,8 +12,23 @@ import RxSwift
 typealias TALeftMenuNavigationAction = TANavigationAction<TALeftMenuNavigationScreen>
 
 final class TALeftMenuViewModel {
+    let items    : [TAMenuItemType]
     let navigationAction = PublishSubject<TALeftMenuNavigationAction>()
     
+    init() {
+        self.items = TAMenuItemType.allCases
+    }
+    
+}
+
+// MARK: - Getters
+
+extension TALeftMenuViewModel {
+
+    func item(for indexPath: IndexPath) -> TAMenuItemType {
+        return items[indexPath.row]
+    }
+
 }
 
 // MARK: - User interactions

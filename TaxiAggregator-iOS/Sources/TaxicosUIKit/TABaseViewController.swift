@@ -22,7 +22,7 @@ class TABaseViewController: UIViewController {
     }
     
     deinit {
-        log.debug("☠️ deinit")
+        log.debug("☠️ deinit \(self)")
     }
         
     @available(*, unavailable, message: "")

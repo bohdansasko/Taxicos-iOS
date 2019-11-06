@@ -11,17 +11,12 @@ import SnapKit
 import SideMenu
 
 final class TALeftMenuRootView: TABaseView {
-    let viewModel: TALeftMenuViewModel
-    let items    : [TAMenuItemType]
     
-    fileprivate let tableMenu: UITableView = {
-        let table = UITableView()
-        table.register(class: TALeftMenuCell.self)
-        table.tableFooterView = UIView()
-        table.separatorStyle = .none
-        table.backgroundColor = .clear
-        return table
-    }()
+    // MARK: - Properties
+    
+    let viewModel: TALeftMenuViewModel
+    
+    // MARK: - UI Components
     
     fileprivate let logoView: UIView = {
         let logoContainerView = UIView()
@@ -38,9 +33,25 @@ final class TALeftMenuRootView: TABaseView {
         return logoContainerView
     }()
     
+    fileprivate let tableMenu: UITableView = {
+        let table = UITableView()
+        table.register(class: TALeftMenuCell.self)
+        table.tableFooterView = UIView()
+        table.separatorStyle = .none
+        table.backgroundColor = .clear
+        return table
+    }()
+    
+    private let versionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Version 1.0.0"
+        return label
+    }()
+    
+    // MARK: - View lifecycle
+    
     init(frame: CGRect = .zero, viewModel: TALeftMenuViewModel) {
         self.viewModel = viewModel
-        self.items     = TAMenuItemType.allCases
         
         super.init(frame: frame)
         
@@ -65,10 +76,18 @@ extension TALeftMenuRootView {
         addSubview(tableMenu)
         tableMenu.snp.makeConstraints {
             $0.top.equalTo(logoView.snp.bottom)
-            $0.left.right.bottom.equalToSuperview()
+            $0.left.right.equalToSuperview()
         }
         tableMenu.delegate = self
         tableMenu.dataSource = self
+        
+        addSubview(versionLabel)
+        versionLabel.snp.makeConstraints {
+            $0.top.equalTo(tableMenu.snp.bottom)
+            $0.left.equalToSuperview().offset(25)
+            $0.right.equalToSuperview()
+            $0.bottom.equalTo(self.layoutMarginsGuide.snp.bottomMargin)
+        }
     }
     
 }
@@ -78,12 +97,12 @@ extension TALeftMenuRootView {
 extension TALeftMenuRootView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return viewModel.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(class: TALeftMenuCell.self, for: indexPath)
-        cell.item = items[indexPath.row]
+        cell.item = viewModel.item(for: indexPath)
         return cell
     }
     
@@ -124,7 +143,10 @@ extension TALeftMenuRootView: UITableViewDelegate {
 extension TALeftMenuRootView: TAThemeable {
         
     func apply(theme: TATheme) {
-        backgroundColor = theme.colors.backgroundColor
+        backgroundColor        = theme.colors.backgroundColor
+        
+        versionLabel.textColor = theme.colors.versionLabelColor
+        versionLabel.font      = theme.colors.versionLabelFont
     }
 
 }
