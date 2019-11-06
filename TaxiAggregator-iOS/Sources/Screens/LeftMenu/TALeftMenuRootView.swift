@@ -43,8 +43,9 @@ final class TALeftMenuRootView: TABaseView {
     }()
     
     private let versionLabel: UILabel = {
+        let appVersionText = String(format: "APP_VERSION".localized, TAConfig.appVersion)
         let label = UILabel()
-        label.text = "Version 1.0.0"
+        label.text = appVersionText
         return label
     }()
     

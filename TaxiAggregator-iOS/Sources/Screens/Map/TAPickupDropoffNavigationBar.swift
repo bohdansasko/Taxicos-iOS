@@ -29,7 +29,7 @@ final class TAPickupDropoffNavigationBar: UINavigationBar {
     }()
 
     fileprivate let pickupTF: UITextField = {
-        return makeTextField(placeholder: "Enter location")
+        return makeTextField(placeholder: "MAP_ENTER_LOCATION".localized)
     }()
     
     // MARK: - Dropoff properties
@@ -39,7 +39,7 @@ final class TAPickupDropoffNavigationBar: UINavigationBar {
     }()
     
     fileprivate let dropoffTF: UITextField = {
-        return makeTextField(placeholder: "Where to?")
+        return makeTextField(placeholder: "MAP_WHERE_TO".localized)
     }()
 
     // MARK: - View lifecycle

@@ -31,16 +31,17 @@ extension TAMenuItemType {
             return #imageLiteral(resourceName: "icRateApp")
         }
     }
+    
     var title: String {
         switch self {
         case .savedLocations:
-            return "Saved locations"
+            return "MENU_ITEM_SAVED_LOCATIONS".localized
         case .shareApp:
-            return "Share app"
+            return "MENU_ITEM_SHARE_APP".localized
         case .feedback:
-            return "Feedback"
+            return "MENU_ITEM_FEEDBACK".localized
         case .rateApp:
-            return "Rate app"
+            return "MENU_ITEM_RATE_APP".localized
         }
     }
     

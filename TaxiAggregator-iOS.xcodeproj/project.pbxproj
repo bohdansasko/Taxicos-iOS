@@ -43,6 +43,7 @@
 		20DC11DD2370BC86004F323E /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11D12370BC86004F323E /* UIStackView+Ext.swift */; };
 		20DC11E02370BC86004F323E /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11D42370BC86004F323E /* UITableView+Ext.swift */; };
 		20ED9D00236F49B800ED3FBB /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */; };
+		976811552372EF6A007AB1E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 976811542372EF6A007AB1E2 /* Localizable.strings */; };
 		9797E7AC23718E1A008AC393 /* TAThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7AB23718E1A008AC393 /* TAThemeable.swift */; };
 		9797E7AE23718E3D008AC393 /* TATheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7AD23718E3D008AC393 /* TATheme.swift */; };
 		9797E7B023718F8C008AC393 /* TAColorsPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7AF23718F8C008AC393 /* TAColorsPalette.swift */; };
@@ -95,6 +96,7 @@
 		20DC11D12370BC86004F323E /* UIStackView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
 		20DC11D42370BC86004F323E /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		976811542372EF6A007AB1E2 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9797E7AB23718E1A008AC393 /* TAThemeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAThemeable.swift; sourceTree = "<group>"; };
 		9797E7AD23718E3D008AC393 /* TATheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TATheme.swift; sourceTree = "<group>"; };
 		9797E7AF23718F8C008AC393 /* TAColorsPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAColorsPalette.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				20ED9CFE236F49A800ED3FBB /* Fonts */,
 				202EDA43236CD73300A1419D /* Info.plist */,
 				202EDA3E236CD73300A1419D /* Assets.xcassets */,
+				976811542372EF6A007AB1E2 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				202EDA42236CD73300A1419D /* LaunchScreen.storyboard in Resources */,
+				976811552372EF6A007AB1E2 /* Localizable.strings in Resources */,
 				20ED9D00236F49B800ED3FBB /* Rubik-Regular.ttf in Resources */,
 				202EDA3F236CD73300A1419D /* Assets.xcassets in Resources */,
 			);

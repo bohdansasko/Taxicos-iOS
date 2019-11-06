@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  TaxiAggregator-iOS
+
+  Created by Office Mac on 11/6/19.
+  Copyright © 2019 Vinso. All rights reserved.
+*/
+
+"APP_VERSION" = "Version %@";
+
+"MENU_ITEM_SAVED_LOCATIONS" = "Saved locations";
+"MENU_ITEM_SHARE_APP" = "Share app";
+"MENU_ITEM_FEEDBACK" = "Feedback";
+"MENU_ITEM_RATE_APP" = "Rate app";
+
+"MAP_ENTER_LOCATION" = "Enter location";
+"MAP_WHERE_TO" = "Where to?";
+

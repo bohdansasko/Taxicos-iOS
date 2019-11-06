@@ -10,4 +10,5 @@ import Foundation
 
 enum TAConfig {
     static var kGSMAPIKey: String { return "AIzaSyACPHIWoEdxs5RWDIYMOUP1I-r6AFiA7Zo" }
+    static var appVersion: String { return "1.0.0" }
 }
