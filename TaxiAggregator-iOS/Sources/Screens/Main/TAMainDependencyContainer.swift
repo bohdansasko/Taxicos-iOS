@@ -27,6 +27,8 @@ extension TAMainDependencyContainer {
     
 }
 
+// MARK: - TAMainFactory
+
 extension TAMainDependencyContainer: TAMainFactory {
 
     func makeHomeViewController() -> TAHomeViewController {

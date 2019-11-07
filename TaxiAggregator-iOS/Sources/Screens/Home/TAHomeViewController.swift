@@ -26,16 +26,13 @@ final class TAHomeViewController: TABaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let mapViewController = homeFactory.makeMapViewController()
-//        add(child: mapViewController)
-//        view.sendSubviewToBack(mapViewController.view)
-        
-        let mapViewController = homeFactory.makeMapViewController()
-        add(child: mapViewController, to: (view as! TAHomeRootView).mapContainerView)
-    
+        addMapViewController()
         subscribe(to: viewModel.navigationAction)
     }
     
+}
+
+private extension TAHomeViewController {
     
     func subscribe(to navigationAction: PublishSubject<TAHomeNavigationAction>) {
         navigationAction
@@ -51,5 +48,14 @@ final class TAHomeViewController: TABaseViewController {
                 }
             }).disposed(by: disposeBag)
     }
+    
+}
 
+private extension TAHomeViewController {
+    
+    func addMapViewController() {
+        let mapViewController = homeFactory.makeMapViewController()
+        add(child: mapViewController, to: (view as! TAHomeRootView).mapContainerView)
+    }
+    
 }
