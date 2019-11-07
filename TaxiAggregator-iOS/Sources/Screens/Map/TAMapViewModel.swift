@@ -9,18 +9,18 @@
 import GoogleMaps
 import RxSwift
 
-typealias TAMapNavigationAction = TANavigationAction<TAMapNavigationScreen>
-
 final class TAMapViewModel: NSObject {
-            let navigationAction = PublishSubject<TAMapNavigationAction>()
+    
     private let locationManager  = CLLocationManager()
 
     let myLocation                = PublishSubject<CLLocation>()
+//    let myAddress                 = PublishSubject<CLLocation>()
     let isMyLocationEnabled       = BehaviorSubject<Bool>(value: true)
     let isVisibleMyLocationButton = BehaviorSubject<Bool>(value: true)
 
     override init() {
         super.init()
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
@@ -37,10 +37,6 @@ final class TAMapViewModel: NSObject {
 // MARK: - User interactions
 
 extension TAMapViewModel {
-
-    @objc func actMenuButton(_ sender: UIButton) {
-        navigationAction.onNext(.present(.leftMenu))
-    }
     
     @objc func actMyLocation(_ sender: UIButton) {
         locationManager.requestLocation()

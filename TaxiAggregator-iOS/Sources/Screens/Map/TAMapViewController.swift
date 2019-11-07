@@ -15,20 +15,17 @@ final class TAMapViewController: TABaseViewController {
     // MARK: - Internal variables
     
     let viewModel: TAMapViewModel
-    let launchViewController: TALaunchViewController
-    let makeLeftSideMenuViewController: () -> SideMenuNavigationController
-    let makeOnboardingViewController: () -> TAOnboardingViewController
+//    let launchViewController: TALaunchViewController
+//    let makeLeftSideMenuViewController: () -> SideMenuNavigationController
+//    let makeOnboardingViewController: () -> TAOnboardingViewController
     
     // MARK: - View lifecycle
     
-    init(viewModel: TAMapViewModel,
-         leftSideMenuFactory: @escaping () -> SideMenuNavigationController,
-         launchViewController: TALaunchViewController,
-         onboardingFactory: @escaping () -> TAOnboardingViewController) {
+    init(viewModel: TAMapViewModel) {
         self.viewModel                    = viewModel
-        self.makeLeftSideMenuViewController = leftSideMenuFactory
-        self.launchViewController         = launchViewController
-        self.makeOnboardingViewController = onboardingFactory
+//        self.makeLeftSideMenuViewController = leftSideMenuFactory
+//        self.launchViewController         = launchViewController
+//        self.makeOnboardingViewController = onboardingFactory
         super.init()
     }
     
@@ -38,28 +35,9 @@ final class TAMapViewController: TABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        subscribe(to: viewModel.navigationAction)
+    
         viewModel.requestLocationIfNeeded()
     }
     
 }
 
-private extension TAMapViewController {
-    
-    func subscribe(to navigationAction: PublishSubject<TAMapNavigationAction>) {
-        navigationAction
-            .subscribe(onNext: { [weak self] action in
-                guard let self = self else { return }
-                switch action {
-                case .present(let screen):
-                    switch screen {
-                    case .leftMenu:
-                        let leftMenu = self.makeLeftSideMenuViewController()
-                        self.present(leftMenu, animated: true, completion: nil)
-                    }
-                }
-            }).disposed(by: disposeBag)
-    }
-    
-}

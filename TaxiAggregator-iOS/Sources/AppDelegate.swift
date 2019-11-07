@@ -19,7 +19,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey(TAConfig.kGSMAPIKey)
 
-        let mainVC = appDependencyContainer.makeMapViewController()
+        let mainVC = appDependencyContainer.makeMainViewController()
         setupWindow(with: mainVC)
         
         return true

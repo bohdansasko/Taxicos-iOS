@@ -20,10 +20,6 @@ final class TAMapRootView: TABaseView {
         return map
     }()
     
-    fileprivate let pickupDropoffView: TAPickupDropoffNavigationBar = {
-        return TAPickupDropoffNavigationBar()
-    }()
-    
     fileprivate let myLocationButton: UIButton = {
         let btn = UIButton()
         btn.setImage(#imageLiteral(resourceName: "icMyLocation"), for: .normal)
@@ -47,31 +43,15 @@ final class TAMapRootView: TABaseView {
 private extension TAMapRootView {
     
     func setupLayout() {
-        addSubview(pickupDropoffView)
-        
-        pickupDropoffView.menuButton.addTarget(
-            viewModel,
-            action: #selector(TAMapViewModel.actMenuButton)
-        )
-        
-        pickupDropoffView.snp.makeConstraints {
-            $0.top.equalTo(self.safeAreaLayoutGuide.snp.topMargin)
-            $0.left.equalToSuperview()
-            $0.right.equalToSuperview()
-            $0.height.equalTo(100)
-        }
-        
         addSubview(mapView)
-        mapView.snp.makeConstraints {
-            $0.top.equalTo(pickupDropoffView.snp.bottom)
-            $0.left.right.bottom.equalToSuperview()
-        }
+        mapView.snp.makeConstraints{ $0.edges.equalToSuperview() }
         
         addSubview(myLocationButton)
         myLocationButton.snp.makeConstraints {
             $0.right.equalToSuperview().inset(2)
             $0.bottom.equalToSuperview().inset(32)
         }
+        
         myLocationButton.addTarget(
             viewModel,
             action: #selector(TAMapViewModel.actMyLocation(_:))
