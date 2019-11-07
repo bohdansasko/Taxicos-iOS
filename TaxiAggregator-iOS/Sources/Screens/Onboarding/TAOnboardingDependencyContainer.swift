@@ -15,7 +15,7 @@ final class TAOnboardingDependencyContainer {
         return TAOnboardingViewController(viewModel: onboardingViewModel)
     }
     
-    func makeOnboardingViewModel() -> TAOnboardingViewModel {
+    private func makeOnboardingViewModel() -> TAOnboardingViewModel {
         return TAOnboardingViewModel()
     }
     

@@ -15,17 +15,11 @@ final class TAMapViewController: TABaseViewController {
     // MARK: - Internal variables
     
     let viewModel: TAMapViewModel
-//    let launchViewController: TALaunchViewController
-//    let makeLeftSideMenuViewController: () -> SideMenuNavigationController
-//    let makeOnboardingViewController: () -> TAOnboardingViewController
     
     // MARK: - View lifecycle
     
     init(viewModel: TAMapViewModel) {
-        self.viewModel                    = viewModel
-//        self.makeLeftSideMenuViewController = leftSideMenuFactory
-//        self.launchViewController         = launchViewController
-//        self.makeOnboardingViewController = onboardingFactory
+        self.viewModel = viewModel
         super.init()
     }
     
