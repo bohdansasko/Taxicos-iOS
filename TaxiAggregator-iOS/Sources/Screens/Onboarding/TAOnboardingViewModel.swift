@@ -12,3 +12,16 @@ final class TAOnboardingViewModel {
     
 }
 
+// MARK: - User interaction
+
+extension TAOnboardingViewModel {
+    
+    @objc func actSkipButton() {
+        log.info("")
+    }
+    
+    @objc func actNextButton() {
+        log.info("")
+    }
+    
+}

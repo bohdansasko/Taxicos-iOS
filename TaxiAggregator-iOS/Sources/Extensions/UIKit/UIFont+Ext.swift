@@ -10,7 +10,7 @@ extension UIFont {
     static func helvetica(weight: UIFont.Weight, fontSize: CGFloat) -> UIFont {
         switch weight {
         case .regular:
-            return UIFont(name: "HelveticaNeue", size: fontSize)!
+            return UIFont(name: "HelveticaNeue-Regular", size: fontSize)!
         default:
             assertionFailure()
             break
@@ -28,5 +28,17 @@ extension UIFont {
         }
         return UIFont.systemFont(ofSize: 14)
     }
+
+    static func avenir(weight: UIFont.Weight, fontSize: CGFloat) -> UIFont {
+        switch weight {
+        case .medium:
+            return UIFont(name: "Avenir-Medium", size: fontSize)!
+        default:
+            assertionFailure()
+            break
+        }
+        return UIFont.systemFont(ofSize: 14)
+    }
+
     
 }

@@ -16,3 +16,5 @@
 "MAP_ENTER_LOCATION" = "Enter location";
 "MAP_WHERE_TO" = "Where to?";
 
+"ONBOARDING_SKIP" = "Skip";
+"ONBOARDING_NEXT" = "Next";
