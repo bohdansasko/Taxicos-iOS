@@ -11,7 +11,7 @@
 	<string>Light</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>HelveticaNeue-Regular.ttf</string>
+		<string>HelveticaNeue.ttf</string>
 		<string>Avenir-Medium.ttf</string>
 		<string>Rubik-Regular.ttf</string>
 	</array>
