@@ -24,10 +24,11 @@ target 'TaxiAggregator-iOS' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'CHIPageControl/Jaloro'
 
   # General
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod "PromiseKit", "~> 6.8"
-  
+
 end
