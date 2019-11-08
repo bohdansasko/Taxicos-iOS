@@ -11,6 +11,7 @@ import CHIPageControl
 
 final class TAOnboardingRootView: TABaseView {
     let viewModel: TAOnboardingViewModel
+    let pages: [UIViewController]
     
     let pageController: UIPageViewController = {
         let pc = UIPageViewController(
@@ -23,7 +24,6 @@ final class TAOnboardingRootView: TABaseView {
     
     let pageControl: CHIPageControlJaloro = {
         let pc = CHIPageControlJaloro()
-        pc.numberOfPages = 3
         pc.elementWidth  = 25
         pc.elementHeight = 6
         pc.radius        = 3
@@ -45,13 +45,14 @@ final class TAOnboardingRootView: TABaseView {
         return btn
     }()
 
-    init(frame: CGRect = .zero, viewModel: TAOnboardingViewModel) {
+    init(frame: CGRect = .zero, viewModel: TAOnboardingViewModel, pages: [UIViewController]) {
         self.viewModel = viewModel
-        
+        self.pages     = pages
         super.init(frame: frame)
         
         setupLayout()
         setupButtonHandlers()
+        setupPageSubscription()
         
         themeProvider.register(observer: self)
     }
@@ -63,6 +64,12 @@ final class TAOnboardingRootView: TABaseView {
 extension TAOnboardingRootView {
     
     func setupLayout() {
+        addSubview(pageController.view)
+        pageController.view.snp.makeConstraints { $0.edges.equalToSuperview() }
+        pageController.delegate = self
+        pageController.dataSource = self
+        
+        
         addSubview(pageControl)
         pageControl.snp.makeConstraints {
             $0.left.equalToSuperview().inset(30)
@@ -84,6 +91,35 @@ extension TAOnboardingRootView {
         nextButton.addTarget(viewModel, action: #selector(TAOnboardingViewModel.actNextButton))
     }
     
+    func setupPageSubscription() {
+        pageControl.numberOfPages = viewModel.kNumberOfPages
+        viewModel.currentPageNumber
+            .asDriver(onErrorJustReturn: viewModel.kStartNumberPage)
+            .drive(onNext: { [unowned self] pageNumber in
+                let pageIndex = pageNumber - 1
+                self.moveTo(pageIndex: pageIndex)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+}
+
+// MARK: - Page navigation
+
+extension TAOnboardingRootView {
+    
+    func moveTo(pageIndex: Int, animated: Bool = true) {
+        let currentPage = pages[pageIndex]
+        pageController.setViewControllers(
+            [currentPage],
+            direction: .forward,
+            animated: true,
+            completion: nil
+        )
+        
+        self.pageControl.set(progress: pageIndex, animated: animated)
+    }
+    
 }
 
 // MARK: - TAThemeable
@@ -100,4 +136,56 @@ extension TAOnboardingRootView: TAThemeable {
         nextButton.titleLabel!.font = theme.colors.onboardingNextButtonFont
     }
 
+}
+
+// MARK: - UIPageViewControllerDataSource
+
+extension TAOnboardingRootView: UIPageViewControllerDataSource {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let viewControllerIndex = pages.firstIndex(of: viewController) else {
+            return nil
+        }
+        
+        let prevViewControllerIndex = viewControllerIndex - 1
+        guard prevViewControllerIndex >= 0 else {
+            return pages.last
+        }
+        
+        guard pages.count > prevViewControllerIndex else {
+            return nil
+        }
+        
+        return pages[prevViewControllerIndex]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let viewControllerIndex = pages.firstIndex(of: viewController) else {
+            return nil
+        }
+        
+        let nextViewControllerIndex = viewControllerIndex + 1
+        guard nextViewControllerIndex < pages.count else {
+            return pages.first
+        }
+        
+        return pages[nextViewControllerIndex]
+    }
+    
+}
+
+// MARK: - UIPageViewControllerDelegate
+
+extension TAOnboardingRootView: UIPageViewControllerDelegate {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard let currentViewController = pageViewController.viewControllers?.last else {
+            return
+        }
+        guard let currentIndex = pages.firstIndex(of: currentViewController) else {
+            return
+        }
+        viewModel.moveTo(page: currentIndex + 1)
+    }
+    
 }

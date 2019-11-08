@@ -6,10 +6,13 @@
 //  Copyright © 2019 Vinso. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
 final class TAOnboardingViewModel {
+    let kStartNumberPage  = 1
+    let kNumberOfPages    = 3
     
+    let currentPageNumber = BehaviorSubject<Int>(value: 1)
 }
 
 // MARK: - User interaction
@@ -21,7 +24,35 @@ extension TAOnboardingViewModel {
     }
     
     @objc func actNextButton() {
-        log.info("")
+        moveToNextPage()
+    }
+    
+}
+
+// MARK: - Page navigation
+
+extension TAOnboardingViewModel {
+
+    func moveToNextPage() {
+        let currentPageIdx = try! currentPageNumber.value()
+        moveTo(page: currentPageIdx + 1)
+    }
+    
+    func moveToPrevPage() {
+        let currentPageIdx = try! currentPageNumber.value()
+        moveTo(page: currentPageIdx - 1)
+    }
+    
+    func moveTo(page: Int) {
+        var nextPageIdx = page
+        
+        if page > kNumberOfPages {
+            nextPageIdx = kStartNumberPage
+        } else if page < kStartNumberPage {
+            nextPageIdx = kNumberOfPages
+        }
+        
+        currentPageNumber.onNext(nextPageIdx)
     }
     
 }
