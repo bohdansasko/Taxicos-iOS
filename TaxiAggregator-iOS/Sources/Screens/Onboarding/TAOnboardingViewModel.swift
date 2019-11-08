@@ -13,6 +13,14 @@ final class TAOnboardingViewModel {
     let kNumberOfPages    = 3
     
     let currentPageNumber = BehaviorSubject<Int>(value: 1)
+    
+    var isLastPage: Bool {
+        guard let currentPN = try? currentPageNumber.value() else {
+            return false
+        }
+        return currentPN == kNumberOfPages
+    }
+    
 }
 
 // MARK: - User interaction
@@ -20,11 +28,15 @@ final class TAOnboardingViewModel {
 extension TAOnboardingViewModel {
     
     @objc func actSkipButton() {
-        log.info("")
+        log.info("skip")
     }
     
     @objc func actNextButton() {
         moveToNextPage()
+    }
+    
+    @objc func actDoneButton() {
+        log.info("done")
     }
     
 }

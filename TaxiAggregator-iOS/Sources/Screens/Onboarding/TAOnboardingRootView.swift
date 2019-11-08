@@ -44,6 +44,19 @@ final class TAOnboardingRootView: TABaseView {
         btn.setTitle("ONBOARDING_NEXT".localized, for: .normal)
         return btn
     }()
+    
+    let skipNextButtonsSV: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .horizontal
+        sv.spacing = 30
+        return sv
+    }()
+    
+    let doneButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("ONBOARDING_DONE".localized, for: .normal)
+        return btn
+    }()
 
     init(frame: CGRect = .zero, viewModel: TAOnboardingViewModel, pages: [UIViewController]) {
         self.viewModel = viewModel
@@ -69,26 +82,28 @@ extension TAOnboardingRootView {
         pageController.delegate = self
         pageController.dataSource = self
         
-        
         addSubview(pageControl)
         pageControl.snp.makeConstraints {
             $0.left.equalToSuperview().inset(30)
             $0.bottom.equalTo(self.layoutMarginsGuide.snp.bottomMargin).inset(40)
         }
         
-        let buttonsSV = UIStackView(arrangedSubviews: [skipButton, nextButton])
-        buttonsSV.axis = .horizontal
-        buttonsSV.spacing = 30
-        addSubview(buttonsSV)
-        buttonsSV.snp.makeConstraints {
+        skipNextButtonsSV.addArrangedSubview(skipButton)
+        skipNextButtonsSV.addArrangedSubview(nextButton)
+        addSubview(skipNextButtonsSV)
+        skipNextButtonsSV.snp.makeConstraints {
             $0.right.equalToSuperview().inset(30)
             $0.centerY.equalTo(pageControl.snp.centerY)
         }
+        
+        addSubview(doneButton)
+        doneButton.snp.makeConstraints{ $0.edges.equalTo(nextButton) }
     }
     
     func setupButtonHandlers() {
         skipButton.addTarget(viewModel, action: #selector(TAOnboardingViewModel.actSkipButton))
         nextButton.addTarget(viewModel, action: #selector(TAOnboardingViewModel.actNextButton))
+        doneButton.addTarget(viewModel, action: #selector(TAOnboardingViewModel.actDoneButton))
     }
     
     func setupPageSubscription() {
@@ -98,6 +113,7 @@ extension TAOnboardingRootView {
             .drive(onNext: { [unowned self] pageNumber in
                 let pageIndex = pageNumber - 1
                 self.moveTo(pageIndex: pageIndex)
+                self.updateButtonsVisibility()
             })
             .disposed(by: disposeBag)
     }
@@ -106,7 +122,7 @@ extension TAOnboardingRootView {
 
 // MARK: - Page navigation
 
-extension TAOnboardingRootView {
+private extension TAOnboardingRootView {
     
     func moveTo(pageIndex: Int, animated: Bool = true) {
         let currentPage = pages[pageIndex]
@@ -118,6 +134,11 @@ extension TAOnboardingRootView {
         )
         
         self.pageControl.set(progress: pageIndex, animated: animated)
+    }
+    
+    func updateButtonsVisibility() {
+        skipNextButtonsSV.isHidden =  viewModel.isLastPage
+        doneButton.isHidden        = !viewModel.isLastPage
     }
     
 }
@@ -134,6 +155,9 @@ extension TAOnboardingRootView: TAThemeable {
         
         nextButton.setTitleColor(theme.colors.onboardingNextButtonColor, for: .normal)
         nextButton.titleLabel!.font = theme.colors.onboardingNextButtonFont
+        
+        doneButton.setTitleColor(theme.colors.onboardingNextButtonColor, for: .normal)
+        doneButton.titleLabel!.font = theme.colors.onboardingNextButtonFont
     }
 
 }

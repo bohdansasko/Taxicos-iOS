@@ -17,19 +17,7 @@ final class TAOnboardingPageViewController: TABaseViewController {
     }
     
     override func loadView() {
-        let contentView = makeContentPageView(by: pageType)
-        view = TAOnboardingPageRootView(contentPageView: contentView)
-    }
-
-    private func makeContentPageView(by pageType: TAOnboardingPageType) -> UIView {
-        switch pageType {
-        case .first:
-            return TAOnboardingFirstPageView()
-        case .second:
-            return TAOnboardingSecondPageView()
-        case .third:
-            return TAOnboardingThirdPageView()
-        }
+        view = TAOnboardingPageRootView(pageType: pageType)
     }
     
 }

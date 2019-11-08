@@ -51,9 +51,6 @@
 		972D23EF2375A91B00B19BBE /* TAOnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23EE2375A91B00B19BBE /* TAOnboardingPageViewController.swift */; };
 		972D23F12375A92700B19BBE /* TAOnboardingPageRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23F02375A92700B19BBE /* TAOnboardingPageRootView.swift */; };
 		972D23F52375AC2900B19BBE /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23F42375AC2900B19BBE /* UIColor+Ext.swift */; };
-		972D23F82375C27300B19BBE /* TAOnboardingFirstPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23F72375C27300B19BBE /* TAOnboardingFirstPageView.swift */; };
-		972D23FA2375C28100B19BBE /* TAOnboardingSecondPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23F92375C28100B19BBE /* TAOnboardingSecondPageView.swift */; };
-		972D23FC2375C28B00B19BBE /* TAOnboardingThirdPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23FB2375C28B00B19BBE /* TAOnboardingThirdPageView.swift */; };
 		972D24002375CE0400B19BBE /* TAOnboardingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */; };
 		972D24022375CE2000B19BBE /* TAOnboardingPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D24012375CE2000B19BBE /* TAOnboardingPageType.swift */; };
 		976811552372EF6A007AB1E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 976811542372EF6A007AB1E2 /* Localizable.strings */; };
@@ -127,9 +124,6 @@
 		972D23EE2375A91B00B19BBE /* TAOnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingPageViewController.swift; sourceTree = "<group>"; };
 		972D23F02375A92700B19BBE /* TAOnboardingPageRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingPageRootView.swift; sourceTree = "<group>"; };
 		972D23F42375AC2900B19BBE /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
-		972D23F72375C27300B19BBE /* TAOnboardingFirstPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingFirstPageView.swift; sourceTree = "<group>"; };
-		972D23F92375C28100B19BBE /* TAOnboardingSecondPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingSecondPageView.swift; sourceTree = "<group>"; };
-		972D23FB2375C28B00B19BBE /* TAOnboardingThirdPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingThirdPageView.swift; sourceTree = "<group>"; };
 		972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingFactory.swift; sourceTree = "<group>"; };
 		972D24012375CE2000B19BBE /* TAOnboardingPageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingPageType.swift; sourceTree = "<group>"; };
 		976811542372EF6A007AB1E2 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -291,8 +285,8 @@
 		20C8AAC5236E0160005E6590 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				972D23F62375C25300B19BBE /* Page Views */,
 				972D23ED2375A90B00B19BBE /* Page */,
+				972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */,
 				209C29682373F88F002D8418 /* TAOnboardingDependencyContainer.swift */,
 				20587B55236EAEE000E661E9 /* TAOnboardingRootView.swift */,
 				20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */,
@@ -369,21 +363,10 @@
 			isa = PBXGroup;
 			children = (
 				972D24012375CE2000B19BBE /* TAOnboardingPageType.swift */,
-				972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */,
 				972D23F02375A92700B19BBE /* TAOnboardingPageRootView.swift */,
 				972D23EE2375A91B00B19BBE /* TAOnboardingPageViewController.swift */,
 			);
 			path = Page;
-			sourceTree = "<group>";
-		};
-		972D23F62375C25300B19BBE /* Page Views */ = {
-			isa = PBXGroup;
-			children = (
-				972D23F72375C27300B19BBE /* TAOnboardingFirstPageView.swift */,
-				972D23F92375C28100B19BBE /* TAOnboardingSecondPageView.swift */,
-				972D23FB2375C28B00B19BBE /* TAOnboardingThirdPageView.swift */,
-			);
-			path = "Page Views";
 			sourceTree = "<group>";
 		};
 		9794DDFD2374100D0077D03A /* Home */ = {
@@ -577,7 +560,6 @@
 				20587B5E236EF1E200E661E9 /* TALeftSideMenuCell.swift in Sources */,
 				97A551DB23708F8500960890 /* TAMapNavigationScreen.swift in Sources */,
 				20587B5A236EAF2A00E661E9 /* TAMapRootView.swift in Sources */,
-				972D23FA2375C28100B19BBE /* TAOnboardingSecondPageView.swift in Sources */,
 				20C8AAA9236DE1D3005E6590 /* TAMapViewModel.swift in Sources */,
 				20C8AAC7236E0183005E6590 /* TAOnboardingViewController.swift in Sources */,
 				20DC11C32370BC04004F323E /* Logger.swift in Sources */,
@@ -589,7 +571,6 @@
 				9794DE0C23741DFC0077D03A /* TALaunchDependencyContainer.swift in Sources */,
 				9797E7B62371AF6C008AC393 /* TAConfig.swift in Sources */,
 				979F180F2374346700CA209B /* TAMainDependencyContainer.swift in Sources */,
-				972D23F82375C27300B19BBE /* TAOnboardingFirstPageView.swift in Sources */,
 				200AEA8C2371E9D000624F53 /* TAUserSessionDataStore.swift in Sources */,
 				2042AF80237379B20074D6CD /* UIViewController+Ext.swift in Sources */,
 				20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */,
@@ -607,7 +588,6 @@
 				9794DE0823741D260077D03A /* TAMainViewController.swift in Sources */,
 				20DC11C52370BC42004F323E /* Date+Ext.swift in Sources */,
 				20DC11E02370BC86004F323E /* UITableView+Ext.swift in Sources */,
-				972D23FC2375C28B00B19BBE /* TAOnboardingThirdPageView.swift in Sources */,
 				209C29672373F801002D8418 /* TAHomeDependencyContainer.swift in Sources */,
 				20C8AAC2236DFFAD005E6590 /* TALaunchViewController.swift in Sources */,
 				20C8AAC4236DFFB5005E6590 /* TALaunchViewModel.swift in Sources */,
