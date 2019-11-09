@@ -68,7 +68,8 @@ extension TAHomeRootView {
 extension TAHomeRootView: TAThemeable {
         
     func apply(theme: TATheme) {
-        backgroundColor = theme.colors.backgroundColor
+        backgroundColor                   = theme.colors.backgroundColor
+        pickupDropoffView.backgroundColor = theme.colors.backgroundColor
     }
 
 }

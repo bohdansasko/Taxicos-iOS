@@ -61,7 +61,8 @@ final class TAPickupDropoffNavigationBar: UINavigationBar {
 private extension TAPickupDropoffNavigationBar {
     
     func setupUI() {
-        backgroundColor = .white
+        backgroundColor = .clear
+        setBackgroundImage(UIImage(), for: .default)
         
         menuButton.setContentHuggingPriority(.init(251), for: .horizontal)
         
