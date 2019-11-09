@@ -46,7 +46,6 @@ extension TAMainDependencyContainer: TAMainFactory {
         let vc = launchDependencyContainer.makeLaunchViewController()
         return vc
     }
-    
 
     func makeOnboardingViewController() -> TAOnboardingViewController {
         let mainDP = TAOnboardingDependencyContainer(mainViewModel: mainViewModel)
