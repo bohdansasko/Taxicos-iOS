@@ -19,7 +19,7 @@ final class TAHomeRootView: TABaseView {
     
     let mapContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .red
+        view.backgroundColor = .clear
         return view
     }()
     
