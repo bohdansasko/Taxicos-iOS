@@ -36,19 +36,19 @@ extension TALeftMenuViewModel {
 extension TALeftMenuViewModel {
     
     @objc func actSavedLocations(_ sender: Any) {
-        navigationAction.onNext(.present(.savedAddresses))
+        navigationAction.onNext(.present(screen: .savedAddresses))
     }
     
     @objc func actShareApp(_ sender: Any) {
-        navigationAction.onNext(.present(.shareApp))
+        navigationAction.onNext(.present(screen: .shareApp))
     }
     
     @objc func actFeedback(_ sender: Any) {
-        navigationAction.onNext(.present(.feedback))
+        navigationAction.onNext(.present(screen: .feedback))
     }
     
     @objc func actRateApp(_ sender: Any) {
-        navigationAction.onNext(.present(.rateApp))
+        navigationAction.onNext(.present(screen: .rateApp))
     }
     
 }

@@ -9,19 +9,23 @@
 import UIKit
 
 protocol TAMainFactory {
-    func makeHomeViewController() -> TAHomeViewController
-    func makeLaunchViewController() -> TALaunchViewController
+    func makeHomeViewController()       -> TAHomeViewController
+    func makeLaunchViewController()     -> TALaunchViewController
+    func makeOnboardingViewController() -> TAOnboardingViewController
 }
 
 final class TAMainDependencyContainer {
+    let mainViewModel: TAMainViewModel
     
+    init(mainViewModel: TAMainViewModel) {
+        self.mainViewModel = mainViewModel
+    }
 }
 
 extension TAMainDependencyContainer {
     
     func makeMainViewController() -> TAMainViewController {
-        let viewModel = TAMainViewModel()
-        let vc = TAMainViewController(viewModel: viewModel, mainFactory: self)
+        let vc = TAMainViewController(viewModel: mainViewModel, mainFactory: self)
         return vc
     }
     
@@ -40,6 +44,13 @@ extension TAMainDependencyContainer: TAMainFactory {
     func makeLaunchViewController() -> TALaunchViewController {
         let launchDependencyContainer = TALaunchDependencyContainer()
         let vc = launchDependencyContainer.makeLaunchViewController()
+        return vc
+    }
+    
+
+    func makeOnboardingViewController() -> TAOnboardingViewController {
+        let mainDP = TAOnboardingDependencyContainer(mainViewModel: mainViewModel)
+        let vc = mainDP.makeOnboardingViewController()
         return vc
     }
     

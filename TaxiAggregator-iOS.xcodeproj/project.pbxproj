@@ -14,7 +14,6 @@
 		200AEA8F2371E9D000624F53 /* TAUserSessionCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA8A2371E9D000624F53 /* TAUserSessionCoding.swift */; };
 		200AEA902371E9D000624F53 /* TAAppUserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA8B2371E9D000624F53 /* TAAppUserSessionRepository.swift */; };
 		200AEA932371FD6A00624F53 /* TALeftMenuNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA922371FD6A00624F53 /* TALeftMenuNavigationScreen.swift */; };
-		200B5B022376244600E2E37D /* TAOnboardingNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200B5B012376244600E2E37D /* TAOnboardingNavigationScreen.swift */; };
 		200B5B04237627E100E2E37D /* TARootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200B5B03237627E100E2E37D /* TARootView.swift */; };
 		202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202EDA35236CD73100A1419D /* AppDelegate.swift */; };
 		202EDA3F236CD73300A1419D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202EDA3E236CD73300A1419D /* Assets.xcassets */; };
@@ -87,7 +86,6 @@
 		200AEA8A2371E9D000624F53 /* TAUserSessionCoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAUserSessionCoding.swift; sourceTree = "<group>"; };
 		200AEA8B2371E9D000624F53 /* TAAppUserSessionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAAppUserSessionRepository.swift; sourceTree = "<group>"; };
 		200AEA922371FD6A00624F53 /* TALeftMenuNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftMenuNavigationScreen.swift; sourceTree = "<group>"; };
-		200B5B012376244600E2E37D /* TAOnboardingNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingNavigationScreen.swift; sourceTree = "<group>"; };
 		200B5B03237627E100E2E37D /* TARootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TARootView.swift; sourceTree = "<group>"; };
 		202EDA32236CD73100A1419D /* Taxicos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taxicos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		202EDA35236CD73100A1419D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				972D23ED2375A90B00B19BBE /* Page */,
-				200B5B012376244600E2E37D /* TAOnboardingNavigationScreen.swift */,
 				972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */,
 				209C29682373F88F002D8418 /* TAOnboardingDependencyContainer.swift */,
 				20587B55236EAEE000E661E9 /* TAOnboardingRootView.swift */,
@@ -618,7 +615,6 @@
 				9794DE1023741EE70077D03A /* TALeftMenuDependencyContainer.swift in Sources */,
 				20C8AAB5236DE4E6005E6590 /* TALeftMenuViewModel.swift in Sources */,
 				20DC11DD2370BC86004F323E /* UIStackView+Ext.swift in Sources */,
-				200B5B022376244600E2E37D /* TAOnboardingNavigationScreen.swift in Sources */,
 				9794DE012374100D0077D03A /* TAHomeRootView.swift in Sources */,
 				9797E7B223718FE4008AC393 /* TAThemeProvider.swift in Sources */,
 				20DC11C72370BC63004F323E /* String+Extension.swift in Sources */,

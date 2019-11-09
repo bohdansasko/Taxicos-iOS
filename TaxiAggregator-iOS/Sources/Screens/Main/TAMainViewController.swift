@@ -25,9 +25,44 @@ final class TAMainViewController: TABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let homeViewController = mainFactory.makeHomeViewController()
-        add(child: homeViewController)        
+        subscribe(to: viewModel.navigationAction)
     }
 
+}
+
+// MARK: - Subscriptions
+
+extension TAMainViewController {
+    
+    func subscribe(to navigation: BehaviorSubject<TAMainNavigationAction>) {
+        viewModel.navigationAction
+            .asDriver(onErrorJustReturn: .present(screen: .home))
+            .drive(onNext: { navAction in
+                switch navAction {
+                case .present(let screen):
+                    self.present(screen: screen)
+                }
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+}
+
+// MARK: - View controllers presentating
+
+extension TAMainViewController {
+
+    func present(screen: TAMainNavigationScreen) {
+        self.children.forEach{ self.remove(child: $0) }
+        
+        switch screen {
+        case .home:
+            let homeViewController = mainFactory.makeHomeViewController()
+            add(child: homeViewController)
+        case .onboarding:
+            let onboardingViewController = mainFactory.makeOnboardingViewController()
+            add(child: onboardingViewController)
+        }
+    }
+    
 }

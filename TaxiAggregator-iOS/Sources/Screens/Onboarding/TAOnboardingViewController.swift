@@ -30,15 +30,6 @@ final class TAOnboardingViewController: TABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        viewModel.navigationAction.subscribe(onNext: { navigationAction in
-//            switch navigationAction {
-//            case .present(let screen):
-//                switch screen {
-//                case .home:
-//                }
-//            }
-//        })
     }
 
 }

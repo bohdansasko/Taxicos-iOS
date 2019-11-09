@@ -9,14 +9,19 @@
 import UIKit
 
 final class TAOnboardingDependencyContainer {
-
+    let mainViewModel: TAMainViewModel
+    
+    init(mainViewModel: TAMainViewModel) {
+        self.mainViewModel = mainViewModel
+    }
+    
     func makeOnboardingViewController() -> TAOnboardingViewController {
         let onboardingViewModel = makeOnboardingViewModel()
         return TAOnboardingViewController(viewModel: onboardingViewModel, onboardingFactory: self)
     }
     
     private func makeOnboardingViewModel() -> TAOnboardingViewModel {
-        return TAOnboardingViewModel()
+        return TAOnboardingViewModel(onboardingResponder: mainViewModel)
     }
     
 }

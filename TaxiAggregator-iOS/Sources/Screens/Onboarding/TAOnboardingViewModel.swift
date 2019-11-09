@@ -8,20 +8,25 @@
 
 import RxSwift
 
-typealias TAOnboardingNavigationAction = TANavigationAction<TAOnboardingNavigationScreen>
+protocol TAOnboardingResponder {
+    func goToHomeScreen()
+}
 
 final class TAOnboardingViewModel {
     let kStartNumberPage  = 1
     let kNumberOfPages    = 3
     let currentPageNumber = BehaviorSubject<Int>(value: 1)
-    
-    let navigationAction = PublishSubject<TAOnboardingNavigationAction>()
+    let onboardingResponder: TAOnboardingResponder
     
     var isLastPage: Bool {
         guard let currentPN = try? currentPageNumber.value() else {
             return false
         }
         return currentPN == kNumberOfPages
+    }
+    
+    init(onboardingResponder: TAOnboardingResponder) {
+        self.onboardingResponder = onboardingResponder
     }
     
 }
@@ -32,7 +37,7 @@ extension TAOnboardingViewModel {
     
     @objc func actSkipButton() {
         log.info("skip")
-        navigationAction.onNext(.present(.home))
+        onboardingResponder.goToHomeScreen()
     }
     
     @objc func actNextButton() {
@@ -40,7 +45,7 @@ extension TAOnboardingViewModel {
     }
     
     @objc func actDoneButton() {
-        navigationAction.onNext(.present(.home))
+        onboardingResponder.goToHomeScreen()
     }
     
 }

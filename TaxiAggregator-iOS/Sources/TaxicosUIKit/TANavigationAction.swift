@@ -10,5 +10,5 @@
 import Foundation
 
 enum TANavigationAction<ViewModelType: Equatable>: Equatable {
-    case present(ViewModelType)
+    case present(screen: ViewModelType)
 }

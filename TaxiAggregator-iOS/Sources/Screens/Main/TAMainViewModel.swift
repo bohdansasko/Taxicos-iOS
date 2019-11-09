@@ -8,12 +8,23 @@
 
 import RxSwift
 
-final class TAMainViewModel {
-    
+enum TAMainNavigationScreen {
+    case home
+    case onboarding
 }
 
-// MARK: - User interactions
+typealias TAMainNavigationAction = TANavigationAction<TAMainNavigationScreen>
 
-extension TAMainViewModel {
+final class TAMainViewModel {
+    let navigationAction = BehaviorSubject<TAMainNavigationAction>(value: .present(screen: .onboarding))
+}
+
+// MARK: - TAOnboardingResponder
+
+extension TAMainViewModel: TAOnboardingResponder {
+    
+    func goToHomeScreen() {
+        navigationAction.onNext(.present(screen: .home))
+    }
     
 }

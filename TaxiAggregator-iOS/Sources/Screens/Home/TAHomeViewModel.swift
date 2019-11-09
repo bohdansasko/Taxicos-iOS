@@ -17,7 +17,7 @@ final class TAHomeViewModel {
 extension TAHomeViewModel {
     
     @objc func actMenuButton() {
-        navigationAction.onNext(.present(.leftMenu))
+        navigationAction.onNext(.present(screen: .leftMenu))
     }
     
 }

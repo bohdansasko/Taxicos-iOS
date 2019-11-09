@@ -49,7 +49,7 @@ final class TAAppDependencyContainer {
 extension TAAppDependencyContainer {
     
     func makeMainViewController() -> UIViewController {
-        let mainDP = TAMainDependencyContainer()
+        let mainDP = TAMainDependencyContainer(mainViewModel: sharedMainViewModel)
         let vc = mainDP.makeMainViewController()
         return vc
     }
