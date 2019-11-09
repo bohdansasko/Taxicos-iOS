@@ -74,7 +74,7 @@
 		97A33C492370391E00C06500 /* TAPickupDropoffNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A33C482370391E00C06500 /* TAPickupDropoffNavigationBar.swift */; };
 		97A551D42370869500960890 /* UIControl+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D32370869500960890 /* UIControl+Ext.swift */; };
 		97A551D923708ECA00960890 /* TANavigationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D823708ECA00960890 /* TANavigationAction.swift */; };
-		97A551DB23708F8500960890 /* TAMapNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551DA23708F8500960890 /* TAMapNavigationScreen.swift */; };
+		97A551DB23708F8500960890 /* TAHomeNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */; };
 		ACB0B621FEE4A6B0C2C1A0C5 /* Pods_TaxiAggregator_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -148,7 +148,7 @@
 		97A33C482370391E00C06500 /* TAPickupDropoffNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAPickupDropoffNavigationBar.swift; sourceTree = "<group>"; };
 		97A551D32370869500960890 /* UIControl+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Ext.swift"; sourceTree = "<group>"; };
 		97A551D823708ECA00960890 /* TANavigationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TANavigationAction.swift; sourceTree = "<group>"; };
-		97A551DA23708F8500960890 /* TAMapNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMapNavigationScreen.swift; sourceTree = "<group>"; };
+		97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAHomeNavigationScreen.swift; sourceTree = "<group>"; };
 		97C9332B237317F6006ADA4A /* KievFakeLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = KievFakeLocation.gpx; sourceTree = "<group>"; };
 		9E0F14C52B61CF4C35095F75 /* Pods-TaxiAggregator-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.release.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E58A9E76673CFFFBC02C29CE /* Pods-TaxiAggregator-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.debug.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -251,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				209C296A2373F8D2002D8418 /* TAMapDependencyContainer.swift */,
-				97A551DA23708F8500960890 /* TAMapNavigationScreen.swift */,
 				97A33C482370391E00C06500 /* TAPickupDropoffNavigationBar.swift */,
 				20587B59236EAF2A00E661E9 /* TAMapRootView.swift */,
 				20C8AAA6236DE17A005E6590 /* TAMapViewController.swift */,
@@ -375,6 +374,7 @@
 		9794DDFD2374100D0077D03A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */,
 				209C29662373F801002D8418 /* TAHomeDependencyContainer.swift */,
 				9794DDFE2374100D0077D03A /* TAHomeRootView.swift */,
 				9794DE002374100D0077D03A /* TAHomeViewController.swift */,
@@ -561,7 +561,7 @@
 			files = (
 				9797E7AC23718E1A008AC393 /* TAThemeable.swift in Sources */,
 				20587B5E236EF1E200E661E9 /* TALeftSideMenuCell.swift in Sources */,
-				97A551DB23708F8500960890 /* TAMapNavigationScreen.swift in Sources */,
+				97A551DB23708F8500960890 /* TAHomeNavigationScreen.swift in Sources */,
 				20587B5A236EAF2A00E661E9 /* TAMapRootView.swift in Sources */,
 				20C8AAA9236DE1D3005E6590 /* TAMapViewModel.swift in Sources */,
 				20C8AAC7236E0183005E6590 /* TAOnboardingViewController.swift in Sources */,

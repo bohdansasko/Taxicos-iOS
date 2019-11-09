@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum TAMapNavigationScreen {
+enum TAHomeNavigationScreen {
     case leftMenu
 }

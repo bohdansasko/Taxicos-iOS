@@ -8,7 +8,7 @@
 
 import RxSwift
 
-typealias TAHomeNavigationAction = TANavigationAction<TAMapNavigationScreen>
+typealias TAHomeNavigationAction = TANavigationAction<TAHomeNavigationScreen>
 
 final class TAHomeViewModel {
     let navigationAction = PublishSubject<TAHomeNavigationAction>()

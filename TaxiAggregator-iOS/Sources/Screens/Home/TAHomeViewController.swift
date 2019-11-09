@@ -32,6 +32,8 @@ final class TAHomeViewController: TABaseViewController {
     
 }
 
+// MARK: - Subscriptions
+
 private extension TAHomeViewController {
     
     func subscribe(to navigationAction: PublishSubject<TAHomeNavigationAction>) {
@@ -40,22 +42,32 @@ private extension TAHomeViewController {
                 guard let self = self else { return }
                 switch action {
                 case .present(let screen):
-                    switch screen {
-                    case .leftMenu:
-                        let leftMenu = self.homeFactory.makeLeftMenuNavigationController()
-                        self.present(leftMenu, animated: true, completion: nil)
-                    }
+                    self.present(screen: screen)
                 }
             }).disposed(by: disposeBag)
     }
     
 }
 
+// MARK: - View controllers presentation
+
 private extension TAHomeViewController {
+    
+    func present(screen: TAHomeNavigationScreen) {
+        switch screen {
+        case .leftMenu:
+            self.presentLeftMenuViewController()
+        }
+    }
     
     func addMapViewController() {
         let mapViewController = homeFactory.makeMapViewController()
         add(child: mapViewController, to: (view as! TAHomeRootView).mapContainerView)
+    }
+    
+    func presentLeftMenuViewController() {
+        let leftMenu = self.homeFactory.makeLeftMenuNavigationController()
+        self.present(leftMenu, animated: true, completion: nil)
     }
     
 }
