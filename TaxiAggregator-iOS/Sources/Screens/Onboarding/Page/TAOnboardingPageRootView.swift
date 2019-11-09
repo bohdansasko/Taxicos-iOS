@@ -34,7 +34,7 @@ private extension TAOnboardingPageRootView {
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
             $0.bottom.equalTo(imgView.snp.top).offset(-68)
-            $0.right.left.equalToSuperview().inset(75)
+            $0.right.left.equalToSuperview().inset(64)
         }
     }
     

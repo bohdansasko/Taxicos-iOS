@@ -19,11 +19,11 @@ extension TAOnboardingPageType {
     var title: String {
         switch self {
         case .first:
-            return "Пошук потрібної локації для майбутньої поїздки1"
+            return "ONBOARDING_FIRST_PAGE".localized
         case .second:
-            return "Пошук потрібної локації для майбутньої поїздки2"
+            return "ONBOARDING_SECOND_PAGE".localized
         case .third:
-            return "Пошук потрібної локації для майбутньої поїздки3"
+            return "ONBOARDING_THIRD_PAGE".localized
         }
     }
     

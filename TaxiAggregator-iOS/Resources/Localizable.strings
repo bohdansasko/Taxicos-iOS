@@ -14,8 +14,12 @@
 "MENU_ITEM_RATE_APP" = "Rate app";
 
 "MAP_ENTER_LOCATION" = "Enter location";
-"MAP_WHERE_TO" = "Where to?";
+"MAP_WHERE_TO"       = "Where to?";
 
 "ONBOARDING_SKIP" = "Skip";
 "ONBOARDING_NEXT" = "Next";
 "ONBOARDING_DONE" = "Done";
+
+"ONBOARDING_FIRST_PAGE"  = "Обирай місце посадки та висадки.";
+"ONBOARDING_SECOND_PAGE" = "Ми тобі покажемо можливі варіанти. Обирай 🚕 серед запропонованих.";
+"ONBOARDING_THIRD_PAGE"  = "Вуаля, ти вже на місці.🥳 Економія грошей на очах 🤑";
