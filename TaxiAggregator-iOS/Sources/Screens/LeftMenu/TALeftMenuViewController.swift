@@ -23,32 +23,25 @@ final class TALeftMenuViewController: TABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        subscribe(to: viewModel.navigationAction)
+
+        subscribe(to: viewModel.isMenuHidden)
     }
     
 }
 
-// MARK: Subscriptions
+// MARK: - Subscriptions
 
-extension TALeftMenuViewController {
+private extension TALeftMenuViewController {
     
-    func subscribe(to navigationAction: PublishSubject<TALeftMenuNavigationAction>) {
-        viewModel.navigationAction.subscribe(onNext: { navigationAction in
-            switch navigationAction {
-            case .present(let screen):
-                switch screen {
-                case .savedAddresses:
-                    log.debug("savedAddresses")
-                case .shareApp:
-                    log.debug("shareApp")
-                case .feedback:
-                    log.debug("feedback")
-                case .rateApp:
-                    log.debug("rateApp")
+    func subscribe(to isMenuHidden: Observable<Bool>) {
+        isMenuHidden
+            .asDriver(onErrorJustReturn: true)
+            .drive(onNext: { isDismiss in
+                if isDismiss {
+                    self.dismiss(animated: true, completion: nil)
                 }
-            }
-        }).disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
     }
     
 }

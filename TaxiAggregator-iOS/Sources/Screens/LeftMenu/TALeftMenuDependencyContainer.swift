@@ -9,6 +9,11 @@
 import SideMenu
 
 final class TALeftMenuDependencyContainer {
+    private let _menuResponder: TALeftMenuResponsder
+    
+    init(menuResponder: TALeftMenuResponsder) {
+        _menuResponder = menuResponder
+    }
     
 }
 
@@ -22,7 +27,7 @@ extension TALeftMenuDependencyContainer {
         leftMenuNavigation.statusBarEndAlpha = 0
         leftMenuNavigation.setNavigationBarHidden(true, animated: false)
         leftMenuNavigation.presentationStyle.onTopShadowOpacity = 0.8
-        
+
         SideMenuManager.default.leftMenuNavigationController = leftMenuNavigation
         
         return leftMenuNavigation
@@ -35,7 +40,7 @@ extension TALeftMenuDependencyContainer {
     }
     
     private func makeLeftMenuViewModel() -> TALeftMenuViewModel {
-        return TALeftMenuViewModel()
+        return TALeftMenuViewModel(menuResponder: _menuResponder)
     }
     
 }

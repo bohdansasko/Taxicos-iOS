@@ -25,3 +25,13 @@ final class TALaunchViewController: TABaseViewController {
     }
 
 }
+
+// MARK: - UINavigationControllerDelegate
+
+extension TALaunchViewController: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        
+    }
+    
+}

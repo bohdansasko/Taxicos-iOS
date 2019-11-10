@@ -98,7 +98,7 @@ extension TALeftMenuRootView {
 extension TALeftMenuRootView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.items.count
+        return viewModel.numberOfItems
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -135,6 +135,7 @@ extension TALeftMenuRootView: UITableViewDelegate {
         case .rateApp:
             viewModel.actRateApp(self)
         }
+        
     }
     
 }

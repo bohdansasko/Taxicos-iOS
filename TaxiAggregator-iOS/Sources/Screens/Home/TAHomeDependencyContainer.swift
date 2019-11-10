@@ -14,21 +14,26 @@ protocol TAHomeFactory {
 }
 
 final class TAHomeDependencyContainer {
+    private let _viewModel: TAHomeViewModel
+    
+    init () {
+        func makeHomeViewModel() -> TAHomeViewModel {
+            return TAHomeViewModel()
+        }
+        _viewModel = makeHomeViewModel()
+    }
     
     func makeHomeViewController() -> TAHomeViewController {
-        let viewModel = makeHomeViewModel()
         let vc = TAHomeViewController(
-            viewModel: viewModel,
+            viewModel: _viewModel,
             homeFactory: self
         )
         return vc
     }
     
-    private func makeHomeViewModel() -> TAHomeViewModel {
-        return TAHomeViewModel()
-    }
-    
 }
+
+// MARK: - TAHomeFactory
 
 extension TAHomeDependencyContainer: TAHomeFactory {
     
@@ -39,7 +44,7 @@ extension TAHomeDependencyContainer: TAHomeFactory {
     }
     
     func makeLeftMenuNavigationController() -> UINavigationController {
-        let leftMenuDependencyContainer = TALeftMenuDependencyContainer()
+        let leftMenuDependencyContainer = TALeftMenuDependencyContainer(menuResponder: _viewModel)
         let vc = leftMenuDependencyContainer.makeLeftMenuNavigationController()
         return vc
     }

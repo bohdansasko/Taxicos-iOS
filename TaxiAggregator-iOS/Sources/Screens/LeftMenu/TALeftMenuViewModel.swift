@@ -9,14 +9,22 @@
 import Foundation
 import RxSwift
 
-typealias TALeftMenuNavigationAction = TANavigationAction<TALeftMenuNavigationScreen>
+protocol TALeftMenuResponsder {
+    func goToNextScreen(screen: TALeftMenuNavigationScreen)
+}
 
 final class TALeftMenuViewModel {
-    let items    : [TAMenuItemType]
-    let navigationAction = PublishSubject<TALeftMenuNavigationAction>()
+    private let _items: [TAMenuItemType]
+    private let _menuResponder: TALeftMenuResponsder
+    private let _shouldDimissMenu = PublishSubject<Bool>()
     
-    init() {
-        self.items = TAMenuItemType.allCases
+    var isMenuHidden: Observable<Bool> {
+        return _shouldDimissMenu.asObservable()
+    }
+    
+    init(menuResponder: TALeftMenuResponsder) {
+        _items         = TAMenuItemType.allCases
+        _menuResponder = menuResponder
     }
     
 }
@@ -26,9 +34,13 @@ final class TALeftMenuViewModel {
 extension TALeftMenuViewModel {
 
     func item(for indexPath: IndexPath) -> TAMenuItemType {
-        return items[indexPath.row]
+        return _items[indexPath.row]
     }
 
+    var numberOfItems: Int {
+        return _items.count
+    }
+    
 }
 
 // MARK: - User interactions
@@ -36,19 +48,20 @@ extension TALeftMenuViewModel {
 extension TALeftMenuViewModel {
     
     @objc func actSavedLocations(_ sender: Any) {
-        navigationAction.onNext(.present(screen: .savedAddresses))
+        _menuResponder.goToNextScreen(screen: .savedAddresses)
+        _shouldDimissMenu.onNext(true)
     }
     
     @objc func actShareApp(_ sender: Any) {
-        navigationAction.onNext(.present(screen: .shareApp))
+        _menuResponder.goToNextScreen(screen: .shareApp)
     }
     
     @objc func actFeedback(_ sender: Any) {
-        navigationAction.onNext(.present(screen: .feedback))
+        _menuResponder.goToNextScreen(screen: .feedback)
     }
     
     @objc func actRateApp(_ sender: Any) {
-        navigationAction.onNext(.present(screen: .rateApp))
+        _menuResponder.goToNextScreen(screen: .rateApp)
     }
     
 }

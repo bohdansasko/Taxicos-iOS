@@ -8,12 +8,13 @@
 
 import UIKit
 import RxSwift
+import StoreKit
 
 final class TAMainViewController: TABaseViewController {
     private let viewModel: TAMainViewModel
     private let mainFactory: TAMainFactory
     
-    private var homeViewController      : TABaseViewController?
+    private var homeViewController      : UIViewController?
     private var onboardingViewController: TABaseViewController?
     
     init(viewModel: TAMainViewModel, mainFactory: TAMainFactory) {

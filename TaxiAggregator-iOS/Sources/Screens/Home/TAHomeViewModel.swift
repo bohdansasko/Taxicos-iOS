@@ -21,3 +21,13 @@ extension TAHomeViewModel {
     }
     
 }
+
+// MARK: - TALeftMenuResponsder
+
+extension TAHomeViewModel: TALeftMenuResponsder {
+    
+    func goToNextScreen(screen: TALeftMenuNavigationScreen) {
+        navigationAction.onNext(.present(screen: .leftMenuScreen(screen)))
+    }
+    
+}

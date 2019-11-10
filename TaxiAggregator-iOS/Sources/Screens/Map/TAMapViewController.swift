@@ -29,7 +29,7 @@ final class TAMapViewController: TABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+
         viewModel.requestLocationIfNeeded()
     }
     
