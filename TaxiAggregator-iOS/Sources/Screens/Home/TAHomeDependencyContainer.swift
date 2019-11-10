@@ -11,6 +11,7 @@ import UIKit
 protocol TAHomeFactory {
     func makeMapViewController() -> UIViewController
     func makeLeftMenuNavigationController() -> UINavigationController
+    func makeSavedAddressesViewController() -> TASavedAddressesViewController
 }
 
 final class TAHomeDependencyContainer {
@@ -46,6 +47,12 @@ extension TAHomeDependencyContainer: TAHomeFactory {
     func makeLeftMenuNavigationController() -> UINavigationController {
         let leftMenuDependencyContainer = TALeftMenuDependencyContainer(menuResponder: _viewModel)
         let vc = leftMenuDependencyContainer.makeLeftMenuNavigationController()
+        return vc
+    }
+    
+    func makeSavedAddressesViewController() -> TASavedAddressesViewController {
+        let dependencyContainer = TASavedAddressesDependencyContainer()
+        let vc = dependencyContainer.makeSavedAddressesViewController()
         return vc
     }
     

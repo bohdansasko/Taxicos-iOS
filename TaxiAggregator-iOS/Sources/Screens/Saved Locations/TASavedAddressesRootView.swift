@@ -1,5 +1,5 @@
 //
-//  TALaunchRootView.swift
+//  TASavedAddressesRootView.swift
 //  TaxiAggregator-iOS
 //
 //  Created by Bogdan Sasko on 03.11.2019.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class TALaunchRootView: TABaseView {
-    let viewModel: TALaunchViewModel
+final class TASavedAddressesRootView: TABaseView {
+    let viewModel: TASavedAddressesViewModel
     
-    init(frame: CGRect = .zero, viewModel: TALaunchViewModel) {
+    init(frame: CGRect = .zero, viewModel: TASavedAddressesViewModel) {
         self.viewModel = viewModel
         super.init(frame: frame)
         
@@ -23,7 +23,7 @@ final class TALaunchRootView: TABaseView {
 
 // MARK: - TAThemeable
 
-extension TALaunchRootView: TAThemeable {
+extension TASavedAddressesRootView: TAThemeable {
         
     func apply(theme: TATheme) {
         backgroundColor = theme.colors.backgroundColor

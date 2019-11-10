@@ -27,6 +27,7 @@ final class TAHomeViewController: TABaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = " "
         navigationController!.delegate = self
         
         addMapViewController()
@@ -71,14 +72,19 @@ private extension TAHomeViewController {
     }
     
     func presentLeftMenuViewController() {
-        let leftMenu = self.homeFactory.makeLeftMenuNavigationController()
+        let leftMenu = homeFactory.makeLeftMenuNavigationController()
         self.present(leftMenu, animated: true, completion: nil)
     }
     
     func presentViewController(menu screen: TALeftMenuNavigationScreen) {
         switch screen {
         case .savedAddresses:
-            break
+            guard let navController = navigationController else {
+                assertionFailure("required")
+                return
+            }
+            let vc = homeFactory.makeSavedAddressesViewController()
+            navController.pushViewController(vc, animated: true)
         case .shareApp:
             break
         case .feedback:
@@ -104,7 +110,7 @@ private extension TAHomeViewController {
     
     func homeScreen(assosiatedWith vc: UIViewController) -> TALeftMenuNavigationScreen? {
         switch vc {
-        case is TALaunchViewController:
+        case is TASavedAddressesViewController:
             return .savedAddresses
         case is TAMapViewController:
             return .savedAddresses

@@ -21,7 +21,7 @@
 		2041CB97237860FD00A6BC60 /* TAFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2041CB96237860FD00A6BC60 /* TAFeatures.swift */; };
 		2042AF80237379B20074D6CD /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2042AF7F237379B20074D6CD /* UIViewController+Ext.swift */; };
 		20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B55236EAEE000E661E9 /* TAOnboardingRootView.swift */; };
-		20587B58236EAF1500E661E9 /* TALaunchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B57236EAF1500E661E9 /* TALaunchRootView.swift */; };
+		20587B58236EAF1500E661E9 /* TASavedAddressesRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B57236EAF1500E661E9 /* TASavedAddressesRootView.swift */; };
 		20587B5A236EAF2A00E661E9 /* TAMapRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B59236EAF2A00E661E9 /* TAMapRootView.swift */; };
 		20587B5C236EAF3D00E661E9 /* TALeftMenuRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B5B236EAF3D00E661E9 /* TALeftMenuRootView.swift */; };
 		20587B5E236EF1E200E661E9 /* TALeftSideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20587B5D236EF1E200E661E9 /* TALeftSideMenuCell.swift */; };
@@ -39,8 +39,8 @@
 		20C8AAB1236DE480005E6590 /* TALeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAB0236DE480005E6590 /* TALeftMenuViewController.swift */; };
 		20C8AAB3236DE49E005E6590 /* TABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAB2236DE49E005E6590 /* TABaseViewController.swift */; };
 		20C8AAB5236DE4E6005E6590 /* TALeftMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAB4236DE4E6005E6590 /* TALeftMenuViewModel.swift */; };
-		20C8AAC2236DFFAD005E6590 /* TALaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC1236DFFAD005E6590 /* TALaunchViewController.swift */; };
-		20C8AAC4236DFFB5005E6590 /* TALaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC3236DFFB5005E6590 /* TALaunchViewModel.swift */; };
+		20C8AAC2236DFFAD005E6590 /* TASavedAddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC1236DFFAD005E6590 /* TASavedAddressesViewController.swift */; };
+		20C8AAC4236DFFB5005E6590 /* TASavedAddressesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC3236DFFB5005E6590 /* TASavedAddressesViewModel.swift */; };
 		20C8AAC7236E0183005E6590 /* TAOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */; };
 		20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */; };
 		20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AACB236EAAAC005E6590 /* TABaseView.swift */; };
@@ -55,6 +55,8 @@
 		20EC5FD423784E98003817FD /* TAUserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC5FD323784E98003817FD /* TAUserSessionRepository.swift */; };
 		20EC5FD723785435003817FD /* TAErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EC5FD623785435003817FD /* TAErrorMessage.swift */; };
 		20ED9D00236F49B800ED3FBB /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */; };
+		20F0D1CC2378C13A0038A31C /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20F0D1CB2378C13A0038A31C /* Rubik-Medium.ttf */; };
+		20F0D1CE2378C7B20038A31C /* TANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0D1CD2378C7B20038A31C /* TANavigationController.swift */; };
 		972D23EF2375A91B00B19BBE /* TAOnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23EE2375A91B00B19BBE /* TAOnboardingPageViewController.swift */; };
 		972D23F12375A92700B19BBE /* TAOnboardingPageRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23F02375A92700B19BBE /* TAOnboardingPageRootView.swift */; };
 		972D23F52375AC2900B19BBE /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23F42375AC2900B19BBE /* UIColor+Ext.swift */; };
@@ -67,7 +69,7 @@
 		9794DE0623741D0E0077D03A /* TAMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DE0523741D0E0077D03A /* TAMainViewModel.swift */; };
 		9794DE0823741D260077D03A /* TAMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DE0723741D260077D03A /* TAMainViewController.swift */; };
 		9794DE0A23741D2F0077D03A /* TAMainRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DE0923741D2F0077D03A /* TAMainRootView.swift */; };
-		9794DE0C23741DFC0077D03A /* TALaunchDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DE0B23741DFC0077D03A /* TALaunchDependencyContainer.swift */; };
+		9794DE0C23741DFC0077D03A /* TASavedAddressesDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DE0B23741DFC0077D03A /* TASavedAddressesDependencyContainer.swift */; };
 		9794DE1023741EE70077D03A /* TALeftMenuDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DE0F23741EE70077D03A /* TALeftMenuDependencyContainer.swift */; };
 		9797E7AC23718E1A008AC393 /* TAThemeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7AB23718E1A008AC393 /* TAThemeable.swift */; };
 		9797E7AE23718E3D008AC393 /* TATheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7AD23718E3D008AC393 /* TATheme.swift */; };
@@ -101,7 +103,7 @@
 		2041CB96237860FD00A6BC60 /* TAFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFeatures.swift; sourceTree = "<group>"; };
 		2042AF7F237379B20074D6CD /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		20587B55236EAEE000E661E9 /* TAOnboardingRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingRootView.swift; sourceTree = "<group>"; };
-		20587B57236EAF1500E661E9 /* TALaunchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALaunchRootView.swift; sourceTree = "<group>"; };
+		20587B57236EAF1500E661E9 /* TASavedAddressesRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASavedAddressesRootView.swift; sourceTree = "<group>"; };
 		20587B59236EAF2A00E661E9 /* TAMapRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMapRootView.swift; sourceTree = "<group>"; };
 		20587B5B236EAF3D00E661E9 /* TALeftMenuRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftMenuRootView.swift; sourceTree = "<group>"; };
 		20587B5D236EF1E200E661E9 /* TALeftSideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftSideMenuCell.swift; sourceTree = "<group>"; };
@@ -119,8 +121,8 @@
 		20C8AAB0236DE480005E6590 /* TALeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftMenuViewController.swift; sourceTree = "<group>"; };
 		20C8AAB2236DE49E005E6590 /* TABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABaseViewController.swift; sourceTree = "<group>"; };
 		20C8AAB4236DE4E6005E6590 /* TALeftMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftMenuViewModel.swift; sourceTree = "<group>"; };
-		20C8AAC1236DFFAD005E6590 /* TALaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALaunchViewController.swift; sourceTree = "<group>"; };
-		20C8AAC3236DFFB5005E6590 /* TALaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALaunchViewModel.swift; sourceTree = "<group>"; };
+		20C8AAC1236DFFAD005E6590 /* TASavedAddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASavedAddressesViewController.swift; sourceTree = "<group>"; };
+		20C8AAC3236DFFB5005E6590 /* TASavedAddressesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASavedAddressesViewModel.swift; sourceTree = "<group>"; };
 		20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingViewController.swift; sourceTree = "<group>"; };
 		20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingViewModel.swift; sourceTree = "<group>"; };
 		20C8AACB236EAAAC005E6590 /* TABaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABaseView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,8 @@
 		20EC5FD323784E98003817FD /* TAUserSessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAUserSessionRepository.swift; sourceTree = "<group>"; };
 		20EC5FD623785435003817FD /* TAErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAErrorMessage.swift; sourceTree = "<group>"; };
 		20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		20F0D1CB2378C13A0038A31C /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		20F0D1CD2378C7B20038A31C /* TANavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TANavigationController.swift; sourceTree = "<group>"; };
 		972D23EE2375A91B00B19BBE /* TAOnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingPageViewController.swift; sourceTree = "<group>"; };
 		972D23F02375A92700B19BBE /* TAOnboardingPageRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingPageRootView.swift; sourceTree = "<group>"; };
 		972D23F42375AC2900B19BBE /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
@@ -147,7 +151,7 @@
 		9794DE0523741D0E0077D03A /* TAMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainViewModel.swift; sourceTree = "<group>"; };
 		9794DE0723741D260077D03A /* TAMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainViewController.swift; sourceTree = "<group>"; };
 		9794DE0923741D2F0077D03A /* TAMainRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainRootView.swift; sourceTree = "<group>"; };
-		9794DE0B23741DFC0077D03A /* TALaunchDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALaunchDependencyContainer.swift; sourceTree = "<group>"; };
+		9794DE0B23741DFC0077D03A /* TASavedAddressesDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASavedAddressesDependencyContainer.swift; sourceTree = "<group>"; };
 		9794DE0F23741EE70077D03A /* TALeftMenuDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftMenuDependencyContainer.swift; sourceTree = "<group>"; };
 		9797E7AB23718E1A008AC393 /* TAThemeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAThemeable.swift; sourceTree = "<group>"; };
 		9797E7AD23718E3D008AC393 /* TATheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TATheme.swift; sourceTree = "<group>"; };
@@ -283,8 +287,8 @@
 				9794DDFD2374100D0077D03A /* Home */,
 				20C8AAAF236DE468005E6590 /* LeftMenu */,
 				20C8AAAD236DE452005E6590 /* Map */,
-				20C8AAC0236DFF91005E6590 /* Launch */,
 				20C8AAC5236E0160005E6590 /* Onboarding */,
+				20C8AAC0236DFF91005E6590 /* Saved Locations */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -314,15 +318,15 @@
 			path = LeftMenu;
 			sourceTree = "<group>";
 		};
-		20C8AAC0236DFF91005E6590 /* Launch */ = {
+		20C8AAC0236DFF91005E6590 /* Saved Locations */ = {
 			isa = PBXGroup;
 			children = (
-				9794DE0B23741DFC0077D03A /* TALaunchDependencyContainer.swift */,
-				20587B57236EAF1500E661E9 /* TALaunchRootView.swift */,
-				20C8AAC1236DFFAD005E6590 /* TALaunchViewController.swift */,
-				20C8AAC3236DFFB5005E6590 /* TALaunchViewModel.swift */,
+				9794DE0B23741DFC0077D03A /* TASavedAddressesDependencyContainer.swift */,
+				20587B57236EAF1500E661E9 /* TASavedAddressesRootView.swift */,
+				20C8AAC1236DFFAD005E6590 /* TASavedAddressesViewController.swift */,
+				20C8AAC3236DFFB5005E6590 /* TASavedAddressesViewModel.swift */,
 			);
-			path = Launch;
+			path = "Saved Locations";
 			sourceTree = "<group>";
 		};
 		20C8AAC5236E0160005E6590 /* Onboarding */ = {
@@ -347,6 +351,7 @@
 				20C8AAB2236DE49E005E6590 /* TABaseViewController.swift */,
 				200AEA802371DA8B00624F53 /* TABaseTableViewCell.swift */,
 				200B5B03237627E100E2E37D /* TARootView.swift */,
+				20F0D1CD2378C7B20038A31C /* TANavigationController.swift */,
 			);
 			path = TAUIKit;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 		20ED9CFE236F49A800ED3FBB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				20F0D1CB2378C13A0038A31C /* Rubik-Medium.ttf */,
 				979F18162374733100CA209B /* Avenir-Medium.ttf */,
 				2096AC192374A32E005BD7EC /* HelveticaNeue.ttf */,
 				20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */,
@@ -424,8 +430,8 @@
 		9794DDFD2374100D0077D03A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */,
 				209C29662373F801002D8418 /* TAHomeDependencyContainer.swift */,
+				97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */,
 				9794DDFE2374100D0077D03A /* TAHomeRootView.swift */,
 				9794DE002374100D0077D03A /* TAHomeViewController.swift */,
 				9794DDFF2374100D0077D03A /* TAHomeViewModel.swift */,
@@ -540,6 +546,7 @@
 				2096AC1A2374A32F005BD7EC /* HelveticaNeue.ttf in Resources */,
 				202EDA3F236CD73300A1419D /* Assets.xcassets in Resources */,
 				979F18172374733100CA209B /* Avenir-Medium.ttf in Resources */,
+				20F0D1CC2378C13A0038A31C /* Rubik-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +631,7 @@
 				97A33C492370391E00C06500 /* TAPickupDropoffNavigationBar.swift in Sources */,
 				97A551D42370869500960890 /* UIControl+Ext.swift in Sources */,
 				9797E7B023718F8C008AC393 /* TAColorsPalette.swift in Sources */,
-				9794DE0C23741DFC0077D03A /* TALaunchDependencyContainer.swift in Sources */,
+				9794DE0C23741DFC0077D03A /* TASavedAddressesDependencyContainer.swift in Sources */,
 				9797E7B62371AF6C008AC393 /* TAConfig.swift in Sources */,
 				979F180F2374346700CA209B /* TAMainDependencyContainer.swift in Sources */,
 				200AEA8C2371E9D000624F53 /* TAUserSessionDataStore.swift in Sources */,
@@ -632,6 +639,7 @@
 				20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */,
 				9794DE0A23741D2F0077D03A /* TAMainRootView.swift in Sources */,
 				200AEA8D2371E9D000624F53 /* TAFileUserSessionDataStore.swift in Sources */,
+				20F0D1CE2378C7B20038A31C /* TANavigationController.swift in Sources */,
 				200AEA812371DA8B00624F53 /* TABaseTableViewCell.swift in Sources */,
 				20C8AAA7236DE17A005E6590 /* TAMapViewController.swift in Sources */,
 				200AEA902371E9D000624F53 /* TAAppUserSessionRepository.swift in Sources */,
@@ -646,13 +654,13 @@
 				20DC11C52370BC42004F323E /* Date+Ext.swift in Sources */,
 				20DC11E02370BC86004F323E /* UITableView+Ext.swift in Sources */,
 				209C29672373F801002D8418 /* TAHomeDependencyContainer.swift in Sources */,
-				20C8AAC2236DFFAD005E6590 /* TALaunchViewController.swift in Sources */,
-				20C8AAC4236DFFB5005E6590 /* TALaunchViewModel.swift in Sources */,
+				20C8AAC2236DFFAD005E6590 /* TASavedAddressesViewController.swift in Sources */,
+				20C8AAC4236DFFB5005E6590 /* TASavedAddressesViewModel.swift in Sources */,
 				20C8AAB1236DE480005E6590 /* TALeftMenuViewController.swift in Sources */,
 				209C296B2373F8D2002D8418 /* TAMapDependencyContainer.swift in Sources */,
 				972D23F12375A92700B19BBE /* TAOnboardingPageRootView.swift in Sources */,
 				9794DE032374100D0077D03A /* TAHomeViewController.swift in Sources */,
-				20587B58236EAF1500E661E9 /* TALaunchRootView.swift in Sources */,
+				20587B58236EAF1500E661E9 /* TASavedAddressesRootView.swift in Sources */,
 				20C8AAA4236DE07A005E6590 /* TAAppDependencyContainer.swift in Sources */,
 				200B5B04237627E100E2E37D /* TARootView.swift in Sources */,
 				972D24022375CE2000B19BBE /* TAOnboardingPageType.swift in Sources */,

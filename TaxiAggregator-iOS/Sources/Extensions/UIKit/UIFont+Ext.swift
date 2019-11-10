@@ -22,6 +22,8 @@ extension UIFont {
         switch weight {
         case .regular:
             return UIFont(name: "Rubik-Regular", size: fontSize)!
+        case .medium:
+            return UIFont(name: "Rubik-Medium", size: fontSize)!
         default:
             assertionFailure()
             break

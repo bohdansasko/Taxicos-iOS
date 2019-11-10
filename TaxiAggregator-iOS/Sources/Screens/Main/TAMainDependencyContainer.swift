@@ -9,8 +9,7 @@
 import UIKit
 
 protocol TAMainFactory {
-    func makeHomeViewController()       -> UIViewController
-    func makeLaunchViewController()     -> TALaunchViewController
+    func makeHomeViewController() -> UIViewController
     func makeOnboardingViewController() -> TAOnboardingViewController
 }
 
@@ -38,14 +37,8 @@ extension TAMainDependencyContainer: TAMainFactory {
     func makeHomeViewController() -> UIViewController {
         let container = TAHomeDependencyContainer()
         let vc = container.makeHomeViewController()
-        let nav = UINavigationController(rootViewController: vc)
+        let nav = TANavigationController(rootViewController: vc)
         return nav
-    }
-
-    func makeLaunchViewController() -> TALaunchViewController {
-        let launchDependencyContainer = TALaunchDependencyContainer()
-        let vc = launchDependencyContainer.makeLaunchViewController()
-        return vc
     }
 
     func makeOnboardingViewController() -> TAOnboardingViewController {
