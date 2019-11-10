@@ -10,12 +10,16 @@ import UIKit
 import RxSwift
 
 final class TAMainViewController: TABaseViewController {
-    let viewModel: TAMainViewModel
-    let mainFactory: TAMainFactory
+    private let viewModel: TAMainViewModel
+    private let mainFactory: TAMainFactory
+    
+    private var homeViewController      : TABaseViewController?
+    private var onboardingViewController: TABaseViewController?
     
     init(viewModel: TAMainViewModel, mainFactory: TAMainFactory) {
         self.viewModel = viewModel
         self.mainFactory = mainFactory
+        
         super.init()
     }
 
@@ -32,11 +36,11 @@ final class TAMainViewController: TABaseViewController {
 
 // MARK: - Subscriptions
 
-extension TAMainViewController {
+private extension TAMainViewController {
     
-    func subscribe(to navigation: BehaviorSubject<TAMainNavigationAction>) {
+    func subscribe(to navigation: Observable<TAMainNavigationAction>) {
         viewModel.navigationAction
-            .asDriver(onErrorJustReturn: .present(screen: .home))
+            .asDriver(onErrorRecover: { _ in fatalError("Unxecpected error in the main navigation action") })
             .drive(onNext: { navAction in
                 switch navAction {
                 case .present(let screen):
@@ -50,18 +54,23 @@ extension TAMainViewController {
 
 // MARK: - View controllers presentating
 
-extension TAMainViewController {
+private extension TAMainViewController {
 
     func present(screen: TAMainNavigationScreen) {
-        self.children.forEach{ self.remove(child: $0) }
-        
         switch screen {
         case .home:
-            let homeViewController = mainFactory.makeHomeViewController()
-            add(child: homeViewController)
+            self.remove(child: onboardingViewController)
+            guard homeViewController == nil else {
+                return
+            }
+            homeViewController = mainFactory.makeHomeViewController()
+            add(child: homeViewController!)
         case .onboarding:
-            let onboardingViewController = mainFactory.makeOnboardingViewController()
-            add(child: onboardingViewController)
+            guard onboardingViewController == nil else {
+                return
+            }
+            onboardingViewController = mainFactory.makeOnboardingViewController()
+            add(child: onboardingViewController!)
         }
     }
     

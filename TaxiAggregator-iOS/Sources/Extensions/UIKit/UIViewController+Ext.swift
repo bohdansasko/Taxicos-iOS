@@ -24,7 +24,11 @@ extension UIViewController {
         child.didMove(toParent: self)
     }
     
-    func remove(child: UIViewController) {
+    func remove(child: UIViewController?) {
+        guard let child = child else {
+            return
+        }
+
         guard child.view != nil else {
             return
         }

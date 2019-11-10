@@ -6,17 +6,32 @@
 //  Copyright © 2019 Vinso. All rights reserved.
 //
 
-import Foundation
+import PromiseKit
 
-protocol TAUserSessionRepository {
-    
-}
-
-final class TAAppUserSessionRepository: TAUserSessionRepository {
+final class TAAppUserSessionRepository {
+    private let dataStore: TAUserSessionDataStore
+    private let authRemoteAPI: TAAuthRemoteAPI
     
     init(dataStore: TAUserSessionDataStore, authRemoteAPI: TAAuthRemoteAPI) {
-        
+        self.dataStore = dataStore
+        self.authRemoteAPI = authRemoteAPI
     }
     
 }
 
+// MARK: - TAUserSessionRepository
+
+extension TAAppUserSessionRepository: TAUserSessionRepository {
+    
+    func readUserSession() -> Promise<TAUserSession?> {
+        return dataStore.readUserSession()
+    }
+    
+    func signIn() -> Promise<TAUserSession> {
+        return Promise { seal in
+            seal.fulfill(dataStore.readUserSession().value!!)
+        }
+    }
+    
+    
+}

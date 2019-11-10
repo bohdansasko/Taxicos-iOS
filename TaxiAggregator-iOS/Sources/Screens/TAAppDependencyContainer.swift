@@ -24,24 +24,19 @@ final class TAAppDependencyContainer {
         }
         
         func makeUserSessionDataStore() -> TAUserSessionDataStore {
-            let coder = makeUserSessionCoder()
-            return TADatabaseSessionDataStore(with: coder)
-        }
-        
-        func makeUserSessionCoder() -> TAUserSessionCoding {
-            return TAUserSessionPropertyListCoder()
+            return TAFileUserSessionDataStore()
         }
         
         func makeAuthRemoteAPI() -> TAAuthRemoteAPI {
             return TAFakeAuthRemoteAPI()
         }
         
-        func makeMainViewModel() -> TAMainViewModel {
-            return TAMainViewModel()
+        func makeMainViewModel(userSessionRepository: TAUserSessionRepository) -> TAMainViewModel {
+            return TAMainViewModel(userSessionRepository: userSessionRepository)
         }
         
         sharedUserSessionRepository = makeUserSessionRepository()
-        sharedMainViewModel         = makeMainViewModel()
+        sharedMainViewModel         = makeMainViewModel(userSessionRepository: sharedUserSessionRepository)
     }
     
 }
