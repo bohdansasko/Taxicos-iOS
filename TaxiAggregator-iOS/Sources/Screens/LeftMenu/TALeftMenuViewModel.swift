@@ -9,22 +9,26 @@
 import Foundation
 import RxSwift
 
-protocol TALeftMenuResponsder {
-    func goToNextScreen(screen: TALeftMenuNavigationScreen)
-}
+typealias TALeftMenuNavigationAction = TANavigationAction<TALeftMenuNavigationScreen>
 
 final class TALeftMenuViewModel {
+    
+    // MARK: - Properties
+    
+    private let _navigationAction = PublishSubject<TALeftMenuNavigationAction>()
     private let _items: [TAMenuItemType]
-    private let _menuResponder: TALeftMenuResponsder
     private let _shouldDimissMenu = PublishSubject<Bool>()
     
-    var isMenuHidden: Observable<Bool> {
-        return _shouldDimissMenu.asObservable()
+    // MARK: - Getters
+    
+    var navigationAction: Observable<TALeftMenuNavigationAction> {
+        return _navigationAction.asObservable()
     }
     
-    init(menuResponder: TALeftMenuResponsder) {
-        _items         = TAMenuItemType.allCases
-        _menuResponder = menuResponder
+    // MARK: - Methods
+    
+    init() {
+        _items = TAMenuItemType.allCases
     }
     
 }
@@ -48,20 +52,19 @@ extension TALeftMenuViewModel {
 extension TALeftMenuViewModel {
     
     @objc func actSavedLocations(_ sender: Any) {
-        _menuResponder.goToNextScreen(screen: .savedAddresses)
-        _shouldDimissMenu.onNext(true)
+        _navigationAction.onNext(.present(screen: .savedAddresses))
     }
     
     @objc func actShareApp(_ sender: Any) {
-        _menuResponder.goToNextScreen(screen: .shareApp)
+        _navigationAction.onNext(.present(screen: .shareApp))
     }
     
     @objc func actFeedback(_ sender: Any) {
-        _menuResponder.goToNextScreen(screen: .feedback)
+        _navigationAction.onNext(.present(screen: .feedback))
     }
     
     @objc func actRateApp(_ sender: Any) {
-        _menuResponder.goToNextScreen(screen: .rateApp)
+        _navigationAction.onNext(.present(screen: .rateApp))
     }
     
 }

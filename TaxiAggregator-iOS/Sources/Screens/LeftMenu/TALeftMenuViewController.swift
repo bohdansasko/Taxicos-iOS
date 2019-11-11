@@ -8,12 +8,16 @@
 
 import UIKit
 import RxSwift
+import StoreKit
 
 final class TALeftMenuViewController: TABaseViewController {
-    let viewModel: TALeftMenuViewModel
+    private let viewModel: TALeftMenuViewModel
+    private let leftMenuFactory: TALeftMenuFactory
     
-    init(viewModel: TALeftMenuViewModel) {
-        self.viewModel = viewModel
+    init(viewModel: TALeftMenuViewModel, leftMenuFactory: TALeftMenuFactory) {
+        self.viewModel       = viewModel
+        self.leftMenuFactory = leftMenuFactory
+        
         super.init()
     }
     
@@ -24,7 +28,7 @@ final class TALeftMenuViewController: TABaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        subscribe(to: viewModel.isMenuHidden)
+        subscribe(to: viewModel.navigationAction)
     }
     
 }
@@ -33,15 +37,35 @@ final class TALeftMenuViewController: TABaseViewController {
 
 private extension TALeftMenuViewController {
     
-    func subscribe(to isMenuHidden: Observable<Bool>) {
-        isMenuHidden
-            .asDriver(onErrorJustReturn: true)
-            .drive(onNext: { isDismiss in
-                if isDismiss {
-                    self.dismiss(animated: true, completion: nil)
+    func subscribe(to navigationAction: Observable<TALeftMenuNavigationAction>) {
+        navigationAction
+            .asDriver(onErrorRecover: { _ in fatalError("unexpected error in navigation action") })
+            .drive(onNext: { [weak self] nextNavigationAction in
+                guard let self = self else { return }
+                switch nextNavigationAction {
+                case .present(let screen):
+                    self.present(screen: screen)
                 }
+                
             })
             .disposed(by: disposeBag)
     }
     
+    func present(screen: TALeftMenuNavigationScreen) {
+        switch screen {
+        case .savedAddresses:
+            guard let navController = navigationController else {
+                assertionFailure("required")
+                return
+            }
+            let vc = self.leftMenuFactory.makeSavedAddressesViewController()
+            navController.pushViewController(vc, animated: true)
+        case .shareApp:
+            break
+        case .feedback:
+            break
+        case .rateApp:
+            SKStoreReviewController.requestReview()
+        }
+    }
 }

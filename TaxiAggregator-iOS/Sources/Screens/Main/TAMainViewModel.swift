@@ -8,9 +8,14 @@
 
 import RxSwift
 
+protocol TAOpenLeftMenuResponder {
+    func goToLeftMenu()
+}
+
 enum TAMainNavigationScreen {
     case home(userSession: TAUserSession)
     case onboarding
+    case leftMenu
 }
 
 // MARK: - Equatable
@@ -19,12 +24,14 @@ extension TAMainNavigationScreen: Equatable {
     
     static func == (lhs: TAMainNavigationScreen, rhs: TAMainNavigationScreen) -> Bool {
         switch (lhs, rhs) {
-        case (.onboarding, .onboarding):
+        case (.onboarding, .onboarding),
+             (.leftMenu, .leftMenu):
             return true
         case let (.home(l), .home(r)):
             return l == r
         case (.onboarding, _),
-             (.home, _):
+             (.home, _),
+             (.leftMenu, _):
             return false
         }
     }
@@ -86,6 +93,16 @@ extension TAMainViewModel: TAOnboardingResponder {
     func goToHomeScreen() {
         _userSession.features.setUserSeenOnboarding(isUserSeen: true)
         _navigationAction.onNext(.present(screen: .home(userSession: _userSession)))
+    }
+    
+}
+
+// MARK: - TAOnboardingResponder
+
+extension TAMainViewModel: TAOpenLeftMenuResponder {
+    
+    func goToLeftMenu() {
+        _navigationAction.onNext(.present(screen: .leftMenu))
     }
     
 }

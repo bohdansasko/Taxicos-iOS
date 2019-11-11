@@ -8,12 +8,11 @@
 
 import SideMenu
 
+protocol TALeftMenuFactory {
+    func makeSavedAddressesViewController() -> TASavedAddressesViewController
+}
+
 final class TALeftMenuDependencyContainer {
-    private let _menuResponder: TALeftMenuResponsder
-    
-    init(menuResponder: TALeftMenuResponsder) {
-        _menuResponder = menuResponder
-    }
     
 }
 
@@ -35,12 +34,25 @@ extension TALeftMenuDependencyContainer {
     
     private func makeLeftMenuViewController() -> TALeftMenuViewController {
         let leftMenuViewModel = makeLeftMenuViewModel()
-        let vc = TALeftMenuViewController(viewModel: leftMenuViewModel)
+        let vc = TALeftMenuViewController(viewModel: leftMenuViewModel, leftMenuFactory: self)
         return vc
     }
     
     private func makeLeftMenuViewModel() -> TALeftMenuViewModel {
-        return TALeftMenuViewModel(menuResponder: _menuResponder)
+        return TALeftMenuViewModel()
     }
     
 }
+
+// MARK: - TALeftMenuFactory
+
+extension TALeftMenuDependencyContainer: TALeftMenuFactory {
+    
+    func makeSavedAddressesViewController() -> TASavedAddressesViewController {
+        let dependencyContainer = TASavedAddressesDependencyContainer()
+        let vc = dependencyContainer.makeSavedAddressesViewController()
+        return vc
+    }
+
+}
+

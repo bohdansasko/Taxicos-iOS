@@ -11,23 +11,24 @@ import RxSwift
 typealias TAHomeNavigationAction = TANavigationAction<TAHomeNavigationScreen>
 
 final class TAHomeViewModel {
-    let navigationAction = PublishSubject<TAHomeNavigationAction>()
+    private let _menuResponder: TAOpenLeftMenuResponder
+    private let _navigationAction = PublishSubject<TAHomeNavigationAction>()
+    
+    var navigationAction: Observable<TAHomeNavigationAction> {
+        return _navigationAction.asObservable()
+    }
+    
+    init(menuResponder: TAOpenLeftMenuResponder) {
+        _menuResponder = menuResponder
+    }
+    
 }
 
 extension TAHomeViewModel {
     
     @objc func actMenuButton() {
-        navigationAction.onNext(.present(screen: .leftMenu))
-    }
-    
-}
-
-// MARK: - TALeftMenuResponsder
-
-extension TAHomeViewModel: TALeftMenuResponsder {
-    
-    func goToNextScreen(screen: TALeftMenuNavigationScreen) {
-        navigationAction.onNext(.present(screen: .leftMenuScreen(screen)))
+        _menuResponder.goToLeftMenu()
+//        _navigationAction.onNext(.present(screen: .leftMenu))
     }
     
 }

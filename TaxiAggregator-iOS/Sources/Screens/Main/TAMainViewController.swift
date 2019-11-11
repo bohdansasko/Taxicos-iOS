@@ -16,7 +16,8 @@ final class TAMainViewController: TABaseViewController {
     
     private var homeViewController      : UIViewController?
     private var onboardingViewController: TABaseViewController?
-    
+    private var leftMenuViewController  : UINavigationController?
+
     init(viewModel: TAMainViewModel, mainFactory: TAMainFactory) {
         self.viewModel = viewModel
         self.mainFactory = mainFactory
@@ -30,6 +31,8 @@ final class TAMainViewController: TABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.navigationController?.delegate = self
         subscribe(to: viewModel.navigationAction)
     }
 
@@ -61,6 +64,7 @@ private extension TAMainViewController {
         switch screen {
         case .home:
             self.remove(child: onboardingViewController)
+            onboardingViewController = nil
             guard homeViewController == nil else {
                 return
             }
@@ -72,6 +76,25 @@ private extension TAMainViewController {
             }
             onboardingViewController = mainFactory.makeOnboardingViewController()
             add(child: onboardingViewController!)
+        case .leftMenu:
+            guard leftMenuViewController == nil else {
+                self.present(leftMenuViewController!, animated: true, completion: nil)
+                return
+            }
+            leftMenuViewController = mainFactory.makeLeftMenuNavigationController()
+            self.present(leftMenuViewController!, animated: true, completion: nil)
+        }
+    }
+    
+}
+
+extension TAMainViewController: UINavigationControllerDelegate {
+
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if viewController is TAMainViewController {
+            navigationController.setNavigationBarHidden(true, animated: false)
+        } else if navigationController.isNavigationBarHidden {
+            navigationController.setNavigationBarHidden(false, animated: false)
         }
     }
     

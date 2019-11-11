@@ -35,21 +35,10 @@ class TABaseViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-}
-
-// MARK: - Navigation
-
-extension TABaseViewController {
-    
-    func clearNavigationBar() {
-        guard let navBar = navigationController?.navigationBar else {
-            assertionFailure()
-            return
-        }
-        navBar.shadowImage = UIImage()
-        navBar.setBackgroundImage(UIImage(), for: .default)
-        navBar.backgroundColor = .clear
-        navBar.isTranslucent = true
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = " "
     }
     
 }
