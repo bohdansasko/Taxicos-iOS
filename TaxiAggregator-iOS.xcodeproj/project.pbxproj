@@ -29,6 +29,7 @@
 		207E5D122377437800A99C25 /* TAUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E5D112377437800A99C25 /* TAUserSession.swift */; };
 		207E5D142377441300A99C25 /* TARemoteUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E5D132377441300A99C25 /* TARemoteUserSession.swift */; };
 		207E5D162377445B00A99C25 /* TAUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E5D152377445B00A99C25 /* TAUserProfile.swift */; };
+		207E6165237A341D00476379 /* TAMainNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E6164237A341D00476379 /* TAMainNavigationScreen.swift */; };
 		2096AC1A2374A32F005BD7EC /* HelveticaNeue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2096AC192374A32E005BD7EC /* HelveticaNeue.ttf */; };
 		209C29672373F801002D8418 /* TAHomeDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C29662373F801002D8418 /* TAHomeDependencyContainer.swift */; };
 		209C29692373F88F002D8418 /* TAOnboardingDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C29682373F88F002D8418 /* TAOnboardingDependencyContainer.swift */; };
@@ -111,6 +112,7 @@
 		207E5D112377437800A99C25 /* TAUserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAUserSession.swift; sourceTree = "<group>"; };
 		207E5D132377441300A99C25 /* TARemoteUserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TARemoteUserSession.swift; sourceTree = "<group>"; };
 		207E5D152377445B00A99C25 /* TAUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAUserProfile.swift; sourceTree = "<group>"; };
+		207E6164237A341D00476379 /* TAMainNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainNavigationScreen.swift; sourceTree = "<group>"; };
 		2096AC192374A32E005BD7EC /* HelveticaNeue.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HelveticaNeue.ttf; sourceTree = "<group>"; };
 		209C29662373F801002D8418 /* TAHomeDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAHomeDependencyContainer.swift; sourceTree = "<group>"; };
 		209C29682373F88F002D8418 /* TAOnboardingDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingDependencyContainer.swift; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 				9794DE0923741D2F0077D03A /* TAMainRootView.swift */,
 				9794DE0723741D260077D03A /* TAMainViewController.swift */,
 				9794DE0523741D0E0077D03A /* TAMainViewModel.swift */,
+				207E6164237A341D00476379 /* TAMainNavigationScreen.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				972D23F12375A92700B19BBE /* TAOnboardingPageRootView.swift in Sources */,
 				9794DE032374100D0077D03A /* TAHomeViewController.swift in Sources */,
 				20587B58236EAF1500E661E9 /* TASavedAddressesRootView.swift in Sources */,
+				207E6165237A341D00476379 /* TAMainNavigationScreen.swift in Sources */,
 				20C8AAA4236DE07A005E6590 /* TAAppDependencyContainer.swift in Sources */,
 				200B5B04237627E100E2E37D /* TARootView.swift in Sources */,
 				972D24022375CE2000B19BBE /* TAOnboardingPageType.swift in Sources */,

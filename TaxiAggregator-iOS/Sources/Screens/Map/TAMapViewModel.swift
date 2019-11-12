@@ -11,26 +11,50 @@ import RxSwift
 
 final class TAMapViewModel: NSObject {
     
-    private let locationManager  = CLLocationManager()
+    // MARK: - Private properties
+    
+    private let _locationManager           = CLLocationManager()
+    
+    private let _myLocation                = PublishSubject<CLLocation>()
+    private let _isMyLocationEnabled       = BehaviorSubject<Bool>(value: true)
+    private let _isVisibleMyLocationButton = BehaviorSubject<Bool>(value: true)
+    
+    // MARK: - Getters
+    
+    var myLocation: Observable<CLLocation> {
+        return _myLocation.asObservable()
+    }
+    
+    var isMyLocationEnabled: Observable<Bool> {
+        return _isMyLocationEnabled.asObservable()
+    }
+    
+    var isVisibleMyLocationButton: Observable<Bool> {
+        return _isVisibleMyLocationButton.asObservable()
+    }
 
-    let myLocation                = PublishSubject<CLLocation>()
-//    let myAddress                 = PublishSubject<CLLocation>()
-    let isMyLocationEnabled       = BehaviorSubject<Bool>(value: true)
-    let isVisibleMyLocationButton = BehaviorSubject<Bool>(value: true)
-
+    // MARK: - Methods
+    
     override init() {
         super.init()
         
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        _locationManager.delegate = self
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
+
+}
+
+// MARK: - Help methods
+
+extension TAMapViewModel {
     
     func requestLocationIfNeeded() {
         if CLLocationManager.locationServicesEnabled() {
             return
         }
-        locationManager.requestLocation()
+        _locationManager.requestLocation()
     }
+    
     
 }
 
@@ -39,7 +63,7 @@ final class TAMapViewModel: NSObject {
 extension TAMapViewModel {
     
     @objc func actMyLocation(_ sender: UIButton) {
-        locationManager.requestLocation()
+        _locationManager.requestLocation()
     }
     
 }
@@ -52,14 +76,14 @@ extension TAMapViewModel: CLLocationManagerDelegate {
         guard status == .authorizedAlways || status == .authorizedWhenInUse else {
             return
         }
-        locationManager.startUpdatingLocation()
+        _locationManager.startUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else {
             return
         }
-        myLocation.onNext(location)
+        _myLocation.onNext(location)
         manager.stopUpdatingLocation()
     }
     

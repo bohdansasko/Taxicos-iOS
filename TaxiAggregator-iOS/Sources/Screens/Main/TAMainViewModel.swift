@@ -12,35 +12,12 @@ protocol TAOpenLeftMenuResponder {
     func goToLeftMenu()
 }
 
-enum TAMainNavigationScreen {
-    case home(userSession: TAUserSession)
-    case onboarding
-    case leftMenu
-}
-
-// MARK: - Equatable
-
-extension TAMainNavigationScreen: Equatable {
-    
-    static func == (lhs: TAMainNavigationScreen, rhs: TAMainNavigationScreen) -> Bool {
-        switch (lhs, rhs) {
-        case (.onboarding, .onboarding),
-             (.leftMenu, .leftMenu):
-            return true
-        case let (.home(l), .home(r)):
-            return l == r
-        case (.onboarding, _),
-             (.home, _),
-             (.leftMenu, _):
-            return false
-        }
-    }
-    
-}
-
 typealias TAMainNavigationAction = TANavigationAction<TAMainNavigationScreen>
 
 final class TAMainViewModel {
+    
+    // MARK: - Properties
+    
     private let _userSessionRepository: TAUserSessionRepository
     private var _userSession: TAUserSession!
     private let _navigationAction = PublishSubject<TAMainNavigationAction>()
@@ -49,14 +26,21 @@ final class TAMainViewModel {
         return _navigationAction.asObservable()
     }
     
+    // MARK: - Methods
     
     init(userSessionRepository: TAUserSessionRepository) {
         _userSessionRepository = userSessionRepository
-        
-        loadUserSession()
+        // ...
+        fetchUserSession()
     }
     
-    func loadUserSession() {
+}
+
+// MARK: - Screen navigation
+
+private extension TAMainViewModel {
+    
+    func fetchUserSession() {
         _userSessionRepository.readUserSession()
             .done(goToNextScreen(userSession:))
             .catch { error in
@@ -65,6 +49,12 @@ final class TAMainViewModel {
                 log.debug(errorMessage)
             }
     }
+    
+}
+
+// MARK: - Screen navigation
+
+private extension TAMainViewModel {
     
     func goToNextScreen(userSession: TAUserSession?) {
         switch userSession {

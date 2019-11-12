@@ -42,3 +42,31 @@ class TABaseViewController: UIViewController {
     }
     
 }
+
+// MARK: - Handle navigation bar visibility
+
+extension TABaseViewController {
+
+    func hideNavigationBar(animated: Bool) {
+        let isNavigationBarHidden = navigationController?.isNavigationBarHidden ?? true
+        guard !isNavigationBarHidden else {
+            return
+        }
+        navigationController!.setNavigationBarHidden(true, animated: animated)
+    }
+
+    func showNavigationBar(animated: Bool) {
+        guard let _ = navigationController?.isNavigationBarHidden else {
+            return
+        }
+
+        guard animated else {
+            navigationController!.setNavigationBarHidden(false, animated: animated)
+            return
+        }
+        transitionCoordinator?.animate(alongsideTransition: { _ in
+            self.navigationController!.setNavigationBarHidden(false, animated: animated)
+        })
+    }
+
+}

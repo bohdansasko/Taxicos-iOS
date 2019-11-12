@@ -11,8 +11,13 @@ import RxSwift
 import StoreKit
 
 final class TALeftMenuViewController: TABaseViewController {
+    
+    // MARK: - Properties
+    
     private let viewModel: TALeftMenuViewModel
     private let leftMenuFactory: TALeftMenuFactory
+    
+    // MARK: - View lifecycle
     
     init(viewModel: TALeftMenuViewModel, leftMenuFactory: TALeftMenuFactory) {
         self.viewModel       = viewModel
@@ -50,7 +55,13 @@ private extension TALeftMenuViewController {
             })
             .disposed(by: disposeBag)
     }
-    
+
+}
+
+// MARK: - Presentation view controllers
+
+private extension TALeftMenuViewController {
+
     func present(screen: TALeftMenuNavigationScreen) {
         switch screen {
         case .savedAddresses:
@@ -68,4 +79,5 @@ private extension TALeftMenuViewController {
             SKStoreReviewController.requestReview()
         }
     }
+    
 }

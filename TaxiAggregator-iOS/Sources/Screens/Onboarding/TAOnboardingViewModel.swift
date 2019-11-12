@@ -13,20 +13,37 @@ protocol TAOnboardingResponder {
 }
 
 final class TAOnboardingViewModel {
-    let kStartNumberPage  = 1
-    let kNumberOfPages    = 3
-    let currentPageNumber = BehaviorSubject<Int>(value: 1)
-    let onboardingResponder: TAOnboardingResponder
     
-    var isLastPage: Bool {
-        guard let currentPN = try? currentPageNumber.value() else {
-            return false
-        }
-        return currentPN == kNumberOfPages
+    // MARK: - Properties
+    
+            let kStartNumberPage   = 1
+            let kNumberOfPages     = 3
+    private let _currentPageNumber = BehaviorSubject<Int>(value: 1)
+    fileprivate let onboardingResponder: TAOnboardingResponder
+    
+    // MARK: - Observable getters
+    
+    var currentPageNumber: Observable<Int> {
+        return _currentPageNumber.asObservable()
     }
+    
+    // MARK: - Getters
     
     init(onboardingResponder: TAOnboardingResponder) {
         self.onboardingResponder = onboardingResponder
+    }
+    
+}
+
+// MARK: - Getters
+
+extension TAOnboardingViewModel {
+    
+    var isLastPage: Bool {
+        guard let currentPN = try? _currentPageNumber.value() else {
+            return false
+        }
+        return currentPN == kNumberOfPages
     }
     
 }
@@ -55,12 +72,12 @@ extension TAOnboardingViewModel {
 extension TAOnboardingViewModel {
 
     func moveToNextPage() {
-        let currentPageIdx = try! currentPageNumber.value()
+        let currentPageIdx = try! _currentPageNumber.value()
         moveTo(page: currentPageIdx + 1)
     }
     
     func moveToPrevPage() {
-        let currentPageIdx = try! currentPageNumber.value()
+        let currentPageIdx = try! _currentPageNumber.value()
         moveTo(page: currentPageIdx - 1)
     }
     
@@ -73,7 +90,7 @@ extension TAOnboardingViewModel {
             nextPageIdx = kNumberOfPages
         }
         
-        currentPageNumber.onNext(nextPageIdx)
+        _currentPageNumber.onNext(nextPageIdx)
     }
     
 }

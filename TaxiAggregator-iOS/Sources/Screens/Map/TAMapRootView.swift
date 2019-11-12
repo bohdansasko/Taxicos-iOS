@@ -12,8 +12,12 @@ import RxSwift
 import RxCocoa
 
 final class TAMapRootView: TABaseView {
-    private let viewModel: TAMapViewModel
-    private var kMapZoom: Float { return 15 }
+    
+    // MARK: - Models
+    
+    fileprivate let viewModel: TAMapViewModel
+    
+    // MARK: - UI
     
     fileprivate let mapView: GMSMapView = {
         let map = GMSMapView()
@@ -26,6 +30,8 @@ final class TAMapRootView: TABaseView {
         btn.contentMode = .scaleAspectFit
         return btn
     }()
+    
+    // MARK: - Methods
     
     init(frame: CGRect = .zero, viewModel: TAMapViewModel) {
         self.viewModel = viewModel
@@ -60,7 +66,7 @@ private extension TAMapRootView {
     
 }
 
-// MARK: - Setup
+// MARK: - Subscriptions
 
 private extension TAMapRootView {
     
@@ -86,7 +92,7 @@ private extension TAMapRootView {
                 
                 let cameraPos = GMSCameraPosition(
                     target: location.coordinate,
-                    zoom: self.kMapZoom
+                    zoom: TAConfig.kMapZoom
                 )
                 self.mapView.animate(to: cameraPos)
             })

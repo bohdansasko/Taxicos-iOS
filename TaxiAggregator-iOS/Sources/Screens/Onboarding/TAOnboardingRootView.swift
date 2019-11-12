@@ -10,10 +10,15 @@ import UIKit
 import CHIPageControl
 
 final class TAOnboardingRootView: TABaseView {
+    
+    // MARK: - Properties
+    
     let viewModel: TAOnboardingViewModel
     let pages: [UIViewController]
     
-    let pageController: UIPageViewController = {
+    // MARK: - UI
+    
+    private let pageController: UIPageViewController = {
         let pc = UIPageViewController(
             transitionStyle: .scroll,
             navigationOrientation: .horizontal,
@@ -22,7 +27,7 @@ final class TAOnboardingRootView: TABaseView {
         return pc
     }()
     
-    let pageControl: CHIPageControlJaloro = {
+    private let pageControl: CHIPageControlJaloro = {
         let pc = CHIPageControlJaloro()
         pc.elementWidth  = 25
         pc.elementHeight = 6
@@ -33,31 +38,33 @@ final class TAOnboardingRootView: TABaseView {
         return pc
     }()
     
-    let skipButton: UIButton = {
+    private let skipButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("ONBOARDING_SKIP".localized, for: .normal)
         return btn
     }()
 
-    let nextButton: UIButton = {
+    private let nextButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("ONBOARDING_NEXT".localized, for: .normal)
         return btn
     }()
     
-    let skipNextButtonsSV: UIStackView = {
+    private let skipNextButtonsSV: UIStackView = {
         let sv = UIStackView()
         sv.axis = .horizontal
         sv.spacing = 30
         return sv
     }()
     
-    let doneButton: UIButton = {
+    private let doneButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("ONBOARDING_DONE".localized, for: .normal)
         return btn
     }()
 
+    // MARK: - View lifecycle
+    
     init(frame: CGRect = .zero, viewModel: TAOnboardingViewModel, pages: [UIViewController]) {
         self.viewModel = viewModel
         self.pages     = pages
@@ -74,7 +81,7 @@ final class TAOnboardingRootView: TABaseView {
 
 // MARK: - Setup
 
-extension TAOnboardingRootView {
+private extension TAOnboardingRootView {
     
     func setupLayout() {
         addSubview(pageController.view)

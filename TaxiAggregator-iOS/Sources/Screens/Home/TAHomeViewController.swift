@@ -10,11 +10,17 @@ import UIKit
 import RxSwift
 import StoreKit
 
-final class TAHomeViewController: TABaseViewController {
+final class TAHomeViewController: TABaseViewController, TARootView {
+    typealias RootViewType = TAHomeRootView
+
+    // MARK: - Properties
+
     fileprivate let viewModel: TAHomeViewModel
     fileprivate let homeFactory: TAHomeFactory
 
     fileprivate var leftMenuViewController: UINavigationController?
+
+    // MARK: - View lifecycle
 
     init(viewModel: TAHomeViewModel, homeFactory: TAHomeFactory) {
         self.viewModel = viewModel
@@ -23,7 +29,7 @@ final class TAHomeViewController: TABaseViewController {
     }
 
     override func loadView() {
-        view = TAHomeRootView(viewModel: viewModel)
+        view = RootViewType(viewModel: viewModel)
     }
     
     override func viewDidLoad() {
@@ -57,81 +63,14 @@ private extension TAHomeViewController {
 // MARK: - View controllers presentation
 
 private extension TAHomeViewController {
-    
-    func present(screen: TAHomeNavigationScreen) {
-        switch screen {
-        case .leftMenu:
-            self.presentLeftMenuViewController()
-        case .leftMenuScreen(let screen):
-            self.presentViewController(menu: screen)
-        }
-    }
-    
+
     func addMapViewController() {
         let mapViewController = homeFactory.makeMapViewController()
-        add(child: mapViewController, to: (view as! TAHomeRootView).mapContainerView)
+        add(child: mapViewController, to: rootView.mapContainerView)
     }
     
-    func presentLeftMenuViewController() {
-//        guard leftMenuViewController == nil else {
-//            return
-//        }
-//        leftMenuViewController = homeFactory.makeLeftMenuNavigationController()
-//        self.present(leftMenuViewController!, animated: true, completion: nil)
-    }
-    
-    func presentViewController(menu screen: TALeftMenuNavigationScreen) {
-//        switch screen {
-//        case .savedAddresses:
-//            break
-////            guard let navController = navigationController else {
-////                assertionFailure("required")
-////                return
-////            }
-////            let vc = homeFactory.makeSavedAddressesViewController()
-////            navController.pushViewController(vc, animated: true)
-//        case .shareApp:
-//            break
-//        case .feedback:
-//            break
-//        case .rateApp:
-//            SKStoreReviewController.requestReview()
-//        }
-    }
-    
-}
-
-// MARK: - Navigation bar visibility
-
-private extension TAHomeViewController {
-    
-    func hideOrShowNavigationBarIfNeeded(for screen: TALeftMenuNavigationScreen, animated: Bool) {
-        if screen.hidesNavigationBar {
-            hideNavigationBar(animated: animated)
-        } else {
-            showNavigationBar(animated: animated)
-        }
-    }
-    
-    func homeScreen(assosiatedWith vc: UIViewController) -> TALeftMenuNavigationScreen? {
-        switch vc {
-        case is TASavedAddressesViewController:
-            return .savedAddresses
-        case is TAMapViewController:
-            return .savedAddresses
-        default:
-            return nil
-        }
-    }
-
-    func hideNavigationBar(animated: Bool) {
-        navigationController!.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    func showNavigationBar(animated: Bool) {
-        if navigationController!.isNavigationBarHidden {
-            navigationController!.setNavigationBarHidden(false, animated: animated)
-        }
+    func present(screen: TAHomeNavigationScreen) {
+        // do nothing
     }
     
 }
@@ -139,15 +78,13 @@ private extension TAHomeViewController {
 // MARK: - UINavigationControllerDelegate
 
 extension TAHomeViewController: UINavigationControllerDelegate {
-    
+
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        guard let screen = homeScreen(assosiatedWith: viewController) else {
-            if viewController is TAHomeViewController {
-                hideNavigationBar(animated: false)
-            }
+        if viewController is TAHomeViewController {
+            hideNavigationBar(animated: animated)
             return
         }
-        hideOrShowNavigationBarIfNeeded(for: screen, animated: animated)
+        showNavigationBar(animated: animated)
     }
     
 }

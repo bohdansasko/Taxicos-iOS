@@ -15,7 +15,7 @@ final class TAMapDependencyContainer {
 extension TAMapDependencyContainer {
     
     func makeMapViewController() -> TAMapViewController {
-        let viewModel            = makeMapViewModel()
+        let viewModel = makeMapViewModel()
         let vc = TAMapViewController(viewModel: viewModel)
         return vc
     }

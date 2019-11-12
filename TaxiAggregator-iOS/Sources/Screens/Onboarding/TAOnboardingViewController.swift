@@ -9,8 +9,13 @@
 import UIKit
 
 final class TAOnboardingViewController: TABaseViewController {
-    let viewModel: TAOnboardingViewModel
-    let onboardingFactory: TAOnboardingFactory
+    
+    // MARK: - Properties
+    
+    private let viewModel: TAOnboardingViewModel
+    private let onboardingFactory: TAOnboardingFactory
+    
+    // MARK: - View lifecycle
     
     init(viewModel: TAOnboardingViewModel, onboardingFactory: TAOnboardingFactory) {
         self.viewModel = viewModel

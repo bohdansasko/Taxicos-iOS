@@ -13,7 +13,12 @@ protocol TAHomeFactory {
 }
 
 final class TAHomeDependencyContainer {
+    
+    // MARK: - Properties
+    
     private let _viewModel: TAHomeViewModel
+    
+    // MARK: - Methods
     
     init (mainViewModel: TAMainViewModel) {
         func makeHomeViewModel() -> TAHomeViewModel {
@@ -21,7 +26,13 @@ final class TAHomeDependencyContainer {
         }
         _viewModel = makeHomeViewModel()
     }
+    
+}
 
+// MARK: -
+
+extension TAHomeDependencyContainer {
+    
     func makeHomeViewController() -> TAHomeViewController {
         let vc = TAHomeViewController(
             viewModel: _viewModel,

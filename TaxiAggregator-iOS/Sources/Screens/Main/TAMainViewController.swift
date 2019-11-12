@@ -11,6 +11,9 @@ import RxSwift
 import StoreKit
 
 final class TAMainViewController: TABaseViewController {
+    
+    // MARK: - Properties
+    
     private let viewModel: TAMainViewModel
     private let mainFactory: TAMainFactory
     
@@ -18,6 +21,8 @@ final class TAMainViewController: TABaseViewController {
     private var onboardingViewController: TABaseViewController?
     private var leftMenuViewController  : UINavigationController?
 
+    // MARK: - View lifecycle
+    
     init(viewModel: TAMainViewModel, mainFactory: TAMainFactory) {
         self.viewModel = viewModel
         self.mainFactory = mainFactory
@@ -32,7 +37,7 @@ final class TAMainViewController: TABaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.delegate = self
+        self.navigationController!.delegate = self
         subscribe(to: viewModel.navigationAction)
     }
 
@@ -88,14 +93,17 @@ private extension TAMainViewController {
     
 }
 
+// MARK: - UINavigationControllerDelegate
+
 extension TAMainViewController: UINavigationControllerDelegate {
 
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        if viewController is TAMainViewController {
-            navigationController.setNavigationBarHidden(true, animated: false)
-        } else if navigationController.isNavigationBarHidden {
-            navigationController.setNavigationBarHidden(false, animated: false)
+        let isHideNavigationBar = viewController is TAMainViewController
+        guard isHideNavigationBar else {
+            showNavigationBar(animated: animated)
+            return
         }
+        hideNavigationBar(animated: animated)
     }
     
 }

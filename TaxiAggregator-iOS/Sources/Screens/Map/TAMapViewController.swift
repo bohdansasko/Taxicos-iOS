@@ -12,9 +12,9 @@ import RxSwift
 
 final class TAMapViewController: TABaseViewController {
     
-    // MARK: - Internal variables
+    // MARK: - Models
     
-    let viewModel: TAMapViewModel
+    private let viewModel: TAMapViewModel
     
     // MARK: - View lifecycle
     

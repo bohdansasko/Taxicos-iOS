@@ -9,11 +9,11 @@
 import UIKit
 
 final class TAHomeRootView: TABaseView {
-    let viewModel: TAHomeViewModel
+    fileprivate let viewModel: TAHomeViewModel
     
     // MARK: - UI Elements
     
-    let pickupDropoffView: TAPickupDropoffNavigationBar = {
+    fileprivate let pickupDropoffView: TAPickupDropoffNavigationBar = {
         return TAPickupDropoffNavigationBar()
     }()
     
@@ -37,9 +37,9 @@ final class TAHomeRootView: TABaseView {
     
 }
 
-// MARK: - TAThemeable
+// MARK: - Setup
 
-extension TAHomeRootView {
+private extension TAHomeRootView {
     
     func setupLayout() {
         addSubview(pickupDropoffView)
