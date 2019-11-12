@@ -9,7 +9,7 @@
 import UIKit
 
 final class TASavedAddressesViewController: TABaseViewController {
-    let viewModel: TASavedAddressesViewModel
+    private let viewModel: TASavedAddressesViewModel
     
     init(viewModel: TASavedAddressesViewModel) {
         self.viewModel = viewModel

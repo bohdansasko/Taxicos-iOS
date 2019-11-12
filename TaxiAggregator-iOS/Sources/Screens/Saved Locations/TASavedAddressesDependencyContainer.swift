@@ -10,6 +10,10 @@ import Foundation
 
 final class TASavedAddressesDependencyContainer {
     
+}
+
+extension TASavedAddressesDependencyContainer {
+    
     func makeSavedAddressesViewController() -> TASavedAddressesViewController {
         let viewModel = makeSavedAddressesViewModel()
         let vc = TASavedAddressesViewController(viewModel: viewModel)

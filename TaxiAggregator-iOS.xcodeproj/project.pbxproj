@@ -58,6 +58,8 @@
 		20ED9D00236F49B800ED3FBB /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */; };
 		20F0D1CC2378C13A0038A31C /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20F0D1CB2378C13A0038A31C /* Rubik-Medium.ttf */; };
 		20F0D1CE2378C7B20038A31C /* TANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0D1CD2378C7B20038A31C /* TANavigationController.swift */; };
+		97202199237ACD0900C55E21 /* TAAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97202198237ACD0900C55E21 /* TAAddressCell.swift */; };
+		9720219B237ACDA400C55E21 /* TAAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720219A237ACDA400C55E21 /* TAAddressModel.swift */; };
 		972D23EF2375A91B00B19BBE /* TAOnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23EE2375A91B00B19BBE /* TAOnboardingPageViewController.swift */; };
 		972D23F12375A92700B19BBE /* TAOnboardingPageRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23F02375A92700B19BBE /* TAOnboardingPageRootView.swift */; };
 		972D23F52375AC2900B19BBE /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23F42375AC2900B19BBE /* UIColor+Ext.swift */; };
@@ -141,6 +143,8 @@
 		20ED9CFF236F49B700ED3FBB /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		20F0D1CB2378C13A0038A31C /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		20F0D1CD2378C7B20038A31C /* TANavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TANavigationController.swift; sourceTree = "<group>"; };
+		97202198237ACD0900C55E21 /* TAAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAAddressCell.swift; sourceTree = "<group>"; };
+		9720219A237ACDA400C55E21 /* TAAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAAddressModel.swift; sourceTree = "<group>"; };
 		972D23EE2375A91B00B19BBE /* TAOnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingPageViewController.swift; sourceTree = "<group>"; };
 		972D23F02375A92700B19BBE /* TAOnboardingPageRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingPageRootView.swift; sourceTree = "<group>"; };
 		972D23F42375AC2900B19BBE /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 		20C8AAC0236DFF91005E6590 /* Saved Locations */ = {
 			isa = PBXGroup;
 			children = (
+				97202198237ACD0900C55E21 /* TAAddressCell.swift */,
+				9720219A237ACDA400C55E21 /* TAAddressModel.swift */,
 				9794DE0B23741DFC0077D03A /* TASavedAddressesDependencyContainer.swift */,
 				20587B57236EAF1500E661E9 /* TASavedAddressesRootView.swift */,
 				20C8AAC1236DFFAD005E6590 /* TASavedAddressesViewController.swift */,
@@ -678,6 +684,7 @@
 				200AEA932371FD6A00624F53 /* TALeftMenuNavigationScreen.swift in Sources */,
 				202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */,
 				20DC11D52370BC86004F323E /* UIApplication+Ext.swift in Sources */,
+				97202199237ACD0900C55E21 /* TAAddressCell.swift in Sources */,
 				972D24002375CE0400B19BBE /* TAOnboardingFactory.swift in Sources */,
 				20DC11DB2370BC86004F323E /* UICollectionView+Ext.swift in Sources */,
 				9794DE1023741EE70077D03A /* TALeftMenuDependencyContainer.swift in Sources */,
@@ -685,6 +692,7 @@
 				20DC11DD2370BC86004F323E /* UIStackView+Ext.swift in Sources */,
 				9794DE012374100D0077D03A /* TAHomeRootView.swift in Sources */,
 				9797E7B223718FE4008AC393 /* TAThemeProvider.swift in Sources */,
+				9720219B237ACDA400C55E21 /* TAAddressModel.swift in Sources */,
 				20DC11C72370BC63004F323E /* String+Extension.swift in Sources */,
 				972D23F52375AC2900B19BBE /* UIColor+Ext.swift in Sources */,
 				972D23EF2375A91B00B19BBE /* TAOnboardingPageViewController.swift in Sources */,
