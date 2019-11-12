@@ -9,6 +9,11 @@
 import Foundation
 
 final class TASavedAddressesDependencyContainer {
+    private let _dataStore: TASavedAddressesDataStore
+    
+    init(dataStore: TASavedAddressesDataStore) {
+        _dataStore = dataStore
+    }
     
 }
 
@@ -21,7 +26,7 @@ extension TASavedAddressesDependencyContainer {
     }
 
     private func makeSavedAddressesViewModel() -> TASavedAddressesViewModel {
-        return TASavedAddressesViewModel()
+        return TASavedAddressesViewModel(dataStore: _dataStore)
     }
     
 }

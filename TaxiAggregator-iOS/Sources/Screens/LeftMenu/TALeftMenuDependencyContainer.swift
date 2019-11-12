@@ -49,7 +49,8 @@ extension TALeftMenuDependencyContainer {
 extension TALeftMenuDependencyContainer: TALeftMenuFactory {
     
     func makeSavedAddressesViewController() -> TASavedAddressesViewController {
-        let dependencyContainer = TASavedAddressesDependencyContainer()
+        let dataStore = TAFakeSavedAddressesDataStore()
+        let dependencyContainer = TASavedAddressesDependencyContainer(dataStore: dataStore)
         let vc = dependencyContainer.makeSavedAddressesViewController()
         return vc
     }

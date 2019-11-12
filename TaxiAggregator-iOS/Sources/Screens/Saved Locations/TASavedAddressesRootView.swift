@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class TASavedAddressesRootView: TABaseView {
     
@@ -34,9 +35,17 @@ final class TASavedAddressesRootView: TABaseView {
         
         setupLayout()
         themeProvider.register(observer: self)
+        
+        subscribeToActivityIndicator()
+        subscribe(to: viewModel.items)
     }
     
-    
+}
+
+// MARK: - Setup
+
+private extension TASavedAddressesRootView {
+        
     func setupLayout() {
         addressesTable.dataSource = self
         addressesTable.delegate = self
@@ -46,9 +55,35 @@ final class TASavedAddressesRootView: TABaseView {
             $0.top.equalToSuperview().offset(20)
             $0.left.right.bottom.equalToSuperview()
         }
+        
+        addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
     }
+
 }
 
+// MARK: - Subscriptions
+
+extension TASavedAddressesRootView {
+    
+    func subscribe(to items: Observable<[TAAddressModel]>) {
+        items.subscribe(onNext: { [weak self] items in
+            guard let self = self else { return }
+            self.addressesTable.reloadData()
+        })
+        .disposed(by: disposeBag)
+    }
+    
+    func subscribeToActivityIndicator() {
+        viewModel.activityIndicatorAnimating
+            .asDriver(onErrorJustReturn: false)
+            .drive(activityIndicator.rx.isAnimating)
+            .disposed(by: disposeBag)
+    }
+    
+}
 
 // MARK: - TAThemeable
 

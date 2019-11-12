@@ -24,6 +24,7 @@ final class TASavedAddressesViewController: TABaseViewController {
         super.viewDidLoad()
 
         navigationItem.title = "SAVED_LOCATIONS_TITLE".localized
+        viewModel.fetchAddresses()
     }
 
 }

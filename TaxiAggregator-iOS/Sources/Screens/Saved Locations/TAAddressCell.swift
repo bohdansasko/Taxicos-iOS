@@ -81,7 +81,7 @@ private extension TAAddressCell {
         }
         
         locationIconView.snp.makeConstraints {
-            $0.centerY.equalTo(heartButton)
+            $0.centerY.equalTo(heartButton).inset(1)
             $0.centerY.equalTo(titleLabel).offset(1)
         }
     }

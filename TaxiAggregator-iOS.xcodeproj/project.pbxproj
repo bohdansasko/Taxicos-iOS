@@ -45,6 +45,8 @@
 		20C8AAC7236E0183005E6590 /* TAOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */; };
 		20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */; };
 		20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AACB236EAAAC005E6590 /* TABaseView.swift */; };
+		20CF3F4B237B615100EBC7BF /* TASavedAddressesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF3F4A237B615100EBC7BF /* TASavedAddressesDataStore.swift */; };
+		20CF3F4F237B625500EBC7BF /* TAFakeSavedAddressesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF3F4E237B625500EBC7BF /* TAFakeSavedAddressesDataStore.swift */; };
 		20DC11C32370BC04004F323E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11C22370BC04004F323E /* Logger.swift */; };
 		20DC11C52370BC42004F323E /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11C42370BC42004F323E /* Date+Ext.swift */; };
 		20DC11C72370BC63004F323E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC11C62370BC63004F323E /* String+Extension.swift */; };
@@ -130,6 +132,8 @@
 		20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingViewController.swift; sourceTree = "<group>"; };
 		20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingViewModel.swift; sourceTree = "<group>"; };
 		20C8AACB236EAAAC005E6590 /* TABaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABaseView.swift; sourceTree = "<group>"; };
+		20CF3F4A237B615100EBC7BF /* TASavedAddressesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASavedAddressesDataStore.swift; sourceTree = "<group>"; };
+		20CF3F4E237B625500EBC7BF /* TAFakeSavedAddressesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFakeSavedAddressesDataStore.swift; sourceTree = "<group>"; };
 		20DC11C22370BC04004F323E /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		20DC11C42370BC42004F323E /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		20DC11C62370BC63004F323E /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -193,13 +197,12 @@
 			isa = PBXGroup;
 			children = (
 				207E5D172377461100A99C25 /* Persistent */,
-				200AEA892371E9D000624F53 /* TAAuthRemoteAPI.swift */,
-				200AEA8B2371E9D000624F53 /* TAAppUserSessionRepository.swift */,
-				20EC5FD323784E98003817FD /* TAUserSessionRepository.swift */,
+				20CF3F4C237B616100EBC7BF /* UserSessionRepository */,
 				207E5D112377437800A99C25 /* TAUserSession.swift */,
 				207E5D132377441300A99C25 /* TARemoteUserSession.swift */,
 				207E5D152377445B00A99C25 /* TAUserProfile.swift */,
 				2041CB96237860FD00A6BC60 /* TAFeatures.swift */,
+				200AEA892371E9D000624F53 /* TAAuthRemoteAPI.swift */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			children = (
 				2041CB93237860D100A6BC60 /* UserSession */,
 				2041CB982378610E00A6BC60 /* Features */,
+				20CF3F4D237B61C200EBC7BF /* SavedAddresses */,
 			);
 			path = Persistent;
 			sourceTree = "<group>";
@@ -327,9 +331,9 @@
 		20C8AAC0236DFF91005E6590 /* Saved Locations */ = {
 			isa = PBXGroup;
 			children = (
+				9794DE0B23741DFC0077D03A /* TASavedAddressesDependencyContainer.swift */,
 				97202198237ACD0900C55E21 /* TAAddressCell.swift */,
 				9720219A237ACDA400C55E21 /* TAAddressModel.swift */,
-				9794DE0B23741DFC0077D03A /* TASavedAddressesDependencyContainer.swift */,
 				20587B57236EAF1500E661E9 /* TASavedAddressesRootView.swift */,
 				20C8AAC1236DFFAD005E6590 /* TASavedAddressesViewController.swift */,
 				20C8AAC3236DFFB5005E6590 /* TASavedAddressesViewModel.swift */,
@@ -362,6 +366,24 @@
 				20F0D1CD2378C7B20038A31C /* TANavigationController.swift */,
 			);
 			path = TAUIKit;
+			sourceTree = "<group>";
+		};
+		20CF3F4C237B616100EBC7BF /* UserSessionRepository */ = {
+			isa = PBXGroup;
+			children = (
+				20EC5FD323784E98003817FD /* TAUserSessionRepository.swift */,
+				200AEA8B2371E9D000624F53 /* TAAppUserSessionRepository.swift */,
+			);
+			path = UserSessionRepository;
+			sourceTree = "<group>";
+		};
+		20CF3F4D237B61C200EBC7BF /* SavedAddresses */ = {
+			isa = PBXGroup;
+			children = (
+				20CF3F4A237B615100EBC7BF /* TASavedAddressesDataStore.swift */,
+				20CF3F4E237B625500EBC7BF /* TAFakeSavedAddressesDataStore.swift */,
+			);
+			path = SavedAddresses;
 			sourceTree = "<group>";
 		};
 		20DC11C82370BC86004F323E /* UIKit */ = {
@@ -658,6 +680,7 @@
 				9794DE0623741D0E0077D03A /* TAMainViewModel.swift in Sources */,
 				20587B60236EF1FA00E661E9 /* TAMenuItemType.swift in Sources */,
 				207E5D142377441300A99C25 /* TARemoteUserSession.swift in Sources */,
+				20CF3F4B237B615100EBC7BF /* TASavedAddressesDataStore.swift in Sources */,
 				9794DE022374100D0077D03A /* TAHomeViewModel.swift in Sources */,
 				9794DE0823741D260077D03A /* TAMainViewController.swift in Sources */,
 				20DC11C52370BC42004F323E /* Date+Ext.swift in Sources */,
@@ -697,6 +720,7 @@
 				972D23F52375AC2900B19BBE /* UIColor+Ext.swift in Sources */,
 				972D23EF2375A91B00B19BBE /* TAOnboardingPageViewController.swift in Sources */,
 				20587B5C236EAF3D00E661E9 /* TALeftMenuRootView.swift in Sources */,
+				20CF3F4F237B625500EBC7BF /* TAFakeSavedAddressesDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
