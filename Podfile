@@ -4,11 +4,11 @@ platform :ios, '11.0'
 target 'TaxiAggregator-iOS' do
   use_frameworks!
 
-  # Crashlytics
-  pod 'Firebase/Core'
-  pod 'Fabric'
-  pod 'Crashlytics'
-
+  # Fabric & Firebase analytics
+  pod 'Firebase/Analytics'
+  pod 'Fabric', '~> 1.10.2'
+  pod 'Crashlytics', '~> 3.14.0'
+  
   # JSON
   pod 'ObjectMapper', '~> 3.4'
   pod 'SwiftyJSON', '~> 5.0'

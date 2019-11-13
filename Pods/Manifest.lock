@@ -3,6 +3,8 @@ PODS:
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
   - Fabric (1.10.2)
+  - Firebase/Analytics (6.12.0):
+    - Firebase/Core
   - Firebase/Core (6.12.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.1.5)
@@ -101,9 +103,9 @@ PODS:
 
 DEPENDENCIES:
   - CHIPageControl/Jaloro
-  - Crashlytics
-  - Fabric
-  - Firebase/Core
+  - Crashlytics (~> 3.14.0)
+  - Fabric (~> 1.10.2)
+  - Firebase/Analytics
   - GoogleMaps
   - GooglePlaces
   - ObjectMapper (~> 3.4)
@@ -175,6 +177,6 @@ SPEC CHECKSUMS:
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 1919be612d42905fe681e75021828b97230ec2a3
+PODFILE CHECKSUM: 8e02367ef5cb3af5410cd3b6bf6f87a70768b123
 
 COCOAPODS: 1.8.0

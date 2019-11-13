@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>372925731618-71idti595bjgi1k5nfe7c9t9120ignh6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.372925731618-71idti595bjgi1k5nfe7c9t9120ignh6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyACPHIWoEdxs5RWDIYMOUP1I-r6AFiA7Zo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>372925731618</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.vinso.TaxiAggregator-iOS</string>
+	<key>PROJECT_ID</key>
+	<string>taxiaggregator-257914</string>
+	<key>STORAGE_BUCKET</key>
+	<string>taxiaggregator-257914.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:372925731618:ios:1658e4f985a48635318b7b</string>
+	<key>DATABASE_URL</key>
+	<string>https://taxiaggregator-257914.firebaseio.com</string>
+</dict>
+</plist>
