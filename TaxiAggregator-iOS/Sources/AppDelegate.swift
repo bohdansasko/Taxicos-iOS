@@ -9,7 +9,6 @@
 import UIKit
 import GoogleMaps
 import Firebase
-import Crashlytics
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,11 +23,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let mainVC = appDependencyContainer.makeMainViewController()
         setupWindow(with: mainVC)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-            Crashlytics.sharedInstance().crash()
-        }
-        
+
         return true
     }
 
