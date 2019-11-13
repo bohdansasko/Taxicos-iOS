@@ -82,6 +82,7 @@
 		9797E7B223718FE4008AC393 /* TAThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7B123718FE4008AC393 /* TAThemeProvider.swift */; };
 		9797E7B423719257008AC393 /* TALegacyThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7B323719257008AC393 /* TALegacyThemeProvider.swift */; };
 		9797E7B62371AF6C008AC393 /* TAConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7B52371AF6C008AC393 /* TAConfig.swift */; };
+		979BF447237BE6ED00F5F56B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 979BF446237BE6EC00F5F56B /* GoogleService-Info.plist */; };
 		979F180F2374346700CA209B /* TAMainDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F180E2374346700CA209B /* TAMainDependencyContainer.swift */; };
 		979F18172374733100CA209B /* Avenir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 979F18162374733100CA209B /* Avenir-Medium.ttf */; };
 		97A33C492370391E00C06500 /* TAPickupDropoffNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A33C482370391E00C06500 /* TAPickupDropoffNavigationBar.swift */; };
@@ -169,6 +170,7 @@
 		9797E7B123718FE4008AC393 /* TAThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAThemeProvider.swift; sourceTree = "<group>"; };
 		9797E7B323719257008AC393 /* TALegacyThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALegacyThemeProvider.swift; sourceTree = "<group>"; };
 		9797E7B52371AF6C008AC393 /* TAConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConfig.swift; sourceTree = "<group>"; };
+		979BF446237BE6EC00F5F56B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		979F180E2374346700CA209B /* TAMainDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainDependencyContainer.swift; sourceTree = "<group>"; };
 		979F18162374733100CA209B /* Avenir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Medium.ttf"; sourceTree = "<group>"; };
 		97A33C482370391E00C06500 /* TAPickupDropoffNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAPickupDropoffNavigationBar.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				202EDA3E236CD73300A1419D /* Assets.xcassets */,
 				20ED9CFE236F49A800ED3FBB /* Fonts */,
 				202EDA43236CD73300A1419D /* Info.plist */,
+				979BF446237BE6EC00F5F56B /* GoogleService-Info.plist */,
 				97C9332B237317F6006ADA4A /* KievFakeLocation.gpx */,
 				976811542372EF6A007AB1E2 /* Localizable.strings */,
 			);
@@ -523,6 +526,7 @@
 				202EDA30236CD73100A1419D /* Resources */,
 				D6932295C86FD9572FF5D2D5 /* [CP] Embed Pods Frameworks */,
 				13879F465AF556AB00CBA920 /* [CP] Copy Pods Resources */,
+				979BF448237BE80D00F5F56B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -572,6 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				202EDA42236CD73300A1419D /* LaunchScreen.storyboard in Resources */,
+				979BF447237BE6ED00F5F56B /* GoogleService-Info.plist in Resources */,
 				976811552372EF6A007AB1E2 /* Localizable.strings in Resources */,
 				20ED9D00236F49B800ED3FBB /* Rubik-Regular.ttf in Resources */,
 				2096AC1A2374A32F005BD7EC /* HelveticaNeue.ttf in Resources */,
@@ -622,6 +627,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		979BF448237BE80D00F5F56B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
 		};
 		D6932295C86FD9572FF5D2D5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -858,6 +880,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "TaxiAggregator-iOS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

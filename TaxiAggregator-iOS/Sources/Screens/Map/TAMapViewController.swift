@@ -10,9 +10,10 @@ import UIKit
 import SideMenu
 import RxSwift
 
-final class TAMapViewController: TABaseViewController {
+final class TAMapViewController: TABaseViewController, TARootView {
+    typealias RootViewType = TAMapRootView
     
-    // MARK: - Models
+    // MARK: - Properties
     
     private let viewModel: TAMapViewModel
     
@@ -24,7 +25,7 @@ final class TAMapViewController: TABaseViewController {
     }
     
     override func loadView() {
-        view = TAMapRootView(viewModel: viewModel)
+        view = RootViewType(viewModel: viewModel)
     }
     
     override func viewDidLoad() {

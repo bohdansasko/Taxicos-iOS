@@ -10,7 +10,8 @@ import UIKit
 import RxSwift
 import StoreKit
 
-final class TAMainViewController: TABaseViewController {
+final class TAMainViewController: TABaseViewController, TARootView {
+    typealias RootViewType = TAMainRootView
     
     // MARK: - Properties
     
@@ -31,7 +32,7 @@ final class TAMainViewController: TABaseViewController {
     }
 
     override func loadView() {
-        view = TAMainRootView(viewModel: viewModel)
+        view = RootViewType(viewModel: viewModel)
     }
     
     override func viewDidLoad() {

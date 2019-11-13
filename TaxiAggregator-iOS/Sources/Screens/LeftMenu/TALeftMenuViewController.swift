@@ -10,7 +10,8 @@ import UIKit
 import RxSwift
 import StoreKit
 
-final class TALeftMenuViewController: TABaseViewController {
+final class TALeftMenuViewController: TABaseViewController, TARootView {
+    typealias RootViewType = TALeftMenuRootView
     
     // MARK: - Properties
     
@@ -27,7 +28,7 @@ final class TALeftMenuViewController: TABaseViewController {
     }
     
     override func loadView() {
-        view = TALeftMenuRootView(viewModel: viewModel)
+        view = RootViewType(viewModel: viewModel)
     }
     
     override func viewDidLoad() {
@@ -58,7 +59,7 @@ private extension TALeftMenuViewController {
 
 }
 
-// MARK: - Presentation view controllers
+// MARK: - Presentation
 
 private extension TALeftMenuViewController {
 

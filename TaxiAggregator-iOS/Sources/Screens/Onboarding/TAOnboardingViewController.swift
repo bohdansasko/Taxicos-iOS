@@ -8,7 +8,8 @@
 
 import UIKit
 
-final class TAOnboardingViewController: TABaseViewController {
+final class TAOnboardingViewController: TABaseViewController, TARootView {
+    typealias RootViewType = TAOnboardingRootView
     
     // MARK: - Properties
     

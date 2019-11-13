@@ -8,8 +8,12 @@
 
 import UIKit
 
-final class TASavedAddressesViewController: TABaseViewController {
+final class TASavedAddressesViewController: TABaseViewController, TARootView {
+    typealias RootViewType = TASavedAddressesRootView
+    
     private let viewModel: TASavedAddressesViewModel
+    
+    // MARK: - View lifecycle
     
     init(viewModel: TASavedAddressesViewModel) {
         self.viewModel = viewModel
@@ -17,7 +21,7 @@ final class TASavedAddressesViewController: TABaseViewController {
     }
     
     override func loadView() {
-        view = TASavedAddressesRootView(viewModel: viewModel)
+        view = RootViewType(viewModel: viewModel)
     }
     
     override func viewDidLoad() {
