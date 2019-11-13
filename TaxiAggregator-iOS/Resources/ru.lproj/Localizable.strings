@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  TaxiAggregator-iOS
+
+  Created by Office Mac on 11/6/19.
+  Copyright © 2019 Vinso. All rights reserved.
+*/
+
+"APP_VERSION" = "Версия %@";
+
+"MENU_ITEM_SAVED_LOCATIONS" = "Сохраненные адреса";
+"MENU_ITEM_SHARE_APP" = "Поделиться";
+"MENU_ITEM_FEEDBACK"  = "Отзыв";
+"MENU_ITEM_RATE_APP"  = "Оценить";
+
+"MAP_ENTER_LOCATION" = "Введите начальный адрес";
+"MAP_WHERE_TO"       = "Куда?";
+
+"ONBOARDING_SKIP" = "Пропустить";
+"ONBOARDING_NEXT" = "Следующая";
+"ONBOARDING_DONE" = "Закончить";
+
+"ONBOARDING_FIRST_PAGE"  = "Выбирай место посадки и высадки.";
+"ONBOARDING_SECOND_PAGE" = "Мы тебе покажем все возможные варианты. Выбирай 🚕 среди предложенных.";
+"ONBOARDING_THIRD_PAGE"  = "Вуаля, ты уже на месте.🥳 Экономия денег на глазах 🤑";
+
+"SAVED_LOCATIONS_TITLE" = "Сохраненные адреса";

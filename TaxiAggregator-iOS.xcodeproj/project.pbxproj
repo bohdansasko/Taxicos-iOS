@@ -62,12 +62,12 @@
 		20F0D1CE2378C7B20038A31C /* TANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0D1CD2378C7B20038A31C /* TANavigationController.swift */; };
 		97202199237ACD0900C55E21 /* TAAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97202198237ACD0900C55E21 /* TAAddressCell.swift */; };
 		9720219B237ACDA400C55E21 /* TAAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720219A237ACDA400C55E21 /* TAAddressModel.swift */; };
+		97292CFA237C1A7100AD9301 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 97292CFC237C1A7100AD9301 /* Localizable.strings */; };
 		972D23EF2375A91B00B19BBE /* TAOnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23EE2375A91B00B19BBE /* TAOnboardingPageViewController.swift */; };
 		972D23F12375A92700B19BBE /* TAOnboardingPageRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23F02375A92700B19BBE /* TAOnboardingPageRootView.swift */; };
 		972D23F52375AC2900B19BBE /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23F42375AC2900B19BBE /* UIColor+Ext.swift */; };
 		972D24002375CE0400B19BBE /* TAOnboardingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */; };
 		972D24022375CE2000B19BBE /* TAOnboardingPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D24012375CE2000B19BBE /* TAOnboardingPageType.swift */; };
-		976811552372EF6A007AB1E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 976811542372EF6A007AB1E2 /* Localizable.strings */; };
 		9794DE012374100D0077D03A /* TAHomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DDFE2374100D0077D03A /* TAHomeRootView.swift */; };
 		9794DE022374100D0077D03A /* TAHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DDFF2374100D0077D03A /* TAHomeViewModel.swift */; };
 		9794DE032374100D0077D03A /* TAHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DE002374100D0077D03A /* TAHomeViewController.swift */; };
@@ -150,12 +150,17 @@
 		20F0D1CD2378C7B20038A31C /* TANavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TANavigationController.swift; sourceTree = "<group>"; };
 		97202198237ACD0900C55E21 /* TAAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAAddressCell.swift; sourceTree = "<group>"; };
 		9720219A237ACDA400C55E21 /* TAAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAAddressModel.swift; sourceTree = "<group>"; };
+		97292CFB237C1A7100AD9301 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		97292D06237C1AD400AD9301 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		97292D07237C1AD400AD9301 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		97292D09237C1ADA00AD9301 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		97292D0A237C1ADA00AD9301 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		97292D0D237C1AF500AD9301 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		972D23EE2375A91B00B19BBE /* TAOnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingPageViewController.swift; sourceTree = "<group>"; };
 		972D23F02375A92700B19BBE /* TAOnboardingPageRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingPageRootView.swift; sourceTree = "<group>"; };
 		972D23F42375AC2900B19BBE /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingFactory.swift; sourceTree = "<group>"; };
 		972D24012375CE2000B19BBE /* TAOnboardingPageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingPageType.swift; sourceTree = "<group>"; };
-		976811542372EF6A007AB1E2 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9794DDFE2374100D0077D03A /* TAHomeRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeRootView.swift; sourceTree = "<group>"; };
 		9794DDFF2374100D0077D03A /* TAHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeViewModel.swift; sourceTree = "<group>"; };
 		9794DE002374100D0077D03A /* TAHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeViewController.swift; sourceTree = "<group>"; };
@@ -217,7 +222,7 @@
 				202EDA43236CD73300A1419D /* Info.plist */,
 				979BF446237BE6EC00F5F56B /* GoogleService-Info.plist */,
 				97C9332B237317F6006ADA4A /* KievFakeLocation.gpx */,
-				976811542372EF6A007AB1E2 /* Localizable.strings */,
+				97292CFC237C1A7100AD9301 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -559,6 +564,8 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
+				ru,
 			);
 			mainGroup = 202EDA29236CD73100A1419D;
 			productRefGroup = 202EDA33236CD73100A1419D /* Products */;
@@ -577,7 +584,7 @@
 			files = (
 				202EDA42236CD73300A1419D /* LaunchScreen.storyboard in Resources */,
 				979BF447237BE6ED00F5F56B /* GoogleService-Info.plist in Resources */,
-				976811552372EF6A007AB1E2 /* Localizable.strings in Resources */,
+				97292CFA237C1A7100AD9301 /* Localizable.strings in Resources */,
 				20ED9D00236F49B800ED3FBB /* Rubik-Regular.ttf in Resources */,
 				2096AC1A2374A32F005BD7EC /* HelveticaNeue.ttf in Resources */,
 				202EDA3F236CD73300A1419D /* Assets.xcassets in Resources */,
@@ -753,8 +760,21 @@
 			isa = PBXVariantGroup;
 			children = (
 				202EDA41236CD73300A1419D /* Base */,
+				97292D06237C1AD400AD9301 /* uk */,
+				97292D09237C1ADA00AD9301 /* ru */,
+				97292D0D237C1AF500AD9301 /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		97292CFC237C1A7100AD9301 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97292CFB237C1A7100AD9301 /* en */,
+				97292D07237C1AD400AD9301 /* uk */,
+				97292D0A237C1ADA00AD9301 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -764,6 +784,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -824,6 +845,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -880,6 +902,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "TaxiAggregator-iOS/Resources/Info.plist";
@@ -902,6 +925,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "TaxiAggregator-iOS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
