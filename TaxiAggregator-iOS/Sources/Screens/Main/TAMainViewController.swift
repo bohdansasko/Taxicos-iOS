@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import StoreKit
 
 final class TAMainViewController: TABaseViewController, TARootView {
     typealias RootViewType = TAMainRootView

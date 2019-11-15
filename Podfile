@@ -22,8 +22,10 @@ target 'TaxiAggregator-iOS' do
   # UI
   pod 'SideMenu', '~> 6.0'
   pod 'SnapKit', '~> 5.0.0'
+  
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  
   pod 'CHIPageControl/Jaloro'
 
   # General

@@ -11,13 +11,19 @@ import RxSwift
 
 class TABaseView: UIView {
     
+    // MARK: - Properties
+    
     let disposeBag = DisposeBag()
 
+    // MARK: - UI
+    
     let activityIndicator: UIActivityIndicatorView  = {
         let indicator = UIActivityIndicatorView(style: .gray)
         indicator.hidesWhenStopped = true
         return indicator
     }()
+    
+    // MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)

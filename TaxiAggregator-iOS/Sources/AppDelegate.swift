@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import GoogleMaps
 import Firebase
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+        
+        GMSPlacesClient.provideAPIKey(TAConfig.kGSPAPIKey)
         GMSServices.provideAPIKey(TAConfig.kGSMAPIKey)
 
         let mainVC = appDependencyContainer.makeMainViewController()

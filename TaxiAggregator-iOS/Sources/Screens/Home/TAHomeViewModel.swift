@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import GooglePlaces
 
 typealias TAHomeNavigationAction = TANavigationAction<TAHomeNavigationScreen>
 
@@ -16,6 +17,7 @@ final class TAHomeViewModel {
     
     private let _menuResponder: TAOpenLeftMenuResponder
     private let _navigationAction = PublishSubject<TAHomeNavigationAction>()
+    private let _placesClient: GMSPlacesClient
     
     var navigationAction: Observable<TAHomeNavigationAction> {
         return _navigationAction.asObservable()
@@ -25,6 +27,11 @@ final class TAHomeViewModel {
     
     init(menuResponder: TAOpenLeftMenuResponder) {
         _menuResponder = menuResponder
+        
+        _placesClient = GMSPlacesClient.shared()
+        _placesClient.autocompleteQuery("Велика ", bounds: nil, filter: nil, callback: { results, error in
+            // do nothing
+        })
     }
     
 }
