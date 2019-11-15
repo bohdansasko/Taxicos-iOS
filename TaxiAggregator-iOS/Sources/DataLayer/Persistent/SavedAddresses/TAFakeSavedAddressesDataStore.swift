@@ -18,7 +18,7 @@ extension TAFakeSavedAddressesDataStore: TASavedAddressesDataStore {
     
     func readAddresses() -> Promise<[TAAddressModel]> {
         return Promise { seal in
-            DispatchQueue.global().asyncAfter(deadline: .now() + 5) {
+            DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(5)) {
                 seal.fulfill(TAAddressModel.mockModels())
             }
         }

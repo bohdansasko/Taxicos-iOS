@@ -41,7 +41,6 @@
 		20C8AAB3236DE49E005E6590 /* TABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAB2236DE49E005E6590 /* TABaseViewController.swift */; };
 		20C8AAB5236DE4E6005E6590 /* TALeftMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAB4236DE4E6005E6590 /* TALeftMenuViewModel.swift */; };
 		20C8AAC2236DFFAD005E6590 /* TASavedAddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC1236DFFAD005E6590 /* TASavedAddressesViewController.swift */; };
-		20C8AAC4236DFFB5005E6590 /* TASavedAddressesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC3236DFFB5005E6590 /* TASavedAddressesViewModel.swift */; };
 		20C8AAC7236E0183005E6590 /* TAOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */; };
 		20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */; };
 		20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C8AACB236EAAAC005E6590 /* TABaseView.swift */; };
@@ -62,7 +61,6 @@
 		20F0D1CC2378C13A0038A31C /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20F0D1CB2378C13A0038A31C /* Rubik-Medium.ttf */; };
 		20F0D1CE2378C7B20038A31C /* TANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0D1CD2378C7B20038A31C /* TANavigationController.swift */; };
 		97202199237ACD0900C55E21 /* TAAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97202198237ACD0900C55E21 /* TAAddressCell.swift */; };
-		9720219B237ACDA400C55E21 /* TAAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9720219A237ACDA400C55E21 /* TAAddressModel.swift */; };
 		97292CFA237C1A7100AD9301 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 97292CFC237C1A7100AD9301 /* Localizable.strings */; };
 		972D23EF2375A91B00B19BBE /* TAOnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23EE2375A91B00B19BBE /* TAOnboardingPageViewController.swift */; };
 		972D23F12375A92700B19BBE /* TAOnboardingPageRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23F02375A92700B19BBE /* TAOnboardingPageRootView.swift */; };
@@ -70,6 +68,8 @@
 		972D24002375CE0400B19BBE /* TAOnboardingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */; };
 		972D24022375CE2000B19BBE /* TAOnboardingPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D24012375CE2000B19BBE /* TAOnboardingPageType.swift */; };
 		974D60BC237E93CA00C652FD /* TAFakeUserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D60BB237E93CA00C652FD /* TAFakeUserSessionDataStore.swift */; };
+		974D60C1237EE7AB00C652FD /* TASavedAddressesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D60BF237EE7AA00C652FD /* TASavedAddressesViewModel.swift */; };
+		974D60C2237EE7AB00C652FD /* TAAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D60C0237EE7AB00C652FD /* TAAddressModel.swift */; };
 		9794DE012374100D0077D03A /* TAHomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DDFE2374100D0077D03A /* TAHomeRootView.swift */; };
 		9794DE022374100D0077D03A /* TAHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DDFF2374100D0077D03A /* TAHomeViewModel.swift */; };
 		9794DE032374100D0077D03A /* TAHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DE002374100D0077D03A /* TAHomeViewController.swift */; };
@@ -131,7 +131,6 @@
 		20C8AAB2236DE49E005E6590 /* TABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABaseViewController.swift; sourceTree = "<group>"; };
 		20C8AAB4236DE4E6005E6590 /* TALeftMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftMenuViewModel.swift; sourceTree = "<group>"; };
 		20C8AAC1236DFFAD005E6590 /* TASavedAddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASavedAddressesViewController.swift; sourceTree = "<group>"; };
-		20C8AAC3236DFFB5005E6590 /* TASavedAddressesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASavedAddressesViewModel.swift; sourceTree = "<group>"; };
 		20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingViewController.swift; sourceTree = "<group>"; };
 		20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingViewModel.swift; sourceTree = "<group>"; };
 		20C8AACB236EAAAC005E6590 /* TABaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABaseView.swift; sourceTree = "<group>"; };
@@ -152,7 +151,6 @@
 		20F0D1CB2378C13A0038A31C /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		20F0D1CD2378C7B20038A31C /* TANavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TANavigationController.swift; sourceTree = "<group>"; };
 		97202198237ACD0900C55E21 /* TAAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAAddressCell.swift; sourceTree = "<group>"; };
-		9720219A237ACDA400C55E21 /* TAAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAAddressModel.swift; sourceTree = "<group>"; };
 		97292CFB237C1A7100AD9301 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		97292D06237C1AD400AD9301 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		97292D07237C1AD400AD9301 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -165,6 +163,8 @@
 		972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingFactory.swift; sourceTree = "<group>"; };
 		972D24012375CE2000B19BBE /* TAOnboardingPageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingPageType.swift; sourceTree = "<group>"; };
 		974D60BB237E93CA00C652FD /* TAFakeUserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFakeUserSessionDataStore.swift; sourceTree = "<group>"; };
+		974D60BF237EE7AA00C652FD /* TASavedAddressesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASavedAddressesViewModel.swift; sourceTree = "<group>"; };
+		974D60C0237EE7AB00C652FD /* TAAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAAddressModel.swift; sourceTree = "<group>"; };
 		9794DDFE2374100D0077D03A /* TAHomeRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeRootView.swift; sourceTree = "<group>"; };
 		9794DDFF2374100D0077D03A /* TAHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeViewModel.swift; sourceTree = "<group>"; };
 		9794DE002374100D0077D03A /* TAHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +312,7 @@
 				20C8AAAD236DE452005E6590 /* Map */,
 				20C8AAC5236E0160005E6590 /* Onboarding */,
 				20C8AAC0236DFF91005E6590 /* Saved Locations */,
+				974D60BD237EE53900C652FD /* DropdownAddresess */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -346,10 +347,9 @@
 			children = (
 				9794DE0B23741DFC0077D03A /* TASavedAddressesDependencyContainer.swift */,
 				20E0EB43237DF45100E4EDD5 /* Cells */,
-				9720219A237ACDA400C55E21 /* TAAddressModel.swift */,
+				974D60BE237EE58500C652FD /* Models */,
 				20587B57236EAF1500E661E9 /* TASavedAddressesRootView.swift */,
 				20C8AAC1236DFFAD005E6590 /* TASavedAddressesViewController.swift */,
-				20C8AAC3236DFFB5005E6590 /* TASavedAddressesViewModel.swift */,
 			);
 			path = "Saved Locations";
 			sourceTree = "<group>";
@@ -477,6 +477,22 @@
 				972D23EE2375A91B00B19BBE /* TAOnboardingPageViewController.swift */,
 			);
 			path = Page;
+			sourceTree = "<group>";
+		};
+		974D60BD237EE53900C652FD /* DropdownAddresess */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DropdownAddresess;
+			sourceTree = "<group>";
+		};
+		974D60BE237EE58500C652FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				974D60C0237EE7AB00C652FD /* TAAddressModel.swift */,
+				974D60BF237EE7AA00C652FD /* TASavedAddressesViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9794DDFD2374100D0077D03A /* Home */ = {
@@ -724,6 +740,7 @@
 				9794DE0623741D0E0077D03A /* TAMainViewModel.swift in Sources */,
 				20587B60236EF1FA00E661E9 /* TAMenuItemType.swift in Sources */,
 				207E5D142377441300A99C25 /* TARemoteUserSession.swift in Sources */,
+				974D60C1237EE7AB00C652FD /* TASavedAddressesViewModel.swift in Sources */,
 				974D60BC237E93CA00C652FD /* TAFakeUserSessionDataStore.swift in Sources */,
 				20CF3F4B237B615100EBC7BF /* TASavedAddressesDataStore.swift in Sources */,
 				9794DE022374100D0077D03A /* TAHomeViewModel.swift in Sources */,
@@ -732,7 +749,6 @@
 				20DC11E02370BC86004F323E /* UITableView+Ext.swift in Sources */,
 				209C29672373F801002D8418 /* TAHomeDependencyContainer.swift in Sources */,
 				20C8AAC2236DFFAD005E6590 /* TASavedAddressesViewController.swift in Sources */,
-				20C8AAC4236DFFB5005E6590 /* TASavedAddressesViewModel.swift in Sources */,
 				20C8AAB1236DE480005E6590 /* TALeftMenuViewController.swift in Sources */,
 				209C296B2373F8D2002D8418 /* TAMapDependencyContainer.swift in Sources */,
 				972D23F12375A92700B19BBE /* TAOnboardingPageRootView.swift in Sources */,
@@ -753,6 +769,7 @@
 				202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */,
 				20DC11D52370BC86004F323E /* UIApplication+Ext.swift in Sources */,
 				97202199237ACD0900C55E21 /* TAAddressCell.swift in Sources */,
+				974D60C2237EE7AB00C652FD /* TAAddressModel.swift in Sources */,
 				972D24002375CE0400B19BBE /* TAOnboardingFactory.swift in Sources */,
 				20DC11DB2370BC86004F323E /* UICollectionView+Ext.swift in Sources */,
 				9794DE1023741EE70077D03A /* TALeftMenuDependencyContainer.swift in Sources */,
@@ -760,7 +777,6 @@
 				20DC11DD2370BC86004F323E /* UIStackView+Ext.swift in Sources */,
 				9794DE012374100D0077D03A /* TAHomeRootView.swift in Sources */,
 				9797E7B223718FE4008AC393 /* TAThemeProvider.swift in Sources */,
-				9720219B237ACDA400C55E21 /* TAAddressModel.swift in Sources */,
 				20DC11C72370BC63004F323E /* String+Extension.swift in Sources */,
 				972D23F52375AC2900B19BBE /* UIColor+Ext.swift in Sources */,
 				972D23EF2375A91B00B19BBE /* TAOnboardingPageViewController.swift in Sources */,
