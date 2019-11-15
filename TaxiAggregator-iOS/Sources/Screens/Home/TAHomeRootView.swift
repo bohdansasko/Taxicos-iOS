@@ -23,6 +23,11 @@ final class TAHomeRootView: TABaseView {
         return view
     }()
     
+    fileprivate let dropdownAddresess: UITableView = {
+        let tv = TAUIFactory.makeTableView()
+        return tv
+    }()
+    
     // MARK: - View lifecycle
     
     init(frame: CGRect = .zero, viewModel: TAHomeViewModel) {
@@ -59,6 +64,8 @@ private extension TAHomeRootView {
             $0.top.equalTo(self.pickupDropoffView.snp.bottom)
             $0.left.right.bottom.equalToSuperview()
         }
+        
+        addSubview(dropdownAddresess)
     }
     
 }

@@ -34,11 +34,8 @@ final class TALeftMenuRootView: TABaseView {
     }()
     
     fileprivate let tableMenu: UITableView = {
-        let table = UITableView()
+        let table = TAUIFactory.makeTableView()
         table.register(class: TALeftMenuCell.self)
-        table.tableFooterView = UIView()
-        table.separatorStyle = .none
-        table.backgroundColor = .clear
         return table
     }()
     

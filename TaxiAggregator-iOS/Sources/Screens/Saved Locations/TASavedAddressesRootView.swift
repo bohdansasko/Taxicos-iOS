@@ -18,11 +18,8 @@ final class TASavedAddressesRootView: TABaseView {
     // MARK: - UI
     
     fileprivate let addressesTable: UITableView = {
-        let tv = UITableView()
-        tv.tableFooterView = UIView()
-        tv.backgroundColor = .clear
-        tv.separatorStyle = .none
-        tv.allowsSelection = false
+        let tv = TAUIFactory.makeTableView()
+        tv.register(class: TAAddressCell.self)
         return tv
     }()
     
@@ -49,7 +46,6 @@ private extension TASavedAddressesRootView {
     func setupLayout() {
         addressesTable.dataSource = self
         addressesTable.delegate = self
-        addressesTable.register(class: TAAddressCell.self)
         addSubview(addressesTable)
         addressesTable.snp.makeConstraints {
             $0.top.equalToSuperview().offset(20)
