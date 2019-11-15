@@ -17,27 +17,15 @@ final class TAFileUserSessionDataStore {
 extension TAFileUserSessionDataStore: TAUserSessionDataStore {
     
     func readUserSession() -> Promise<TAUserSession?> {
-        return Promise { seal in
-            let profile       = TAUserProfile()
-            let remoteSession = TARemoteUserSession(token: "fakeToken123")
-            let features      = TAFeatures(datastore: self)
-            let userSession   = TAUserSession(profile: profile,
-                                              remoteSession: remoteSession,
-                                              features: features)
-            seal.fulfill(userSession)
-        }
+        fatalError("hasn't been implemented")
     }
     
     func save(userSession: TAUserSession) -> Promise<TAUserSession> {
-        return Promise { seal in
-            seal.fulfill(userSession)
-        }
+        fatalError("hasn't been implemented")
     }
     
     func delete(userSession: TAUserSession) -> Promise<TAUserSession> {
-        return Promise { seal in
-            seal.fulfill(userSession)
-        }
+        fatalError("hasn't been implemented")
     }
     
 }

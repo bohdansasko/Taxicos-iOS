@@ -69,6 +69,7 @@
 		972D23F52375AC2900B19BBE /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23F42375AC2900B19BBE /* UIColor+Ext.swift */; };
 		972D24002375CE0400B19BBE /* TAOnboardingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */; };
 		972D24022375CE2000B19BBE /* TAOnboardingPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D24012375CE2000B19BBE /* TAOnboardingPageType.swift */; };
+		974D60BC237E93CA00C652FD /* TAFakeUserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D60BB237E93CA00C652FD /* TAFakeUserSessionDataStore.swift */; };
 		9794DE012374100D0077D03A /* TAHomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DDFE2374100D0077D03A /* TAHomeRootView.swift */; };
 		9794DE022374100D0077D03A /* TAHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DDFF2374100D0077D03A /* TAHomeViewModel.swift */; };
 		9794DE032374100D0077D03A /* TAHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DE002374100D0077D03A /* TAHomeViewController.swift */; };
@@ -163,6 +164,7 @@
 		972D23F42375AC2900B19BBE /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingFactory.swift; sourceTree = "<group>"; };
 		972D24012375CE2000B19BBE /* TAOnboardingPageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingPageType.swift; sourceTree = "<group>"; };
+		974D60BB237E93CA00C652FD /* TAFakeUserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFakeUserSessionDataStore.swift; sourceTree = "<group>"; };
 		9794DDFE2374100D0077D03A /* TAHomeRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeRootView.swift; sourceTree = "<group>"; };
 		9794DDFF2374100D0077D03A /* TAHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeViewModel.swift; sourceTree = "<group>"; };
 		9794DE002374100D0077D03A /* TAHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				200AEA872371E9D000624F53 /* TAUserSessionDataStore.swift */,
 				200AEA882371E9D000624F53 /* TAFileUserSessionDataStore.swift */,
+				974D60BB237E93CA00C652FD /* TAFakeUserSessionDataStore.swift */,
 			);
 			path = UserSession;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				9794DE0623741D0E0077D03A /* TAMainViewModel.swift in Sources */,
 				20587B60236EF1FA00E661E9 /* TAMenuItemType.swift in Sources */,
 				207E5D142377441300A99C25 /* TARemoteUserSession.swift in Sources */,
+				974D60BC237E93CA00C652FD /* TAFakeUserSessionDataStore.swift in Sources */,
 				20CF3F4B237B615100EBC7BF /* TASavedAddressesDataStore.swift in Sources */,
 				9794DE022374100D0077D03A /* TAHomeViewModel.swift in Sources */,
 				9794DE0823741D260077D03A /* TAMainViewController.swift in Sources */,

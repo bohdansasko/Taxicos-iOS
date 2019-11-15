@@ -24,7 +24,7 @@ final class TAAppDependencyContainer {
         }
         
         func makeUserSessionDataStore() -> TAUserSessionDataStore {
-            return TAFileUserSessionDataStore()
+            return TAFakeUserSessionDataStore()
         }
         
         func makeAuthRemoteAPI() -> TAAuthRemoteAPI {
