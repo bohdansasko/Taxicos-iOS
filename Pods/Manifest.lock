@@ -93,6 +93,9 @@ PODS:
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxKeyboard (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
@@ -112,6 +115,7 @@ DEPENDENCIES:
   - PromiseKit (~> 6.8)
   - RealmSwift
   - RxCocoa (~> 5)
+  - RxKeyboard
   - RxSwift (~> 5)
   - SideMenu (~> 6.0)
   - SnapKit (~> 5.0.0)
@@ -141,6 +145,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - RxCocoa
+    - RxKeyboard
     - RxRelay
     - RxSwift
     - SideMenu
@@ -170,6 +175,7 @@ SPEC CHECKSUMS:
   Realm: 0c5b8f398daeec5b29824e41c453ff9e126e31d8
   RealmSwift: 02e1f604f7091ec535145055764ca53efa8cdc92
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SideMenu: 43910eb6dc994dd59771f8e82573d04a9e776361
@@ -177,6 +183,6 @@ SPEC CHECKSUMS:
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 8e02367ef5cb3af5410cd3b6bf6f87a70768b123
+PODFILE CHECKSUM: afaa3108dc96417629c265ec9ee43a4ee13d3508
 
 COCOAPODS: 1.8.4
