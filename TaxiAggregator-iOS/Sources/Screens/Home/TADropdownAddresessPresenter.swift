@@ -15,6 +15,10 @@ struct TAActionModel {
 
 struct TADropdownAddresessSection<CellModel> {
     var items: [CellModel]
+    
+    func item(for indexPath: IndexPath) -> CellModel {
+        return items[indexPath.row]
+    }
 }
 
 extension TADropdownAddresessSection {
@@ -30,12 +34,9 @@ typealias TAAddressesSection = TADropdownAddresessSection<TAActionModel>
 
 final class TADropdownAddresessPresenter: NSObject {
     private let _tableView: UITableView
-    private let _sections = [
-        TADropdownAddresessSection<TAActionModel>(items: [
-            TAActionModel(icon: #imageLiteral(resourceName: "icVector"), text: "SEARCH_RESULTS_CHOOSE_ON_MAP".localized)
-        ]),
-        TADropdownAddresessSection<TAAddressModel>(items: [])
-    ]
+    private let _section = TADropdownAddresessSection<TAAddressModel>(items:
+        TAAddressModel.mockModels()
+    )
     
     init(tableView: UITableView) {
         _tableView = tableView
@@ -50,7 +51,6 @@ final class TADropdownAddresessPresenter: NSObject {
 private extension TADropdownAddresessPresenter {
     
     func setupTableView() {
-        _tableView.register(class: TASetLocationOnMapCell.self)
         _tableView.register(class: TAAddressCell.self)
         _tableView.dataSource = self
         _tableView.delegate   = self
@@ -63,11 +63,12 @@ private extension TADropdownAddresessPresenter {
 extension TADropdownAddresessPresenter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return _section.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeue(class: TAAddressCell.self, for: indexPath)
+        return cell
     }
 
 }
@@ -75,5 +76,11 @@ extension TADropdownAddresessPresenter: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension TADropdownAddresessPresenter: UITableViewDelegate {
-      
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let addressModel = _section.item(for: indexPath)
+        let addressCell = cell as! TAAddressCell
+        addressCell.set(addressModel: addressModel)
+    }
+    
 }

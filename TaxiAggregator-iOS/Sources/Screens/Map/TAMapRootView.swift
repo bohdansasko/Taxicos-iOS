@@ -55,7 +55,7 @@ private extension TAMapRootView {
         addSubview(myLocationButton)
         myLocationButton.snp.makeConstraints {
             $0.right.equalToSuperview().inset(2)
-            $0.bottom.equalToSuperview().inset(32)
+            $0.bottom.equalToSuperview().inset(10)
         }
         
         myLocationButton.addTarget(

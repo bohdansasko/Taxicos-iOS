@@ -14,6 +14,8 @@
 		200AEA902371E9D000624F53 /* TAAppUserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA8B2371E9D000624F53 /* TAAppUserSessionRepository.swift */; };
 		200AEA932371FD6A00624F53 /* TALeftMenuNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA922371FD6A00624F53 /* TALeftMenuNavigationScreen.swift */; };
 		200B5B04237627E100E2E37D /* TARootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200B5B03237627E100E2E37D /* TARootView.swift */; };
+		202E50452381B268008CD13D /* TASearchDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E50442381B268008CD13D /* TASearchDestinationView.swift */; };
+		202E50472381F5CE008CD13D /* TATapableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E50462381F5CE008CD13D /* TATapableTextField.swift */; };
 		202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202EDA35236CD73100A1419D /* AppDelegate.swift */; };
 		202EDA3F236CD73300A1419D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202EDA3E236CD73300A1419D /* Assets.xcassets */; };
 		202EDA42236CD73300A1419D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 202EDA40236CD73300A1419D /* LaunchScreen.storyboard */; };
@@ -104,6 +106,8 @@
 		200AEA8B2371E9D000624F53 /* TAAppUserSessionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAAppUserSessionRepository.swift; sourceTree = "<group>"; };
 		200AEA922371FD6A00624F53 /* TALeftMenuNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftMenuNavigationScreen.swift; sourceTree = "<group>"; };
 		200B5B03237627E100E2E37D /* TARootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TARootView.swift; sourceTree = "<group>"; };
+		202E50442381B268008CD13D /* TASearchDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASearchDestinationView.swift; sourceTree = "<group>"; };
+		202E50462381F5CE008CD13D /* TATapableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TATapableTextField.swift; sourceTree = "<group>"; };
 		202EDA32236CD73100A1419D /* Taxicos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taxicos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		202EDA35236CD73100A1419D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		202EDA3E236CD73300A1419D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -233,6 +237,14 @@
 				97292CFC237C1A7100AD9301 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		202E50432381B23D008CD13D /* SearchDestination */ = {
+			isa = PBXGroup;
+			children = (
+				202E50442381B268008CD13D /* TASearchDestinationView.swift */,
+			);
+			path = SearchDestination;
 			sourceTree = "<group>";
 		};
 		202EDA29236CD73100A1419D = {
@@ -375,12 +387,12 @@
 			isa = PBXGroup;
 			children = (
 				9797E7AA23718DE1008AC393 /* Theme */,
-				97A551D823708ECA00960890 /* TANavigationAction.swift */,
 				20C8AACB236EAAAC005E6590 /* TABaseView.swift */,
 				20C8AAB2236DE49E005E6590 /* TABaseViewController.swift */,
 				200AEA802371DA8B00624F53 /* TABaseTableViewCell.swift */,
 				200B5B03237627E100E2E37D /* TARootView.swift */,
 				20F0D1CD2378C7B20038A31C /* TANavigationController.swift */,
+				202E50462381F5CE008CD13D /* TATapableTextField.swift */,
 			);
 			path = TAUIKit;
 			sourceTree = "<group>";
@@ -440,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				20EC5FD623785435003817FD /* TAErrorMessage.swift */,
+				97A551D823708ECA00960890 /* TANavigationAction.swift */,
 			);
 			path = TAKit;
 			sourceTree = "<group>";
@@ -495,6 +508,7 @@
 		9794DDFD2374100D0077D03A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				202E50432381B23D008CD13D /* SearchDestination */,
 				209C29662373F801002D8418 /* TAHomeDependencyContainer.swift */,
 				97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */,
 				9794DDFE2374100D0077D03A /* TAHomeRootView.swift */,
@@ -714,6 +728,7 @@
 				2041CB97237860FD00A6BC60 /* TAFeatures.swift in Sources */,
 				2041CB95237860DC00A6BC60 /* TAFeaturesDataStore.swift in Sources */,
 				20E0EB42237DF44E00E4EDD5 /* TASetLocationOnMapCell.swift in Sources */,
+				202E50472381F5CE008CD13D /* TATapableTextField.swift in Sources */,
 				20DC11C32370BC04004F323E /* Logger.swift in Sources */,
 				9797E7AE23718E3D008AC393 /* TATheme.swift in Sources */,
 				974D60CE237EEBC300C652FD /* TAUIFactory.swift in Sources */,
@@ -743,6 +758,7 @@
 				974D60C1237EE7AB00C652FD /* TASavedAddressesViewModel.swift in Sources */,
 				974D60BC237E93CA00C652FD /* TAFakeUserSessionDataStore.swift in Sources */,
 				20CF3F4B237B615100EBC7BF /* TASavedAddressesDataStore.swift in Sources */,
+				202E50452381B268008CD13D /* TASearchDestinationView.swift in Sources */,
 				9794DE022374100D0077D03A /* TAHomeViewModel.swift in Sources */,
 				9794DE0823741D260077D03A /* TAMainViewController.swift in Sources */,
 				20DC11C52370BC42004F323E /* Date+Ext.swift in Sources */,
