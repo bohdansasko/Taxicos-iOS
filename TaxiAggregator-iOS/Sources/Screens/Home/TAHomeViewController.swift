@@ -34,10 +34,20 @@ final class TAHomeViewController: TABaseViewController, TARootView {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController!.delegate = self
-
+        setupNavigationBar()
         addMapViewController()
         subscribe(to: viewModel.navigationAction)
+    }
+
+}
+
+// MARK: - Setup
+
+private extension TAHomeViewController {
+    
+    func setupNavigationBar() {
+        navigationItem.title = "APP_NAME".localized
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: rootView.menuButton)
     }
     
 }
@@ -70,20 +80,6 @@ private extension TAHomeViewController {
     
     func present(screen: TAHomeNavigationScreen) {
         // do nothing
-    }
-    
-}
-
-// MARK: - UINavigationControllerDelegate
-
-extension TAHomeViewController: UINavigationControllerDelegate {
-
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        if viewController is TAHomeViewController {
-            hideNavigationBar(animated: animated)
-            return
-        }
-        showNavigationBar(animated: animated)
     }
     
 }

@@ -6,6 +6,7 @@
   Copyright © 2019 Vinso. All rights reserved.
 */
 
+"APP_NAME"    = "TAXICOS";
 "APP_VERSION" = "Version %@";
 
 "MENU_ITEM_SAVED_LOCATIONS" = "Saved locations";

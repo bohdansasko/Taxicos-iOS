@@ -16,10 +16,7 @@ final class TANavigationController: UINavigationController {
         let backIcon =  #imageLiteral(resourceName: "icArrowLeft").withRenderingMode(.alwaysOriginal)
         navigationBar.backIndicatorImage = backIcon
         navigationBar.backIndicatorTransitionMaskImage = backIcon
-        
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.shadowImage = UIImage()
-        
+               
         themeProvider.register(observer: self)
     }
     

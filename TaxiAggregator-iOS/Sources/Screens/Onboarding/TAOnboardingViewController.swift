@@ -31,7 +31,7 @@ final class TAOnboardingViewController: TABaseViewController, TARootView {
             onboardingFactory.makeSecondPageViewController(),
             onboardingFactory.makeThirdPageViewController()
         ]
-        view = TAOnboardingRootView(viewModel: viewModel, pages: pages)
+        view = RootViewType(viewModel: viewModel, pages: pages)
     }
     
     override func viewDidLoad() {

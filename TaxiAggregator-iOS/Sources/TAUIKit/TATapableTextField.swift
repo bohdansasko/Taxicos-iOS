@@ -30,6 +30,8 @@ final class TATapableTextField: UIControl {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        backgroundColor = .white
+        
         let touch = touches.first!
         let touchLocation = touch.location(in: self)
         if bounds.contains(touchLocation) {
