@@ -19,6 +19,17 @@ struct TAAddressModel {
 
 // MARK: - Fake models
 
+extension TAAddressModel: Equatable {
+    
+    static func ==(lhs: TAAddressModel, rhs: TAAddressModel) -> Bool {
+        return lhs.location.latitude  == rhs.location.latitude
+            && lhs.location.longitude == rhs.location.longitude
+    }
+    
+}
+
+// MARK: - Fake models
+
 extension TAAddressModel {
     
     static func searchResultsModels() -> [TAAddressModel] {

@@ -9,7 +9,7 @@
 import Foundation
 
 enum TAHomeNavigationScreen {
-    // do nothing
+    case setDestination(TAAddressModel?)
 }
 
 // MARK: - Equatable
@@ -17,7 +17,10 @@ enum TAHomeNavigationScreen {
 extension TAHomeNavigationScreen: Equatable {
     
     static func ==(lhs: TAHomeNavigationScreen, rhs: TAHomeNavigationScreen) -> Bool {
-        return false
+        switch (lhs, rhs) {
+        case let (.setDestination(l), .setDestination(r)):
+            return l == r
+        }
     }
     
 }

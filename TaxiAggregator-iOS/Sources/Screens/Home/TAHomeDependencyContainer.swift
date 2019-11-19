@@ -11,6 +11,8 @@ import UIKit
 protocol TAHomeFactory {
     func makeMapViewController() -> UIViewController
     func makeSearchDestinationView() -> TASearchDestinationView
+    
+    func makeDestinationViewController(with address: TAAddressModel?) -> UIViewController
 }
 
 final class TAHomeDependencyContainer {
@@ -59,6 +61,10 @@ extension TAHomeDependencyContainer: TAHomeFactory {
         let viewModel = TASearchDestinationViewModel(dataStore: dataStore, searchDestinationResponder: _viewModel)
         let view = TASearchDestinationView(viewModel: viewModel)
         return view
+    }
+    
+    func makeDestinationViewController(with address: TAAddressModel?) -> UIViewController {
+        return self.makeMapViewController()
     }
     
 }

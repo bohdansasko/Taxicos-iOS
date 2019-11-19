@@ -51,7 +51,7 @@ extension TAHomeViewModel {
 extension TAHomeViewModel: TASearchDestinationResponder {
     
     func setDestinationAddress(_ addressModel: TAAddressModel?) {
-        
+        _navigationAction.onNext(.present(screen: .setDestination(addressModel)))
     }
     
 }

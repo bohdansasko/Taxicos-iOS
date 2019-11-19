@@ -80,7 +80,11 @@ private extension TAHomeViewController {
     }
     
     func present(screen: TAHomeNavigationScreen) {
-        // do nothing
+        switch screen {
+        case .setDestination(let addressModel):
+            let destinationViewController = homeFactory.makeDestinationViewController(with: addressModel)
+            navigationController!.pushViewController(destinationViewController, animated: true)
+        }
     }
     
 }
