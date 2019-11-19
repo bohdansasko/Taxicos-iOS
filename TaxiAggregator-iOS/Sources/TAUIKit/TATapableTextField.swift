@@ -9,9 +9,7 @@
 import UIKit
 
 final class TATapableTextField: UIControl {
-    var highlightedColor: UIColor {
-        return UIColor(rgb: 250)
-    }
+    var highlightedColor: UIColor = #colorLiteral(red: 0.9844431281, green: 0.9844661355, blue: 0.9844536185, alpha: 1)
 
     override var isHighlighted: Bool {
         didSet {
@@ -60,7 +58,7 @@ private extension TATapableTextField {
         
         let label = UILabel()
         label.font = UIFont.rubik(weight: .regular, fontSize: 16)
-        label.text = "Search destination"
+        label.text = "SEARCH_DESTINATION".localized
         label.textColor = #colorLiteral(red: 0.6980392157, green: 0.6980392157, blue: 0.6980392157, alpha: 1)
         label.textAlignment = .left
         

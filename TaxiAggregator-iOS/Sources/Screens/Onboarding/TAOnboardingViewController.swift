@@ -16,7 +16,7 @@ final class TAOnboardingViewController: TABaseViewController, TARootView {
     private let viewModel: TAOnboardingViewModel
     private let onboardingFactory: TAOnboardingFactory
     
-    // MARK: - View lifecycle
+    // MARK: - Lifecycle
     
     init(viewModel: TAOnboardingViewModel, onboardingFactory: TAOnboardingFactory) {
         self.viewModel = viewModel

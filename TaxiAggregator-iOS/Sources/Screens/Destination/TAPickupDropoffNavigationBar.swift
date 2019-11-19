@@ -8,19 +8,7 @@
 
 import UIKit
 
-final class TAPickupDropoffNavigationBar: UINavigationBar {
-
-    // MARK: - Menu button
-    
-    let menuButton: UIButton = {
-        let menuIcon = #imageLiteral(resourceName: "icMenu").withRenderingMode(.alwaysOriginal)
-        let menuButton = UIButton(type: .system)
-        menuButton.translatesAutoresizingMaskIntoConstraints = false
-        menuButton.setImage(menuIcon, for: .normal)
-        menuButton.contentMode = .scaleAspectFit
-        return menuButton
-    }()
-    
+final class TAPickupDropoffNavigationBar: TABaseView {
     
     // MARK: - Pickup properties
     
@@ -47,11 +35,7 @@ final class TAPickupDropoffNavigationBar: UINavigationBar {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setupUI()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        setupLayout()
     }
 
 }
@@ -60,11 +44,11 @@ final class TAPickupDropoffNavigationBar: UINavigationBar {
 
 private extension TAPickupDropoffNavigationBar {
     
-    func setupUI() {
-        backgroundColor = .clear
-        setBackgroundImage(UIImage(), for: .default)
+    func setupLayout() {
+        backgroundColor = .white
         
-        menuButton.setContentHuggingPriority(.init(251), for: .horizontal)
+        layer.shadowOpacity = 0.2
+        layer.shadowOffset = CGSize(width: 0, height: 2)
         
         pickupIconView.setContentHuggingPriority(.init(251), for: .horizontal)
         dropoffIconView.setContentHuggingPriority(.init(251), for: .horizontal)
@@ -86,14 +70,12 @@ private extension TAPickupDropoffNavigationBar {
         fromToSV.distribution = .fill
         fromToSV.spacing = 8
         
-        let allSV = UIStackView(arrangedSubviews: [menuButton, fromToSV])
+        let allSV = UIStackView(arrangedSubviews: [fromToSV])
         allSV.axis = .horizontal
         allSV.distribution = .fill
         allSV.alignment = .top
         allSV.spacing = 15
         addSubview(allSV)
-        
-        menuButton.snp.makeConstraints{ $0.centerY.equalTo(pickupIconView) }
         
         allSV.snp.makeConstraints {
             $0.left.equalToSuperview().offset(18)

@@ -31,3 +31,5 @@
 
 "DESTINATION_WHERE_YOU_GONNA" = "Where are you going?";
 "DESTINATION_TIME_TO_FIND_CHEAPEST_CAB" = "Time to find cheapest cab!";
+"SEARCH_DESTINATION" = "Search destination";
+"SET_DESTINATION" = "Set Destination";

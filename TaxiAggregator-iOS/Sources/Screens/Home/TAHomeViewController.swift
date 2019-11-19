@@ -40,6 +40,16 @@ final class TAHomeViewController: TABaseViewController, TARootView {
         subscribe(to: viewModel.navigationAction)
     }
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.title = "APP_NAME".localized
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.title = " "
+    }
 }
 
 // MARK: - Setup
@@ -47,8 +57,14 @@ final class TAHomeViewController: TABaseViewController, TARootView {
 private extension TAHomeViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = "APP_NAME".localized
+        navigationController!.navigationBar.backItem?.title = " 2 "
+        navigationItem.backBarButtonItem?.title = " 1 "
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: rootView.menuButton)
+        
+        navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController!.navigationBar.shadowImage = UIImage()
+        navigationController!.navigationBar.backgroundColor = .white
     }
     
 }

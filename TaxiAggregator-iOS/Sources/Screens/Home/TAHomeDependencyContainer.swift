@@ -64,7 +64,9 @@ extension TAHomeDependencyContainer: TAHomeFactory {
     }
     
     func makeDestinationViewController(with address: TAAddressModel?) -> UIViewController {
-        return self.makeMapViewController()
+        let destinationDependencyContainer = TADestinationDependencyContainer()
+        let vc = destinationDependencyContainer.makeDestinationViewController()
+        return vc
     }
     
 }
