@@ -9,27 +9,65 @@
 import GoogleMaps
 
 struct TAAddressModel {
+    var icon: UIImage
     var shortAddress: String
     var fullAddress : String
     var location    : CLLocationCoordinate2D
+    var isFavVisible: Bool = false
+    var timestamp   : TimeInterval
 }
+
+// MARK: - Fake models
 
 extension TAAddressModel {
     
-    static func mockModels() -> [TAAddressModel] {
+    static func searchResultsModels() -> [TAAddressModel] {
         return [
-            TAAddressModel(shortAddress: "Birsten st. London ",
+            TAAddressModel(icon: #imageLiteral(resourceName: "icDropoff"),
+                           shortAddress: "Birsten st. London ",
                            fullAddress: "Hourse 57, road-8, Block-D, niketon...",
-                           location: .init(latitude: 0, longitude: 0)),
-            TAAddressModel(shortAddress: "Birsten st. Lviv, Ukrain",
+                           location: .init(latitude: 0, longitude: 0),
+                           timestamp: Date().timeIntervalSince1970),
+            TAAddressModel(icon: #imageLiteral(resourceName: "icDropoff"),
+                           shortAddress: "Birsten st. Lviv, Ukrain",
                            fullAddress: "Mirpur Rd, Dhanmondi 32 Bustop",
-                           location: .init(latitude: 0, longitude: 0)),
-            TAAddressModel(shortAddress: "Birsten st. London ",
+                           location: .init(latitude: 0, longitude: 0),
+                           timestamp: Date().timeIntervalSince1970),
+            TAAddressModel(icon: #imageLiteral(resourceName: "icDropoff"),
+                           shortAddress: "Birsten st. London ",
                            fullAddress: "Hourse 57, road-8, Block-D, niketon...",
-                           location: .init(latitude: 0, longitude: 0)),
-            TAAddressModel(shortAddress: "Birsten st. Lviv, Ukrain",
+                           location: .init(latitude: 0, longitude: 0),
+                           timestamp: Date().timeIntervalSince1970),
+            TAAddressModel(icon: #imageLiteral(resourceName: "icDropoff"),
+                           shortAddress: "Birsten st. Lviv, Ukrain",
                            fullAddress: "Mirpur Rd, Dhanmondi 32 Bustop",
-                           location: .init(latitude: 0, longitude: 0))
+                           location: .init(latitude: 0, longitude: 0),
+                           timestamp: Date().timeIntervalSince1970)
+        ]
+    }
+    
+    static func historyModels() -> [TAAddressModel] {
+        return [
+            TAAddressModel(icon: #imageLiteral(resourceName: "icHistory"),
+                           shortAddress: "Birsten st. London ",
+                           fullAddress: "Hourse 57, road-8, Block-D, niketon...",
+                           location: .init(latitude: 0, longitude: 0),
+                           timestamp: Date().timeIntervalSince1970),
+            TAAddressModel(icon: #imageLiteral(resourceName: "icHistory"),
+                           shortAddress: "Birsten st. Lviv, Ukrain",
+                           fullAddress: "Mirpur Rd, Dhanmondi 32 Bustop",
+                           location: .init(latitude: 0, longitude: 0),
+                           timestamp: Date().timeIntervalSince1970),
+            TAAddressModel(icon: #imageLiteral(resourceName: "icHistory"),
+                           shortAddress: "Birsten st. London ",
+                           fullAddress: "Hourse 57, road-8, Block-D, niketon...",
+                           location: .init(latitude: 0, longitude: 0),
+                           timestamp: Date().timeIntervalSince1970),
+            TAAddressModel(icon: #imageLiteral(resourceName: "icHistory"),
+                           shortAddress: "Birsten st. Lviv, Ukrain",
+                           fullAddress: "Mirpur Rd, Dhanmondi 32 Bustop",
+                           location: .init(latitude: 0, longitude: 0),
+                           timestamp: Date().timeIntervalSince1970)
         ]
     }
     

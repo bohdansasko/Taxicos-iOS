@@ -49,7 +49,13 @@ final class TAAddressCell: TABaseTableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        selectionStyle = .none
         setupLayout()
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        contentView.backgroundColor = highlighted ? #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1) : .clear
     }
     
 }
@@ -75,14 +81,22 @@ private extension TAAddressCell {
         addSubview(contentSV)
         
         contentSV.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(20)
-            $0.right.equalToSuperview().inset(20)
-            $0.bottom.equalToSuperview()
+            $0.left.equalToSuperview().offset(36)
+            $0.right.equalToSuperview().inset(36)
+            $0.center.equalToSuperview()
         }
         
         locationIconView.snp.makeConstraints {
             $0.centerY.equalTo(heartButton).inset(1)
             $0.centerY.equalTo(titleLabel).offset(1)
+        }
+        
+        addSubview(separatorLineView)
+        separatorLineView.snp.makeConstraints {
+            $0.left.equalToSuperview().offset(36)
+            $0.right.equalToSuperview().inset(36)
+            $0.bottom.equalToSuperview()
+            $0.height.equalTo(2)
         }
     }
     
@@ -93,8 +107,10 @@ private extension TAAddressCell {
 extension TAAddressCell {
     
     func set(addressModel: TAAddressModel) {
+        locationIconView.image = addressModel.icon
         titleLabel.text = addressModel.shortAddress
         subtitleLabel.text = addressModel.fullAddress
+        heartButton.isHidden = !addressModel.isFavVisible
     }
     
 }

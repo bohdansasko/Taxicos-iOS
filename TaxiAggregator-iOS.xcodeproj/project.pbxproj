@@ -69,6 +69,7 @@
 		972D23F52375AC2900B19BBE /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23F42375AC2900B19BBE /* UIColor+Ext.swift */; };
 		972D24002375CE0400B19BBE /* TAOnboardingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */; };
 		972D24022375CE2000B19BBE /* TAOnboardingPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972D24012375CE2000B19BBE /* TAOnboardingPageType.swift */; };
+		9746DF4423843B2800F74108 /* TASearchDestinationResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9746DF4323843B2800F74108 /* TASearchDestinationResponder.swift */; };
 		974D60BC237E93CA00C652FD /* TAFakeUserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D60BB237E93CA00C652FD /* TAFakeUserSessionDataStore.swift */; };
 		974D60C1237EE7AB00C652FD /* TASavedAddressesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D60BF237EE7AA00C652FD /* TASavedAddressesViewModel.swift */; };
 		974D60C2237EE7AB00C652FD /* TAAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D60C0237EE7AB00C652FD /* TAAddressModel.swift */; };
@@ -95,6 +96,9 @@
 		97A551D42370869500960890 /* UIControl+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D32370869500960890 /* UIControl+Ext.swift */; };
 		97A551D923708ECA00960890 /* TANavigationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D823708ECA00960890 /* TANavigationAction.swift */; };
 		97A551DB23708F8500960890 /* TAHomeNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */; };
+		97D3EBBC2384286C00060B35 /* TASearchDestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBBB2384286C00060B35 /* TASearchDestinationViewModel.swift */; };
+		97D3EBBF2384318000060B35 /* TASearchHistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBBE2384318000060B35 /* TASearchHistoryDataStore.swift */; };
+		97D3EBC12384318D00060B35 /* TAFakeSearchHistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBC02384318D00060B35 /* TAFakeSearchHistoryDataStore.swift */; };
 		ACB0B621FEE4A6B0C2C1A0C5 /* Pods_TaxiAggregator_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +172,7 @@
 		972D23F42375AC2900B19BBE /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingFactory.swift; sourceTree = "<group>"; };
 		972D24012375CE2000B19BBE /* TAOnboardingPageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAOnboardingPageType.swift; sourceTree = "<group>"; };
+		9746DF4323843B2800F74108 /* TASearchDestinationResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASearchDestinationResponder.swift; sourceTree = "<group>"; };
 		974D60BB237E93CA00C652FD /* TAFakeUserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFakeUserSessionDataStore.swift; sourceTree = "<group>"; };
 		974D60BF237EE7AA00C652FD /* TASavedAddressesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASavedAddressesViewModel.swift; sourceTree = "<group>"; };
 		974D60C0237EE7AB00C652FD /* TAAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAAddressModel.swift; sourceTree = "<group>"; };
@@ -195,6 +200,9 @@
 		97A551D823708ECA00960890 /* TANavigationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TANavigationAction.swift; sourceTree = "<group>"; };
 		97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAHomeNavigationScreen.swift; sourceTree = "<group>"; };
 		97C9332B237317F6006ADA4A /* KievFakeLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = KievFakeLocation.gpx; sourceTree = "<group>"; };
+		97D3EBBB2384286C00060B35 /* TASearchDestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASearchDestinationViewModel.swift; sourceTree = "<group>"; };
+		97D3EBBE2384318000060B35 /* TASearchHistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASearchHistoryDataStore.swift; sourceTree = "<group>"; };
+		97D3EBC02384318D00060B35 /* TAFakeSearchHistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFakeSearchHistoryDataStore.swift; sourceTree = "<group>"; };
 		9E0F14C52B61CF4C35095F75 /* Pods-TaxiAggregator-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.release.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E58A9E76673CFFFBC02C29CE /* Pods-TaxiAggregator-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.debug.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaxiAggregator_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				202E50442381B268008CD13D /* TASearchDestinationView.swift */,
+				97D3EBBB2384286C00060B35 /* TASearchDestinationViewModel.swift */,
+				9746DF4323843B2800F74108 /* TASearchDestinationResponder.swift */,
 			);
 			path = SearchDestination;
 			sourceTree = "<group>";
@@ -298,6 +308,7 @@
 				2041CB93237860D100A6BC60 /* UserSession */,
 				2041CB982378610E00A6BC60 /* Features */,
 				20CF3F4D237B61C200EBC7BF /* SavedAddresses */,
+				97D3EBBD2384314100060B35 /* SearchHistory */,
 			);
 			path = Persistent;
 			sourceTree = "<group>";
@@ -323,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				20C8AAA3236DE07A005E6590 /* TAAppDependencyContainer.swift */,
+				97A33C482370391E00C06500 /* TAPickupDropoffNavigationBar.swift */,
 				9794DE0423741CFD0077D03A /* Main */,
 				9794DDFD2374100D0077D03A /* Home */,
 				20C8AAAF236DE468005E6590 /* LeftMenu */,
@@ -509,7 +521,6 @@
 			children = (
 				202E50432381B23D008CD13D /* SearchDestination */,
 				209C29662373F801002D8418 /* TAHomeDependencyContainer.swift */,
-				97A33C482370391E00C06500 /* TAPickupDropoffNavigationBar.swift */,
 				97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */,
 				9794DDFE2374100D0077D03A /* TAHomeRootView.swift */,
 				9794DE002374100D0077D03A /* TAHomeViewController.swift */,
@@ -550,6 +561,15 @@
 				20DC11C82370BC86004F323E /* UIKit */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		97D3EBBD2384314100060B35 /* SearchHistory */ = {
+			isa = PBXGroup;
+			children = (
+				97D3EBBE2384318000060B35 /* TASearchHistoryDataStore.swift */,
+				97D3EBC02384318D00060B35 /* TAFakeSearchHistoryDataStore.swift */,
+			);
+			path = SearchHistory;
 			sourceTree = "<group>";
 		};
 		FDAD88DE6590E05ECA27BA7D /* Frameworks */ = {
@@ -742,6 +762,7 @@
 				200AEA8C2371E9D000624F53 /* TAUserSessionDataStore.swift in Sources */,
 				2042AF80237379B20074D6CD /* UIViewController+Ext.swift in Sources */,
 				20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */,
+				97D3EBC12384318D00060B35 /* TAFakeSearchHistoryDataStore.swift in Sources */,
 				9794DE0A23741D2F0077D03A /* TAMainRootView.swift in Sources */,
 				200AEA8D2371E9D000624F53 /* TAFileUserSessionDataStore.swift in Sources */,
 				20F0D1CE2378C7B20038A31C /* TANavigationController.swift in Sources */,
@@ -773,6 +794,7 @@
 				207E6165237A341D00476379 /* TAMainNavigationScreen.swift in Sources */,
 				20C8AAA4236DE07A005E6590 /* TAAppDependencyContainer.swift in Sources */,
 				200B5B04237627E100E2E37D /* TARootView.swift in Sources */,
+				9746DF4423843B2800F74108 /* TASearchDestinationResponder.swift in Sources */,
 				972D24022375CE2000B19BBE /* TAOnboardingPageType.swift in Sources */,
 				97A551D923708ECA00960890 /* TANavigationAction.swift in Sources */,
 				20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */,
@@ -782,12 +804,14 @@
 				9797E7B423719257008AC393 /* TALegacyThemeProvider.swift in Sources */,
 				20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */,
 				200AEA932371FD6A00624F53 /* TALeftMenuNavigationScreen.swift in Sources */,
+				97D3EBBC2384286C00060B35 /* TASearchDestinationViewModel.swift in Sources */,
 				202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */,
 				20DC11D52370BC86004F323E /* UIApplication+Ext.swift in Sources */,
 				97202199237ACD0900C55E21 /* TAAddressCell.swift in Sources */,
 				974D60C2237EE7AB00C652FD /* TAAddressModel.swift in Sources */,
 				972D24002375CE0400B19BBE /* TAOnboardingFactory.swift in Sources */,
 				20DC11DB2370BC86004F323E /* UICollectionView+Ext.swift in Sources */,
+				97D3EBBF2384318000060B35 /* TASearchHistoryDataStore.swift in Sources */,
 				9794DE1023741EE70077D03A /* TALeftMenuDependencyContainer.swift in Sources */,
 				20C8AAB5236DE4E6005E6590 /* TALeftMenuViewModel.swift in Sources */,
 				20DC11DD2370BC86004F323E /* UIStackView+Ext.swift in Sources */,

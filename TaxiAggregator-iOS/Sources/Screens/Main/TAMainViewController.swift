@@ -39,6 +39,7 @@ final class TAMainViewController: TABaseViewController, TARootView {
 
         self.navigationController!.delegate = self
         subscribe(to: viewModel.navigationAction)
+        viewModel.fetchUserSession()
     }
 
 }

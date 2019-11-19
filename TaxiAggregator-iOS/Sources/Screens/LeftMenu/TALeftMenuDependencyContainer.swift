@@ -24,9 +24,10 @@ extension TALeftMenuDependencyContainer {
         let leftMenuNavigation = SideMenuNavigationController(rootViewController: leftMenuViewController)
         leftMenuNavigation.leftSide = true
         leftMenuNavigation.statusBarEndAlpha = 0
+        leftMenuNavigation.presentationStyle = .menuSlideIn
         leftMenuNavigation.setNavigationBarHidden(true, animated: false)
         leftMenuNavigation.presentationStyle.onTopShadowOpacity = 0.8
-
+        leftMenuNavigation.presentationStyle.presentingEndAlpha = 0.6
         SideMenuManager.default.leftMenuNavigationController = leftMenuNavigation
         
         return leftMenuNavigation

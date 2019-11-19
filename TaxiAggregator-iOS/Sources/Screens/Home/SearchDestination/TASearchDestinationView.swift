@@ -10,6 +10,12 @@ import UIKit
 
 final class TASearchDestinationView: TABaseView {
 
+    // MARK: - Properties
+    
+    private let viewModel: TASearchDestinationViewModel
+    
+    // MARK: - UI
+    
     private let upperTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.rubik(weight: .regular, fontSize: 13)
@@ -31,19 +37,24 @@ final class TASearchDestinationView: TABaseView {
         return ttf
     }()
     
-    private let lastAddresesTable: UITableView = {
+    private let addressesTable: UITableView = {
         let tv = TAUIFactory.makeTableView()
         tv.register(class: TAAddressCell.self)
         tv.isScrollEnabled = false
         return tv
     }()
     
-    private var lastAddresesItems: [TAAddressModel] = Array(TAAddressModel.mockModels().prefix(3))
+    // MARK: - View lifecycle
     
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, viewModel: TASearchDestinationViewModel) {
+        self.viewModel = viewModel
+        
         super.init(frame: frame)
         
         setupLayout()
+        subscribeToViewModel()
+        
+        viewModel.fetchHistory()
     }
 
 }
@@ -53,10 +64,11 @@ final class TASearchDestinationView: TABaseView {
 private extension TASearchDestinationView {
    
     func setupLayout() {
-        backgroundColor    = .white
-        layer.cornerRadius = 10
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: -2)
+        backgroundColor     = .white
+        
+        layer.cornerRadius  = 10
+        layer.shadowColor   = UIColor.black.cgColor
+        layer.shadowOffset  = CGSize(width: 0, height: -2)
         layer.shadowOpacity = 0.2
         
         addSubview(upperTitleLabel)
@@ -73,33 +85,41 @@ private extension TASearchDestinationView {
         }
         
         addSubview(searchButton)
-        searchButton.addTarget(self, action: #selector(actSearchDestinationButton), for: .touchUpInside)
+        searchButton.addTarget(viewModel,
+                               action: #selector(TASearchDestinationViewModel.actSearchDestinationButton),
+                               for: .touchUpInside)
         searchButton.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
             $0.left.right.equalTo(titleLabel)
             $0.height.equalTo(40)
         }
         
-        lastAddresesTable.dataSource = self
-        lastAddresesTable.delegate = self
+        addressesTable.dataSource = self
+        addressesTable.delegate = self
         
-        addSubview(lastAddresesTable)
-        lastAddresesTable.snp.makeConstraints {
-            $0.top.equalTo(searchButton.snp.bottom).offset(20)
-            $0.left.equalToSuperview().offset(20)
-            $0.right.equalToSuperview().inset(20)
+        addSubview(addressesTable)
+        addressesTable.snp.makeConstraints {
+            $0.top.equalTo(searchButton.snp.bottom).offset(10)
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
     }
     
 }
 
-// MARK: - User interaction
+// MARK: - View model subscriptions
 
 private extension TASearchDestinationView {
     
-    @objc func actSearchDestinationButton() {
-        log.info("")
+    func subscribeToViewModel() {
+        viewModel.items
+            .asDriver(onErrorJustReturn: [])
+            .drive(onNext: { [weak self] items in
+                guard let self = self else { return }
+                self.addressesTable.reloadData()
+            })
+            .disposed(by: self.disposeBag)
     }
     
 }
@@ -109,13 +129,11 @@ private extension TASearchDestinationView {
 extension TASearchDestinationView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lastAddresesItems.count
+        return viewModel.numberOfItems
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let addressModel = lastAddresesItems[indexPath.row]
         let addressCell = tableView.dequeue(class: TAAddressCell.self, for: indexPath)
-        addressCell.set(addressModel: addressModel)
         return addressCell
     }
     
@@ -124,5 +142,22 @@ extension TASearchDestinationView: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension TASearchDestinationView: UITableViewDelegate {
-    // do nothing
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(viewModel.kCellHeight)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let addressModel = viewModel.item(for: indexPath)
+        let isLastElement = viewModel.isLastItem(by: indexPath)
+        
+        let addressCell = cell as! TAAddressCell
+        addressCell.set(addressModel: addressModel)
+        addressCell.isSeparatorHidden = isLastElement
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.actAddressField(at: indexPath)
+    }
+    
 }

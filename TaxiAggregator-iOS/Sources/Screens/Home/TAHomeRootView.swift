@@ -31,15 +31,13 @@ final class TAHomeRootView: TABaseView {
         return view
     }()
     
-    fileprivate let destinationView: TASearchDestinationView = {
-        let view = TASearchDestinationView()
-        return view
-    }()
+    fileprivate let destinationView: TASearchDestinationView
     
     // MARK: - View lifecycle
     
-    init(frame: CGRect = .zero, viewModel: TAHomeViewModel) {
+    init(frame: CGRect = .zero, viewModel: TAHomeViewModel, destinationView: TASearchDestinationView) {
         self.viewModel = viewModel
+        self.destinationView = destinationView
         
         super.init(frame: frame)
         
@@ -70,7 +68,7 @@ private extension TAHomeRootView {
             $0.top.equalTo(mapContainerView.snp.bottom).inset(6)
             $0.left.right.equalToSuperview()
             $0.bottom.equalToSuperview()
-            $0.height.equalToSuperview().multipliedBy(0.4)
+            $0.height.equalTo(340)
         }
     }
     

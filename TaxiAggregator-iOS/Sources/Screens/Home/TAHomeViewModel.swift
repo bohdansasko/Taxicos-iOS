@@ -45,3 +45,13 @@ extension TAHomeViewModel {
     }
     
 }
+
+// MARK: - TASearchDestinationResponder
+
+extension TAHomeViewModel: TASearchDestinationResponder {
+    
+    func setDestinationAddress(_ addressModel: TAAddressModel?) {
+        
+    }
+    
+}

@@ -30,15 +30,13 @@ final class TAMainViewModel {
     
     init(userSessionRepository: TAUserSessionRepository) {
         _userSessionRepository = userSessionRepository
-        // ...
-        fetchUserSession()
     }
     
 }
 
-// MARK: - Screen navigation
+// MARK: - API
 
-private extension TAMainViewModel {
+extension TAMainViewModel {
     
     func fetchUserSession() {
         _userSessionRepository.readUserSession()

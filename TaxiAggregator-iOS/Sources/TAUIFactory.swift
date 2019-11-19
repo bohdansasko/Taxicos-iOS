@@ -19,7 +19,6 @@ extension TAUIFactory {
         tv.tableFooterView = UIView()
         tv.backgroundColor = .clear
         tv.separatorStyle = .none
-        tv.allowsSelection = false
         return tv
     }
     

@@ -28,7 +28,8 @@ final class TAHomeViewController: TABaseViewController, TARootView {
     }
 
     override func loadView() {
-        view = RootViewType(viewModel: viewModel)
+        let destinationView = homeFactory.makeSearchDestinationView()
+        view = RootViewType(viewModel: viewModel, destinationView: destinationView)
     }
     
     override func viewDidLoad() {

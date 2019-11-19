@@ -35,7 +35,7 @@ typealias TAAddressesSection = TADropdownAddresessSection<TAActionModel>
 final class TADropdownAddresessPresenter: NSObject {
     private let _tableView: UITableView
     private let _section = TADropdownAddresessSection<TAAddressModel>(items:
-        TAAddressModel.mockModels()
+        TAAddressModel.searchResultsModels()
     )
     
     init(tableView: UITableView) {
