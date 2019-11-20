@@ -1,5 +1,5 @@
 //
-//  TAPickupDropoffNavigationBar.swift
+//  TAPickupDropoffView.swift
 //  TaxiAggregator-iOS
 //
 //  Created by Bogdan Sasko on 04.11.2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TAPickupDropoffNavigationBar: TABaseView {
+final class TAPickupDropoffView: TABaseView {
     
     // MARK: - Pickup properties
     
@@ -16,8 +16,8 @@ final class TAPickupDropoffNavigationBar: TABaseView {
         return makeIconView(image: #imageLiteral(resourceName: "icPickup"))
     }()
 
-    fileprivate let pickupTF: UITextField = {
-        return makeTextField(placeholder: "MAP_ENTER_LOCATION".localized)
+    fileprivate let pickupTF: TATextField = {
+        return TAUIFactory.makeTextField(placeholder: "MAP_ENTER_LOCATION".localized, tintColor: #colorLiteral(red: 0.04705882353, green: 0.1960784314, blue: 0.7254901961, alpha: 1))
     }()
     
     // MARK: - Dropoff properties
@@ -26,8 +26,8 @@ final class TAPickupDropoffNavigationBar: TABaseView {
         return makeIconView(image: #imageLiteral(resourceName: "icDropoff"))
     }()
     
-    fileprivate let dropoffTF: UITextField = {
-        return makeTextField(placeholder: "MAP_WHERE_TO".localized)
+    fileprivate let dropoffTF: TATextField = {
+        return TAUIFactory.makeTextField(placeholder: "MAP_WHERE_TO".localized, tintColor: #colorLiteral(red: 0.2039215686, green: 0.2196078431, blue: 0.337254902, alpha: 1))
     }()
 
     // MARK: - View lifecycle
@@ -42,7 +42,7 @@ final class TAPickupDropoffNavigationBar: TABaseView {
 
 // MARK: - Setup
 
-private extension TAPickupDropoffNavigationBar {
+private extension TAPickupDropoffView {
     
     func setupLayout() {
         backgroundColor = .white
@@ -77,8 +77,11 @@ private extension TAPickupDropoffNavigationBar {
         allSV.spacing = 15
         addSubview(allSV)
         
+        pickupTF.snp.makeConstraints { $0.height.equalTo(40) }
+        dropoffTF.snp.makeConstraints { $0.height.equalTo(40) }
+        
         allSV.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(18)
+            $0.left.equalToSuperview().offset(28)
             $0.right.equalToSuperview().inset(18)
             $0.bottom.equalToSuperview().inset(8)
         }
@@ -88,16 +91,7 @@ private extension TAPickupDropoffNavigationBar {
 
 // MARK: - Make
 
-private extension TAPickupDropoffNavigationBar {
-
-    static func makeTextField(placeholder: String?) -> UITextField {
-        let tf = UITextField()
-        tf.borderStyle = .roundedRect
-        tf.textAlignment = .left
-        tf.font = UIFont.rubik(weight: .regular, fontSize: 14)
-        tf.placeholder = placeholder
-        return tf
-    }
+private extension TAPickupDropoffView {
     
     static func makeIconView(image: UIImage?) -> UIImageView {
         let imgView = UIImageView(image: image)

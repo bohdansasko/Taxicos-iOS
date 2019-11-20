@@ -22,4 +22,11 @@ extension TAUIFactory {
         return tv
     }
     
+    static func makeTextField(placeholder: String?, tintColor: UIColor) -> TATextField {
+        let tf = TATextField()
+        tf.textField.placeholder = placeholder
+        tf.textField.tintColor = tintColor
+        return tf
+    }
+    
 }

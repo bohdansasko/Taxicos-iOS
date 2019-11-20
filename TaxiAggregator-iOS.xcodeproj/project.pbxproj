@@ -96,13 +96,14 @@
 		979BF447237BE6ED00F5F56B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 979BF446237BE6EC00F5F56B /* GoogleService-Info.plist */; };
 		979F180F2374346700CA209B /* TAMainDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F180E2374346700CA209B /* TAMainDependencyContainer.swift */; };
 		979F18172374733100CA209B /* Avenir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 979F18162374733100CA209B /* Avenir-Medium.ttf */; };
-		97A33C492370391E00C06500 /* TAPickupDropoffNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A33C482370391E00C06500 /* TAPickupDropoffNavigationBar.swift */; };
+		97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A33C482370391E00C06500 /* TAPickupDropoffView.swift */; };
 		97A551D42370869500960890 /* UIControl+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D32370869500960890 /* UIControl+Ext.swift */; };
 		97A551D923708ECA00960890 /* TANavigationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D823708ECA00960890 /* TANavigationAction.swift */; };
 		97A551DB23708F8500960890 /* TAHomeNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */; };
 		97D3EBBC2384286C00060B35 /* TASearchDestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBBB2384286C00060B35 /* TASearchDestinationViewModel.swift */; };
 		97D3EBBF2384318000060B35 /* TASearchHistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBBE2384318000060B35 /* TASearchHistoryDataStore.swift */; };
 		97D3EBC12384318D00060B35 /* TAFakeSearchHistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBC02384318D00060B35 /* TAFakeSearchHistoryDataStore.swift */; };
+		97E43D5D23854BCD00C030EB /* TATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E43D5C23854BCD00C030EB /* TATextField.swift */; };
 		ACB0B621FEE4A6B0C2C1A0C5 /* Pods_TaxiAggregator_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -203,7 +204,7 @@
 		979BF446237BE6EC00F5F56B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		979F180E2374346700CA209B /* TAMainDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainDependencyContainer.swift; sourceTree = "<group>"; };
 		979F18162374733100CA209B /* Avenir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Medium.ttf"; sourceTree = "<group>"; };
-		97A33C482370391E00C06500 /* TAPickupDropoffNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAPickupDropoffNavigationBar.swift; sourceTree = "<group>"; };
+		97A33C482370391E00C06500 /* TAPickupDropoffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAPickupDropoffView.swift; sourceTree = "<group>"; };
 		97A551D32370869500960890 /* UIControl+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Ext.swift"; sourceTree = "<group>"; };
 		97A551D823708ECA00960890 /* TANavigationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TANavigationAction.swift; sourceTree = "<group>"; };
 		97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAHomeNavigationScreen.swift; sourceTree = "<group>"; };
@@ -211,6 +212,7 @@
 		97D3EBBB2384286C00060B35 /* TASearchDestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASearchDestinationViewModel.swift; sourceTree = "<group>"; };
 		97D3EBBE2384318000060B35 /* TASearchHistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASearchHistoryDataStore.swift; sourceTree = "<group>"; };
 		97D3EBC02384318D00060B35 /* TAFakeSearchHistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFakeSearchHistoryDataStore.swift; sourceTree = "<group>"; };
+		97E43D5C23854BCD00C030EB /* TATextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TATextField.swift; sourceTree = "<group>"; };
 		9E0F14C52B61CF4C35095F75 /* Pods-TaxiAggregator-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.release.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E58A9E76673CFFFBC02C29CE /* Pods-TaxiAggregator-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.debug.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaxiAggregator_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -324,9 +326,8 @@
 		20AC55CD2384772800747E12 /* Destination */ = {
 			isa = PBXGroup;
 			children = (
-				97A33C482370391E00C06500 /* TAPickupDropoffNavigationBar.swift */,
 				20AC55D42384783200747E12 /* TADestinationDependencyContainer.swift */,
-				20AC55D02384777500747E12 /* TADestinationRootView.swift */,
+				97E43D5B23854B9E00C030EB /* Views */,
 				20AC55CE2384774E00747E12 /* TADestinationViewController.swift */,
 				20AC55D22384779800747E12 /* TADestinationViewModel.swift */,
 			);
@@ -424,6 +425,7 @@
 				200B5B03237627E100E2E37D /* TARootView.swift */,
 				20F0D1CD2378C7B20038A31C /* TANavigationController.swift */,
 				202E50462381F5CE008CD13D /* TATapableTextField.swift */,
+				97E43D5C23854BCD00C030EB /* TATextField.swift */,
 			);
 			path = TAUIKit;
 			sourceTree = "<group>";
@@ -590,6 +592,15 @@
 				97D3EBC02384318D00060B35 /* TAFakeSearchHistoryDataStore.swift */,
 			);
 			path = SearchHistory;
+			sourceTree = "<group>";
+		};
+		97E43D5B23854B9E00C030EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97A33C482370391E00C06500 /* TAPickupDropoffView.swift */,
+				20AC55D02384777500747E12 /* TADestinationRootView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FDAD88DE6590E05ECA27BA7D /* Frameworks */ = {
@@ -773,7 +784,7 @@
 				9797E7AE23718E3D008AC393 /* TATheme.swift in Sources */,
 				974D60CE237EEBC300C652FD /* TAUIFactory.swift in Sources */,
 				20EC5FD423784E98003817FD /* TAUserSessionRepository.swift in Sources */,
-				97A33C492370391E00C06500 /* TAPickupDropoffNavigationBar.swift in Sources */,
+				97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */,
 				97A551D42370869500960890 /* UIControl+Ext.swift in Sources */,
 				9797E7B023718F8C008AC393 /* TAColorsPalette.swift in Sources */,
 				9794DE0C23741DFC0077D03A /* TASavedAddressesDependencyContainer.swift in Sources */,
@@ -806,6 +817,7 @@
 				202E50452381B268008CD13D /* TASearchDestinationView.swift in Sources */,
 				9794DE022374100D0077D03A /* TAHomeViewModel.swift in Sources */,
 				9794DE0823741D260077D03A /* TAMainViewController.swift in Sources */,
+				97E43D5D23854BCD00C030EB /* TATextField.swift in Sources */,
 				20DC11C52370BC42004F323E /* Date+Ext.swift in Sources */,
 				20DC11E02370BC86004F323E /* UITableView+Ext.swift in Sources */,
 				209C29672373F801002D8418 /* TAHomeDependencyContainer.swift in Sources */,

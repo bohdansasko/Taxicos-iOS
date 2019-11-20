@@ -57,9 +57,6 @@ final class TAHomeViewController: TABaseViewController, TARootView {
 private extension TAHomeViewController {
     
     func setupNavigationBar() {
-        navigationController!.navigationBar.backItem?.title = " 2 "
-        navigationItem.backBarButtonItem?.title = " 1 "
-        
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: rootView.menuButton)
         
         navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)

@@ -13,8 +13,8 @@ final class TADestinationRootView: TABaseView {
     
     // MARK: - UI
     
-    private let fromToView: TAPickupDropoffNavigationBar = {
-        let v = TAPickupDropoffNavigationBar()
+    private let fromToView: TAPickupDropoffView = {
+        let v = TAPickupDropoffView()
         return v
     }()
  
