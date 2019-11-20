@@ -104,6 +104,10 @@
 		97D3EBBF2384318000060B35 /* TASearchHistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBBE2384318000060B35 /* TASearchHistoryDataStore.swift */; };
 		97D3EBC12384318D00060B35 /* TAFakeSearchHistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBC02384318D00060B35 /* TAFakeSearchHistoryDataStore.swift */; };
 		97E43D5D23854BCD00C030EB /* TATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E43D5C23854BCD00C030EB /* TATextField.swift */; };
+		97E43D632385710C00C030EB /* TALocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E43D622385710C00C030EB /* TALocationRepository.swift */; };
+		97E43D652385711F00C030EB /* TAVinsoLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E43D642385711F00C030EB /* TAVinsoLocationRepository.swift */; };
+		97E43D67238571DE00C030EB /* TALocationRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E43D66238571DE00C030EB /* TALocationRemoteAPI.swift */; };
+		97E43D692385724400C030EB /* TAVinsoLocationRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E43D682385724400C030EB /* TAVinsoLocationRemoteAPI.swift */; };
 		ACB0B621FEE4A6B0C2C1A0C5 /* Pods_TaxiAggregator_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -213,6 +217,10 @@
 		97D3EBBE2384318000060B35 /* TASearchHistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASearchHistoryDataStore.swift; sourceTree = "<group>"; };
 		97D3EBC02384318D00060B35 /* TAFakeSearchHistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFakeSearchHistoryDataStore.swift; sourceTree = "<group>"; };
 		97E43D5C23854BCD00C030EB /* TATextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TATextField.swift; sourceTree = "<group>"; };
+		97E43D622385710C00C030EB /* TALocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALocationRepository.swift; sourceTree = "<group>"; };
+		97E43D642385711F00C030EB /* TAVinsoLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAVinsoLocationRepository.swift; sourceTree = "<group>"; };
+		97E43D66238571DE00C030EB /* TALocationRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALocationRemoteAPI.swift; sourceTree = "<group>"; };
+		97E43D682385724400C030EB /* TAVinsoLocationRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAVinsoLocationRemoteAPI.swift; sourceTree = "<group>"; };
 		9E0F14C52B61CF4C35095F75 /* Pods-TaxiAggregator-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.release.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E58A9E76673CFFFBC02C29CE /* Pods-TaxiAggregator-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiAggregator-iOS.debug.xcconfig"; path = "Target Support Files/Pods-TaxiAggregator-iOS/Pods-TaxiAggregator-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FAAC8EDC2D0262BFED911AD7 /* Pods_TaxiAggregator_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaxiAggregator_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +241,7 @@
 		200AEA862371E9D000624F53 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				97E43D612385710500C030EB /* Location */,
 				207E5D172377461100A99C25 /* Persistent */,
 				20CF3F4C237B616100EBC7BF /* UserSessionRepository */,
 				207E5D112377437800A99C25 /* TAUserSession.swift */,
@@ -603,6 +612,33 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		97E43D612385710500C030EB /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				97E43D6A238572B000C030EB /* Repository */,
+				97E43D6B238572B900C030EB /* API */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		97E43D6A238572B000C030EB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				97E43D622385710C00C030EB /* TALocationRepository.swift */,
+				97E43D642385711F00C030EB /* TAVinsoLocationRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		97E43D6B238572B900C030EB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				97E43D66238571DE00C030EB /* TALocationRemoteAPI.swift */,
+				97E43D682385724400C030EB /* TAVinsoLocationRemoteAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		FDAD88DE6590E05ECA27BA7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -780,10 +816,12 @@
 				2041CB95237860DC00A6BC60 /* TAFeaturesDataStore.swift in Sources */,
 				20E0EB42237DF44E00E4EDD5 /* TASetLocationOnMapCell.swift in Sources */,
 				202E50472381F5CE008CD13D /* TATapableTextField.swift in Sources */,
+				97E43D632385710C00C030EB /* TALocationRepository.swift in Sources */,
 				20DC11C32370BC04004F323E /* Logger.swift in Sources */,
 				9797E7AE23718E3D008AC393 /* TATheme.swift in Sources */,
 				974D60CE237EEBC300C652FD /* TAUIFactory.swift in Sources */,
 				20EC5FD423784E98003817FD /* TAUserSessionRepository.swift in Sources */,
+				97E43D692385724400C030EB /* TAVinsoLocationRemoteAPI.swift in Sources */,
 				97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */,
 				97A551D42370869500960890 /* UIControl+Ext.swift in Sources */,
 				9797E7B023718F8C008AC393 /* TAColorsPalette.swift in Sources */,
@@ -824,6 +862,7 @@
 				20C8AAC2236DFFAD005E6590 /* TASavedAddressesViewController.swift in Sources */,
 				20C8AAB1236DE480005E6590 /* TALeftMenuViewController.swift in Sources */,
 				209C296B2373F8D2002D8418 /* TAMapDependencyContainer.swift in Sources */,
+				97E43D67238571DE00C030EB /* TALocationRemoteAPI.swift in Sources */,
 				972D23F12375A92700B19BBE /* TAOnboardingPageRootView.swift in Sources */,
 				9794DE032374100D0077D03A /* TAHomeViewController.swift in Sources */,
 				20587B58236EAF1500E661E9 /* TASavedAddressesRootView.swift in Sources */,
@@ -852,6 +891,7 @@
 				20C8AAB5236DE4E6005E6590 /* TALeftMenuViewModel.swift in Sources */,
 				20DC11DD2370BC86004F323E /* UIStackView+Ext.swift in Sources */,
 				9794DE012374100D0077D03A /* TAHomeRootView.swift in Sources */,
+				97E43D652385711F00C030EB /* TAVinsoLocationRepository.swift in Sources */,
 				9797E7B223718FE4008AC393 /* TAThemeProvider.swift in Sources */,
 				20DC11C72370BC63004F323E /* String+Extension.swift in Sources */,
 				972D23F52375AC2900B19BBE /* UIColor+Ext.swift in Sources */,

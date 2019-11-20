@@ -15,6 +15,7 @@ final class TATextField: TABaseView {
         tf.borderStyle = .none
         tf.textAlignment = .left
         tf.font = UIFont.rubik(weight: .regular, fontSize: 14)
+        tf.textColor = #colorLiteral(red: 0.2039215686, green: 0.2196078431, blue: 0.337254902, alpha: 1)
         return tf
     }()
     

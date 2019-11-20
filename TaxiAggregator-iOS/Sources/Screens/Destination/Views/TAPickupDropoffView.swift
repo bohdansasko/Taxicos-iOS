@@ -40,6 +40,20 @@ final class TAPickupDropoffView: TABaseView {
 
 }
 
+// MARK: - 
+
+extension TAPickupDropoffView {
+
+    func pickupTextField() -> UITextField {
+        return pickupTF.textField
+    }
+    
+    func dropoffTextField() -> UITextField {
+        return dropoffTF.textField
+    }
+    
+}
+
 // MARK: - Setup
 
 private extension TAPickupDropoffView {

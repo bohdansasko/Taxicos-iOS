@@ -24,7 +24,7 @@ final class TADestinationViewController: TABaseViewController, TARootView {
     }
     
     override func loadView() {
-        view = RootViewType()
+        view = RootViewType(viewModel: _viewModel)
     }
     
     override func viewDidLoad() {
