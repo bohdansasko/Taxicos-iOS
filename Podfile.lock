@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.0.0-rc.3)
   - CHIPageControl/Jaloro (0.2)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
@@ -105,6 +106,7 @@ PODS:
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.3)
   - CHIPageControl/Jaloro
   - Crashlytics (~> 3.14.0)
   - Fabric (~> 1.10.2)
@@ -124,6 +126,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - CHIPageControl
     - Crashlytics
     - Fabric
@@ -154,6 +157,7 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   CHIPageControl: a787bf7205c9b7e7fbfc412be36c5e8636b68f86
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
@@ -183,6 +187,6 @@ SPEC CHECKSUMS:
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: afaa3108dc96417629c265ec9ee43a4ee13d3508
+PODFILE CHECKSUM: 3c9615a1f9095436160d46bd646019ac2b6af5ae
 
 COCOAPODS: 1.8.4

@@ -15,7 +15,8 @@ target 'TaxiAggregator-iOS' do
 
   # Internet
   pod 'Starscream', '~> 3.0.2'
-
+  pod 'Alamofire', '~> 5.0.0-rc.3'
+  
   # Store
   pod 'RealmSwift'
 
