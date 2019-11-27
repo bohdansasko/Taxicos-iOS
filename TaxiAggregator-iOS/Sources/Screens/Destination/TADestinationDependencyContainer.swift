@@ -15,7 +15,7 @@ final class TADestinationDependencyContainer {
 extension TADestinationDependencyContainer {
     
     func makeDestinationViewController() -> TADestinationViewController {
-        let remoteAPI = TAVinsoLocationRemoteAPI()
+        let remoteAPI = TAFakeLocationRemoteAPI()
         let locationRepository = TAVinsoLocationRepository(remoteAPI: remoteAPI)
         let viewModel = TADestinationViewModel(locationRepository: locationRepository)
         let vc = TADestinationViewController(viewModel: viewModel)

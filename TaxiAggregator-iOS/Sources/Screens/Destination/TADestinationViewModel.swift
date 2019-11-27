@@ -13,18 +13,12 @@ final class TADestinationViewModel {
     // MARK: - Internal properties
     
     private let _locationRepository: TALocationRepository
-    
-    private let _pickupAddressResults = BehaviorSubject<[TAAddressModel]>(value: [])
-    private let _dropoffAddressResults = BehaviorSubject<[TAAddressModel]>(value: [])
+    private let _addressesResults = BehaviorSubject<[TAAddressModel]>(value: [])
     
     // MARK: - Observables
     
-    var pickupAddressResults: Observable<[TAAddressModel]> {
-        return _pickupAddressResults.asObservable()
-    }
-
-    var dropoffAddressResults: Observable<[TAAddressModel]> {
-        return _dropoffAddressResults.asObservable()
+    var addressesResults: Observable<[TAAddressModel]> {
+        return _addressesResults.asObservable()
     }
     
     // MARK: - Static properties
@@ -44,9 +38,12 @@ final class TADestinationViewModel {
 extension TADestinationViewModel {
 
     func searchForLocations(using query: String) {
-        _locationRepository.searchForLocations(using: query).done { [weak self] items in
+        guard !query.isEmpty else  { return }
+        
+        _locationRepository.searchForLocations(using: query)
+        .done { [weak self] items in
             items.forEach { log.info($0.fullAddress, " -> ", $0.shortAddress) }
-            self?._pickupAddressResults.onNext(items)
+            self?._addressesResults.onNext(items)
         }.catch { err in
             log.error(err)
         }
@@ -54,6 +51,10 @@ extension TADestinationViewModel {
     
     func actAddressField(at indexPath: IndexPath) {
 //        let addressModel = item(for: indexPath)
+    }
+    
+    @objc func actChooseLocationOnMap(_ sender: Any) {
+        log.debug("")
     }
 
 }
@@ -63,19 +64,19 @@ extension TADestinationViewModel {
 extension TADestinationViewModel {
     
     var numberOfItems: Int {
-        let count = (try? _pickupAddressResults.value().count) ?? 0
+        let count = (try? _addressesResults.value().count) ?? 0
         return count
     }
     
     func item(for indexPath: IndexPath) -> TAAddressModel {
-        guard let items = try? _pickupAddressResults.value() else {
+        guard let items = try? _addressesResults.value() else {
             fatalError("fix me")
         }
         return items[indexPath.row]
     }
     
     func isLastItem(by indexPath: IndexPath) -> Bool {
-        guard let items = try? _pickupAddressResults.value() else {
+        guard let items = try? _addressesResults.value() else {
             fatalError("fix me")
         }
         return (indexPath.row + 1) == items.count

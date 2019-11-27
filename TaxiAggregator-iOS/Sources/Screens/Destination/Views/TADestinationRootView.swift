@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxKeyboard
 
 final class TADestinationRootView: TABaseView {
     
@@ -25,7 +26,17 @@ final class TADestinationRootView: TABaseView {
     private let addressesTable: UITableView = {
         let tv = TAUIFactory.makeTableView()
         tv.register(class: TAAddressCell.self)
+        tv.keyboardDismissMode = .onDrag
         return tv
+    }()
+    
+    private let chooseOnMapButton: UIButton = {
+        let b = UIButton(type: .system)
+        b.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.3137254902, blue: 0.6196078431, alpha: 1)
+        b.setTitle("Choose on map", for: .normal)
+        b.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        b.titleLabel!.font = UIFont.avenir(weight: .medium, fontSize: 16)
+        return b
     }()
     
     // MARK: - Lifecycle
@@ -37,14 +48,15 @@ final class TADestinationRootView: TABaseView {
         
         setupLayout()
         setupSubscriptions()
+        setupKeyboardSubscription()
         
-        themeProvider.register(observer: self)
+        fromToView.dropoffTextField().becomeFirstResponder()
     }
 }
 
 // MARK: - Setup
 
-extension TADestinationRootView {
+private extension TADestinationRootView {
     
     func setupLayout() {
         addSubview(fromToView)
@@ -57,14 +69,23 @@ extension TADestinationRootView {
         
         addressesTable.dataSource = self
         addressesTable.delegate = self
-        
         addSubview(addressesTable)
         addressesTable.snp.makeConstraints {
             $0.top.equalTo(fromToView.snp.bottom).offset(10)
-            $0.left.equalToSuperview()
-            $0.right.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.left.right.equalToSuperview()
         }
+        
+        addSubview(chooseOnMapButton)
+        chooseOnMapButton.snp.makeConstraints {
+            $0.top.equalTo(addressesTable.snp.bottom)
+            $0.left.right.equalToSuperview()
+            $0.bottom.equalTo(self.snp.bottom)
+            $0.height.equalTo(46)
+        }
+        chooseOnMapButton.addTarget(
+            _viewModel,
+            action: #selector(TADestinationViewModel.actChooseLocationOnMap(_:))
+        )
     }
     
     func setupSubscriptions() {
@@ -88,17 +109,25 @@ extension TADestinationRootView {
             })
             .disposed(by: disposeBag)
         
-        _viewModel.pickupAddressResults
+        _viewModel.addressesResults
             .asDriver(onErrorJustReturn: [])
             .drive(onNext: { _ in
                 self.addressesTable.reloadData()
             })
             .disposed(by: disposeBag)
         
-        _viewModel.dropoffAddressResults
-            .asDriver(onErrorJustReturn: [])
-            .drive(onNext: { _ in
-                self.addressesTable.reloadData()
+        themeProvider.register(observer: self)
+    }
+    
+    func setupKeyboardSubscription() {
+        RxKeyboard.instance.visibleHeight
+            .drive(onNext: { [unowned self] kbHeight in
+                UIView.animate(withDuration: CATransaction.animationDuration(), animations: {
+                    self.chooseOnMapButton.snp.updateConstraints {
+                        $0.bottom.equalTo(self.snp.bottom).inset(kbHeight)
+                    }
+                    self.layoutIfNeeded()
+                })
             })
             .disposed(by: disposeBag)
     }

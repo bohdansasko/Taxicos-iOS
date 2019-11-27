@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200AB307238F142A00DF6E05 /* TAFakeLocationRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AB306238F142A00DF6E05 /* TAFakeLocationRemoteAPI.swift */; };
+		200AB309238F1C0A00DF6E05 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AB308238F1C0A00DF6E05 /* UIView+Ext.swift */; };
 		200AEA812371DA8B00624F53 /* TABaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA802371DA8B00624F53 /* TABaseTableViewCell.swift */; };
 		200AEA8C2371E9D000624F53 /* TAUserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA872371E9D000624F53 /* TAUserSessionDataStore.swift */; };
 		200AEA8D2371E9D000624F53 /* TAFileUserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA882371E9D000624F53 /* TAFileUserSessionDataStore.swift */; };
@@ -112,6 +114,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		200AB306238F142A00DF6E05 /* TAFakeLocationRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFakeLocationRemoteAPI.swift; sourceTree = "<group>"; };
+		200AB308238F1C0A00DF6E05 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		200AEA802371DA8B00624F53 /* TABaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABaseTableViewCell.swift; sourceTree = "<group>"; };
 		200AEA872371E9D000624F53 /* TAUserSessionDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAUserSessionDataStore.swift; sourceTree = "<group>"; };
 		200AEA882371E9D000624F53 /* TAFileUserSessionDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAFileUserSessionDataStore.swift; sourceTree = "<group>"; };
@@ -468,6 +472,7 @@
 				20DC11CF2370BC86004F323E /* UICollectionView+Ext.swift */,
 				20DC11D42370BC86004F323E /* UITableView+Ext.swift */,
 				2042AF7F237379B20074D6CD /* UIViewController+Ext.swift */,
+				200AB308238F1C0A00DF6E05 /* UIView+Ext.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -635,6 +640,7 @@
 			children = (
 				97E43D66238571DE00C030EB /* TALocationRemoteAPI.swift */,
 				97E43D682385724400C030EB /* TAVinsoLocationRemoteAPI.swift */,
+				200AB306238F142A00DF6E05 /* TAFakeLocationRemoteAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -836,6 +842,7 @@
 				20AC55D52384783200747E12 /* TADestinationDependencyContainer.swift in Sources */,
 				9794DE0A23741D2F0077D03A /* TAMainRootView.swift in Sources */,
 				200AEA8D2371E9D000624F53 /* TAFileUserSessionDataStore.swift in Sources */,
+				200AB307238F142A00DF6E05 /* TAFakeLocationRemoteAPI.swift in Sources */,
 				20F0D1CE2378C7B20038A31C /* TANavigationController.swift in Sources */,
 				200AEA812371DA8B00624F53 /* TABaseTableViewCell.swift in Sources */,
 				20C8AAA7236DE17A005E6590 /* TAMapViewController.swift in Sources */,
@@ -886,6 +893,7 @@
 				974D60C2237EE7AB00C652FD /* TAAddressModel.swift in Sources */,
 				972D24002375CE0400B19BBE /* TAOnboardingFactory.swift in Sources */,
 				20DC11DB2370BC86004F323E /* UICollectionView+Ext.swift in Sources */,
+				200AB309238F1C0A00DF6E05 /* UIView+Ext.swift in Sources */,
 				97D3EBBF2384318000060B35 /* TASearchHistoryDataStore.swift in Sources */,
 				9794DE1023741EE70077D03A /* TALeftMenuDependencyContainer.swift in Sources */,
 				20C8AAB5236DE4E6005E6590 /* TALeftMenuViewModel.swift in Sources */,
