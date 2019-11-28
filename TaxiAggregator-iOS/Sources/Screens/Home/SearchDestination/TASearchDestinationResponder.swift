@@ -9,5 +9,5 @@
 import Foundation
 
 protocol TASearchDestinationResponder {
-    func setDestinationAddress(_ addressModel: TAAddressModel?)
+    func setDestinationAddress(from fromAddressModel: TAAddressModel?, to toAddressModel: TAAddressModel?)
 }

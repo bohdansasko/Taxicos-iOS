@@ -9,10 +9,10 @@
 import UIKit
 
 protocol TAHomeFactory {
-    func makeMapViewController() -> UIViewController
+    func makeMapViewController() -> TAMapViewController
     func makeSearchDestinationView() -> TASearchDestinationView
     
-    func makeDestinationViewController(with address: TAAddressModel?) -> UIViewController
+    func makeDestinationViewController(from fromAddress: TAAddressModel?, to toAddress: TAAddressModel?) -> UIViewController
 }
 
 final class TAHomeDependencyContainer {
@@ -50,9 +50,9 @@ extension TAHomeDependencyContainer {
 
 extension TAHomeDependencyContainer: TAHomeFactory {
     
-    func makeMapViewController() -> UIViewController {
+    func makeMapViewController() -> TAMapViewController {
         let mapDependencyContainer = TAMapDependencyContainer()
-        let vc = mapDependencyContainer.makeMapViewController()
+        let vc = mapDependencyContainer.makeMapViewController(responder: _viewModel)
         return vc
     }
     
@@ -63,7 +63,7 @@ extension TAHomeDependencyContainer: TAHomeFactory {
         return view
     }
     
-    func makeDestinationViewController(with address: TAAddressModel?) -> UIViewController {
+    func makeDestinationViewController(from fromAddress: TAAddressModel?, to toAddress: TAAddressModel?) -> UIViewController {
         let destinationDependencyContainer = TADestinationDependencyContainer()
         let vc = destinationDependencyContainer.makeDestinationViewController()
         return vc

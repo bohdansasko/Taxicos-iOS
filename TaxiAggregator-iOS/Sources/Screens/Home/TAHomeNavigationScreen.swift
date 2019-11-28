@@ -9,7 +9,7 @@
 import Foundation
 
 enum TAHomeNavigationScreen {
-    case setDestination(TAAddressModel?)
+    case setDestination(from: TAAddressModel?, to: TAAddressModel?)
 }
 
 // MARK: - Equatable

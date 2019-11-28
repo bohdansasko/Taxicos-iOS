@@ -15,7 +15,7 @@ final class TASearchDestinationViewModel {
     private let _dataStore: TASearchHistoryDataStore
     private let _searchDestinationResponder: TASearchDestinationResponder
     
-    private var _items    = BehaviorSubject<[TAAddressModel]>(value: [])
+    private var _items = BehaviorSubject<[TAAddressModel]>(value: [])
     
     // MARK: - Public properties
     
@@ -40,11 +40,13 @@ extension TASearchDestinationViewModel {
 
     func actAddressField(at indexPath: IndexPath) {
         let addressModel = item(for: indexPath)
-        _searchDestinationResponder.setDestinationAddress(addressModel)
+        let currentAddressModel = TAAddressModel.searchResultsModels().first!
+        _searchDestinationResponder.setDestinationAddress(from: currentAddressModel, to: addressModel)
     }
 
     @objc func actSearchDestinationButton() {
-        _searchDestinationResponder.setDestinationAddress(nil)
+        let currentAddressModel = TAAddressModel.searchResultsModels().first!
+        _searchDestinationResponder.setDestinationAddress(from: currentAddressModel, to: nil)
     }
     
 }

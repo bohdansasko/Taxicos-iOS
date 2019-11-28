@@ -26,7 +26,6 @@ final class TADestinationRootView: TABaseView {
     private let addressesTable: UITableView = {
         let tv = TAUIFactory.makeTableView()
         tv.register(class: TAAddressCell.self)
-        tv.keyboardDismissMode = .onDrag
         return tv
     }()
     

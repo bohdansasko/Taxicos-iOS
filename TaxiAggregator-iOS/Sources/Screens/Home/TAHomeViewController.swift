@@ -17,6 +17,7 @@ final class TAHomeViewController: TABaseViewController, TARootView {
     fileprivate let viewModel: TAHomeViewModel
     fileprivate let homeFactory: TAHomeFactory
 
+    fileprivate let mapViewController: TAMapViewController
     fileprivate var leftMenuViewController: UINavigationController?
 
     // MARK: - View lifecycle
@@ -24,6 +25,8 @@ final class TAHomeViewController: TABaseViewController, TARootView {
     init(viewModel: TAHomeViewModel, homeFactory: TAHomeFactory) {
         self.viewModel = viewModel
         self.homeFactory = homeFactory
+        self.mapViewController = homeFactory.makeMapViewController()
+        
         super.init()
     }
 
@@ -88,14 +91,13 @@ private extension TAHomeViewController {
 private extension TAHomeViewController {
 
     func addMapViewController() {
-        let mapViewController = homeFactory.makeMapViewController()
         add(child: mapViewController, to: rootView.mapContainerView)
     }
     
     func present(screen: TAHomeNavigationScreen) {
         switch screen {
-        case .setDestination(let addressModel):
-            let destinationViewController = homeFactory.makeDestinationViewController(with: addressModel)
+        case .setDestination(let fromAddressModel, let toAddressModel):
+            let destinationViewController = homeFactory.makeDestinationViewController(from: fromAddressModel, to: toAddressModel)
             navigationController!.pushViewController(destinationViewController, animated: true)
         }
     }

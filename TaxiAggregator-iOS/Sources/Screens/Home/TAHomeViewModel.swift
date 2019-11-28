@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import GoogleMaps
 
 typealias TAHomeNavigationAction = TANavigationAction<TAHomeNavigationScreen>
 
@@ -43,8 +44,20 @@ extension TAHomeViewModel {
 
 extension TAHomeViewModel: TASearchDestinationResponder {
     
-    func setDestinationAddress(_ addressModel: TAAddressModel?) {
-        _navigationAction.onNext(.present(screen: .setDestination(addressModel)))
+    func setDestinationAddress(from fromAddressModel: TAAddressModel?, to toAddressModel: TAAddressModel?) {
+        _navigationAction.onNext(.present(screen: .setDestination(from: fromAddressModel, to: toAddressModel)))
     }
     
 }
+
+// MARK: - TARecognizeUserLocationResponder
+
+extension TAHomeViewModel: TARecognizeUserLocationResponder {
+    
+    func didUpdateLocation(_ location: CLLocation) {
+        
+    }
+    
+}
+
+

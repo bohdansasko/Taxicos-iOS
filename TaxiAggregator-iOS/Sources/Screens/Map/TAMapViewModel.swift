@@ -9,6 +9,10 @@
 import GoogleMaps
 import RxSwift
 
+protocol TARecognizeUserLocationResponder {
+    func didUpdateLocation(_ location: CLLocation)
+}
+
 final class TAMapViewModel: NSObject {
     
     // MARK: - Private properties
@@ -18,6 +22,8 @@ final class TAMapViewModel: NSObject {
     private let _myLocation                = PublishSubject<CLLocation>()
     private let _isMyLocationEnabled       = BehaviorSubject<Bool>(value: true)
     private let _isVisibleMyLocationButton = BehaviorSubject<Bool>(value: true)
+    
+    private let _recognizeUserLocationResponder: TARecognizeUserLocationResponder
     
     // MARK: - Getters
     
@@ -35,7 +41,9 @@ final class TAMapViewModel: NSObject {
 
     // MARK: - Methods
     
-    override init() {
+    init(recognizeUserLocationResponder: TARecognizeUserLocationResponder) {
+        _recognizeUserLocationResponder = recognizeUserLocationResponder
+        
         super.init()
         
         _locationManager.delegate = self
@@ -83,7 +91,7 @@ extension TAMapViewModel: CLLocationManagerDelegate {
         guard let location = locations.first else {
             return
         }
-        _myLocation.onNext(location)
+        _recognizeUserLocationResponder.didUpdateLocation(location)
         manager.stopUpdatingLocation()
     }
     
