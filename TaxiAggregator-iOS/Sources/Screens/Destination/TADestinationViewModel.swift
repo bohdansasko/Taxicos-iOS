@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 final class TADestinationViewModel {
     
@@ -17,24 +18,20 @@ final class TADestinationViewModel {
     
     private var _fromAddress = BehaviorSubject<TAAddressModel?>(value: nil)
     private var _toAddress   = BehaviorSubject<TAAddressModel?>(value: nil)
-    
-    // MARK: - Observables
-    
-    var addressesResults: Observable<[TAAddressModel]> {
-        return _addressesResults.asObservable()
-    }
-    
-    var fromAddress: Observable<TAAddressModel?> {
-        return _fromAddress.asObservable()
-    }
 
-    var toAddress: Observable<TAAddressModel?> {
-        return _toAddress.asObservable()
-    }
-
+    let activeAddressTyping = BehaviorRelay<TAActiveAddressTyping>(value: .to)
+    
     // MARK: - Static properties
     
     let kCellHeight: Float = 60
+    
+    var isReadyToSearchTaxis: Bool {
+        guard let _ = try? _fromAddress.value(),
+              let _ = try? _toAddress.value() else {
+                return false
+        }
+        return true
+    }
     
     // MARK: - Lifecycle
     
@@ -46,28 +43,20 @@ final class TADestinationViewModel {
     
 }
 
-// MARK: - User interaction
+// MARK: - Observables getters
 
 extension TADestinationViewModel {
 
-    func searchForLocations(using query: String) {
-        guard !query.isEmpty else  { return }
-        
-        _locationRepository.searchForLocations(using: query)
-        .done { [weak self] items in
-            items.forEach { log.info($0.fullAddress, " -> ", $0.shortAddress) }
-            self?._addressesResults.onNext(items)
-        }.catch { err in
-            log.error(err)
-        }
+    var addressesResults: Observable<[TAAddressModel]> {
+        return _addressesResults.asObservable()
     }
-    
-    func actAddressField(at indexPath: IndexPath) {
-//        let addressModel = item(for: indexPath)
+
+    var fromAddress: Observable<TAAddressModel?> {
+        return _fromAddress.asObservable()
     }
-    
-    @objc func actChooseLocationOnMap(_ sender: Any) {
-        log.debug("")
+
+    var toAddress: Observable<TAAddressModel?> {
+        return _toAddress.asObservable()
     }
 
 }
@@ -94,5 +83,72 @@ extension TADestinationViewModel {
         }
         return (indexPath.row + 1) == items.count
     }
+
+}
+
+// MARK: - Help methods
+
+private extension TADestinationViewModel {
+
+    func clearSelectedAddress() {
+        switch activeAddressTyping.value {
+        case .from:
+            _fromAddress.onNext(nil)
+        case .to:
+            _toAddress.onNext(nil)
+        }
+    }
     
+}
+
+// MARK: - User interaction
+
+extension TADestinationViewModel {
+    
+    func actAddressField(at indexPath: IndexPath) {
+        let address = item(for: indexPath)
+        
+        switch activeAddressTyping.value {
+        case .from:
+            _fromAddress.onNext(address)
+        case .to:
+            _toAddress.onNext(address)
+        }
+        
+        if isReadyToSearchTaxis {
+            assertionFailure("required implementating")
+        }
+        _addressesResults.onNext([])
+    }
+    
+    @objc func actChooseLocationOnMap(_ sender: Any) {
+        assertionFailure("required implementating")
+    }
+
+}
+
+// MARK: - API
+
+extension TADestinationViewModel {
+
+    func searchForLocations(using query: String) {
+        guard !query.isEmpty else  {
+            _addressesResults.onNext([])
+            clearSelectedAddress()
+            return
+        }
+
+        _locationRepository.searchForLocations(using: query)
+            .done { [weak self] items in
+                guard let self = self else { return }
+
+                if items.isEmpty {
+                    self.clearSelectedAddress()
+                }
+                self._addressesResults.onNext(items)
+            }.catch { err in
+                log.error(err)
+            }
+    }
+
 }

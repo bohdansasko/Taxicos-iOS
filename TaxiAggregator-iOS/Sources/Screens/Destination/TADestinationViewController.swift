@@ -30,7 +30,14 @@ final class TADestinationViewController: TABaseViewController, TARootView {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.backBarButtonItem?.title = " "
+        setupNavigationBar()
+    }
+    
+}
+
+private extension TADestinationViewController {
+    
+    func setupNavigationBar() {
         navigationItem.title = "SET_DESTINATION".localized
         
         navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)

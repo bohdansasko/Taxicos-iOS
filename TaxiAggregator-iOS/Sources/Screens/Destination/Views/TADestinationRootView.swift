@@ -26,6 +26,7 @@ final class TADestinationRootView: TABaseView {
     private let addressesTable: UITableView = {
         let tv = TAUIFactory.makeTableView()
         tv.register(class: TAAddressCell.self)
+        tv.backgroundColor = #colorLiteral(red: 0.9843137255, green: 0.9843137255, blue: 0.9882352941, alpha: 1)
         return tv
     }()
     
@@ -130,6 +131,8 @@ private extension TADestinationRootView {
             })
             .disposed(by: disposeBag)
 
+        fromToView.activeAddressTyping.bind(to: _viewModel.activeAddressTyping)
+        
         themeProvider.register(observer: self)
     }
     
@@ -153,7 +156,7 @@ private extension TADestinationRootView {
 extension TADestinationRootView: TAThemeable {
         
     func apply(theme: TATheme) {
-        backgroundColor = theme.colors.backgroundColor
+        backgroundColor = #colorLiteral(red: 0.9843137255, green: 0.9843137255, blue: 0.9882352941, alpha: 1)
     }
 
 }

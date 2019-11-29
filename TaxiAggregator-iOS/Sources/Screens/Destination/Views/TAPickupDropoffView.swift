@@ -7,10 +7,24 @@
 //
 
 import UIKit
+import RxSwift
+
+enum TAActiveAddressTyping {
+    case from
+    case to
+}
 
 final class TAPickupDropoffView: TABaseView {
     
-    // MARK: - Pickup properties
+    // MARK: - Properties
+    
+    fileprivate let _activeAddressTyping = PublishSubject<TAActiveAddressTyping>()
+    
+    var activeAddressTyping: Observable<TAActiveAddressTyping> {
+        return _activeAddressTyping.asObservable()
+    }
+    
+    // MARK: - UI
     
     fileprivate let pickupIconView: UIImageView = {
         return makeIconView(image: #imageLiteral(resourceName: "icPickup"))
@@ -19,8 +33,6 @@ final class TAPickupDropoffView: TABaseView {
     fileprivate let fromAddressTF: TATextField = {
         return TAUIFactory.makeTextField(placeholder: "MAP_ENTER_LOCATION".localized, tintColor: #colorLiteral(red: 0.04705882353, green: 0.1960784314, blue: 0.7254901961, alpha: 1))
     }()
-    
-    // MARK: - Dropoff properties
     
     fileprivate let dropoffIconView: UIImageView = {
         return makeIconView(image: #imageLiteral(resourceName: "icDropoff"))
@@ -64,6 +76,9 @@ private extension TAPickupDropoffView {
         layer.shadowOpacity = 0.2
         layer.shadowOffset = CGSize(width: 0, height: 2)
         
+        fromAddressTF.textField.delegate = self
+        toAddressTF.textField.delegate = self
+        
         pickupIconView.setContentHuggingPriority(.init(251), for: .horizontal)
         dropoffIconView.setContentHuggingPriority(.init(251), for: .horizontal)
 
@@ -103,7 +118,7 @@ private extension TAPickupDropoffView {
     
 }
 
-// MARK: - Make
+// MARK: - Makers
 
 private extension TAPickupDropoffView {
     
@@ -113,4 +128,32 @@ private extension TAPickupDropoffView {
         return imgView
     }
 
+}
+
+// MARK: - Help methods
+
+private extension TAPickupDropoffView {
+    
+    func activeAddressType(by textField: UITextField) -> TAActiveAddressTyping {
+        switch textField {
+        case fromAddressTF.textField:
+            return .from
+        case toAddressTF.textField:
+            return .to
+        default:
+            fatalError("fix me")
+        }
+    }
+    
+}
+
+// MARK: - UITextFieldDelegate
+
+extension TAPickupDropoffView: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let addressType = activeAddressType(by: textField)
+        _activeAddressTyping.onNext(addressType)
+    }
+    
 }
