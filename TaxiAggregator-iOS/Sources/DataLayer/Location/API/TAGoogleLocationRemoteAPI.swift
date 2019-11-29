@@ -10,7 +10,7 @@ import PromiseKit
 import GooglePlaces
 import Alamofire
 
-final class TAVinsoLocationRemoteAPI {
+final class TAGoogleLocationRemoteAPI {
     private let _placesClient: GMSPlacesClient
     private let _sessionToken: GMSAutocompleteSessionToken
     
@@ -23,7 +23,7 @@ final class TAVinsoLocationRemoteAPI {
 
 // MARK: - TALocationRemoteAPI
 
-extension TAVinsoLocationRemoteAPI: TALocationRemoteAPI {
+extension TAGoogleLocationRemoteAPI: TALocationRemoteAPI {
     
     func getLocationSearchResults(query: String) -> Promise<[TAAddressModel]> {
         return Promise { [weak self] seal in
