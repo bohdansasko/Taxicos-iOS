@@ -49,7 +49,7 @@ final class TADestinationRootView: TABaseView {
         setupSubscriptions()
         setupKeyboardSubscription()
         
-        fromToView.dropoffTextField().becomeFirstResponder()
+        fromToView.toTextField().becomeFirstResponder()
     }
 }
 
@@ -88,7 +88,7 @@ private extension TADestinationRootView {
     }
     
     func setupSubscriptions() {
-        fromToView.pickupTextField().rx
+        fromToView.fromTextField().rx
             .text
             .orEmpty
             .throttle(.milliseconds(600), scheduler: MainScheduler.instance)
@@ -98,7 +98,7 @@ private extension TADestinationRootView {
             })
             .disposed(by: disposeBag)
 
-        fromToView.dropoffTextField().rx
+        fromToView.toTextField().rx
             .text
             .orEmpty
             .throttle(.milliseconds(600), scheduler: MainScheduler.instance)
@@ -114,7 +114,22 @@ private extension TADestinationRootView {
                 self.addressesTable.reloadData()
             })
             .disposed(by: disposeBag)
+
         
+        _viewModel.fromAddress
+            .asDriver(onErrorJustReturn: nil)
+            .drive(onNext: { [unowned self] address in
+                self.fromToView.fromTextField().text = address?.fullAddress
+            })
+            .disposed(by: disposeBag)
+
+        _viewModel.toAddress
+            .asDriver(onErrorJustReturn: nil)
+            .drive(onNext: { [unowned self] address in
+                self.fromToView.toTextField().text = address?.fullAddress
+            })
+            .disposed(by: disposeBag)
+
         themeProvider.register(observer: self)
     }
     

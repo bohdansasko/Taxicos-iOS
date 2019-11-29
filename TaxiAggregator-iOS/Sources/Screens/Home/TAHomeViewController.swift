@@ -96,9 +96,12 @@ private extension TAHomeViewController {
     
     func present(screen: TAHomeNavigationScreen) {
         switch screen {
-        case .setDestination(let fromAddressModel, let toAddressModel):
-            let destinationViewController = homeFactory.makeDestinationViewController(from: fromAddressModel, to: toAddressModel)
+        case .setDestination(let fromAddress):
+            let destinationViewController = homeFactory.makeDestinationViewController(from: fromAddress)
             navigationController!.pushViewController(destinationViewController, animated: true)
+        case .showTaxisOptions(let fromAddress, let toAddress):
+            assertionFailure("required") 
+            break
         }
     }
     

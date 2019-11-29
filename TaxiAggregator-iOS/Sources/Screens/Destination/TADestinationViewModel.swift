@@ -15,20 +15,33 @@ final class TADestinationViewModel {
     private let _locationRepository: TALocationRepository
     private let _addressesResults = BehaviorSubject<[TAAddressModel]>(value: [])
     
+    private var _fromAddress = BehaviorSubject<TAAddressModel?>(value: nil)
+    private var _toAddress   = BehaviorSubject<TAAddressModel?>(value: nil)
+    
     // MARK: - Observables
     
     var addressesResults: Observable<[TAAddressModel]> {
         return _addressesResults.asObservable()
     }
     
+    var fromAddress: Observable<TAAddressModel?> {
+        return _fromAddress.asObservable()
+    }
+
+    var toAddress: Observable<TAAddressModel?> {
+        return _toAddress.asObservable()
+    }
+
     // MARK: - Static properties
     
     let kCellHeight: Float = 60
     
     // MARK: - Lifecycle
     
-    init(locationRepository: TALocationRepository) {
+    init(locationRepository: TALocationRepository, from fromAddress: TAAddressModel?) {
         _locationRepository = locationRepository
+        
+        _fromAddress.onNext(fromAddress)
     }
     
 }

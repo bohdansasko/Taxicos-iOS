@@ -43,9 +43,18 @@ extension TAHomeViewModel {
 // MARK: - TASearchDestinationResponder
 
 extension TAHomeViewModel: TASearchDestinationResponder {
-    
-    func setDestinationAddress(from fromAddressModel: TAAddressModel?, to toAddressModel: TAAddressModel?) {
-        _navigationAction.onNext(.present(screen: .setDestination(from: fromAddressModel, to: toAddressModel)))
+//    from ,
+    func setDestinationAddress(to toAddressModel: TAAddressModel?) {
+        switch toAddressModel {
+        case .none:
+            let fromAddressModel: TAAddressModel? = TAAddressModel.searchResultsModels().first!
+            let destinationScreen: TAHomeNavigationScreen = .setDestination(from: fromAddressModel)
+            _navigationAction.onNext(.present(screen: destinationScreen))
+        case .some(let toAddress):
+            let fromAddress: TAAddressModel? = TAAddressModel.searchResultsModels().first!
+            _navigationAction.onNext(.present(screen: .showTaxisOptions(from: fromAddress, to: toAddress)))
+            
+        }
     }
     
 }

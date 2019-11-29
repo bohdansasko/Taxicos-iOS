@@ -16,7 +16,7 @@ final class TAPickupDropoffView: TABaseView {
         return makeIconView(image: #imageLiteral(resourceName: "icPickup"))
     }()
 
-    fileprivate let pickupTF: TATextField = {
+    fileprivate let fromAddressTF: TATextField = {
         return TAUIFactory.makeTextField(placeholder: "MAP_ENTER_LOCATION".localized, tintColor: #colorLiteral(red: 0.04705882353, green: 0.1960784314, blue: 0.7254901961, alpha: 1))
     }()
     
@@ -26,7 +26,7 @@ final class TAPickupDropoffView: TABaseView {
         return makeIconView(image: #imageLiteral(resourceName: "icDropoff"))
     }()
     
-    fileprivate let dropoffTF: TATextField = {
+    fileprivate let toAddressTF: TATextField = {
         return TAUIFactory.makeTextField(placeholder: "MAP_WHERE_TO".localized, tintColor: #colorLiteral(red: 0.2039215686, green: 0.2196078431, blue: 0.337254902, alpha: 1))
     }()
 
@@ -44,12 +44,12 @@ final class TAPickupDropoffView: TABaseView {
 
 extension TAPickupDropoffView {
 
-    func pickupTextField() -> UITextField {
-        return pickupTF.textField
+    func fromTextField() -> UITextField {
+        return fromAddressTF.textField
     }
     
-    func dropoffTextField() -> UITextField {
-        return dropoffTF.textField
+    func toTextField() -> UITextField {
+        return toAddressTF.textField
     }
     
 }
@@ -67,12 +67,12 @@ private extension TAPickupDropoffView {
         pickupIconView.setContentHuggingPriority(.init(251), for: .horizontal)
         dropoffIconView.setContentHuggingPriority(.init(251), for: .horizontal)
 
-        let pickupSV = UIStackView(arrangedSubviews: [pickupIconView, pickupTF])
+        let pickupSV = UIStackView(arrangedSubviews: [pickupIconView, fromAddressTF])
         pickupSV.axis = .horizontal
         pickupSV.distribution = .fill
         pickupSV.spacing = 12
 
-        let dropoffSV = UIStackView(arrangedSubviews: [dropoffIconView, dropoffTF])
+        let dropoffSV = UIStackView(arrangedSubviews: [dropoffIconView, toAddressTF])
         dropoffSV.translatesAutoresizingMaskIntoConstraints = false
         dropoffSV.axis = .horizontal
         dropoffSV.distribution = .fill
@@ -91,8 +91,8 @@ private extension TAPickupDropoffView {
         allSV.spacing = 15
         addSubview(allSV)
         
-        pickupTF.snp.makeConstraints { $0.height.equalTo(40) }
-        dropoffTF.snp.makeConstraints { $0.height.equalTo(40) }
+        fromAddressTF.snp.makeConstraints { $0.height.equalTo(40) }
+        toAddressTF.snp.makeConstraints { $0.height.equalTo(40) }
         
         allSV.snp.makeConstraints {
             $0.left.equalToSuperview().offset(28)

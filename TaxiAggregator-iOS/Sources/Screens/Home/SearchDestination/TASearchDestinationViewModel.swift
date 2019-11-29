@@ -40,13 +40,11 @@ extension TASearchDestinationViewModel {
 
     func actAddressField(at indexPath: IndexPath) {
         let addressModel = item(for: indexPath)
-        let currentAddressModel = TAAddressModel.searchResultsModels().first!
-        _searchDestinationResponder.setDestinationAddress(from: currentAddressModel, to: addressModel)
+        _searchDestinationResponder.setDestinationAddress(to: addressModel)
     }
 
     @objc func actSearchDestinationButton() {
-        let currentAddressModel = TAAddressModel.searchResultsModels().first!
-        _searchDestinationResponder.setDestinationAddress(from: currentAddressModel, to: nil)
+        _searchDestinationResponder.setDestinationAddress(to: nil)
     }
     
 }
