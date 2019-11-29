@@ -131,7 +131,9 @@ private extension TADestinationRootView {
             })
             .disposed(by: disposeBag)
 
-        fromToView.activeAddressTyping.bind(to: _viewModel.activeAddressTyping)
+        fromToView.activeAddressTyping
+            .bind(to: _viewModel.activeAddressTyping)
+            .disposed(by: disposeBag)
         
         themeProvider.register(observer: self)
     }
@@ -139,12 +141,9 @@ private extension TADestinationRootView {
     func setupKeyboardSubscription() {
         RxKeyboard.instance.visibleHeight
             .drive(onNext: { [unowned self] kbHeight in
-                UIView.animate(withDuration: CATransaction.animationDuration(), animations: {
-                    self.chooseOnMapButton.snp.updateConstraints {
-                        $0.bottom.equalTo(self.snp.bottom).inset(kbHeight)
-                    }
-                    self.layoutIfNeeded()
-                })
+                self.chooseOnMapButton.snp.updateConstraints {
+                    $0.bottom.equalTo(self.snp.bottom).inset(kbHeight)
+                }
             })
             .disposed(by: disposeBag)
     }
