@@ -18,8 +18,8 @@ final class TADestinationRootView: TABaseView {
     
     // MARK: - UI
     
-    private let fromToView: TAPickupDropoffView = {
-        let v = TAPickupDropoffView()
+    private let fromToView: TAFromToAddressView = {
+        let v = TAFromToAddressView()
         return v
     }()
  

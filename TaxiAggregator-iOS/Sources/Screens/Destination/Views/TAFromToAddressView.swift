@@ -14,7 +14,7 @@ enum TAActiveAddressTyping {
     case to
 }
 
-final class TAPickupDropoffView: TABaseView {
+final class TAFromToAddressView: TABaseView {
     
     // MARK: - Properties
     
@@ -54,7 +54,7 @@ final class TAPickupDropoffView: TABaseView {
 
 // MARK: - 
 
-extension TAPickupDropoffView {
+extension TAFromToAddressView {
 
     func fromTextField() -> UITextField {
         return fromAddressTF.textField
@@ -68,7 +68,7 @@ extension TAPickupDropoffView {
 
 // MARK: - Setup
 
-private extension TAPickupDropoffView {
+private extension TAFromToAddressView {
     
     func setupLayout() {
         backgroundColor = .white
@@ -120,7 +120,7 @@ private extension TAPickupDropoffView {
 
 // MARK: - Makers
 
-private extension TAPickupDropoffView {
+private extension TAFromToAddressView {
     
     static func makeIconView(image: UIImage?) -> UIImageView {
         let imgView = UIImageView(image: image)
@@ -132,7 +132,7 @@ private extension TAPickupDropoffView {
 
 // MARK: - Help methods
 
-private extension TAPickupDropoffView {
+private extension TAFromToAddressView {
     
     func activeAddressType(by textField: UITextField) -> TAActiveAddressTyping {
         switch textField {
@@ -149,7 +149,7 @@ private extension TAPickupDropoffView {
 
 // MARK: - UITextFieldDelegate
 
-extension TAPickupDropoffView: UITextFieldDelegate {
+extension TAFromToAddressView: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         let addressType = activeAddressType(by: textField)

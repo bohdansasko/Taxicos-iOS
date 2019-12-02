@@ -98,7 +98,7 @@
 		979BF447237BE6ED00F5F56B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 979BF446237BE6EC00F5F56B /* GoogleService-Info.plist */; };
 		979F180F2374346700CA209B /* TAMainDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F180E2374346700CA209B /* TAMainDependencyContainer.swift */; };
 		979F18172374733100CA209B /* Avenir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 979F18162374733100CA209B /* Avenir-Medium.ttf */; };
-		97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A33C482370391E00C06500 /* TAPickupDropoffView.swift */; };
+		97A33C492370391E00C06500 /* TAFromToAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A33C482370391E00C06500 /* TAFromToAddressView.swift */; };
 		97A551D42370869500960890 /* UIControl+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D32370869500960890 /* UIControl+Ext.swift */; };
 		97A551D923708ECA00960890 /* TANavigationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D823708ECA00960890 /* TANavigationAction.swift */; };
 		97A551DB23708F8500960890 /* TAHomeNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */; };
@@ -212,7 +212,7 @@
 		979BF446237BE6EC00F5F56B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		979F180E2374346700CA209B /* TAMainDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainDependencyContainer.swift; sourceTree = "<group>"; };
 		979F18162374733100CA209B /* Avenir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Medium.ttf"; sourceTree = "<group>"; };
-		97A33C482370391E00C06500 /* TAPickupDropoffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAPickupDropoffView.swift; sourceTree = "<group>"; };
+		97A33C482370391E00C06500 /* TAFromToAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFromToAddressView.swift; sourceTree = "<group>"; };
 		97A551D32370869500960890 /* UIControl+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Ext.swift"; sourceTree = "<group>"; };
 		97A551D823708ECA00960890 /* TANavigationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TANavigationAction.swift; sourceTree = "<group>"; };
 		97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAHomeNavigationScreen.swift; sourceTree = "<group>"; };
@@ -611,7 +611,7 @@
 		97E43D5B23854B9E00C030EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				97A33C482370391E00C06500 /* TAPickupDropoffView.swift */,
+				97A33C482370391E00C06500 /* TAFromToAddressView.swift */,
 				20AC55D02384777500747E12 /* TADestinationRootView.swift */,
 			);
 			path = Views;
@@ -828,7 +828,7 @@
 				974D60CE237EEBC300C652FD /* TAUIFactory.swift in Sources */,
 				20EC5FD423784E98003817FD /* TAUserSessionRepository.swift in Sources */,
 				97E43D692385724400C030EB /* TAGoogleLocationRemoteAPI.swift in Sources */,
-				97A33C492370391E00C06500 /* TAPickupDropoffView.swift in Sources */,
+				97A33C492370391E00C06500 /* TAFromToAddressView.swift in Sources */,
 				97A551D42370869500960890 /* UIControl+Ext.swift in Sources */,
 				9797E7B023718F8C008AC393 /* TAColorsPalette.swift in Sources */,
 				9794DE0C23741DFC0077D03A /* TASavedAddressesDependencyContainer.swift in Sources */,
