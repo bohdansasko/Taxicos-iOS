@@ -100,9 +100,7 @@ private extension TASearchDestinationView {
         addSubview(addressesTable)
         addressesTable.snp.makeConstraints {
             $0.top.equalTo(searchButton.snp.bottom).offset(10)
-            $0.left.equalToSuperview()
-            $0.right.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.left.right.bottom.equalToSuperview()
         }
     }
     

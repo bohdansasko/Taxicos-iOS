@@ -33,3 +33,5 @@
 "DESTINATION_TIME_TO_FIND_CHEAPEST_CAB" = "Time to find cheapest cab!";
 "SEARCH_DESTINATION" = "Search destination";
 "SET_DESTINATION" = "Set Destination";
+
+"TAXIS_OPTIONS_TITLE" = "Search Results";

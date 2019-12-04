@@ -40,7 +40,21 @@ class TABaseViewController: UIViewController {
         
         title = " "
     }
-    
+
+}
+
+// MARK: - View controller presentation
+
+extension TABaseViewController {
+
+    func push(viewController: UIViewController, animated: Bool = true) {
+        guard let nav = navigationController else {
+            assertionFailure("required")
+            return
+        }
+        nav.pushViewController(viewController, animated: animated)
+    }
+
 }
 
 // MARK: - Handle navigation bar visibility

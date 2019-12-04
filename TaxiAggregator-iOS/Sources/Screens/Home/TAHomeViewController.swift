@@ -98,10 +98,13 @@ private extension TAHomeViewController {
         switch screen {
         case .setDestination(let fromAddress):
             let destinationViewController = homeFactory.makeDestinationViewController(from: fromAddress)
-            navigationController!.pushViewController(destinationViewController, animated: true)
+            push(viewController: destinationViewController)
         case .showTaxisOptions(let fromAddress, let toAddress):
-            assertionFailure("required") 
-            break
+            let taxisOptionsViewController = homeFactory.makeTaxisOptionsViewController(
+                from: fromAddress,
+                to: toAddress
+            )
+            push(viewController: taxisOptionsViewController)
         }
     }
     

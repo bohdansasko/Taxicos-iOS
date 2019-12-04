@@ -81,6 +81,13 @@
 		974D60C2237EE7AB00C652FD /* TAAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D60C0237EE7AB00C652FD /* TAAddressModel.swift */; };
 		974D60CE237EEBC300C652FD /* TAUIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D60CD237EEBC300C652FD /* TAUIFactory.swift */; };
 		974D60D0237EEE1A00C652FD /* TADropdownAddresessPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974D60CF237EEE1A00C652FD /* TADropdownAddresessPresenter.swift */; };
+		9778336D2397F3E3002B5F96 /* TATaxisOptionsRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977833692397F3E3002B5F96 /* TATaxisOptionsRootView.swift */; };
+		9778336E2397F3E3002B5F96 /* TATaxisOptionsDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778336A2397F3E3002B5F96 /* TATaxisOptionsDependencyContainer.swift */; };
+		9778336F2397F3E3002B5F96 /* TATaxisOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778336B2397F3E3002B5F96 /* TATaxisOptionsViewController.swift */; };
+		977833702397F3E3002B5F96 /* TATaxisOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778336C2397F3E3002B5F96 /* TATaxisOptionsViewModel.swift */; };
+		977833722397FE38002B5F96 /* TATaxiOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977833712397FE38002B5F96 /* TATaxiOptionModel.swift */; };
+		97783374239803F7002B5F96 /* TATaxiOptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97783373239803F7002B5F96 /* TATaxiOptionType.swift */; };
+		9778337823980EA7002B5F96 /* TATaxiOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778337723980EA7002B5F96 /* TATaxiOptionCell.swift */; };
 		9794DE012374100D0077D03A /* TAHomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DDFE2374100D0077D03A /* TAHomeRootView.swift */; };
 		9794DE022374100D0077D03A /* TAHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DDFF2374100D0077D03A /* TAHomeViewModel.swift */; };
 		9794DE032374100D0077D03A /* TAHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DE002374100D0077D03A /* TAHomeViewController.swift */; };
@@ -195,6 +202,13 @@
 		974D60C0237EE7AB00C652FD /* TAAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAAddressModel.swift; sourceTree = "<group>"; };
 		974D60CD237EEBC300C652FD /* TAUIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAUIFactory.swift; sourceTree = "<group>"; };
 		974D60CF237EEE1A00C652FD /* TADropdownAddresessPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TADropdownAddresessPresenter.swift; sourceTree = "<group>"; };
+		977833692397F3E3002B5F96 /* TATaxisOptionsRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATaxisOptionsRootView.swift; sourceTree = "<group>"; };
+		9778336A2397F3E3002B5F96 /* TATaxisOptionsDependencyContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATaxisOptionsDependencyContainer.swift; sourceTree = "<group>"; };
+		9778336B2397F3E3002B5F96 /* TATaxisOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATaxisOptionsViewController.swift; sourceTree = "<group>"; };
+		9778336C2397F3E3002B5F96 /* TATaxisOptionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATaxisOptionsViewModel.swift; sourceTree = "<group>"; };
+		977833712397FE38002B5F96 /* TATaxiOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TATaxiOptionModel.swift; sourceTree = "<group>"; };
+		97783373239803F7002B5F96 /* TATaxiOptionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TATaxiOptionType.swift; sourceTree = "<group>"; };
+		9778337723980EA7002B5F96 /* TATaxiOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATaxiOptionCell.swift; sourceTree = "<group>"; };
 		9794DDFE2374100D0077D03A /* TAHomeRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeRootView.swift; sourceTree = "<group>"; };
 		9794DDFF2374100D0077D03A /* TAHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeViewModel.swift; sourceTree = "<group>"; };
 		9794DE002374100D0077D03A /* TAHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeViewController.swift; sourceTree = "<group>"; };
@@ -375,6 +389,7 @@
 				20C8AAC5236E0160005E6590 /* Onboarding */,
 				20C8AAC0236DFF91005E6590 /* Saved Locations */,
 				20AC55CD2384772800747E12 /* Destination */,
+				977833682397F374002B5F96 /* TaxisOptions */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -550,6 +565,20 @@
 				974D60BF237EE7AA00C652FD /* TASavedAddressesViewModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		977833682397F374002B5F96 /* TaxisOptions */ = {
+			isa = PBXGroup;
+			children = (
+				9778337723980EA7002B5F96 /* TATaxiOptionCell.swift */,
+				9778336A2397F3E3002B5F96 /* TATaxisOptionsDependencyContainer.swift */,
+				977833692397F3E3002B5F96 /* TATaxisOptionsRootView.swift */,
+				9778336B2397F3E3002B5F96 /* TATaxisOptionsViewController.swift */,
+				9778336C2397F3E3002B5F96 /* TATaxisOptionsViewModel.swift */,
+				977833712397FE38002B5F96 /* TATaxiOptionModel.swift */,
+				97783373239803F7002B5F96 /* TATaxiOptionType.swift */,
+			);
+			path = TaxisOptions;
 			sourceTree = "<group>";
 		};
 		9794DDFD2374100D0077D03A /* Home */ = {
@@ -823,6 +852,7 @@
 				20E0EB42237DF44E00E4EDD5 /* TASetLocationOnMapCell.swift in Sources */,
 				202E50472381F5CE008CD13D /* TATapableTextField.swift in Sources */,
 				97E43D632385710C00C030EB /* TALocationRepository.swift in Sources */,
+				977833722397FE38002B5F96 /* TATaxiOptionModel.swift in Sources */,
 				20DC11C32370BC04004F323E /* Logger.swift in Sources */,
 				9797E7AE23718E3D008AC393 /* TATheme.swift in Sources */,
 				974D60CE237EEBC300C652FD /* TAUIFactory.swift in Sources */,
@@ -837,6 +867,7 @@
 				200AEA8C2371E9D000624F53 /* TAUserSessionDataStore.swift in Sources */,
 				20AC55CF2384774E00747E12 /* TADestinationViewController.swift in Sources */,
 				2042AF80237379B20074D6CD /* UIViewController+Ext.swift in Sources */,
+				977833702397F3E3002B5F96 /* TATaxisOptionsViewModel.swift in Sources */,
 				20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */,
 				97D3EBC12384318D00060B35 /* TAFakeSearchHistoryDataStore.swift in Sources */,
 				20AC55D52384783200747E12 /* TADestinationDependencyContainer.swift in Sources */,
@@ -847,11 +878,13 @@
 				200AEA812371DA8B00624F53 /* TABaseTableViewCell.swift in Sources */,
 				20C8AAA7236DE17A005E6590 /* TAMapViewController.swift in Sources */,
 				200AEA902371E9D000624F53 /* TAAppUserSessionRepository.swift in Sources */,
+				9778336F2397F3E3002B5F96 /* TATaxisOptionsViewController.swift in Sources */,
 				20DC11D62370BC86004F323E /* UIFont+Ext.swift in Sources */,
 				974D60D0237EEE1A00C652FD /* TADropdownAddresessPresenter.swift in Sources */,
 				209C29692373F88F002D8418 /* TAOnboardingDependencyContainer.swift in Sources */,
 				20C8AAB3236DE49E005E6590 /* TABaseViewController.swift in Sources */,
 				9794DE0623741D0E0077D03A /* TAMainViewModel.swift in Sources */,
+				9778336E2397F3E3002B5F96 /* TATaxisOptionsDependencyContainer.swift in Sources */,
 				20587B60236EF1FA00E661E9 /* TAMenuItemType.swift in Sources */,
 				20AC55D12384777500747E12 /* TADestinationRootView.swift in Sources */,
 				207E5D142377441300A99C25 /* TARemoteUserSession.swift in Sources */,
@@ -875,18 +908,21 @@
 				20587B58236EAF1500E661E9 /* TASavedAddressesRootView.swift in Sources */,
 				207E6165237A341D00476379 /* TAMainNavigationScreen.swift in Sources */,
 				20C8AAA4236DE07A005E6590 /* TAAppDependencyContainer.swift in Sources */,
+				9778336D2397F3E3002B5F96 /* TATaxisOptionsRootView.swift in Sources */,
 				200B5B04237627E100E2E37D /* TARootView.swift in Sources */,
 				9746DF4423843B2800F74108 /* TASearchDestinationResponder.swift in Sources */,
 				972D24022375CE2000B19BBE /* TAOnboardingPageType.swift in Sources */,
 				97A551D923708ECA00960890 /* TANavigationAction.swift in Sources */,
 				20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */,
 				207E5D162377445B00A99C25 /* TAUserProfile.swift in Sources */,
+				9778337823980EA7002B5F96 /* TATaxiOptionCell.swift in Sources */,
 				200AEA8E2371E9D000624F53 /* TAAuthRemoteAPI.swift in Sources */,
 				20EC5FD723785435003817FD /* TAErrorMessage.swift in Sources */,
 				9797E7B423719257008AC393 /* TALegacyThemeProvider.swift in Sources */,
 				20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */,
 				200AEA932371FD6A00624F53 /* TALeftMenuNavigationScreen.swift in Sources */,
 				97D3EBBC2384286C00060B35 /* TASearchDestinationViewModel.swift in Sources */,
+				97783374239803F7002B5F96 /* TATaxiOptionType.swift in Sources */,
 				202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */,
 				20DC11D52370BC86004F323E /* UIApplication+Ext.swift in Sources */,
 				97202199237ACD0900C55E21 /* TAAddressCell.swift in Sources */,

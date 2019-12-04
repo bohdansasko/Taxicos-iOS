@@ -51,7 +51,7 @@ extension TAHomeViewModel: TASearchDestinationResponder {
             let destinationScreen: TAHomeNavigationScreen = .setDestination(from: fromAddressModel)
             _navigationAction.onNext(.present(screen: destinationScreen))
         case .some(let toAddress):
-            let fromAddress: TAAddressModel? = TAAddressModel.searchResultsModels().first!
+            let fromAddress: TAAddressModel = TAAddressModel.searchResultsModels().first!
             _navigationAction.onNext(.present(screen: .showTaxisOptions(from: fromAddress, to: toAddress)))
             
         }

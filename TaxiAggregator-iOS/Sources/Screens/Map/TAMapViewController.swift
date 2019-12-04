@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SideMenu
 import RxSwift
 
 final class TAMapViewController: TABaseViewController, TARootView {
