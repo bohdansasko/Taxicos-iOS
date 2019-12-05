@@ -38,6 +38,7 @@ extension TATaxiOptionModel {
     var formattedPrice: String {
         return String(format: "₴%.0f", price)
     }
+    
 }
 
 // MARK: - Mock
