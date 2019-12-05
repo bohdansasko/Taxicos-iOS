@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxRelay
 
 final class TASearchDestinationViewModel {
     
@@ -15,12 +16,12 @@ final class TASearchDestinationViewModel {
     private let _dataStore: TASearchHistoryDataStore
     private let _searchDestinationResponder: TASearchDestinationResponder
     
-    private var _items = BehaviorSubject<[TAAddressModel]>(value: [])
+    private var _items = BehaviorRelay<[TAAddressModel]>(value: [])
     
     // MARK: - Public properties
     
     var items: Observable<[TAAddressModel]> {
-        return _items.asObserver()
+        return _items.asObservable()
     }
     
     let kCellHeight: Float = 60
@@ -56,7 +57,7 @@ extension TASearchDestinationViewModel {
     func fetchHistory() {
         _dataStore.fetchSearchHistory()
         .done { [unowned self] items in
-            self._items.onNext(items)
+            self._items.accept(items)
         }.catch { err in
             log.error(err)
         }
@@ -69,21 +70,17 @@ extension TASearchDestinationViewModel {
 extension TASearchDestinationViewModel {
     
     var numberOfItems: Int {
-        let count = (try? _items.value().count) ?? 0
+        let count = _items.value.count
         return count
     }
     
     func item(for indexPath: IndexPath) -> TAAddressModel {
-        guard let items = try? _items.value() else {
-            fatalError("fix me")
-        }
+        let items = _items.value
         return items[indexPath.row]
     }
     
     func isLastItem(by indexPath: IndexPath) -> Bool {
-        guard let items = try? _items.value() else {
-            fatalError("fix me")
-        }
+        let items = _items.value
         return (indexPath.row + 1) == items.count
     }
     

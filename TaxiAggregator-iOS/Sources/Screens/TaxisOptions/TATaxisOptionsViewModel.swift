@@ -7,12 +7,13 @@
 //
 
 import RxSwift
+import RxRelay
 
 final class TATaxisOptionsViewModel {
     
     // MARK: - Private properties
     
-    private var _items = BehaviorSubject<[TATaxiOptionModel]>(value: TATaxiOptionModel.mockOptions())
+    private var _items = BehaviorRelay<[TATaxiOptionModel]>(value: TATaxiOptionModel.mockOptions())
     
     private let _fromAddress: TAAddressModel
     private let _toAddress: TAAddressModel
@@ -20,7 +21,7 @@ final class TATaxisOptionsViewModel {
     // MARK: - Getters
 
     var items: Observable<[TATaxiOptionModel]> {
-        return _items.asObserver()
+        return _items.asObservable()
     }
     
     let kCellHeight: Float = 78
@@ -49,21 +50,17 @@ extension TATaxisOptionsViewModel {
 extension TATaxisOptionsViewModel {
     
     var numberOfItems: Int {
-        let count = (try? _items.value().count) ?? 0
+        let count = _items.value.count
         return count
     }
     
     func item(for indexPath: IndexPath) -> TATaxiOptionModel {
-        guard let items = try? _items.value() else {
-            fatalError("fix me")
-        }
+        let items = _items.value
         return items[indexPath.row]
     }
     
     func isLastItem(by indexPath: IndexPath) -> Bool {
-        guard let items = try? _items.value() else {
-            fatalError("fix me")
-        }
+        let items = _items.value
         return (indexPath.row + 1) == items.count
     }
     

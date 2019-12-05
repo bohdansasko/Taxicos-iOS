@@ -7,12 +7,13 @@
 //
 
 import RxSwift
+import RxRelay
 
 final class TASavedAddressesViewModel {
     
     // MARK: - Properties
     
-    fileprivate var _items = BehaviorSubject<[TAAddressModel]>(value: [])
+    fileprivate var _items = BehaviorRelay<[TAAddressModel]>(value: [])
     fileprivate let _dataStore: TASavedAddressesDataStore
     
     fileprivate let _activityIndicatorAnimating = BehaviorSubject<Bool>(value: false)
@@ -47,7 +48,7 @@ extension TASavedAddressesViewModel {
                 self._activityIndicatorAnimating.onNext(false)
             }
             .done { cachedItems in
-                self._items.onNext(cachedItems)
+                self._items.accept(cachedItems)
             }
             .catch { err in
                 let error = TAErrorMessage(title: "Saved addresses", message: "Couldn't fetch saved addresses")
@@ -62,17 +63,13 @@ extension TASavedAddressesViewModel {
 extension TASavedAddressesViewModel {
     
     func item(for indexPath: IndexPath) -> TAAddressModel {
-        do {
-            let items = try _items.value()
-            return items[indexPath.row]
-        } catch (let err) {
-            fatalError("unexpected behaviour - \(err)")
-        }
+        let items = _items.value
+        return items[indexPath.row]
     }
     
     var numberOfItems: Int {
-        let count = try? _items.value().count
-        return count ?? 0
+        let count = _items.value.count
+        return count
     }
 }
 
