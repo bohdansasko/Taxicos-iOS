@@ -13,24 +13,46 @@ final class TATaxisOptionsViewModel {
     
     // MARK: - Private properties
     
-    private var _items = BehaviorRelay<[TATaxiOptionModel]>(value: TATaxiOptionModel.mockOptions())
-    
+    private let _repository: TATaxisOptionsRepository
     private let _fromAddress: TAAddressModel
     private let _toAddress: TAAddressModel
     
-    // MARK: - Getters
-
-    var items: Observable<[TATaxiOptionModel]> {
-        return _items.asObservable()
-    }
+    private let _items = BehaviorRelay<[TATaxiOptionModel]>(value: [])
+    private let _activityIndicatorAnimating = BehaviorRelay<Bool>(value: false)
+    private let _errorMessage = PublishSubject<Error>()
     
     let kCellHeight: Float = 78
 
-    // MARK: - Methods
+    // MARK: - Lifecycle
     
-    init(from fromAddress: TAAddressModel, to toAddress: TAAddressModel) {
+    init(repository: TATaxisOptionsRepository, from fromAddress: TAAddressModel, to toAddress: TAAddressModel) {
+        _repository  = repository
         _fromAddress = fromAddress
-        _toAddress = toAddress
+        _toAddress   = toAddress
+    }
+    
+}
+
+// MARK: - Network API
+
+extension TATaxisOptionsViewModel {
+    
+    func fetchTaxisOptions() {
+        _activityIndicatorAnimating.accept(true)
+        _repository
+            .getTaxisOptions(from: _fromAddress, to: _toAddress)
+            .done { [weak self] items in
+                guard let self = self else { return }
+                self._items.accept(items)
+            }
+            .catch { [weak self] err in
+                guard let self = self else { return }
+                self._errorMessage.onNext(err)
+                log.error(err)
+            }
+            .finally {
+                self._activityIndicatorAnimating.accept(false)
+            }
     }
     
 }
@@ -45,7 +67,25 @@ extension TATaxisOptionsViewModel {
     
 }
 
-// MARK: - Getters
+// MARK: - Reactive getters
+
+extension TATaxisOptionsViewModel {
+
+    var items: Observable<[TATaxiOptionModel]> {
+        return _items.asObservable()
+    }
+    
+    var activityIndicatorAnimating: Observable<Bool> {
+        return _activityIndicatorAnimating.asObservable()
+    }
+    
+    var errorMessage: Observable<Error> {
+        return _errorMessage.asObservable()
+    }
+    
+}
+
+// MARK: - Datasource getters
 
 extension TATaxisOptionsViewModel {
     

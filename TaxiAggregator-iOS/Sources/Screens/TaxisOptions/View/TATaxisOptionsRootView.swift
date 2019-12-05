@@ -64,6 +64,11 @@ private extension TATaxisOptionsRootView {
         }
         taxisOptionsTable.delegate = self
         taxisOptionsTable.dataSource = self
+        
+        addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
     }
     
 }
@@ -73,7 +78,17 @@ private extension TATaxisOptionsRootView {
 private extension TATaxisOptionsRootView {
     
     func setupSubscriptionsToViewModel() {
-        // do nothing
+        viewModel.items
+            .asDriver(onErrorJustReturn: [])
+            .drive(onNext: { [weak self] items in
+                self?.taxisOptionsTable.reloadData()
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.activityIndicatorAnimating
+            .asDriver(onErrorJustReturn: false)
+            .drive(activityIndicator.rx.isAnimating)
+            .disposed(by: disposeBag)
     }
     
 }

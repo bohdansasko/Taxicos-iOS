@@ -103,12 +103,16 @@
 		9797E7B423719257008AC393 /* TALegacyThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7B323719257008AC393 /* TALegacyThemeProvider.swift */; };
 		9797E7B62371AF6C008AC393 /* TAConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797E7B52371AF6C008AC393 /* TAConfig.swift */; };
 		979BF447237BE6ED00F5F56B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 979BF446237BE6EC00F5F56B /* GoogleService-Info.plist */; };
+		979DFBF023990C1D001D2908 /* TATaxisOptionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979DFBEF23990C1D001D2908 /* TATaxisOptionsRepository.swift */; };
+		979DFBF323990C4E001D2908 /* TATaxisOptionsRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979DFBF223990C4E001D2908 /* TATaxisOptionsRemoteAPI.swift */; };
 		979F180F2374346700CA209B /* TAMainDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F180E2374346700CA209B /* TAMainDependencyContainer.swift */; };
 		979F18172374733100CA209B /* Avenir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 979F18162374733100CA209B /* Avenir-Medium.ttf */; };
 		97A33C492370391E00C06500 /* TAFromToAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A33C482370391E00C06500 /* TAFromToAddressView.swift */; };
 		97A551D42370869500960890 /* UIControl+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D32370869500960890 /* UIControl+Ext.swift */; };
 		97A551D923708ECA00960890 /* TANavigationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551D823708ECA00960890 /* TANavigationAction.swift */; };
 		97A551DB23708F8500960890 /* TAHomeNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */; };
+		97AD303523990DE2006DE503 /* TAFakeTaxisOptionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AD303423990DE2006DE503 /* TAFakeTaxisOptionsRepository.swift */; };
+		97AD303923990E89006DE503 /* TAVinsoTaxisOptionsRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AD303823990E89006DE503 /* TAVinsoTaxisOptionsRemoteAPI.swift */; };
 		97D3EBBC2384286C00060B35 /* TASearchDestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBBB2384286C00060B35 /* TASearchDestinationViewModel.swift */; };
 		97D3EBBF2384318000060B35 /* TASearchHistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBBE2384318000060B35 /* TASearchHistoryDataStore.swift */; };
 		97D3EBC12384318D00060B35 /* TAFakeSearchHistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBC02384318D00060B35 /* TAFakeSearchHistoryDataStore.swift */; };
@@ -224,12 +228,16 @@
 		9797E7B323719257008AC393 /* TALegacyThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALegacyThemeProvider.swift; sourceTree = "<group>"; };
 		9797E7B52371AF6C008AC393 /* TAConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConfig.swift; sourceTree = "<group>"; };
 		979BF446237BE6EC00F5F56B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		979DFBEF23990C1D001D2908 /* TATaxisOptionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TATaxisOptionsRepository.swift; sourceTree = "<group>"; };
+		979DFBF223990C4E001D2908 /* TATaxisOptionsRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TATaxisOptionsRemoteAPI.swift; sourceTree = "<group>"; };
 		979F180E2374346700CA209B /* TAMainDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAMainDependencyContainer.swift; sourceTree = "<group>"; };
 		979F18162374733100CA209B /* Avenir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Medium.ttf"; sourceTree = "<group>"; };
 		97A33C482370391E00C06500 /* TAFromToAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFromToAddressView.swift; sourceTree = "<group>"; };
 		97A551D32370869500960890 /* UIControl+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Ext.swift"; sourceTree = "<group>"; };
 		97A551D823708ECA00960890 /* TANavigationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TANavigationAction.swift; sourceTree = "<group>"; };
 		97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAHomeNavigationScreen.swift; sourceTree = "<group>"; };
+		97AD303423990DE2006DE503 /* TAFakeTaxisOptionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFakeTaxisOptionsRepository.swift; sourceTree = "<group>"; };
+		97AD303823990E89006DE503 /* TAVinsoTaxisOptionsRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAVinsoTaxisOptionsRemoteAPI.swift; sourceTree = "<group>"; };
 		97C9332B237317F6006ADA4A /* KievFakeLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = KievFakeLocation.gpx; sourceTree = "<group>"; };
 		97D3EBBB2384286C00060B35 /* TASearchDestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASearchDestinationViewModel.swift; sourceTree = "<group>"; };
 		97D3EBBE2384318000060B35 /* TASearchHistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASearchHistoryDataStore.swift; sourceTree = "<group>"; };
@@ -267,6 +275,7 @@
 				207E5D152377445B00A99C25 /* TAUserProfile.swift */,
 				2041CB96237860FD00A6BC60 /* TAFeatures.swift */,
 				200AEA892371E9D000624F53 /* TAAuthRemoteAPI.swift */,
+				979DFBF123990C44001D2908 /* TaxisOptions */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -355,7 +364,6 @@
 			children = (
 				20AC55D42384783200747E12 /* TADestinationDependencyContainer.swift */,
 				97E43D5B23854B9E00C030EB /* Views */,
-				20AC55CE2384774E00747E12 /* TADestinationViewController.swift */,
 				20AC55D22384779800747E12 /* TADestinationViewModel.swift */,
 			);
 			path = Destination;
@@ -570,13 +578,10 @@
 		977833682397F374002B5F96 /* TaxisOptions */ = {
 			isa = PBXGroup;
 			children = (
-				9778337723980EA7002B5F96 /* TATaxiOptionCell.swift */,
 				9778336A2397F3E3002B5F96 /* TATaxisOptionsDependencyContainer.swift */,
-				977833692397F3E3002B5F96 /* TATaxisOptionsRootView.swift */,
-				9778336B2397F3E3002B5F96 /* TATaxisOptionsViewController.swift */,
+				97AD303A2399220B006DE503 /* Model */,
+				97AD303B2399221F006DE503 /* View */,
 				9778336C2397F3E3002B5F96 /* TATaxisOptionsViewModel.swift */,
-				977833712397FE38002B5F96 /* TATaxiOptionModel.swift */,
-				97783373239803F7002B5F96 /* TATaxiOptionType.swift */,
 			);
 			path = TaxisOptions;
 			sourceTree = "<group>";
@@ -619,6 +624,15 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		979DFBF123990C44001D2908 /* TaxisOptions */ = {
+			isa = PBXGroup;
+			children = (
+				97AD303623990E6D006DE503 /* API */,
+				97AD303723990E71006DE503 /* Repository */,
+			);
+			path = TaxisOptions;
+			sourceTree = "<group>";
+		};
 		97A551D22370868700960890 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -626,6 +640,43 @@
 				20DC11C82370BC86004F323E /* UIKit */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		97AD303623990E6D006DE503 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				979DFBF223990C4E001D2908 /* TATaxisOptionsRemoteAPI.swift */,
+				97AD303823990E89006DE503 /* TAVinsoTaxisOptionsRemoteAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		97AD303723990E71006DE503 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				979DFBEF23990C1D001D2908 /* TATaxisOptionsRepository.swift */,
+				97AD303423990DE2006DE503 /* TAFakeTaxisOptionsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		97AD303A2399220B006DE503 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				977833712397FE38002B5F96 /* TATaxiOptionModel.swift */,
+				97783373239803F7002B5F96 /* TATaxiOptionType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		97AD303B2399221F006DE503 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9778337723980EA7002B5F96 /* TATaxiOptionCell.swift */,
+				977833692397F3E3002B5F96 /* TATaxisOptionsRootView.swift */,
+				9778336B2397F3E3002B5F96 /* TATaxisOptionsViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		97D3EBBD2384314100060B35 /* SearchHistory */ = {
@@ -642,6 +693,7 @@
 			children = (
 				97A33C482370391E00C06500 /* TAFromToAddressView.swift */,
 				20AC55D02384777500747E12 /* TADestinationRootView.swift */,
+				20AC55CE2384774E00747E12 /* TADestinationViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -877,6 +929,7 @@
 				20F0D1CE2378C7B20038A31C /* TANavigationController.swift in Sources */,
 				200AEA812371DA8B00624F53 /* TABaseTableViewCell.swift in Sources */,
 				20C8AAA7236DE17A005E6590 /* TAMapViewController.swift in Sources */,
+				97AD303523990DE2006DE503 /* TAFakeTaxisOptionsRepository.swift in Sources */,
 				200AEA902371E9D000624F53 /* TAAppUserSessionRepository.swift in Sources */,
 				9778336F2397F3E3002B5F96 /* TATaxisOptionsViewController.swift in Sources */,
 				20DC11D62370BC86004F323E /* UIFont+Ext.swift in Sources */,
@@ -892,9 +945,11 @@
 				974D60C1237EE7AB00C652FD /* TASavedAddressesViewModel.swift in Sources */,
 				974D60BC237E93CA00C652FD /* TAFakeUserSessionDataStore.swift in Sources */,
 				20CF3F4B237B615100EBC7BF /* TASavedAddressesDataStore.swift in Sources */,
+				979DFBF023990C1D001D2908 /* TATaxisOptionsRepository.swift in Sources */,
 				202E50452381B268008CD13D /* TASearchDestinationView.swift in Sources */,
 				9794DE022374100D0077D03A /* TAHomeViewModel.swift in Sources */,
 				9794DE0823741D260077D03A /* TAMainViewController.swift in Sources */,
+				979DFBF323990C4E001D2908 /* TATaxisOptionsRemoteAPI.swift in Sources */,
 				97E43D5D23854BCD00C030EB /* TATextField.swift in Sources */,
 				20DC11C52370BC42004F323E /* Date+Ext.swift in Sources */,
 				20DC11E02370BC86004F323E /* UITableView+Ext.swift in Sources */,
@@ -913,6 +968,7 @@
 				9746DF4423843B2800F74108 /* TASearchDestinationResponder.swift in Sources */,
 				972D24022375CE2000B19BBE /* TAOnboardingPageType.swift in Sources */,
 				97A551D923708ECA00960890 /* TANavigationAction.swift in Sources */,
+				97AD303923990E89006DE503 /* TAVinsoTaxisOptionsRemoteAPI.swift in Sources */,
 				20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */,
 				207E5D162377445B00A99C25 /* TAUserProfile.swift in Sources */,
 				9778337823980EA7002B5F96 /* TATaxiOptionCell.swift in Sources */,

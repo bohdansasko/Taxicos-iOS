@@ -16,7 +16,7 @@ final class TASavedAddressesViewModel {
     fileprivate var _items = BehaviorRelay<[TAAddressModel]>(value: [])
     fileprivate let _dataStore: TASavedAddressesDataStore
     
-    fileprivate let _activityIndicatorAnimating = BehaviorSubject<Bool>(value: false)
+    fileprivate let _activityIndicatorAnimating = BehaviorRelay<Bool>(value: false)
     
     var items: Observable<[TAAddressModel]> {
         return _items.asObservable()
@@ -41,11 +41,11 @@ final class TASavedAddressesViewModel {
 extension TASavedAddressesViewModel {
  
     func fetchAddresses() {
-        _activityIndicatorAnimating.onNext(true)
+        _activityIndicatorAnimating.accept(true)
         
         _dataStore.readAddresses()
             .ensure {
-                self._activityIndicatorAnimating.onNext(false)
+                self._activityIndicatorAnimating.accept(false)
             }
             .done { cachedItems in
                 self._items.accept(cachedItems)

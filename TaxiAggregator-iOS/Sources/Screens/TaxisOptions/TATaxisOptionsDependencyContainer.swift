@@ -21,7 +21,9 @@ extension TATaxisOptionsDependencyContainer {
     }
     
     private func makeTaxisOptionsViewModel(from fromAddress: TAAddressModel, to toAddress: TAAddressModel) -> TATaxisOptionsViewModel {
-        return TATaxisOptionsViewModel(from: fromAddress, to: toAddress)
+        let remoteAPI = TAVinsoTaxisOptionsRemoteAPI()
+        let repository = TAFakeTaxisOptionsRepository(remoteAPI: remoteAPI)
+        return TATaxisOptionsViewModel(repository: repository, from: fromAddress, to: toAddress)
     }
     
 }
