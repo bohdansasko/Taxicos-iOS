@@ -23,13 +23,14 @@ target 'TaxiAggregator-iOS' do
   # UI
   pod 'SideMenu', '~> 6.0'
   pod 'SnapKit', '~> 5.0.0'
-  
-  pod 'GoogleMaps'
-  pod 'GooglePlaces'
-  
+    
   pod 'CHIPageControl/Jaloro'
 
-  # Rx
+  # Map & Places
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+
+  # Reactive
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'RxKeyboard'
