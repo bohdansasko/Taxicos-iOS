@@ -99,9 +99,4 @@ extension TATaxisOptionsViewModel {
         return items[indexPath.row]
     }
     
-    func isLastItem(by indexPath: IndexPath) -> Bool {
-        let items = _items.value
-        return (indexPath.row + 1) == items.count
-    }
-    
 }

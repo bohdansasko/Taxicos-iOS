@@ -128,14 +128,13 @@ extension TATaxisOptionsRootView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let taxiModel = viewModel.item(for: indexPath)
-        let isLastElement = viewModel.isLastItem(by: indexPath)
         
         let taxiCell = cell as! TATaxiOptionCell
         taxiCell.item = taxiModel
-        taxiCell.isSeparatorHidden = isLastElement
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         viewModel.actTaxiField(at: indexPath)
     }
     
