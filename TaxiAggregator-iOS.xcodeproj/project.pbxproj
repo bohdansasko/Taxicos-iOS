@@ -88,6 +88,7 @@
 		977833722397FE38002B5F96 /* TATaxiOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977833712397FE38002B5F96 /* TATaxiOptionModel.swift */; };
 		97783374239803F7002B5F96 /* TATaxiOptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97783373239803F7002B5F96 /* TATaxiOptionType.swift */; };
 		9778337823980EA7002B5F96 /* TATaxiOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778337723980EA7002B5F96 /* TATaxiOptionCell.swift */; };
+		978A6446239BD6C3006542B6 /* TADestinationNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978A6445239BD6C3006542B6 /* TADestinationNavigationScreen.swift */; };
 		9794DE012374100D0077D03A /* TAHomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DDFE2374100D0077D03A /* TAHomeRootView.swift */; };
 		9794DE022374100D0077D03A /* TAHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DDFF2374100D0077D03A /* TAHomeViewModel.swift */; };
 		9794DE032374100D0077D03A /* TAHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9794DE002374100D0077D03A /* TAHomeViewController.swift */; };
@@ -213,6 +214,7 @@
 		977833712397FE38002B5F96 /* TATaxiOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TATaxiOptionModel.swift; sourceTree = "<group>"; };
 		97783373239803F7002B5F96 /* TATaxiOptionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TATaxiOptionType.swift; sourceTree = "<group>"; };
 		9778337723980EA7002B5F96 /* TATaxiOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATaxiOptionCell.swift; sourceTree = "<group>"; };
+		978A6445239BD6C3006542B6 /* TADestinationNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TADestinationNavigationScreen.swift; sourceTree = "<group>"; };
 		9794DDFE2374100D0077D03A /* TAHomeRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeRootView.swift; sourceTree = "<group>"; };
 		9794DDFF2374100D0077D03A /* TAHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeViewModel.swift; sourceTree = "<group>"; };
 		9794DE002374100D0077D03A /* TAHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAHomeViewController.swift; sourceTree = "<group>"; };
@@ -363,8 +365,9 @@
 			isa = PBXGroup;
 			children = (
 				20AC55D42384783200747E12 /* TADestinationDependencyContainer.swift */,
-				97E43D5B23854B9E00C030EB /* Views */,
-				20AC55D22384779800747E12 /* TADestinationViewModel.swift */,
+				978A6444239BD6B7006542B6 /* Model */,
+				97E43D5B23854B9E00C030EB /* View */,
+				978A6447239BD742006542B6 /* ViewModel */,
 			);
 			path = Destination;
 			sourceTree = "<group>";
@@ -581,9 +584,33 @@
 				9778336A2397F3E3002B5F96 /* TATaxisOptionsDependencyContainer.swift */,
 				97AD303A2399220B006DE503 /* Model */,
 				97AD303B2399221F006DE503 /* View */,
-				9778336C2397F3E3002B5F96 /* TATaxisOptionsViewModel.swift */,
+				978A6448239BDEDD006542B6 /* ViewModel */,
 			);
 			path = TaxisOptions;
+			sourceTree = "<group>";
+		};
+		978A6444239BD6B7006542B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				978A6445239BD6C3006542B6 /* TADestinationNavigationScreen.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		978A6447239BD742006542B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				20AC55D22384779800747E12 /* TADestinationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		978A6448239BDEDD006542B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9778336C2397F3E3002B5F96 /* TATaxisOptionsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		9794DDFD2374100D0077D03A /* Home */ = {
@@ -688,14 +715,14 @@
 			path = SearchHistory;
 			sourceTree = "<group>";
 		};
-		97E43D5B23854B9E00C030EB /* Views */ = {
+		97E43D5B23854B9E00C030EB /* View */ = {
 			isa = PBXGroup;
 			children = (
 				97A33C482370391E00C06500 /* TAFromToAddressView.swift */,
 				20AC55D02384777500747E12 /* TADestinationRootView.swift */,
 				20AC55CE2384774E00747E12 /* TADestinationViewController.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		97E43D612385710500C030EB /* Location */ = {
@@ -973,6 +1000,7 @@
 				207E5D162377445B00A99C25 /* TAUserProfile.swift in Sources */,
 				9778337823980EA7002B5F96 /* TATaxiOptionCell.swift in Sources */,
 				200AEA8E2371E9D000624F53 /* TAAuthRemoteAPI.swift in Sources */,
+				978A6446239BD6C3006542B6 /* TADestinationNavigationScreen.swift in Sources */,
 				20EC5FD723785435003817FD /* TAErrorMessage.swift in Sources */,
 				9797E7B423719257008AC393 /* TALegacyThemeProvider.swift in Sources */,
 				20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */,

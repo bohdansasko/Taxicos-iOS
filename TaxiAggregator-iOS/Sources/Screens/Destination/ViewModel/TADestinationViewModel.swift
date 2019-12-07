@@ -8,26 +8,31 @@
 
 import RxSwift
 import RxCocoa
+import RxRelay
+
+typealias TADestinationNavigationAction = TANavigationAction<TADestinationNavigationScreen>
 
 final class TADestinationViewModel {
     
     // MARK: - Internal properties
     
     private let _locationRepository: TALocationRepository
-    private let _addressesResults = BehaviorSubject<[TAAddressModel]>(value: [])
     
-    private var _fromAddress = BehaviorSubject<TAAddressModel?>(value: nil)
-    private var _toAddress   = BehaviorSubject<TAAddressModel?>(value: nil)
-
+    private let _addressesResults = BehaviorRelay<[TAAddressModel]>(value: [])
+    private let _navigationAction = PublishSubject<TADestinationNavigationAction>()
+    
+    private let _fromAddress = BehaviorRelay<TAAddressModel?>(value: nil)
+    private let _toAddress   = BehaviorRelay<TAAddressModel?>(value: nil)
+    
     let activeAddressTyping = BehaviorRelay<TAActiveAddressTyping>(value: .to)
     
-    // MARK: - Static properties
+    // MARK: - Getters
     
     let kCellHeight: Float = 60
     
-    var isReadyToSearchTaxis: Bool {
-        guard let _ = try? _fromAddress.value(),
-              let _ = try? _toAddress.value() else {
+    private var isReadyToSearchTaxis: Bool {
+        guard let _ = _fromAddress.value,
+              let _ = _toAddress.value else {
                 return false
         }
         return true
@@ -38,7 +43,7 @@ final class TADestinationViewModel {
     init(locationRepository: TALocationRepository, from fromAddress: TAAddressModel?) {
         _locationRepository = locationRepository
         
-        _fromAddress.onNext(fromAddress)
+        _fromAddress.accept(fromAddress)
     }
     
 }
@@ -47,6 +52,10 @@ final class TADestinationViewModel {
 
 extension TADestinationViewModel {
 
+    var navigationAction: Observable<TADestinationNavigationAction> {
+        return _navigationAction.asObservable()
+    }
+    
     var addressesResults: Observable<[TAAddressModel]> {
         return _addressesResults.asObservable()
     }
@@ -66,21 +75,17 @@ extension TADestinationViewModel {
 extension TADestinationViewModel {
     
     var numberOfItems: Int {
-        let count = (try? _addressesResults.value().count) ?? 0
+        let count = _addressesResults.value.count
         return count
     }
     
     func item(for indexPath: IndexPath) -> TAAddressModel {
-        guard let items = try? _addressesResults.value() else {
-            fatalError("fix me")
-        }
+        let items = _addressesResults.value
         return items[indexPath.row]
     }
     
     func isLastItem(by indexPath: IndexPath) -> Bool {
-        guard let items = try? _addressesResults.value() else {
-            fatalError("fix me")
-        }
+        let items = _addressesResults.value
         return (indexPath.row + 1) == items.count
     }
 
@@ -93,9 +98,9 @@ private extension TADestinationViewModel {
     func clearSelectedAddress() {
         switch activeAddressTyping.value {
         case .from:
-            _fromAddress.onNext(nil)
+            _fromAddress.accept(nil)
         case .to:
-            _toAddress.onNext(nil)
+            _toAddress.accept(nil)
         }
     }
     
@@ -110,19 +115,24 @@ extension TADestinationViewModel {
         
         switch activeAddressTyping.value {
         case .from:
-            _fromAddress.onNext(address)
+            _fromAddress.accept(address)
         case .to:
-            _toAddress.onNext(address)
+            _toAddress.accept(address)
+        }
+        _addressesResults.accept([])
+        
+        guard let fromAddress = _fromAddress.value,
+              let toAddress = _toAddress.value else {
+            return
         }
         
         if isReadyToSearchTaxis {
-            assertionFailure("required implementating")
+            _navigationAction.onNext(.present(screen: .showTaxisOptions(from: fromAddress, to: toAddress)))
         }
-        _addressesResults.onNext([])
     }
     
     @objc func actChooseLocationOnMap(_ sender: Any) {
-        assertionFailure("required implementating")
+        _navigationAction.onNext(.present(screen: .chooseLocationOnMap))
     }
 
 }
@@ -133,7 +143,7 @@ extension TADestinationViewModel {
 
     func searchForLocations(using query: String) {
         guard !query.isEmpty else  {
-            _addressesResults.onNext([])
+            _addressesResults.accept([])
             clearSelectedAddress()
             return
         }
@@ -145,7 +155,7 @@ extension TADestinationViewModel {
                 if items.isEmpty {
                     self.clearSelectedAddress()
                 }
-                self._addressesResults.onNext(items)
+                self._addressesResults.accept(items)
             }.catch { err in
                 log.error(err)
             }

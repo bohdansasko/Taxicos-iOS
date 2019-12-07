@@ -18,17 +18,9 @@ final class TASavedAddressesViewModel {
     
     fileprivate let _activityIndicatorAnimating = BehaviorRelay<Bool>(value: false)
     
-    var items: Observable<[TAAddressModel]> {
-        return _items.asObservable()
-    }
-    
-    var activityIndicatorAnimating: Observable<Bool> {
-        return _activityIndicatorAnimating.asObservable()
-    }
-    
     let kItemHeight: Float = 56
     
-    // MARK: - Methods
+    // MARK: - Lifecycle
     
     init(dataStore: TASavedAddressesDataStore) {
         _dataStore = dataStore
@@ -44,16 +36,29 @@ extension TASavedAddressesViewModel {
         _activityIndicatorAnimating.accept(true)
         
         _dataStore.readAddresses()
-            .ensure {
-                self._activityIndicatorAnimating.accept(false)
-            }
             .done { cachedItems in
                 self._items.accept(cachedItems)
             }
             .catch { err in
                 let error = TAErrorMessage(title: "Saved addresses", message: "Couldn't fetch saved addresses")
                 fatalError("unexpected behaviour - \(error)")
+            }.finally {
+                self._activityIndicatorAnimating.accept(false)
             }
+    }
+    
+}
+
+// MARK: - Rx Getters
+
+extension TASavedAddressesViewModel {
+    
+    var items: Observable<[TAAddressModel]> {
+        return _items.asObservable()
+    }
+    
+    var activityIndicatorAnimating: Observable<Bool> {
+        return _activityIndicatorAnimating.asObservable()
     }
     
 }

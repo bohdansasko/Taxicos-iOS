@@ -31,9 +31,12 @@ final class TADestinationViewController: TABaseViewController, TARootView {
         super.viewDidLoad()
         
         setupNavigationBar()
+        setupNavigationSubscription()
     }
     
 }
+
+// MARK: - Setup
 
 private extension TADestinationViewController {
     
@@ -43,6 +46,32 @@ private extension TADestinationViewController {
         navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController!.navigationBar.shadowImage = UIImage()
         navigationController!.navigationBar.backgroundColor = .white
+    }
+    
+    func setupNavigationSubscription() {
+        _viewModel.navigationAction
+            .subscribe(onNext: { [weak self] action in
+                switch action {
+                case .present(let screen):
+                    self?.present(screen: screen)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+    
+}
+
+// MARK: -
+
+private extension TADestinationViewController {
+
+    func present(screen: TADestinationNavigationScreen) {
+        switch screen {
+        case .showTaxisOptions(let fromAddress, let toAddress):
+            log.debug(fromAddress, toAddress)
+        case .chooseLocationOnMap:
+            log.debug("chooseLocationOnMap")
+        }
     }
     
 }
