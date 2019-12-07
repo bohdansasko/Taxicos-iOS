@@ -187,9 +187,13 @@ extension TADestinationRootView: UITableViewDelegate {
         let addressModel = _viewModel.item(for: indexPath)
         let isLastElement = _viewModel.isLastItem(by: indexPath)
         
-        let addressCell = cell as! TAAddressCell
+        guard let addressCell = cell as? TAAddressCell else {
+            assertionFailure("required")
+            return
+        }
         addressCell.set(addressModel: addressModel)
         addressCell.isSeparatorHidden = isLastElement
+        addressCell.contentOffset = UIEdgeInsets(top: 0, left: 28, bottom: 0, right: -18)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

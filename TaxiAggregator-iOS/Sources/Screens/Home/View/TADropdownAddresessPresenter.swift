@@ -79,8 +79,12 @@ extension TADropdownAddresessPresenter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let addressModel = _section.item(for: indexPath)
-        let addressCell = cell as! TAAddressCell
+        guard let addressCell = cell as? TAAddressCell else {
+            assertionFailure("required")
+            return
+        }
         addressCell.set(addressModel: addressModel)
+        addressCell.contentOffset = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: -40)
     }
     
 }

@@ -10,7 +10,26 @@ import UIKit
 
 final class TAAddressCell: TABaseTableViewCell {
     
+    /// can update only left or right offset
+    var contentOffset: UIEdgeInsets = .zero {
+        didSet {
+            contentSV.snp.updateConstraints {
+                $0.left.equalToSuperview().offset(contentOffset.left)
+                $0.right.equalToSuperview().offset(contentOffset.right)
+            }
+            self.setNeedsLayout()
+        }
+    }
+    
     // MARK: - UI
+    private let contentSV: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .horizontal
+        sv.alignment = .top
+        sv.distribution = .fill
+        sv.spacing = 16
+        return sv
+    }()
     
     private let locationIconView: UIImageView = {
         let imageView = UIImageView()
@@ -73,7 +92,9 @@ private extension TAAddressCell {
         titlesSV.spacing = 2
         titlesSV.axis = .vertical
         
-        let contentSV = UIStackView(arrangedSubviews: [locationIconView, titlesSV, heartButton])
+        [locationIconView, titlesSV, heartButton].forEach {
+            contentSV.addArrangedSubview($0)
+        }
         contentSV.axis = .horizontal
         contentSV.alignment = .top
         contentSV.distribution = .fill
@@ -81,8 +102,8 @@ private extension TAAddressCell {
         addSubview(contentSV)
         
         contentSV.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(36)
-            $0.right.equalToSuperview().inset(36)
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
             $0.center.equalToSuperview()
         }
         
@@ -93,8 +114,8 @@ private extension TAAddressCell {
         
         addSubview(separatorLineView)
         separatorLineView.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(36)
-            $0.right.equalToSuperview().inset(36)
+            $0.left.equalToSuperview()
+            $0.right.equalToSuperview()
             $0.bottom.equalToSuperview()
             $0.height.equalTo(2)
         }

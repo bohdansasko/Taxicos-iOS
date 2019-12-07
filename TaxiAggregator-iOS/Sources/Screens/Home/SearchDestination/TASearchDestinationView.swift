@@ -149,9 +149,13 @@ extension TASearchDestinationView: UITableViewDelegate {
         let addressModel = viewModel.item(for: indexPath)
         let isLastElement = viewModel.isLastItem(by: indexPath)
         
-        let addressCell = cell as! TAAddressCell
+        guard let addressCell = cell as? TAAddressCell else {
+            assertionFailure("required")
+            return
+        }
         addressCell.set(addressModel: addressModel)
         addressCell.isSeparatorHidden = isLastElement
+        addressCell.contentOffset = UIEdgeInsets(top: 0, left: 36, bottom: 0, right: -36)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

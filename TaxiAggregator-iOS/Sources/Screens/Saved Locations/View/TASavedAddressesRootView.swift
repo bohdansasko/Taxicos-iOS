@@ -121,6 +121,7 @@ extension TASavedAddressesRootView: UITableViewDelegate {
         }
         let addressModel = viewModel.item(for: indexPath)
         addressCell.set(addressModel: addressModel)
+        addressCell.contentOffset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: -20)
     }
     
 }
