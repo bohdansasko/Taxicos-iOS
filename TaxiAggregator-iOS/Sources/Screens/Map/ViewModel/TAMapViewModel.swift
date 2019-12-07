@@ -91,8 +91,10 @@ extension TAMapViewModel: CLLocationManagerDelegate {
         guard let location = locations.first else {
             return
         }
-        _recognizeUserLocationResponder.didUpdateLocation(location)
         manager.stopUpdatingLocation()
+        
+        _myLocation.onNext(location)
+        _recognizeUserLocationResponder.didUpdateLocation(location)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
