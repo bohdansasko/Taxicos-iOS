@@ -298,9 +298,9 @@
 		202E50432381B23D008CD13D /* SearchDestination */ = {
 			isa = PBXGroup;
 			children = (
+				9746DF4323843B2800F74108 /* TASearchDestinationResponder.swift */,
 				202E50442381B268008CD13D /* TASearchDestinationView.swift */,
 				97D3EBBB2384286C00060B35 /* TASearchDestinationViewModel.swift */,
-				9746DF4323843B2800F74108 /* TASearchDestinationResponder.swift */,
 			);
 			path = SearchDestination;
 			sourceTree = "<group>";
@@ -409,9 +409,8 @@
 			isa = PBXGroup;
 			children = (
 				209C296A2373F8D2002D8418 /* TAMapDependencyContainer.swift */,
-				20587B59236EAF2A00E661E9 /* TAMapRootView.swift */,
-				20C8AAA6236DE17A005E6590 /* TAMapViewController.swift */,
-				20C8AAA8236DE1D3005E6590 /* TAMapViewModel.swift */,
+				978A644E239BED33006542B6 /* View */,
+				978A644D239BED2E006542B6 /* ViewModel */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -420,11 +419,9 @@
 			isa = PBXGroup;
 			children = (
 				9794DE0F23741EE70077D03A /* TALeftMenuDependencyContainer.swift */,
-				20ED9CFD236F261E00ED3FBB /* List */,
-				20587B5B236EAF3D00E661E9 /* TALeftMenuRootView.swift */,
-				20C8AAB0236DE480005E6590 /* TALeftMenuViewController.swift */,
-				20C8AAB4236DE4E6005E6590 /* TALeftMenuViewModel.swift */,
-				200AEA922371FD6A00624F53 /* TALeftMenuNavigationScreen.swift */,
+				978A644F239BED51006542B6 /* Model */,
+				978A6450239BED59006542B6 /* View */,
+				978A6451239BED60006542B6 /* ViewModel */,
 			);
 			path = LeftMenu;
 			sourceTree = "<group>";
@@ -433,10 +430,9 @@
 			isa = PBXGroup;
 			children = (
 				9794DE0B23741DFC0077D03A /* TASavedAddressesDependencyContainer.swift */,
-				20E0EB43237DF45100E4EDD5 /* Cells */,
-				974D60BE237EE58500C652FD /* Models */,
-				20587B57236EAF1500E661E9 /* TASavedAddressesRootView.swift */,
-				20C8AAC1236DFFAD005E6590 /* TASavedAddressesViewController.swift */,
+				974D60BE237EE58500C652FD /* Model */,
+				978A6449239BECDE006542B6 /* View */,
+				978A644A239BECEB006542B6 /* ViewModel */,
 			);
 			path = "Saved Locations";
 			sourceTree = "<group>";
@@ -444,12 +440,11 @@
 		20C8AAC5236E0160005E6590 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				972D23ED2375A90B00B19BBE /* Page */,
 				972D23FF2375CE0400B19BBE /* TAOnboardingFactory.swift */,
 				209C29682373F88F002D8418 /* TAOnboardingDependencyContainer.swift */,
-				20587B55236EAEE000E661E9 /* TAOnboardingRootView.swift */,
-				20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */,
-				20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */,
+				972D23ED2375A90B00B19BBE /* Page */,
+				978A644B239BED1E006542B6 /* View */,
+				978A644C239BED22006542B6 /* ViewModel */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -530,15 +525,6 @@
 			path = TAKit;
 			sourceTree = "<group>";
 		};
-		20ED9CFD236F261E00ED3FBB /* List */ = {
-			isa = PBXGroup;
-			children = (
-				20587B5F236EF1FA00E661E9 /* TAMenuItemType.swift */,
-				20587B5D236EF1E200E661E9 /* TALeftSideMenuCell.swift */,
-			);
-			path = List;
-			sourceTree = "<group>";
-		};
 		20ED9CFE236F49A800ED3FBB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,13 +555,12 @@
 			path = Page;
 			sourceTree = "<group>";
 		};
-		974D60BE237EE58500C652FD /* Models */ = {
+		974D60BE237EE58500C652FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				974D60C0237EE7AB00C652FD /* TAAddressModel.swift */,
-				974D60BF237EE7AA00C652FD /* TASavedAddressesViewModel.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		977833682397F374002B5F96 /* TaxisOptions */ = {
@@ -613,16 +598,144 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		978A6449239BECDE006542B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20E0EB43237DF45100E4EDD5 /* Cells */,
+				20587B57236EAF1500E661E9 /* TASavedAddressesRootView.swift */,
+				20C8AAC1236DFFAD005E6590 /* TASavedAddressesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		978A644A239BECEB006542B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				974D60BF237EE7AA00C652FD /* TASavedAddressesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		978A644B239BED1E006542B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20587B55236EAEE000E661E9 /* TAOnboardingRootView.swift */,
+				20C8AAC6236E0183005E6590 /* TAOnboardingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		978A644C239BED22006542B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				20C8AAC8236E018B005E6590 /* TAOnboardingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		978A644D239BED2E006542B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				20C8AAA8236DE1D3005E6590 /* TAMapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		978A644E239BED33006542B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20587B59236EAF2A00E661E9 /* TAMapRootView.swift */,
+				20C8AAA6236DE17A005E6590 /* TAMapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		978A644F239BED51006542B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20587B5F236EF1FA00E661E9 /* TAMenuItemType.swift */,
+				200AEA922371FD6A00624F53 /* TALeftMenuNavigationScreen.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		978A6450239BED59006542B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20587B5D236EF1E200E661E9 /* TALeftSideMenuCell.swift */,
+				20587B5B236EAF3D00E661E9 /* TALeftMenuRootView.swift */,
+				20C8AAB0236DE480005E6590 /* TALeftMenuViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		978A6451239BED60006542B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				20C8AAB4236DE4E6005E6590 /* TALeftMenuViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		978A6452239BED86006542B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				974D60CF237EEE1A00C652FD /* TADropdownAddresessPresenter.swift */,
+				9794DDFE2374100D0077D03A /* TAHomeRootView.swift */,
+				9794DE002374100D0077D03A /* TAHomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		978A6453239BED8B006542B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9794DDFF2374100D0077D03A /* TAHomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		978A6454239BED93006542B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		978A6455239BEDB9006542B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				207E6164237A341D00476379 /* TAMainNavigationScreen.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		978A6456239BEDBE006542B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9794DE0923741D2F0077D03A /* TAMainRootView.swift */,
+				9794DE0723741D260077D03A /* TAMainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		978A6457239BEDC4006542B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9794DE0523741D0E0077D03A /* TAMainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		9794DDFD2374100D0077D03A /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				202E50432381B23D008CD13D /* SearchDestination */,
 				209C29662373F801002D8418 /* TAHomeDependencyContainer.swift */,
-				97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */,
-				9794DDFE2374100D0077D03A /* TAHomeRootView.swift */,
-				9794DE002374100D0077D03A /* TAHomeViewController.swift */,
-				9794DDFF2374100D0077D03A /* TAHomeViewModel.swift */,
-				974D60CF237EEE1A00C652FD /* TADropdownAddresessPresenter.swift */,
+				978A6454239BED93006542B6 /* Model */,
+				978A6452239BED86006542B6 /* View */,
+				978A6453239BED8B006542B6 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -631,10 +744,9 @@
 			isa = PBXGroup;
 			children = (
 				979F180E2374346700CA209B /* TAMainDependencyContainer.swift */,
-				9794DE0923741D2F0077D03A /* TAMainRootView.swift */,
-				9794DE0723741D260077D03A /* TAMainViewController.swift */,
-				9794DE0523741D0E0077D03A /* TAMainViewModel.swift */,
-				207E6164237A341D00476379 /* TAMainNavigationScreen.swift */,
+				978A6455239BEDB9006542B6 /* Model */,
+				978A6456239BEDBE006542B6 /* View */,
+				978A6457239BEDC4006542B6 /* ViewModel */,
 			);
 			path = Main;
 			sourceTree = "<group>";
