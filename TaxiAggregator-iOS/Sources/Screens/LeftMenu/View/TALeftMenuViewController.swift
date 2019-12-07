@@ -66,19 +66,32 @@ private extension TALeftMenuViewController {
     func present(screen: TALeftMenuNavigationScreen) {
         switch screen {
         case .savedAddresses:
-            guard let navController = navigationController else {
-                assertionFailure("required")
-                return
-            }
-            let vc = self.leftMenuFactory.makeSavedAddressesViewController()
-            navController.pushViewController(vc, animated: true)
+            showSavedAddressesViewController()
         case .shareApp:
-            break
+            showShareAppSheet()
         case .feedback:
             break
         case .rateApp:
             SKStoreReviewController.requestReview()
         }
+    }
+    
+    func showSavedAddressesViewController() {
+        guard let navController = navigationController else {
+            assertionFailure("required")
+            return
+        }
+        let vc = self.leftMenuFactory.makeSavedAddressesViewController()
+        navController.pushViewController(vc, animated: true)
+    }
+    
+    func showShareAppSheet() {
+        guard let link = NSURL(string: TAConfig.appLinkInTheAppStore) else {
+            return
+        }
+        let objectsToShare = [link] as [Any]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        present(activityVC, animated: true, completion: nil)
     }
     
 }

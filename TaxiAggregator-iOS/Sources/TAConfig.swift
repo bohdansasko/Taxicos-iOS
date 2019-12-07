@@ -14,6 +14,7 @@ enum TAConfig {
     static var appVersion: String { return "1.0.0" }
     static var kMapZoom  : Float  { return 15 }
     
+    static var appLinkInTheAppStore: String { return "" }
 }
 
 // MARK: - UserDefaults
