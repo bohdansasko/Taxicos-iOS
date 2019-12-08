@@ -25,10 +25,11 @@ final class TAHomeDependencyContainer {
     // MARK: - Methods
     
     init (mainViewModel: TAMainViewModel) {
-        func makeHomeViewModel() -> TAHomeViewModel {
-            return TAHomeViewModel(menuResponder: mainViewModel)
+        func makeHomeViewModel(geocodeAPI: TAGeocodeRemoteAPI) -> TAHomeViewModel {
+            return TAHomeViewModel(geocodeRemoteAPI: geocodeAPI, menuResponder: mainViewModel)
         }
-        _viewModel = makeHomeViewModel()
+        let geocodeAPI = TAGoogleGeocodeRemoteAPI()
+        _viewModel = makeHomeViewModel(geocodeAPI: geocodeAPI)
     }
     
 }

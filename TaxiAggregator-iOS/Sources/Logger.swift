@@ -17,7 +17,7 @@ struct log {
             let fileName = (pathToFile as NSString).lastPathComponent
             let argsAsStr = items.map { String(describing: $0) }.joined(separator: " ")
             let threadAsStr = Thread.current.isMainThread ? "thread: <main>" : "thread: <background>"
-            print(level.icon, Date().now, threadAsStr, line, fileName, function, argsAsStr)
+            print(level.icon, Date().formattedNow, threadAsStr, line, fileName, function, argsAsStr)
         #endif
     }
 

@@ -120,14 +120,14 @@ private extension TADestinationRootView {
         _viewModel.fromAddress
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [unowned self] address in
-                self.fromToView.fromTextField().text = address?.fullAddress
+                self.fromToView.fromTextField().text = address?.shortAddress
             })
             .disposed(by: disposeBag)
 
         _viewModel.toAddress
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [unowned self] address in
-                self.fromToView.toTextField().text = address?.fullAddress
+                self.fromToView.toTextField().text = address?.shortAddress
             })
             .disposed(by: disposeBag)
 

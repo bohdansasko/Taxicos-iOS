@@ -7,7 +7,7 @@
 //
 
 import RxSwift
-import GoogleMaps
+import GooglePlaces
 
 typealias TAHomeNavigationAction = TANavigationAction<TAHomeNavigationScreen>
 
@@ -15,17 +15,17 @@ final class TAHomeViewModel {
     
     // MARK: - Properties
     
+    private let _geocodeRemoteAPI: TAGeocodeRemoteAPI
     private let _menuResponder: TAOpenLeftMenuResponder
+    
     private let _navigationAction = PublishSubject<TAHomeNavigationAction>()
+    private var _myCurrentAddress: TAAddressModel?
     
-    var navigationAction: Observable<TAHomeNavigationAction> {
-        return _navigationAction.asObservable()
-    }
+    // MARK: - Lifecycle
     
-    // MARK: - Methods
-    
-    init(menuResponder: TAOpenLeftMenuResponder) {
-        _menuResponder = menuResponder
+    init(geocodeRemoteAPI: TAGeocodeRemoteAPI, menuResponder: TAOpenLeftMenuResponder) {
+        _geocodeRemoteAPI = geocodeRemoteAPI
+        _menuResponder    = menuResponder
     }
     
 }
@@ -43,18 +43,30 @@ extension TAHomeViewModel {
 // MARK: - TASearchDestinationResponder
 
 extension TAHomeViewModel: TASearchDestinationResponder {
-//    from ,
+
     func setDestinationAddress(to toAddressModel: TAAddressModel?) {
+        guard let fromAddress = _myCurrentAddress else {
+            assertionFailure("required")
+            return
+        }
+        
         switch toAddressModel {
         case .none:
-            let fromAddressModel: TAAddressModel? = TAAddressModel.searchResultsModels().first!
-            let destinationScreen: TAHomeNavigationScreen = .setDestination(from: fromAddressModel)
+            let destinationScreen: TAHomeNavigationScreen = .setDestination(from: fromAddress)
             _navigationAction.onNext(.present(screen: destinationScreen))
         case .some(let toAddress):
-            let fromAddress: TAAddressModel = TAAddressModel.searchResultsModels().first!
             _navigationAction.onNext(.present(screen: .showTaxisOptions(from: fromAddress, to: toAddress)))
-            
         }
+    }
+    
+}
+
+// MARK: - Rx getters
+
+extension TAHomeViewModel {
+    
+    var navigationAction: Observable<TAHomeNavigationAction> {
+        return _navigationAction.asObservable()
     }
     
 }
@@ -64,7 +76,13 @@ extension TAHomeViewModel: TASearchDestinationResponder {
 extension TAHomeViewModel: TARecognizeUserLocationResponder {
     
     func didUpdateLocation(_ location: CLLocation) {
-        
+        _geocodeRemoteAPI.reverseGeocodeCoordinate(with: location.coordinate)
+            .done { [weak self] geocodedAddress in
+                self?._myCurrentAddress = geocodedAddress
+            }
+            .catch { err in
+                log.error(err.localizedDescription)
+            }
     }
     
 }

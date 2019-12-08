@@ -9,12 +9,24 @@
 import Foundation
 
 enum TAConfig {
-    static var kGSPAPIKey: String { return "AIzaSyCcjM-YfwsUmonRehkmIMg6a4Smy3UgLuM" }
-    static var kGSMAPIKey: String { return "AIzaSyCcjM-YfwsUmonRehkmIMg6a4Smy3UgLuM" }
     static var appVersion: String { return "1.0.0" }
-    static var kMapZoom  : Float  { return 15 }
-    
     static var appLinkInTheAppStore: String { return "" }
+}
+
+// MARK: - Map
+
+extension TAConfig {
+    
+    enum Map {
+        enum GoogleAPIKeys {
+            static var map   : String { return "AIzaSyCPhPMxrgdByKQCrt8thI4XZ5pG2DuxmDo" }
+            static var places: String { return "AIzaSyCcjM-YfwsUmonRehkmIMg6a4Smy3UgLuM" }
+            static var geocoding: String { return "AIzaSyCcjM-YfwsUmonRehkmIMg6a4Smy3UgLuM" }
+        }
+        
+        static var kMapZoom: Float  { return 15 }
+    }
+    
 }
 
 // MARK: - UserDefaults

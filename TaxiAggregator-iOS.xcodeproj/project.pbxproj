@@ -16,6 +16,8 @@
 		200AEA902371E9D000624F53 /* TAAppUserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA8B2371E9D000624F53 /* TAAppUserSessionRepository.swift */; };
 		200AEA932371FD6A00624F53 /* TALeftMenuNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AEA922371FD6A00624F53 /* TALeftMenuNavigationScreen.swift */; };
 		200B5B04237627E100E2E37D /* TARootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200B5B03237627E100E2E37D /* TARootView.swift */; };
+		201CFFAE239CE68800F6F99F /* TAGeocodeRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201CFFAD239CE68800F6F99F /* TAGeocodeRemoteAPI.swift */; };
+		201CFFB0239CE6FD00F6F99F /* TAGoogleGeocodeRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201CFFAF239CE6FD00F6F99F /* TAGoogleGeocodeRemoteAPI.swift */; };
 		202E50452381B268008CD13D /* TASearchDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E50442381B268008CD13D /* TASearchDestinationView.swift */; };
 		202E50472381F5CE008CD13D /* TATapableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E50462381F5CE008CD13D /* TATapableTextField.swift */; };
 		202EDA36236CD73100A1419D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202EDA35236CD73100A1419D /* AppDelegate.swift */; };
@@ -135,6 +137,8 @@
 		200AEA8B2371E9D000624F53 /* TAAppUserSessionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAAppUserSessionRepository.swift; sourceTree = "<group>"; };
 		200AEA922371FD6A00624F53 /* TALeftMenuNavigationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TALeftMenuNavigationScreen.swift; sourceTree = "<group>"; };
 		200B5B03237627E100E2E37D /* TARootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TARootView.swift; sourceTree = "<group>"; };
+		201CFFAD239CE68800F6F99F /* TAGeocodeRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAGeocodeRemoteAPI.swift; sourceTree = "<group>"; };
+		201CFFAF239CE6FD00F6F99F /* TAGoogleGeocodeRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAGoogleGeocodeRemoteAPI.swift; sourceTree = "<group>"; };
 		202E50442381B268008CD13D /* TASearchDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASearchDestinationView.swift; sourceTree = "<group>"; };
 		202E50462381F5CE008CD13D /* TATapableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TATapableTextField.swift; sourceTree = "<group>"; };
 		202EDA32236CD73100A1419D /* Taxicos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taxicos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +273,7 @@
 		200AEA862371E9D000624F53 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				201CFFAC239CE66200F6F99F /* Geocode */,
 				97E43D612385710500C030EB /* Location */,
 				207E5D172377461100A99C25 /* Persistent */,
 				20CF3F4C237B616100EBC7BF /* UserSessionRepository */,
@@ -293,6 +298,15 @@
 				97292CFC237C1A7100AD9301 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		201CFFAC239CE66200F6F99F /* Geocode */ = {
+			isa = PBXGroup;
+			children = (
+				201CFFAD239CE68800F6F99F /* TAGeocodeRemoteAPI.swift */,
+				201CFFAF239CE6FD00F6F99F /* TAGoogleGeocodeRemoteAPI.swift */,
+			);
+			path = Geocode;
 			sourceTree = "<group>";
 		};
 		202E50432381B23D008CD13D /* SearchDestination */ = {
@@ -1080,6 +1094,7 @@
 				20587B60236EF1FA00E661E9 /* TAMenuItemType.swift in Sources */,
 				20AC55D12384777500747E12 /* TADestinationRootView.swift in Sources */,
 				207E5D142377441300A99C25 /* TARemoteUserSession.swift in Sources */,
+				201CFFB0239CE6FD00F6F99F /* TAGoogleGeocodeRemoteAPI.swift in Sources */,
 				20AC55D32384779800747E12 /* TADestinationViewModel.swift in Sources */,
 				974D60C1237EE7AB00C652FD /* TASavedAddressesViewModel.swift in Sources */,
 				974D60BC237E93CA00C652FD /* TAFakeUserSessionDataStore.swift in Sources */,
@@ -1135,6 +1150,7 @@
 				9797E7B223718FE4008AC393 /* TAThemeProvider.swift in Sources */,
 				20DC11C72370BC63004F323E /* String+Extension.swift in Sources */,
 				972D23F52375AC2900B19BBE /* UIColor+Ext.swift in Sources */,
+				201CFFAE239CE68800F6F99F /* TAGeocodeRemoteAPI.swift in Sources */,
 				972D23EF2375A91B00B19BBE /* TAOnboardingPageViewController.swift in Sources */,
 				20587B5C236EAF3D00E661E9 /* TALeftMenuRootView.swift in Sources */,
 				20CF3F4F237B625500EBC7BF /* TAFakeSavedAddressesDataStore.swift in Sources */,

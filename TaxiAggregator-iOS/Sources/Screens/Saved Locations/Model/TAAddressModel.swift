@@ -10,7 +10,7 @@ import GoogleMaps
 
 struct TAAddressModel {
     var icon: UIImage
-    var shortAddress: String
+    var shortAddress: String?
     var fullAddress : String
     var location    : CLLocationCoordinate2D
     var isFavVisible: Bool = false

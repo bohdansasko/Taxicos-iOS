@@ -21,8 +21,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-        GMSPlacesClient.provideAPIKey(TAConfig.kGSPAPIKey)
-        GMSServices.provideAPIKey(TAConfig.kGSMAPIKey)
+        GMSPlacesClient.provideAPIKey(TAConfig.Map.GoogleAPIKeys.places)
+        GMSServices.provideAPIKey(TAConfig.Map.GoogleAPIKeys.map)
 
         let mainVC = appDependencyContainer.makeMainViewController()
         setupWindow(with: mainVC)
