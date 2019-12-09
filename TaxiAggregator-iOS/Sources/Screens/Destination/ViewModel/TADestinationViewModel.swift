@@ -21,6 +21,8 @@ final class TADestinationViewModel {
     private let _addressesResults = BehaviorRelay<[TAAddressModel]>(value: [])
     private let _navigationAction = PublishSubject<TADestinationNavigationAction>()
     
+    private let _currentAddress: TAAddressModel
+    
     private let _fromAddress = BehaviorRelay<TAAddressModel?>(value: nil)
     private let _toAddress   = BehaviorRelay<TAAddressModel?>(value: nil)
     
@@ -39,11 +41,12 @@ final class TADestinationViewModel {
     }
     
     // MARK: - Lifecycle
-    
-    init(locationRepository: TALocationRepository, from fromAddress: TAAddressModel?) {
+
+    init(locationRepository: TALocationRepository, from fromAddress: TAAddressModel) {
         _locationRepository = locationRepository
+        _currentAddress     = fromAddress
         
-        _fromAddress.accept(fromAddress)
+        _fromAddress.accept(_currentAddress)
     }
     
 }
@@ -132,7 +135,14 @@ extension TADestinationViewModel {
     }
     
     @objc func actChooseLocationOnMap(_ sender: Any) {
-        _navigationAction.onNext(.present(screen: .chooseLocationOnMap))
+        switch activeAddressTyping.value {
+        case .from:
+            let address = _fromAddress.value ?? _currentAddress
+            _navigationAction.onNext(.present(screen: .chooseLocationOnMap(currentAddress: address)))
+        case .to:
+            let address = _toAddress.value ?? _currentAddress
+            _navigationAction.onNext(.present(screen: .chooseLocationOnMap(currentAddress: address)))
+        }
     }
 
 }

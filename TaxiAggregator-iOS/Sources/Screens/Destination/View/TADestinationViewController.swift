@@ -14,11 +14,12 @@ final class TADestinationViewController: TABaseViewController, TARootView {
     // MARK: - Properties
     
     private let _viewModel: TADestinationViewModel
-    
+    private let _factory: TADestinationFactory
     // MARK: - Lifecycle
     
-    init(viewModel: TADestinationViewModel) {
+    init(viewModel: TADestinationViewModel, factory: TADestinationFactory) {
         _viewModel = viewModel
+        _factory = factory
         
         super.init()
     }
@@ -68,9 +69,11 @@ private extension TADestinationViewController {
     func present(screen: TADestinationNavigationScreen) {
         switch screen {
         case .showTaxisOptions(let fromAddress, let toAddress):
-            log.debug(fromAddress, toAddress)
-        case .chooseLocationOnMap:
-            log.debug("chooseLocationOnMap")
+            let vc = _factory.makeTaxisOptionsViewController(from: fromAddress, to: toAddress)
+            push(viewController: vc)
+        case .chooseLocationOnMap(let currentAddress):
+            let vc = _factory.makeChooseOnMapViewController(with: currentAddress)
+            push(viewController: vc)
         }
     }
     

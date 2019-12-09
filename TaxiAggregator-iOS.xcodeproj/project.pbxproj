@@ -116,6 +116,15 @@
 		97A551DB23708F8500960890 /* TAHomeNavigationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A551DA23708F8500960890 /* TAHomeNavigationScreen.swift */; };
 		97AD303523990DE2006DE503 /* TAFakeTaxisOptionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AD303423990DE2006DE503 /* TAFakeTaxisOptionsRepository.swift */; };
 		97AD303923990E89006DE503 /* TAVinsoTaxisOptionsRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AD303823990E89006DE503 /* TAVinsoTaxisOptionsRemoteAPI.swift */; };
+		97D1CCF1239E3B02001611C4 /* TAChooseLocationOnMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1CCE9239E3B02001611C4 /* TAChooseLocationOnMapViewModel.swift */; };
+		97D1CCF2239E3B02001611C4 /* TAChooseLocationOnMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1CCEB239E3B02001611C4 /* TAChooseLocationOnMapViewController.swift */; };
+		97D1CCF4239E3B02001611C4 /* TAChooseLocationOnMapRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1CCED239E3B02001611C4 /* TAChooseLocationOnMapRootView.swift */; };
+		97D1CCF5239E3B02001611C4 /* TAChooseLocationOnMapDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1CCEE239E3B02001611C4 /* TAChooseLocationOnMapDependencyContainer.swift */; };
+		97D1CCF9239E43D7001611C4 /* TAAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1CCF8239E43D6001611C4 /* TAAddressView.swift */; };
+		97D1CCFE239E4437001611C4 /* TAChooseOnMapRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1CCFD239E4437001611C4 /* TAChooseOnMapRootView.swift */; };
+		97D1CD00239E4455001611C4 /* TAChooseOnMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1CCFF239E4455001611C4 /* TAChooseOnMapViewController.swift */; };
+		97D1CD02239E44C3001611C4 /* TAChooseOnMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1CD01239E44C3001611C4 /* TAChooseOnMapViewModel.swift */; };
+		97D1CD04239E454E001611C4 /* TAChooseOnMapDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D1CD03239E454E001611C4 /* TAChooseOnMapDependencyContainer.swift */; };
 		97D3EBBC2384286C00060B35 /* TASearchDestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBBB2384286C00060B35 /* TASearchDestinationViewModel.swift */; };
 		97D3EBBF2384318000060B35 /* TASearchHistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBBE2384318000060B35 /* TASearchHistoryDataStore.swift */; };
 		97D3EBC12384318D00060B35 /* TAFakeSearchHistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D3EBC02384318D00060B35 /* TAFakeSearchHistoryDataStore.swift */; };
@@ -245,6 +254,15 @@
 		97AD303423990DE2006DE503 /* TAFakeTaxisOptionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFakeTaxisOptionsRepository.swift; sourceTree = "<group>"; };
 		97AD303823990E89006DE503 /* TAVinsoTaxisOptionsRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAVinsoTaxisOptionsRemoteAPI.swift; sourceTree = "<group>"; };
 		97C9332B237317F6006ADA4A /* KievFakeLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = KievFakeLocation.gpx; sourceTree = "<group>"; };
+		97D1CCE9239E3B02001611C4 /* TAChooseLocationOnMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAChooseLocationOnMapViewModel.swift; sourceTree = "<group>"; };
+		97D1CCEB239E3B02001611C4 /* TAChooseLocationOnMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAChooseLocationOnMapViewController.swift; sourceTree = "<group>"; };
+		97D1CCED239E3B02001611C4 /* TAChooseLocationOnMapRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAChooseLocationOnMapRootView.swift; sourceTree = "<group>"; };
+		97D1CCEE239E3B02001611C4 /* TAChooseLocationOnMapDependencyContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAChooseLocationOnMapDependencyContainer.swift; sourceTree = "<group>"; };
+		97D1CCF8239E43D6001611C4 /* TAAddressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAAddressView.swift; sourceTree = "<group>"; };
+		97D1CCFD239E4437001611C4 /* TAChooseOnMapRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAChooseOnMapRootView.swift; sourceTree = "<group>"; };
+		97D1CCFF239E4455001611C4 /* TAChooseOnMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAChooseOnMapViewController.swift; sourceTree = "<group>"; };
+		97D1CD01239E44C3001611C4 /* TAChooseOnMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAChooseOnMapViewModel.swift; sourceTree = "<group>"; };
+		97D1CD03239E454E001611C4 /* TAChooseOnMapDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAChooseOnMapDependencyContainer.swift; sourceTree = "<group>"; };
 		97D3EBBB2384286C00060B35 /* TASearchDestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASearchDestinationViewModel.swift; sourceTree = "<group>"; };
 		97D3EBBE2384318000060B35 /* TASearchHistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TASearchHistoryDataStore.swift; sourceTree = "<group>"; };
 		97D3EBC02384318D00060B35 /* TAFakeSearchHistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAFakeSearchHistoryDataStore.swift; sourceTree = "<group>"; };
@@ -414,6 +432,7 @@
 				20C8AAC5236E0160005E6590 /* Onboarding */,
 				20C8AAC0236DFF91005E6590 /* Saved Locations */,
 				20AC55CD2384772800747E12 /* Destination */,
+				97D1CCF7239E43A4001611C4 /* ChooseOnMap */,
 				977833682397F374002B5F96 /* TaxisOptions */,
 			);
 			path = Screens;
@@ -832,6 +851,70 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		97D1CCE7239E3A51001611C4 /* ChooseLocationOnMap */ = {
+			isa = PBXGroup;
+			children = (
+				97D1CCEE239E3B02001611C4 /* TAChooseLocationOnMapDependencyContainer.swift */,
+				97D1CCEA239E3B02001611C4 /* View */,
+				97D1CCE8239E3B02001611C4 /* ViewModel */,
+			);
+			path = ChooseLocationOnMap;
+			sourceTree = "<group>";
+		};
+		97D1CCE8239E3B02001611C4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				97D1CCE9239E3B02001611C4 /* TAChooseLocationOnMapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		97D1CCEA239E3B02001611C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				97D1CCED239E3B02001611C4 /* TAChooseLocationOnMapRootView.swift */,
+				97D1CCEB239E3B02001611C4 /* TAChooseLocationOnMapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		97D1CCF7239E43A4001611C4 /* ChooseOnMap */ = {
+			isa = PBXGroup;
+			children = (
+				97D1CD03239E454E001611C4 /* TAChooseOnMapDependencyContainer.swift */,
+				97D1CCFC239E4409001611C4 /* AddressView */,
+				97D1CCE7239E3A51001611C4 /* ChooseLocationOnMap */,
+				97D1CCFA239E43E8001611C4 /* View */,
+				97D1CCFB239E43FC001611C4 /* ViewModel */,
+			);
+			path = ChooseOnMap;
+			sourceTree = "<group>";
+		};
+		97D1CCFA239E43E8001611C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				97D1CCFD239E4437001611C4 /* TAChooseOnMapRootView.swift */,
+				97D1CCFF239E4455001611C4 /* TAChooseOnMapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		97D1CCFB239E43FC001611C4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				97D1CD01239E44C3001611C4 /* TAChooseOnMapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		97D1CCFC239E4409001611C4 /* AddressView */ = {
+			isa = PBXGroup;
+			children = (
+				97D1CCF8239E43D6001611C4 /* TAAddressView.swift */,
+			);
+			path = AddressView;
+			sourceTree = "<group>";
+		};
 		97D3EBBD2384314100060B35 /* SearchHistory */ = {
 			isa = PBXGroup;
 			children = (
@@ -1060,18 +1143,22 @@
 				977833722397FE38002B5F96 /* TATaxiOptionModel.swift in Sources */,
 				20DC11C32370BC04004F323E /* Logger.swift in Sources */,
 				9797E7AE23718E3D008AC393 /* TATheme.swift in Sources */,
+				97D1CCF1239E3B02001611C4 /* TAChooseLocationOnMapViewModel.swift in Sources */,
 				974D60CE237EEBC300C652FD /* TAUIFactory.swift in Sources */,
 				20EC5FD423784E98003817FD /* TAUserSessionRepository.swift in Sources */,
 				97E43D692385724400C030EB /* TAGoogleLocationRemoteAPI.swift in Sources */,
 				97A33C492370391E00C06500 /* TAFromToAddressView.swift in Sources */,
 				97A551D42370869500960890 /* UIControl+Ext.swift in Sources */,
 				9797E7B023718F8C008AC393 /* TAColorsPalette.swift in Sources */,
+				97D1CCF2239E3B02001611C4 /* TAChooseLocationOnMapViewController.swift in Sources */,
 				9794DE0C23741DFC0077D03A /* TASavedAddressesDependencyContainer.swift in Sources */,
 				9797E7B62371AF6C008AC393 /* TAConfig.swift in Sources */,
 				979F180F2374346700CA209B /* TAMainDependencyContainer.swift in Sources */,
+				97D1CCF9239E43D7001611C4 /* TAAddressView.swift in Sources */,
 				200AEA8C2371E9D000624F53 /* TAUserSessionDataStore.swift in Sources */,
 				20AC55CF2384774E00747E12 /* TADestinationViewController.swift in Sources */,
 				2042AF80237379B20074D6CD /* UIViewController+Ext.swift in Sources */,
+				97D1CCF4239E3B02001611C4 /* TAChooseLocationOnMapRootView.swift in Sources */,
 				977833702397F3E3002B5F96 /* TATaxisOptionsViewModel.swift in Sources */,
 				20587B56236EAEE000E661E9 /* TAOnboardingRootView.swift in Sources */,
 				97D3EBC12384318D00060B35 /* TAFakeSearchHistoryDataStore.swift in Sources */,
@@ -1085,6 +1172,7 @@
 				97AD303523990DE2006DE503 /* TAFakeTaxisOptionsRepository.swift in Sources */,
 				200AEA902371E9D000624F53 /* TAAppUserSessionRepository.swift in Sources */,
 				9778336F2397F3E3002B5F96 /* TATaxisOptionsViewController.swift in Sources */,
+				97D1CD04239E454E001611C4 /* TAChooseOnMapDependencyContainer.swift in Sources */,
 				20DC11D62370BC86004F323E /* UIFont+Ext.swift in Sources */,
 				974D60D0237EEE1A00C652FD /* TADropdownAddresessPresenter.swift in Sources */,
 				209C29692373F88F002D8418 /* TAOnboardingDependencyContainer.swift in Sources */,
@@ -1093,6 +1181,7 @@
 				9778336E2397F3E3002B5F96 /* TATaxisOptionsDependencyContainer.swift in Sources */,
 				20587B60236EF1FA00E661E9 /* TAMenuItemType.swift in Sources */,
 				20AC55D12384777500747E12 /* TADestinationRootView.swift in Sources */,
+				97D1CCF5239E3B02001611C4 /* TAChooseLocationOnMapDependencyContainer.swift in Sources */,
 				207E5D142377441300A99C25 /* TARemoteUserSession.swift in Sources */,
 				201CFFB0239CE6FD00F6F99F /* TAGoogleGeocodeRemoteAPI.swift in Sources */,
 				20AC55D32384779800747E12 /* TADestinationViewModel.swift in Sources */,
@@ -1112,6 +1201,7 @@
 				20C8AAB1236DE480005E6590 /* TALeftMenuViewController.swift in Sources */,
 				209C296B2373F8D2002D8418 /* TAMapDependencyContainer.swift in Sources */,
 				97E43D67238571DE00C030EB /* TALocationRemoteAPI.swift in Sources */,
+				97D1CD00239E4455001611C4 /* TAChooseOnMapViewController.swift in Sources */,
 				972D23F12375A92700B19BBE /* TAOnboardingPageRootView.swift in Sources */,
 				9794DE032374100D0077D03A /* TAHomeViewController.swift in Sources */,
 				20587B58236EAF1500E661E9 /* TASavedAddressesRootView.swift in Sources */,
@@ -1123,12 +1213,14 @@
 				972D24022375CE2000B19BBE /* TAOnboardingPageType.swift in Sources */,
 				97A551D923708ECA00960890 /* TANavigationAction.swift in Sources */,
 				97AD303923990E89006DE503 /* TAVinsoTaxisOptionsRemoteAPI.swift in Sources */,
+				97D1CCFE239E4437001611C4 /* TAChooseOnMapRootView.swift in Sources */,
 				20C8AACC236EAAAC005E6590 /* TABaseView.swift in Sources */,
 				207E5D162377445B00A99C25 /* TAUserProfile.swift in Sources */,
 				9778337823980EA7002B5F96 /* TATaxiOptionCell.swift in Sources */,
 				200AEA8E2371E9D000624F53 /* TAAuthRemoteAPI.swift in Sources */,
 				978A6446239BD6C3006542B6 /* TADestinationNavigationScreen.swift in Sources */,
 				20EC5FD723785435003817FD /* TAErrorMessage.swift in Sources */,
+				97D1CD02239E44C3001611C4 /* TAChooseOnMapViewModel.swift in Sources */,
 				9797E7B423719257008AC393 /* TALegacyThemeProvider.swift in Sources */,
 				20C8AAC9236E018B005E6590 /* TAOnboardingViewModel.swift in Sources */,
 				200AEA932371FD6A00624F53 /* TALeftMenuNavigationScreen.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 
 enum TAHomeNavigationScreen {
-    case setDestination(from: TAAddressModel?)
+    case setDestination(from: TAAddressModel)
     case showTaxisOptions(from: TAAddressModel, to: TAAddressModel)
 }
 

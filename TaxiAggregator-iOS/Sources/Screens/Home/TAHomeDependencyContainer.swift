@@ -12,7 +12,7 @@ protocol TAHomeFactory {
     func makeMapViewController() -> TAMapViewController
     func makeSearchDestinationView() -> TASearchDestinationView
     
-    func makeDestinationViewController(from fromAddress: TAAddressModel?) -> UIViewController
+    func makeDestinationViewController(from fromAddress: TAAddressModel) -> UIViewController
     func makeTaxisOptionsViewController(from fromAddress: TAAddressModel, to toAddress: TAAddressModel) -> TATaxisOptionsViewController
 }
 
@@ -65,7 +65,7 @@ extension TAHomeDependencyContainer: TAHomeFactory {
         return view
     }
     
-    func makeDestinationViewController(from fromAddress: TAAddressModel?) -> UIViewController {
+    func makeDestinationViewController(from fromAddress: TAAddressModel) -> UIViewController {
         let destinationDependencyContainer = TADestinationDependencyContainer()
         let vc = destinationDependencyContainer.makeDestinationViewController(from: fromAddress)
         return vc
@@ -76,4 +76,5 @@ extension TAHomeDependencyContainer: TAHomeFactory {
         let vc = taxisOptionsDependencyContainer.makeTaxisOptionsViewController(from: fromAddress, to: toAddress)
         return vc
     }
+    
 }
