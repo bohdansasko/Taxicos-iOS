@@ -18,6 +18,12 @@ final class TAChooseLocationOnMapRootView: TABaseView {
     
     // MARK: - UI
     
+    fileprivate let pinIconView: UIImageView = {
+        let imgView = UIImageView(image: #imageLiteral(resourceName: "icDropoff"))
+        imgView.contentMode = .scaleAspectFit
+        return imgView
+    }()
+    
     fileprivate let mapView: GMSMapView = {
         let map = GMSMapView()
         return map
@@ -50,8 +56,12 @@ final class TAChooseLocationOnMapRootView: TABaseView {
 private extension TAChooseLocationOnMapRootView {
     
     func setupLayout() {
+        mapView.delegate = self
         addSubview(mapView)
         mapView.snp.makeConstraints{ $0.edges.equalToSuperview() }
+        
+        addSubview(pinIconView)
+        pinIconView.snp.makeConstraints{ $0.center.equalToSuperview() }
         
         addSubview(myLocationButton)
         myLocationButton.snp.makeConstraints {
@@ -100,3 +110,14 @@ extension TAChooseLocationOnMapRootView: TAThemeable {
     }
 
 }
+
+// MARK: - GMSMapViewDelegate
+
+extension TAChooseLocationOnMapRootView: GMSMapViewDelegate {
+   
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        _viewModel.reverseGeocodeCoordinate(for: position.target)
+    }
+   
+}
+

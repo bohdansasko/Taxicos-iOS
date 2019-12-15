@@ -52,6 +52,10 @@ final class TAAddressView: TABaseView {
         setupLayout()
     }
     
+    func set(address: TAAddressModel) {
+        addressLabel.text = address.shortAddress ?? address.fullAddress
+    }
+    
 }
 
 // MARK: - Setup

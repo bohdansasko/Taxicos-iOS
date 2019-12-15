@@ -9,15 +9,25 @@
 import Foundation
 
 final class TAChooseLocationOnMapDependencyContainer {
+    private let _idleLocationResponder: TAIdleLocationResponder
+    
+    init(idleLocationResponder: TAIdleLocationResponder) {
+        _idleLocationResponder = idleLocationResponder
+    }
     
 }
 
 extension TAChooseLocationOnMapDependencyContainer {
     
     func makeChooseLocationOnMapViewController(with currentAddress: TAAddressModel?) -> TAChooseLocationOnMapViewController {
-        let remoteAPI = TAGoogleLocationRemoteAPI()
-        let locationRepository = TAVinsoLocationRepository(remoteAPI: remoteAPI)
-        let viewModel = TAChooseLocationOnMapViewModel(myLocationRemoteAPI: TAGoogleMyLocationRemoteAPI())
+        let myLocationRemoteAPI = TAGoogleMyLocationRemoteAPI()
+        let geocodeRemoteAPI = TAGoogleGeocodeRemoteAPI()
+        
+        let viewModel = TAChooseLocationOnMapViewModel(
+            myLocationRemoteAPI: myLocationRemoteAPI,
+            geocodeRemoteAPI: geocodeRemoteAPI,
+            idleLocationResponder: _idleLocationResponder
+        )
         let vc = TAChooseLocationOnMapViewController(viewModel: viewModel)
         return vc
     }

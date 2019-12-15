@@ -6,10 +6,20 @@
 //  Copyright © 2019 Vinso. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
 final class TAChooseOnMapViewModel {
+    private let _idleAddress = PublishSubject<TAAddressModel>()
+}
+
+// MARK: - Rx Getters
+
+extension TAChooseOnMapViewModel {
     
+    var idleAddress: Observable<TAAddressModel> {
+        return _idleAddress.asObservable()
+    }
+
 }
 
 // MARK: - User interaction
@@ -21,3 +31,14 @@ extension TAChooseOnMapViewModel {
     }
 
 }
+
+// MARK: - TAIdleLocationResponder
+
+extension TAChooseOnMapViewModel: TAIdleLocationResponder {
+    
+    func idleLocation(at address: TAAddressModel) {
+        _idleAddress.onNext(address)
+    }
+    
+}
+

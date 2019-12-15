@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol TAChooseOnMapFactory {
-    func makeChooseLocationOnMapViewController() -> TAChooseLocationOnMapViewController
-}
-
 final class TAChooseOnMapDependencyContainer {
     private let _currentAddress: TAAddressModel
     
@@ -21,19 +17,15 @@ final class TAChooseOnMapDependencyContainer {
     
     func makeChooseOnMapViewController() -> TAChooseOnMapViewController {
         let viewModel = TAChooseOnMapViewModel()
-        let chooseOnMapViewController = makeChooseLocationOnMapViewController()
+        let chooseOnMapViewController = makeChooseLocationOnMapViewController(idleLocationResponder: viewModel)
         
         let vc = TAChooseOnMapViewController(viewModel: viewModel,
                                              chooseOnMapViewController: chooseOnMapViewController)
         return vc
     }
     
-}
-
-extension TAChooseOnMapDependencyContainer: TAChooseOnMapFactory {
-    
-    func makeChooseLocationOnMapViewController() -> TAChooseLocationOnMapViewController {
-        let dc = TAChooseLocationOnMapDependencyContainer()
+    private func makeChooseLocationOnMapViewController(idleLocationResponder: TAIdleLocationResponder) -> TAChooseLocationOnMapViewController {
+        let dc = TAChooseLocationOnMapDependencyContainer(idleLocationResponder: idleLocationResponder)
         let vc = dc.makeChooseLocationOnMapViewController(with: _currentAddress)
         return vc
     }

@@ -9,6 +9,7 @@
 import UIKit
 
 final class TAChooseOnMapRootView: TABaseView {
+    
     private let _viewModel: TAChooseOnMapViewModel
     
     // MARK: - UI
@@ -32,6 +33,8 @@ final class TAChooseOnMapRootView: TABaseView {
         super.init(frame: frame)
         
         setupLayout()
+        setupIdleAddressSubscription()
+        
         themeProvider.register(observer: self)
         
         _addressView.confirmButton.addTarget(_viewModel, action: #selector(_viewModel.actConfirmLocation(_:)))
@@ -46,7 +49,8 @@ private extension TAChooseOnMapRootView {
     func setupLayout() {
         addSubview(mapContainerView)
         mapContainerView.snp.makeConstraints {
-            $0.top.left.right.equalToSuperview()
+            $0.top.equalTo(self.safeAreaLayoutGuide)
+            $0.left.right.equalToSuperview()
         }
         
         addSubview(_addressView)
@@ -55,6 +59,14 @@ private extension TAChooseOnMapRootView {
             $0.bottom.left.right.equalToSuperview()
             $0.height.equalTo(180)
         }
+    }
+    
+    func setupIdleAddressSubscription() {
+        _viewModel.idleAddress
+            .subscribe(onNext: { [weak self] address in
+                self?._addressView.set(address: address)
+            })
+            .disposed(by: disposeBag)
     }
     
 }
