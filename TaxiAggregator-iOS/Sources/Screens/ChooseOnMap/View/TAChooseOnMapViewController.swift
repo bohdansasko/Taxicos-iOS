@@ -18,14 +18,12 @@ final class TAChooseOnMapViewController: TABaseViewController, TARootView {
     // MARK: - UI
     
     private let _chooseOnMapViewController: TAChooseLocationOnMapViewController
-    private let _addressView: TAAddressView
     
     // MARK: - Lifecycle
     
-    init(viewModel: TAChooseOnMapViewModel, chooseOnMapViewController: TAChooseLocationOnMapViewController, addressView: TAAddressView) {
+    init(viewModel: TAChooseOnMapViewModel, chooseOnMapViewController: TAChooseLocationOnMapViewController) {
         _viewModel = viewModel
         _chooseOnMapViewController = chooseOnMapViewController
-        _addressView = addressView
         
         super.init()
     }
@@ -38,9 +36,6 @@ final class TAChooseOnMapViewController: TABaseViewController, TARootView {
         super.viewDidLoad()
         
         add(child: _chooseOnMapViewController, to: rootView.mapContainerView)
-        
-        rootView.addressContainerView.addSubview(_addressView)
-        _addressView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
     
 }

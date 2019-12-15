@@ -7,6 +7,8 @@
 //
 
 import PromiseKit
+import GoogleMaps
+import RxSwift
 
 final class TAVinsoLocationRepository {
     private let _remoteAPI: TALocationRemoteAPI
@@ -14,7 +16,10 @@ final class TAVinsoLocationRepository {
     init(remoteAPI: TALocationRemoteAPI) {
         _remoteAPI = remoteAPI
     }
+
 }
+
+// MARK: - TALocationRepository
 
 extension TAVinsoLocationRepository: TALocationRepository {
     

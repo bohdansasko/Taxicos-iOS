@@ -9,17 +9,23 @@
 import RxSwift
 import RxCocoa
 import RxRelay
+import GoogleMaps
 
 final class TAChooseLocationOnMapViewModel {
     
     // MARK: - Internal properties
     
-    private let _locationRepository: TALocationRepository
+    private let _myLocationRemoteAPI: TAMyLocationRemoteAPI
+    
+    private let _isMyLocationEnabled       = BehaviorRelay<Bool>(value: true)
+    private let _isVisibleMyLocationButton = BehaviorRelay<Bool>(value: true)
     
     // MARK: - Lifecycle
     
-    init(locationRepository: TALocationRepository) {
-        _locationRepository = locationRepository
+    init(myLocationRemoteAPI: TAMyLocationRemoteAPI) {
+        _myLocationRemoteAPI = myLocationRemoteAPI
+        
+        _myLocationRemoteAPI.determineMyLocation()
     }
     
 }
@@ -28,14 +34,32 @@ final class TAChooseLocationOnMapViewModel {
 
 extension TAChooseLocationOnMapViewModel {
     
-    @objc func actConfirmLocation(_ sender: Any) {
-        // 
+    @objc func actDetermineMyLocation(_ sender: Any) {
+        _myLocationRemoteAPI.determineMyLocation()
     }
 
+}
+
+// MARK: - Rx Getters
+
+extension TAChooseLocationOnMapViewModel {
+    
+    var myLocation: Observable<CLLocation> {
+        return _myLocationRemoteAPI.myLocation
+    }
+    
+    var isMyLocationEnabled: Observable<Bool> {
+        return _isMyLocationEnabled.asObservable()
+    }
+    
+    var isVisibleMyLocationButton: Observable<Bool> {
+        return _isVisibleMyLocationButton.asObservable()
+    }
+    
 }
 
 // MARK: - API
 
 extension TAChooseLocationOnMapViewModel {
-
+    
 }

@@ -34,7 +34,7 @@ final class TAAddressView: TABaseView {
         return label
     }()
     
-    private let confirmButton: UIButton = {
+    let confirmButton: UIButton = {
         let b = UIButton(type: .system)
         b.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.3137254902, blue: 0.6196078431, alpha: 1)
         b.setTitle("TAXIS_CONFIRM".localized, for: .normal)

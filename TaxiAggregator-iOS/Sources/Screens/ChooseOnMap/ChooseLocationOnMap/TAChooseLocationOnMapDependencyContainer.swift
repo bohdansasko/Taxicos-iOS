@@ -17,7 +17,7 @@ extension TAChooseLocationOnMapDependencyContainer {
     func makeChooseLocationOnMapViewController(with currentAddress: TAAddressModel?) -> TAChooseLocationOnMapViewController {
         let remoteAPI = TAGoogleLocationRemoteAPI()
         let locationRepository = TAVinsoLocationRepository(remoteAPI: remoteAPI)
-        let viewModel = TAChooseLocationOnMapViewModel(locationRepository: locationRepository)
+        let viewModel = TAChooseLocationOnMapViewModel(myLocationRemoteAPI: TAGoogleMyLocationRemoteAPI())
         let vc = TAChooseLocationOnMapViewController(viewModel: viewModel)
         return vc
     }

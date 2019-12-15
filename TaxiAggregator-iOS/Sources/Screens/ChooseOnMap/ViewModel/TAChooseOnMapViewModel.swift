@@ -11,3 +11,13 @@ import Foundation
 final class TAChooseOnMapViewModel {
     
 }
+
+// MARK: - User interaction
+
+extension TAChooseOnMapViewModel {
+    
+    @objc func actConfirmLocation(_ sender: Any) {
+        log.info()
+    }
+
+}

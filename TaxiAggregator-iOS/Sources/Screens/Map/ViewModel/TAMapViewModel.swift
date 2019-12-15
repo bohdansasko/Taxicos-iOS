@@ -8,6 +8,7 @@
 
 import GoogleMaps
 import RxSwift
+import RxRelay
 
 protocol TARecognizeUserLocationResponder {
     func didUpdateLocation(_ location: CLLocation)
@@ -20,8 +21,8 @@ final class TAMapViewModel: NSObject {
     private let _locationManager           = CLLocationManager()
     
     private let _myLocation                = PublishSubject<CLLocation>()
-    private let _isMyLocationEnabled       = BehaviorSubject<Bool>(value: true)
-    private let _isVisibleMyLocationButton = BehaviorSubject<Bool>(value: true)
+    private let _isMyLocationEnabled       = BehaviorRelay<Bool>(value: true)
+    private let _isVisibleMyLocationButton = BehaviorRelay<Bool>(value: true)
     
     private let _recognizeUserLocationResponder: TARecognizeUserLocationResponder
     

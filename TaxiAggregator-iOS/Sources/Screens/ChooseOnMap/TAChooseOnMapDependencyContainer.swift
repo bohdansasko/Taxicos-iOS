@@ -22,16 +22,10 @@ final class TAChooseOnMapDependencyContainer {
     func makeChooseOnMapViewController() -> TAChooseOnMapViewController {
         let viewModel = TAChooseOnMapViewModel()
         let chooseOnMapViewController = makeChooseLocationOnMapViewController()
-        let addresView = makeAddressView()
         
         let vc = TAChooseOnMapViewController(viewModel: viewModel,
-                                             chooseOnMapViewController: chooseOnMapViewController,
-                                             addressView: addresView)
+                                             chooseOnMapViewController: chooseOnMapViewController)
         return vc
-    }
-    
-    func makeAddressView() -> TAAddressView {
-        return TAAddressView()
     }
     
 }

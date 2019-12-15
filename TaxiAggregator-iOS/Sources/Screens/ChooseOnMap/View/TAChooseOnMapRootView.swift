@@ -19,9 +19,8 @@ final class TAChooseOnMapRootView: TABaseView {
         return view
     }()
     
-    let addressContainerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .rnd
+    fileprivate let _addressView: TAAddressView = {
+        let view = TAAddressView()
         return view
     }()
     
@@ -34,6 +33,8 @@ final class TAChooseOnMapRootView: TABaseView {
         
         setupLayout()
         themeProvider.register(observer: self)
+        
+        _addressView.confirmButton.addTarget(_viewModel, action: #selector(_viewModel.actConfirmLocation(_:)))
     }
     
 }
@@ -48,8 +49,8 @@ private extension TAChooseOnMapRootView {
             $0.top.left.right.equalToSuperview()
         }
         
-        addSubview(addressContainerView)
-        addressContainerView.snp.makeConstraints {
+        addSubview(_addressView)
+        _addressView.snp.makeConstraints {
             $0.top.equalTo(mapContainerView.snp.bottom)
             $0.bottom.left.right.equalToSuperview()
             $0.height.equalTo(180)
