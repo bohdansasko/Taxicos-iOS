@@ -10,13 +10,17 @@ import Foundation
 
 final class TAChooseOnMapDependencyContainer {
     private let _currentAddress: TAAddressModel
+    private let _addressType: TAActiveAddressTyping
+    private let _destinationViewModel: TADestinationViewModel
     
-    init(with currentAddress: TAAddressModel) {
+    init(with currentAddress: TAAddressModel, addressType: TAActiveAddressTyping, destinationViewModel: TADestinationViewModel) {
         _currentAddress = currentAddress
+        _addressType = addressType
+        _destinationViewModel = destinationViewModel
     }
     
     func makeChooseOnMapViewController() -> TAChooseOnMapViewController {
-        let viewModel = TAChooseOnMapViewModel()
+        let viewModel = TAChooseOnMapViewModel(addressType: _addressType, confirmAddressResponder: _destinationViewModel)
         let chooseOnMapViewController = makeChooseLocationOnMapViewController(idleLocationResponder: viewModel)
         
         let vc = TAChooseOnMapViewController(viewModel: viewModel,

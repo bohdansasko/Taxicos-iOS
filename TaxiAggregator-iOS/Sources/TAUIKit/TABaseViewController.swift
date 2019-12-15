@@ -55,6 +55,13 @@ extension TABaseViewController {
         nav.pushViewController(viewController, animated: animated)
     }
 
+    func close() {
+        let poppedVC = navigationController?.popViewController(animated: true)
+        if poppedVC == nil  {
+            dismiss(animated: true)
+        }
+    }
+    
 }
 
 // MARK: - Handle navigation bar visibility

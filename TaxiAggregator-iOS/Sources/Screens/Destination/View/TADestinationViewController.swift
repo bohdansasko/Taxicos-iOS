@@ -71,8 +71,8 @@ private extension TADestinationViewController {
         case .showTaxisOptions(let fromAddress, let toAddress):
             let vc = _factory.makeTaxisOptionsViewController(from: fromAddress, to: toAddress)
             push(viewController: vc)
-        case .chooseLocationOnMap(let currentAddress):
-            let vc = _factory.makeChooseOnMapViewController(with: currentAddress)
+        case .chooseLocationOnMap(let currentAddress, let addressType):
+            let vc = _factory.makeChooseOnMapViewController(with: currentAddress, addressType: addressType)
             push(viewController: vc)
         }
     }

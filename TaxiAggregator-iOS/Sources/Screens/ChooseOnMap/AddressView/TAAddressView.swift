@@ -22,13 +22,13 @@ final class TAAddressView: TABaseView {
     }()
     
     fileprivate let locationIconView: UIImageView = {
-        return makeIconView(image: #imageLiteral(resourceName: "icPickup"))
+        return makeIconView(image: #imageLiteral(resourceName: "icDropoff"))
     }()
 
     fileprivate let addressLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.rubik(weight: .medium, fontSize: 18)
-        label.text = "<Velyka Vasylkivska 124>"
+        label.text = "TAXIS_DETERMINING_ADDRESS".localized
         label.textColor = #colorLiteral(red: 0.2392156863, green: 0.2392156863, blue: 0.2392156863, alpha: 1)
         label.textAlignment = .left
         return label
@@ -50,10 +50,6 @@ final class TAAddressView: TABaseView {
         super.init(frame: frame)
 
         setupLayout()
-    }
-    
-    func set(address: TAAddressModel) {
-        addressLabel.text = address.shortAddress ?? address.fullAddress
     }
     
 }
@@ -104,6 +100,25 @@ private extension TAAddressView {
             $0.top.equalTo(addressSV.snp.bottom).offset(16)
             $0.left.right.equalTo(titleLabel)
             $0.height.equalTo(46)
+        }
+    }
+    
+}
+
+// MARK: - Set
+
+extension TAAddressView {
+    
+    func set(address: TAAddressModel) {
+        addressLabel.text = address.shortAddress ?? address.fullAddress
+    }
+
+    func set(addressType: TAActiveAddressTyping) {
+        switch addressType {
+        case .from:
+            titleLabel.text = "TAXIS_CONFIRM_PICKUP".localized
+        case .to:
+            titleLabel.text = "TAXIS_CONFIRM_DESTINATION".localized
         }
     }
     

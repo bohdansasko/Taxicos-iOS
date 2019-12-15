@@ -138,10 +138,10 @@ extension TADestinationViewModel {
         switch activeAddressTyping.value {
         case .from:
             let address = _fromAddress.value ?? _currentAddress
-            _navigationAction.onNext(.present(screen: .chooseLocationOnMap(currentAddress: address)))
+            _navigationAction.onNext(.present(screen: .chooseLocationOnMap(currentAddress: address, addressType: .from)))
         case .to:
             let address = _toAddress.value ?? _currentAddress
-            _navigationAction.onNext(.present(screen: .chooseLocationOnMap(currentAddress: address)))
+            _navigationAction.onNext(.present(screen: .chooseLocationOnMap(currentAddress: address, addressType: .to)))
         }
     }
 
@@ -169,6 +169,21 @@ extension TADestinationViewModel {
             }.catch { err in
                 log.error(err)
             }
+    }
+
+}
+
+// MARK: - TAConfirmAddressOnMapResponder
+
+extension TADestinationViewModel: TAConfirmAddressOnMapResponder {
+    
+    func confirmAddress(_ address: TAAddressModel, addressType: TAActiveAddressTyping) {
+        switch activeAddressTyping.value {
+        case .from:
+            _fromAddress.accept(address)
+        case .to:
+            _toAddress.accept(address)
+        }
     }
 
 }

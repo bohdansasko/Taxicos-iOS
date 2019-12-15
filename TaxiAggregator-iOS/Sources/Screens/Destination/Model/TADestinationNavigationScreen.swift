@@ -10,7 +10,7 @@ import Foundation
 
 enum TADestinationNavigationScreen {
     case showTaxisOptions(from: TAAddressModel, to: TAAddressModel)
-    case chooseLocationOnMap(currentAddress: TAAddressModel)
+    case chooseLocationOnMap(currentAddress: TAAddressModel, addressType: TAActiveAddressTyping)
 }
 
 extension TADestinationNavigationScreen: Equatable {
@@ -19,8 +19,8 @@ extension TADestinationNavigationScreen: Equatable {
         switch (lhs, rhs) {
         case let (.showTaxisOptions(l), .showTaxisOptions(r)):
             return l == r
-        case let (.chooseLocationOnMap(l), .chooseLocationOnMap(r)):
-            return l == r
+        case let (.chooseLocationOnMap(l, ll), .chooseLocationOnMap(r, rr)):
+            return l == r && ll == rr
         case (.showTaxisOptions, _),
              (.chooseLocationOnMap, _):
             return false

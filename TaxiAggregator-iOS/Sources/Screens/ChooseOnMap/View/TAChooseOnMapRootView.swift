@@ -53,6 +53,7 @@ private extension TAChooseOnMapRootView {
             $0.left.right.equalToSuperview()
         }
         
+        _addressView.set(addressType: _viewModel.addressType)
         addSubview(_addressView)
         _addressView.snp.makeConstraints {
             $0.top.equalTo(mapContainerView.snp.bottom)
@@ -70,6 +71,8 @@ private extension TAChooseOnMapRootView {
     }
     
 }
+
+// MARK: TAThemeable
 
 extension TAChooseOnMapRootView: TAThemeable {
     

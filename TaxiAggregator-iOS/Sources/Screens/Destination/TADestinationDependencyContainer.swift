@@ -9,12 +9,12 @@
 import Foundation
 
 protocol TADestinationFactory {
-    func makeChooseOnMapViewController(with startAddress: TAAddressModel) -> TAChooseOnMapViewController
+    func makeChooseOnMapViewController(with startAddress: TAAddressModel, addressType: TAActiveAddressTyping) -> TAChooseOnMapViewController
     func makeTaxisOptionsViewController(from fromAddress: TAAddressModel, to toAddress: TAAddressModel) -> TATaxisOptionsViewController
 }
 
 final class TADestinationDependencyContainer {
-    
+    private var _viewModel: TADestinationViewModel?
 }
 
 extension TADestinationDependencyContainer {
@@ -22,8 +22,8 @@ extension TADestinationDependencyContainer {
     func makeDestinationViewController(from fromAddress: TAAddressModel) -> TADestinationViewController {
         let remoteAPI = TAGoogleLocationRemoteAPI()
         let locationRepository = TAVinsoLocationRepository(remoteAPI: remoteAPI)
-        let viewModel = TADestinationViewModel(locationRepository: locationRepository, from: fromAddress)
-        let vc = TADestinationViewController(viewModel: viewModel, factory: self)
+        _viewModel = TADestinationViewModel(locationRepository: locationRepository, from: fromAddress)
+        let vc = TADestinationViewController(viewModel: _viewModel!, factory: self)
         return vc
     }
     
@@ -33,8 +33,13 @@ extension TADestinationDependencyContainer {
 
 extension TADestinationDependencyContainer: TADestinationFactory {
     
-    func makeChooseOnMapViewController(with startAddress: TAAddressModel) -> TAChooseOnMapViewController {
-        let dp = TAChooseOnMapDependencyContainer(with: startAddress)
+    func makeChooseOnMapViewController(with startAddress: TAAddressModel, addressType: TAActiveAddressTyping) -> TAChooseOnMapViewController {
+        guard let viewModel = _viewModel else {
+            fatalError("fix me")
+        }
+        let dp = TAChooseOnMapDependencyContainer(with: startAddress,
+                                                  addressType: addressType,
+                                                  destinationViewModel: viewModel)
         let vc = dp.makeChooseOnMapViewController()
         return vc
     }

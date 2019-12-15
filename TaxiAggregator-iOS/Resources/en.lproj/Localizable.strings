@@ -37,5 +37,6 @@
 "TAXIS_OPTIONS_TITLE"       = "Search Results";
 "TAXIS_CHOOSE_ON_MAP"       = "Choose on map";
 "TAXIS_CONFIRM"             = "Confirm";
-"TAXIS_CONFIRM_PICK_UP"     = "Confirm pick up location";
+"TAXIS_DETERMINING_ADDRESS" = "We're determining your address...";
+"TAXIS_CONFIRM_PICKUP"      = "Confirm pick up location";
 "TAXIS_CONFIRM_DESTINATION" = "Confirm destination location";
