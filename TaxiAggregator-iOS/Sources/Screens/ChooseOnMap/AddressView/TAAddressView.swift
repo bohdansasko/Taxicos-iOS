@@ -10,31 +10,38 @@ import UIKit
 import RxSwift
 
 final class TAAddressView: TABaseView {
-    
-    // MARK: - Properties
-    
-    fileprivate let _activeAddressTyping = PublishSubject<TAActiveAddressTyping>()
-    
-    var activeAddressTyping: Observable<TAActiveAddressTyping> {
-        return _activeAddressTyping.asObservable()
-    }
-    
+  
     // MARK: - UI
     
-    fileprivate let pickupIconView: UIImageView = {
+    fileprivate let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.rubik(weight: .medium, fontSize: 14)
+        label.text = "TAXIS_CONFIRM_DESTINATION".localized
+        label.textColor = #colorLiteral(red: 0.2392156863, green: 0.2392156863, blue: 0.2392156863, alpha: 1)
+        return label
+    }()
+    
+    fileprivate let locationIconView: UIImageView = {
         return makeIconView(image: #imageLiteral(resourceName: "icPickup"))
     }()
 
-    fileprivate let fromAddressTF: TATextField = {
-        return TAUIFactory.makeTextField(placeholder: "MAP_ENTER_LOCATION".localized, tintColor: #colorLiteral(red: 0.04705882353, green: 0.1960784314, blue: 0.7254901961, alpha: 1))
+    fileprivate let addressLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.rubik(weight: .medium, fontSize: 18)
+        label.text = "<Velyka Vasylkivska 124>"
+        label.textColor = #colorLiteral(red: 0.2392156863, green: 0.2392156863, blue: 0.2392156863, alpha: 1)
+        label.textAlignment = .left
+        return label
     }()
     
-    fileprivate let dropoffIconView: UIImageView = {
-        return makeIconView(image: #imageLiteral(resourceName: "icDropoff"))
-    }()
-    
-    fileprivate let toAddressTF: TATextField = {
-        return TAUIFactory.makeTextField(placeholder: "MAP_WHERE_TO".localized, tintColor: #colorLiteral(red: 0.2039215686, green: 0.2196078431, blue: 0.337254902, alpha: 1))
+    private let confirmButton: UIButton = {
+        let b = UIButton(type: .system)
+        b.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.3137254902, blue: 0.6196078431, alpha: 1)
+        b.setTitle("TAXIS_CONFIRM".localized, for: .normal)
+        b.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        b.titleLabel!.font = UIFont.avenir(weight: .medium, fontSize: 16)
+        b.layer.cornerRadius = 8
+        return b
     }()
 
     // MARK: - View lifecycle
@@ -43,20 +50,6 @@ final class TAAddressView: TABaseView {
         super.init(frame: frame)
 
         setupLayout()
-    }
-    
-}
-
-// MARK: - 
-
-extension TAAddressView {
-
-    func fromTextField() -> UITextField {
-        return fromAddressTF.textField
-    }
-    
-    func toTextField() -> UITextField {
-        return toAddressTF.textField
     }
     
 }
@@ -71,43 +64,42 @@ private extension TAAddressView {
         layer.shadowOpacity = 0.2
         layer.shadowOffset = CGSize(width: 0, height: 2)
         
-        fromAddressTF.textField.delegate = self
-        toAddressTF.textField.delegate = self
+        let offsetFromLeftRight = 25
         
-        pickupIconView.setContentHuggingPriority(.init(251), for: .horizontal)
-        dropoffIconView.setContentHuggingPriority(.init(251), for: .horizontal)
+        addSubview(titleLabel)
+        titleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(15)
+            $0.left.equalToSuperview().offset(offsetFromLeftRight)
+            $0.right.equalToSuperview().inset(offsetFromLeftRight)
+        }
+        
+        let separatorView = UIView()
+        separatorView.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
+        addSubview(separatorView)
+        separatorView.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
+            $0.left.right.equalTo(titleLabel)
+            $0.height.equalTo(2)
+        }
+        
+        locationIconView.setContentHuggingPriority(.init(251), for: .horizontal)
 
-        let pickupSV = UIStackView(arrangedSubviews: [pickupIconView, fromAddressTF])
-        pickupSV.axis = .horizontal
-        pickupSV.distribution = .fill
-        pickupSV.spacing = 12
-
-        let dropoffSV = UIStackView(arrangedSubviews: [dropoffIconView, toAddressTF])
-        dropoffSV.translatesAutoresizingMaskIntoConstraints = false
-        dropoffSV.axis = .horizontal
-        dropoffSV.distribution = .fill
-        dropoffSV.spacing = 12
-
-        let fromToSV = UIStackView(arrangedSubviews: [pickupSV, dropoffSV])
-        fromToSV.translatesAutoresizingMaskIntoConstraints = false
-        fromToSV.axis = .vertical
-        fromToSV.distribution = .fill
-        fromToSV.spacing = 8
+        let addressSV = UIStackView(arrangedSubviews: [locationIconView, addressLabel])
+        addressSV.axis = .horizontal
+        addressSV.distribution = .fill
+        addressSV.alignment = .center
+        addressSV.spacing = 20
+        addSubview(addressSV)
+        addressSV.snp.makeConstraints {
+            $0.top.equalTo(separatorView.snp.bottom).offset(16)
+            $0.left.right.equalTo(titleLabel)
+        }
         
-        let allSV = UIStackView(arrangedSubviews: [fromToSV])
-        allSV.axis = .horizontal
-        allSV.distribution = .fill
-        allSV.alignment = .top
-        allSV.spacing = 15
-        addSubview(allSV)
-        
-        fromAddressTF.snp.makeConstraints { $0.height.equalTo(40) }
-        toAddressTF.snp.makeConstraints { $0.height.equalTo(40) }
-        
-        allSV.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(28)
-            $0.right.equalToSuperview().inset(18)
-            $0.bottom.equalToSuperview().inset(8)
+        addSubview(confirmButton)
+        confirmButton.snp.makeConstraints {
+            $0.top.equalTo(addressSV.snp.bottom).offset(16)
+            $0.left.right.equalTo(titleLabel)
+            $0.height.equalTo(46)
         }
     }
     
@@ -123,32 +115,4 @@ private extension TAAddressView {
         return imgView
     }
 
-}
-
-// MARK: - Help methods
-
-private extension TAAddressView {
-    
-    func activeAddressType(by textField: UITextField) -> TAActiveAddressTyping {
-        switch textField {
-        case fromAddressTF.textField:
-            return .from
-        case toAddressTF.textField:
-            return .to
-        default:
-            fatalError("fix me")
-        }
-    }
-    
-}
-
-// MARK: - UITextFieldDelegate
-
-extension TAAddressView: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        let addressType = activeAddressType(by: textField)
-        _activeAddressTyping.onNext(addressType)
-    }
-    
 }

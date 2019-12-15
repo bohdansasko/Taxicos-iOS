@@ -33,6 +33,7 @@ final class TAChooseOnMapRootView: TABaseView {
         super.init(frame: frame)
         
         setupLayout()
+        themeProvider.register(observer: self)
     }
     
 }
@@ -53,6 +54,14 @@ private extension TAChooseOnMapRootView {
             $0.bottom.left.right.equalToSuperview()
             $0.height.equalTo(180)
         }
+    }
+    
+}
+
+extension TAChooseOnMapRootView: TAThemeable {
+    
+    func apply(theme: TATheme) {
+        backgroundColor = theme.colors.backgroundColor
     }
     
 }

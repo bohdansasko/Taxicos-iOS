@@ -29,9 +29,13 @@
 
 "SEARCH_RESULTS_CHOOSE_ON_MAP" = "Set the location on the map";
 
-"DESTINATION_WHERE_YOU_GONNA" = "Where are you going?";
+"DESTINATION_WHERE_YOU_GONNA"           = "Where are you going?";
 "DESTINATION_TIME_TO_FIND_CHEAPEST_CAB" = "Time to find cheapest cab!";
-"SEARCH_DESTINATION" = "Search destination";
-"SET_DESTINATION" = "Set Destination";
+"SEARCH_DESTINATION"                    = "Search destination";
+"SET_DESTINATION"                       = "Set Destination";
 
-"TAXIS_OPTIONS_TITLE" = "Search Results";
+"TAXIS_OPTIONS_TITLE"       = "Search Results";
+"TAXIS_CHOOSE_ON_MAP"       = "Choose on map";
+"TAXIS_CONFIRM"             = "Confirm";
+"TAXIS_CONFIRM_PICK_UP"     = "Confirm pick up location";
+"TAXIS_CONFIRM_DESTINATION" = "Confirm destination location";

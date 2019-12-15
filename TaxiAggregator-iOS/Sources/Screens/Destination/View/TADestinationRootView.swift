@@ -33,7 +33,7 @@ final class TADestinationRootView: TABaseView {
     private let chooseOnMapButton: UIButton = {
         let b = UIButton(type: .system)
         b.backgroundColor = #colorLiteral(red: 0.2549019608, green: 0.3137254902, blue: 0.6196078431, alpha: 1)
-        b.setTitle("Choose on map", for: .normal)
+        b.setTitle("TAXIS_CHOOSE_ON_MAP".localized, for: .normal)
         b.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         b.titleLabel!.font = UIFont.avenir(weight: .medium, fontSize: 16)
         return b
