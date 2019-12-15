@@ -14,22 +14,35 @@ protocol TARecognizeUserLocationResponder {
     func didUpdateLocation(_ location: CLLocation)
 }
 
-final class TAMapViewModel: NSObject {
+final class TAMapViewModel {
     
     // MARK: - Private properties
     
-    private let _locationManager           = CLLocationManager()
+    private let _disposeBag = DisposeBag()
     
-    private let _myLocation                = PublishSubject<CLLocation>()
     private let _isMyLocationEnabled       = BehaviorRelay<Bool>(value: true)
     private let _isVisibleMyLocationButton = BehaviorRelay<Bool>(value: true)
     
+    private let _myLocationRemoteAPI: TAMyLocationRemoteAPI
     private let _recognizeUserLocationResponder: TARecognizeUserLocationResponder
+
+    // MARK: - Methods
     
-    // MARK: - Getters
+    init(myLocationRemoteAPI: TAMyLocationRemoteAPI, recognizeUserLocationResponder: TARecognizeUserLocationResponder) {
+        _myLocationRemoteAPI = myLocationRemoteAPI
+        _recognizeUserLocationResponder = recognizeUserLocationResponder
+
+        setupUserLocationSubscription()
+    }
     
+}
+
+// MARK: - Rx Getters
+
+extension TAMapViewModel {
+
     var myLocation: Observable<CLLocation> {
-        return _myLocation.asObservable()
+        return _myLocationRemoteAPI.myLocation.asObservable()
     }
     
     var isMyLocationEnabled: Observable<Bool> {
@@ -39,31 +52,29 @@ final class TAMapViewModel: NSObject {
     var isVisibleMyLocationButton: Observable<Bool> {
         return _isVisibleMyLocationButton.asObservable()
     }
-
-    // MARK: - Methods
     
-    init(recognizeUserLocationResponder: TARecognizeUserLocationResponder) {
-        _recognizeUserLocationResponder = recognizeUserLocationResponder
-        
-        super.init()
-        
-        _locationManager.delegate = self
-        _locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    }
+}
 
+// MARK: - Setup
+
+private extension TAMapViewModel {
+    
+    func setupUserLocationSubscription() {
+        myLocation.subscribe(onNext: { [weak self] newLocation in
+            self?._recognizeUserLocationResponder.didUpdateLocation(newLocation)
+        })
+        .disposed(by: _disposeBag)
+    }
+    
 }
 
 // MARK: - Help methods
 
 extension TAMapViewModel {
     
-    func requestLocationIfNeeded() {
-        if CLLocationManager.locationServicesEnabled() {
-            return
-        }
-        _locationManager.requestLocation()
+    func requestCurrentLocation() {
+        _myLocationRemoteAPI.determineMyLocation()
     }
-    
     
 }
 
@@ -72,35 +83,7 @@ extension TAMapViewModel {
 extension TAMapViewModel {
     
     @objc func actMyLocation(_ sender: UIButton) {
-        _locationManager.requestLocation()
+        requestCurrentLocation()
     }
     
 }
-
-// MARK: - CLLocationManagerDelegate
-
-extension TAMapViewModel: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        guard status == .authorizedAlways || status == .authorizedWhenInUse else {
-            return
-        }
-        _locationManager.startUpdatingLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else {
-            return
-        }
-        manager.stopUpdatingLocation()
-        
-        _myLocation.onNext(location)
-        _recognizeUserLocationResponder.didUpdateLocation(location)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        manager.stopUpdatingLocation()
-    }
-    
-}
-

@@ -15,13 +15,14 @@ final class TAMapDependencyContainer {
 extension TAMapDependencyContainer {
     
     func makeMapViewController(responder: TARecognizeUserLocationResponder) -> TAMapViewController {
-        let viewModel = makeMapViewModel(responder: responder)
+        let myLocationRemoteAPI = TAGoogleMyLocationRemoteAPI()
+        let viewModel = makeMapViewModel(myLocationRemoteAPI: myLocationRemoteAPI, responder: responder)
         let vc = TAMapViewController(viewModel: viewModel)
         return vc
     }
     
-    private func makeMapViewModel(responder: TARecognizeUserLocationResponder) -> TAMapViewModel {
-        return TAMapViewModel(recognizeUserLocationResponder: responder)
+    private func makeMapViewModel(myLocationRemoteAPI: TAMyLocationRemoteAPI, responder: TARecognizeUserLocationResponder) -> TAMapViewModel {
+        return TAMapViewModel(myLocationRemoteAPI: myLocationRemoteAPI, recognizeUserLocationResponder: responder)
     }
     
 }

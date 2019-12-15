@@ -14,23 +14,22 @@ final class TAMapViewController: TABaseViewController, TARootView {
     
     // MARK: - Properties
     
-    private let viewModel: TAMapViewModel
+    private let _viewModel: TAMapViewModel
     
     // MARK: - View lifecycle
     
     init(viewModel: TAMapViewModel) {
-        self.viewModel = viewModel
+        self._viewModel = viewModel
         super.init()
     }
     
     override func loadView() {
-        view = RootViewType(viewModel: viewModel)
+        view = RootViewType(viewModel: _viewModel)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        viewModel.requestLocationIfNeeded()
+        _viewModel.requestCurrentLocation()
     }
     
 }
