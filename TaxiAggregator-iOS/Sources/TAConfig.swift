@@ -24,7 +24,8 @@ extension TAConfig {
             static var geocoding: String { return "AIzaSyCcjM-YfwsUmonRehkmIMg6a4Smy3UgLuM" }
         }
         
-        static var kMapZoom: Float  { return 15 }
+        static var kHomeMapZoom: Float  { return 15 }
+        static var kMyLocationMapZoom: Float  { return 19 }
     }
     
 }

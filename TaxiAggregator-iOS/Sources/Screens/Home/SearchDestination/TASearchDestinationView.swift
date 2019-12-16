@@ -66,7 +66,6 @@ private extension TASearchDestinationView {
     func setupLayout() {
         backgroundColor     = .white
         
-        layer.cornerRadius  = 10
         layer.shadowColor   = UIColor.black.cgColor
         layer.shadowOffset  = CGSize(width: 0, height: -2)
         layer.shadowOpacity = 0.2
@@ -85,9 +84,10 @@ private extension TASearchDestinationView {
         }
         
         addSubview(searchButton)
-        searchButton.addTarget(viewModel,
-                               action: #selector(TASearchDestinationViewModel.actSearchDestinationButton),
-                               for: .touchUpInside)
+        searchButton.addTarget(
+            viewModel,
+            action: #selector(viewModel.actSearchDestinationButton)
+        )
         searchButton.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
             $0.left.right.equalTo(titleLabel)

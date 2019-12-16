@@ -11,10 +11,11 @@ import UIKit
 final class TADestinationViewController: TABaseViewController, TARootView {
     typealias RootViewType = TADestinationRootView
     
-    // MARK: - Properties
+    // MARK: - Internal vars
     
     private let _viewModel: TADestinationViewModel
     private let _factory: TADestinationFactory
+    
     // MARK: - Lifecycle
     
     init(viewModel: TADestinationViewModel, factory: TADestinationFactory) {
@@ -35,6 +36,18 @@ final class TADestinationViewController: TABaseViewController, TARootView {
         setupNavigationSubscription()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.title = "SET_DESTINATION".localized
+        navigationItem.backBarButtonItem?.title = " "
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.title = " "
+    }
+    
 }
 
 // MARK: - Setup
@@ -42,8 +55,6 @@ final class TADestinationViewController: TABaseViewController, TARootView {
 private extension TADestinationViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = "SET_DESTINATION".localized
-        
         navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController!.navigationBar.shadowImage = UIImage()
         navigationController!.navigationBar.backgroundColor = .white

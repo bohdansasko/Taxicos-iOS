@@ -36,15 +36,28 @@ final class TAChooseOnMapViewController: TABaseViewController, TARootView {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationTitle()
+        setupSubscription(to: _viewModel.navigationAction)
         add(child: _chooseOnMapViewController, to: rootView.mapContainerView)
-        subscribe(to: _viewModel.navigationAction)
     }
     
 }
 
+
+// MARK: - Setup
+
 private extension TAChooseOnMapViewController {
+ 
+    func setupNavigationTitle() {
+        switch _viewModel.addressType {
+        case .from:
+            navigationItem.title = "CHOOSE_ON_MAP_PICKUP_TITLE".localized
+        case .to:
+            navigationItem.title = "CHOOSE_ON_MAP_DESTINATION_TITLE".localized
+        }
+    }
     
-    func subscribe(to navigationAction: Observable<TAChooseOnMapNavigationAction>) {
+    func setupSubscription(to navigationAction: Observable<TAChooseOnMapNavigationAction>) {
         navigationAction
             .asDriver(onErrorRecover: { _ in fatalError("Unxecpected error in the choose on map navigation action") })
             .drive(onNext: { navAction in
@@ -56,9 +69,15 @@ private extension TAChooseOnMapViewController {
             .disposed(by: self.disposeBag)
     }
     
+}
+
+// MARK: - Present view controller
+
+private extension TAChooseOnMapViewController {
+    
     func present(screen: TAChooseOnMapNavigationScreen) {
         switch screen {
-        case .destination(let address):
+        case .destination(_):
             self.close()
         }
     }

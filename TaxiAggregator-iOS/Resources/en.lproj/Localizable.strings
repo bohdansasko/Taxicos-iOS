@@ -40,3 +40,5 @@
 "TAXIS_DETERMINING_ADDRESS" = "We're determining your address...";
 "TAXIS_CONFIRM_PICKUP"      = "Confirm pick up location";
 "TAXIS_CONFIRM_DESTINATION" = "Confirm destination location";
+"CHOOSE_ON_MAP_PICKUP_TITLE" = "Pickup";
+"CHOOSE_ON_MAP_DESTINATION_TITLE" = "Destination";

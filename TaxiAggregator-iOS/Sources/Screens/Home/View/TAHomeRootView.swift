@@ -66,7 +66,7 @@ private extension TAHomeRootView {
         
         addSubview(destinationView)
         destinationView.snp.makeConstraints {
-            $0.top.equalTo(mapContainerView.snp.bottom).inset(6)
+            $0.top.equalTo(mapContainerView.snp.bottom)
             $0.left.right.equalToSuperview()
             $0.bottom.equalToSuperview()
             $0.height.equalTo(340)

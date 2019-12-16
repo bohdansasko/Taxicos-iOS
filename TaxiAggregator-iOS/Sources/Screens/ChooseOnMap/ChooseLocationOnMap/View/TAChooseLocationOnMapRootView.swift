@@ -92,7 +92,7 @@ private extension TAChooseLocationOnMapRootView {
                 
                 let cameraPos = GMSCameraPosition(
                     target: location.coordinate,
-                    zoom: TAConfig.Map.kMapZoom
+                    zoom: self._viewModel.mapZoom
                 )
                 self.mapView.animate(to: cameraPos)
             })

@@ -26,6 +26,12 @@ final class TAChooseLocationOnMapViewModel {
     private let _isMyLocationEnabled       = BehaviorRelay<Bool>(value: true)
     private let _isVisibleMyLocationButton = BehaviorRelay<Bool>(value: true)
     
+    // MARK: - Getters
+    
+    var mapZoom: Float {
+        return TAConfig.Map.kMyLocationMapZoom
+    }
+    
     // MARK: - Lifecycle
     
     init(myLocationRemoteAPI: TAMyLocationRemoteAPI, geocodeRemoteAPI: TAGoogleGeocodeRemoteAPI, idleLocationResponder: TAIdleLocationResponder) {

@@ -16,7 +16,7 @@ protocol TARecognizeUserLocationResponder {
 
 final class TAMapViewModel {
     
-    // MARK: - Private properties
+    // MARK: - Internal properties
     
     private let _disposeBag = DisposeBag()
     
@@ -26,7 +26,13 @@ final class TAMapViewModel {
     private let _myLocationRemoteAPI: TAMyLocationRemoteAPI
     private let _recognizeUserLocationResponder: TARecognizeUserLocationResponder
 
-    // MARK: - Methods
+    // MARK: - Getters
+    
+    var mapZoom: Float {
+        return TAConfig.Map.kHomeMapZoom
+    }
+    
+    // MARK: - Lifecyle
     
     init(myLocationRemoteAPI: TAMyLocationRemoteAPI, recognizeUserLocationResponder: TARecognizeUserLocationResponder) {
         _myLocationRemoteAPI = myLocationRemoteAPI
@@ -60,10 +66,11 @@ extension TAMapViewModel {
 private extension TAMapViewModel {
     
     func setupUserLocationSubscription() {
-        myLocation.subscribe(onNext: { [weak self] newLocation in
-            self?._recognizeUserLocationResponder.didUpdateLocation(newLocation)
-        })
-        .disposed(by: _disposeBag)
+        myLocation
+            .subscribe(onNext: { [weak self] newLocation in
+                self?._recognizeUserLocationResponder.didUpdateLocation(newLocation)
+            })
+            .disposed(by: _disposeBag)
     }
     
 }
