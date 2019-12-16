@@ -89,6 +89,17 @@ private extension TADestinationRootView {
     }
     
     func setupSubscriptions() {
+        fromToView.activeAddressTyping
+            .bind(to: _viewModel.activeAddressTyping)
+            .disposed(by: disposeBag)
+        
+        fromToView.fromTextField().rx
+            .controlEvent(.editingDidBegin)
+            .subscribe(onNext: { [unowned self] in
+                self._viewModel.searchForLocations(using: self.fromToView.fromTextField().text ?? "")
+            })
+                .disposed(by: disposeBag)
+        
         fromToView.fromTextField().rx
             .text
             .orEmpty
@@ -96,6 +107,13 @@ private extension TADestinationRootView {
             .distinctUntilChanged()
             .subscribe(onNext: { [unowned self] queryText in
                 self._viewModel.searchForLocations(using: queryText)
+            })
+            .disposed(by: disposeBag)
+
+        fromToView.toTextField().rx
+            .controlEvent(.editingDidBegin)
+            .subscribe(onNext: { [unowned self] in
+                self._viewModel.searchForLocations(using: self.fromToView.toTextField().text ?? "")
             })
             .disposed(by: disposeBag)
 
@@ -129,10 +147,6 @@ private extension TADestinationRootView {
             .drive(onNext: { [unowned self] address in
                 self.fromToView.toTextField().text = address?.shortAddress
             })
-            .disposed(by: disposeBag)
-
-        fromToView.activeAddressTyping
-            .bind(to: _viewModel.activeAddressTyping)
             .disposed(by: disposeBag)
         
         themeProvider.register(observer: self)

@@ -14,9 +14,11 @@ typealias TADestinationNavigationAction = TANavigationAction<TADestinationNaviga
 
 final class TADestinationViewModel {
     
-    // MARK: - Internal properties
+    // MARK: - Internal vars
     
     private let _locationRepository: TALocationRepository
+    
+    private let _disposeBag = DisposeBag()
     
     private let _addressesResults = BehaviorRelay<[TAAddressModel]>(value: [])
     private let _navigationAction = PublishSubject<TADestinationNavigationAction>()
@@ -25,6 +27,8 @@ final class TADestinationViewModel {
     
     private let _fromAddress = BehaviorRelay<TAAddressModel?>(value: nil)
     private let _toAddress   = BehaviorRelay<TAAddressModel?>(value: nil)
+    
+    // MARK: - Public vars
     
     let activeAddressTyping = BehaviorRelay<TAActiveAddressTyping>(value: .to)
     
