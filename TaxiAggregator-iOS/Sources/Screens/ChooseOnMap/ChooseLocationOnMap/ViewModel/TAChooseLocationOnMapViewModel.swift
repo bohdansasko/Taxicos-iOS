@@ -19,9 +19,13 @@ final class TAChooseLocationOnMapViewModel {
     
     // MARK: - Internal properties
     
+    private let _disposeBag = DisposeBag()
+    
     private let _myLocationRemoteAPI: TAMyLocationRemoteAPI
     private let _geocodeRemoteAPI   : TAGoogleGeocodeRemoteAPI
     private let _idleLocationResponder: TAIdleLocationResponder
+    
+    private let _idleLocation = BehaviorSubject<CLLocationCoordinate2D>(value: .init())
     
     private let _isMyLocationEnabled       = BehaviorRelay<Bool>(value: true)
     private let _isVisibleMyLocationButton = BehaviorRelay<Bool>(value: true)
@@ -34,12 +38,18 @@ final class TAChooseLocationOnMapViewModel {
     
     // MARK: - Lifecycle
     
-    init(myLocationRemoteAPI: TAMyLocationRemoteAPI, geocodeRemoteAPI: TAGoogleGeocodeRemoteAPI, idleLocationResponder: TAIdleLocationResponder) {
-        _myLocationRemoteAPI = myLocationRemoteAPI
-        _geocodeRemoteAPI    = geocodeRemoteAPI
+    init(myLocationRemoteAPI: TAMyLocationRemoteAPI, geocodeRemoteAPI: TAGoogleGeocodeRemoteAPI,
+         idleLocationResponder: TAIdleLocationResponder, currentAddress: TAAddressModel?) {
+        _myLocationRemoteAPI   = myLocationRemoteAPI
+        _geocodeRemoteAPI      = geocodeRemoteAPI
         _idleLocationResponder = idleLocationResponder
         
-        _myLocationRemoteAPI.determineMyLocation()
+        _idleLocation.onNext(currentAddress!.location)
+        _myLocationRemoteAPI.myLocation
+            .subscribe(onNext: { [weak self] location in
+                self?._idleLocation.onNext(location.coordinate)
+            })
+            .disposed(by: _disposeBag)
     }
     
 }
@@ -58,8 +68,8 @@ extension TAChooseLocationOnMapViewModel {
 
 extension TAChooseLocationOnMapViewModel {
     
-    var myLocation: Observable<CLLocation> {
-        return _myLocationRemoteAPI.myLocation
+    var myLocation: Observable<CLLocationCoordinate2D> {
+        return _idleLocation.asObservable()
     }
     
     var isMyLocationEnabled: Observable<Bool> {

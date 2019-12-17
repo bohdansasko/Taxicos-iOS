@@ -26,7 +26,8 @@ extension TAChooseLocationOnMapDependencyContainer {
         let viewModel = TAChooseLocationOnMapViewModel(
             myLocationRemoteAPI: myLocationRemoteAPI,
             geocodeRemoteAPI: geocodeRemoteAPI,
-            idleLocationResponder: _idleLocationResponder
+            idleLocationResponder: _idleLocationResponder,
+            currentAddress: currentAddress
         )
         let vc = TAChooseLocationOnMapViewController(viewModel: viewModel)
         return vc

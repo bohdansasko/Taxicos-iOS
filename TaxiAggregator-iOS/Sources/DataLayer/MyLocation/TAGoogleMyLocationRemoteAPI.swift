@@ -47,6 +47,7 @@ extension TAGoogleMyLocationRemoteAPI: TAMyLocationRemoteAPI {
     
     func determineMyLocation() {
         _locationManager.requestLocation()
+        _locationManager.startUpdatingLocation()
     }
     
 }
@@ -60,7 +61,6 @@ extension TAGoogleMyLocationRemoteAPI: CLLocationManagerDelegate {
         guard status == .authorizedAlways || status == .authorizedWhenInUse else {
             return
         }
-        _locationManager.startUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

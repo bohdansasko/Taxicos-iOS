@@ -15,6 +15,7 @@ final class TADestinationRootView: TABaseView {
     // MARK: - Properties
     
     private let _viewModel: TADestinationViewModel
+    private let _activeAddressTyping = PublishSubject<TAActiveAddressTyping>()
     
     // MARK: - UI
     
@@ -48,8 +49,8 @@ final class TADestinationRootView: TABaseView {
         
         setupLayout()
         setupSubscriptions()
-        setupKeyboardSubscription()
         
+        themeProvider.register(observer: self)
         fromToView.toTextField().becomeFirstResponder()
     }
 }
@@ -89,16 +90,31 @@ private extension TADestinationRootView {
     }
     
     func setupSubscriptions() {
-        fromToView.activeAddressTyping
+        _activeAddressTyping
             .bind(to: _viewModel.activeAddressTyping)
             .disposed(by: disposeBag)
         
+        _viewModel.addressesResults
+            .asDriver(onErrorJustReturn: [])
+            .drive(onNext: { _ in
+                self.addressesTable.reloadData()
+            })
+            .disposed(by: disposeBag)
+
+        setupSubscriptionForPickupTextField()
+        setupSubscriptionForDestinationTextField()
+        setupSubscriptionForFromToAddress()
+        setupKeyboardSubscription()
+    }
+    
+    func setupSubscriptionForPickupTextField() {
         fromToView.fromTextField().rx
             .controlEvent(.editingDidBegin)
             .subscribe(onNext: { [unowned self] in
+                self._activeAddressTyping.onNext(.from)
                 self._viewModel.searchForLocations(using: self.fromToView.fromTextField().text ?? "")
             })
-                .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
         fromToView.fromTextField().rx
             .text
@@ -109,10 +125,13 @@ private extension TADestinationRootView {
                 self._viewModel.searchForLocations(using: queryText)
             })
             .disposed(by: disposeBag)
-
+    }
+    
+    func setupSubscriptionForDestinationTextField() {
         fromToView.toTextField().rx
             .controlEvent(.editingDidBegin)
             .subscribe(onNext: { [unowned self] in
+                self._activeAddressTyping.onNext(.to)
                 self._viewModel.searchForLocations(using: self.fromToView.toTextField().text ?? "")
             })
             .disposed(by: disposeBag)
@@ -126,15 +145,9 @@ private extension TADestinationRootView {
                 self._viewModel.searchForLocations(using: queryText)
             })
             .disposed(by: disposeBag)
-        
-        _viewModel.addressesResults
-            .asDriver(onErrorJustReturn: [])
-            .drive(onNext: { _ in
-                self.addressesTable.reloadData()
-            })
-            .disposed(by: disposeBag)
-
-        
+    }
+    
+    func setupSubscriptionForFromToAddress() {
         _viewModel.fromAddress
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [unowned self] address in
@@ -148,8 +161,6 @@ private extension TADestinationRootView {
                 self.fromToView.toTextField().text = address?.shortAddress
             })
             .disposed(by: disposeBag)
-        
-        themeProvider.register(observer: self)
     }
     
     func setupKeyboardSubscription() {

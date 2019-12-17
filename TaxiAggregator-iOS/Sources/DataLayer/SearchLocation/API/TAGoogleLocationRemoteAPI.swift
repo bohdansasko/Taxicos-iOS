@@ -43,7 +43,7 @@ extension TAGoogleLocationRemoteAPI: TALocationRemoteAPI {
                     seal.fulfill([])
                     return
                 }
-
+                
                 let addresses = results.map { TAAddressModel(icon: #imageLiteral(resourceName: "icDropoff"),
                                              shortAddress: $0.attributedPrimaryText.string,
                                              fullAddress: ($0.attributedSecondaryText?.string) ?? "",

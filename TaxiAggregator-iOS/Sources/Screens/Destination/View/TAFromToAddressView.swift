@@ -16,14 +16,6 @@ enum TAActiveAddressTyping {
 
 final class TAFromToAddressView: TABaseView {
     
-    // MARK: - Properties
-    
-    fileprivate let _activeAddressTyping = PublishSubject<TAActiveAddressTyping>()
-    
-    var activeAddressTyping: Observable<TAActiveAddressTyping> {
-        return _activeAddressTyping.asObservable()
-    }
-    
     // MARK: - UI
     
     fileprivate let pickupIconView: UIImageView = {
@@ -75,10 +67,7 @@ private extension TAFromToAddressView {
         
         layer.shadowOpacity = 0.2
         layer.shadowOffset = CGSize(width: 0, height: 2)
-        
-        fromAddressTF.textField.delegate = self
-        toAddressTF.textField.delegate = self
-        
+                
         pickupIconView.setContentHuggingPriority(.init(251), for: .horizontal)
         dropoffIconView.setContentHuggingPriority(.init(251), for: .horizontal)
 
@@ -128,32 +117,4 @@ private extension TAFromToAddressView {
         return imgView
     }
 
-}
-
-// MARK: - Help methods
-
-private extension TAFromToAddressView {
-    
-    func activeAddressType(by textField: UITextField) -> TAActiveAddressTyping {
-        switch textField {
-        case fromAddressTF.textField:
-            return .from
-        case toAddressTF.textField:
-            return .to
-        default:
-            fatalError("fix me")
-        }
-    }
-    
-}
-
-// MARK: - UITextFieldDelegate
-
-extension TAFromToAddressView: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        let addressType = activeAddressType(by: textField)
-        _activeAddressTyping.onNext(addressType)
-    }
-    
 }

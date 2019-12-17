@@ -87,11 +87,11 @@ private extension TAChooseLocationOnMapRootView {
         
         _viewModel
             .myLocation
-            .subscribe(onNext: { [weak self] location in
+            .subscribe(onNext: { [weak self] coordinate in
                 guard let self = self else { return }
                 
                 let cameraPos = GMSCameraPosition(
-                    target: location.coordinate,
+                    target: coordinate,
                     zoom: self._viewModel.mapZoom
                 )
                 self.mapView.animate(to: cameraPos)
