@@ -1,6 +1,8 @@
 # Taxicos-iOS
 MVVM + RxSwift
 
+Main idea: find cheapest cab to specific point. 
+
 1. App icon
 
 ![iPhone 11 — 13 1 2020-01-02 12-10-57](https://user-images.githubusercontent.com/12583893/71662093-f6d8d980-2d58-11ea-96f2-8053832183fe.png)
